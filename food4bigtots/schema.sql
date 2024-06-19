@@ -6,7 +6,7 @@ CREATE TABLE recipes (
     name TEXT NOT NULL,
     date TEXT NOT NULL,
     path TEXT NOT NULL,
-    original TEXT NOT NULL,
+    original TEXT,
     thumbnail TEXT NOT NULL,
     category_id INTEGER NOT NULL,
     FOREIGN KEY (category_id) REFERENCES categories (id)
