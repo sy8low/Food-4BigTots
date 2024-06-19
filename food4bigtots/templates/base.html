@@ -2,12 +2,13 @@
 
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="desciption" content="">
-        <meta name="author" content="Low Sze Yoong, Low Lai Kuan">
         <title>Food-4BigTots{% block title %}{% endblock title %}</title>
 
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="desciption" content="The much-awaited sequel to Food-4Tots.com.">
+        <meta name="author" content="Low Sze Yoong, Low Lai Kuan">
+        
         <link rel="icon" href="{{ url_for('static', filename='media/theme/FFT_icon.jpeg') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,27 +17,27 @@
     </head>
 
     <body>
-        <header class="border-bottom border-2 border-primary">
-            <nav class="navbar py-3 mx-4">
+        <header>
+            <nav class="navbar">
                 <div class="container-fluid justify-content-start">
                     <div class="col-4">
-                        <button class="navbar-toggler w-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
 
-                        <div class="offcanvas offcanvas-start ps-3" data-bs-scroll="true" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                            <div class="offcanvas-header text-primary pb-0">
-                                <p class="h2 fw-medium poppins-regular offcanvas-title interactive-under" id="offcanvasNavbarLabel">Menu</p>
+                        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                            <div class="offcanvas-header">
+                                <p class="offcanvas-title interactive-under h2" id="offcanvasNavbarLabel">Menu</p>
                                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                             </div>
 
-                            <div class="offcanvas-body text-secondary pt-2">
+                            <div class="offcanvas-body">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                                        <a class="nav-link active" aria-current="page" href="{{ url_for('home.home') }}">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="about.hmtl">About Us</a>
+                                        <a class="nav-link" href="{{ url_for('home.about') }}">About Us</a>
                                     </li>
 
                                     <li class="nav-item dropdown">
@@ -44,21 +45,18 @@
                                             Recipes
                                         </a>
 
-                                        <ul class="dropdown-menu border border-1 border-primary">
+                                        <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="#">One</a></li>
                                             <li><a class="dropdown-item" href="#">Two</a></li>
                                             <li><a class="dropdown-item" href="#">Three</a></li>
                                         </ul>
                                     </li>
-
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <a class="col-4 navbar-brand text-black poppins-regular text-decoration-none text-center" href="index.html">
-                        <span class="fw-bold">food 4 BIG tots</span>
-                    </a>
+                    <a class="col-4 navbar-brand" href="{{ url_for('home.home') }}">food 4 BIG tots</a>
                 </div>
             </nav>
         </header>
@@ -67,37 +65,37 @@
             {% block main %}{% endblock %}
         </main>
 
-        <footer class="container-fluid pb-5 border-top border-primary border-2 bg-info">
+        <footer class="container-fluid">
             <div class="container">
-                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-5 pt-5 pb-0 mb-0">
-                    <div class="col mb-0">
-                        <a class="h4 text-black poppins-regular text-decoration-none text-center" href="index.html">
-                            <span class="fw-bold">food 4 BIG tots</span>
+                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-5">
+                    <div class="col">
+                        <a class="h4" href="{{ url_for('home.home') }}">
+                            food 4 BIG tots
                         </a>
                         <p class="mt-2 text-body-secondary">&copy; 2024</p>
                     </div>
 
-                    <div class="col mb-0"></div>
+                    <div class="col"></div>
 
-                    <div class="col mb-1"></div>
+                    <div class="col"></div>
 
-                    <div class="col mb-1">
-                        <h5 class="poppins-regular text-black fw-bold">Introduction</h5>
+                    <div class="col">
+                        <a class="h5">Introduction</a>
                         <ul class="nav flex-column">
-                            <li class="nav-item mb-2">
-                                <a href="about.html" class="nav-link p-0">About Us</a>
+                            <li class="nav-item">
+                                <a href="{{ url_for('home.about') }}" class="nav-link">About Us</a>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="col mb-1">
-                        <h5 class="poppins-regular text-black fw-bold">Recipes</h5>
+                    <div class="col">
+                        <a class="h5">Recipes</a>
                         <ul class="nav flex-column">
-                            <li class="nav-item mb-2">
-                                <a href="about.html" class="nav-link p-0">About Us</a>
+                            <li class="nav-item">
+                                <a href="{{ url_for('home.about') }}" class="nav-link">About Us</a>
                             </li>
-                            <li class="nav-item mb-2">
-                                <a href="about.html" class="nav-link p-0">About Us</a>
+                            <li class="nav-item">
+                                <a href="{{ url_for('home.about') }}" class="nav-link">About Us</a>
                             </li>
                         </ul>
                     </div>
