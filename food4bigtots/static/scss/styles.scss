@@ -1,3 +1,5 @@
+// Use relative units: lh, %, rem.
+
 //Default overrides.
 $primary: #72502E;
 $secondary: #9B7854;
@@ -97,9 +99,15 @@ a:hover, .nav-link:hover,
     box-shadow: 0.1875rem 0.1875rem $primary;
 }
 
+.nav-item {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
 // Cards.
 .card {
     width: 100%;
+    height: 100%;
 }
 
 .card-img {
@@ -107,7 +115,11 @@ a:hover, .nav-link:hover,
 }
 
 .card-body {
+    border: 0.125rem solid $primary;
     border-radius: 0.5rem;
+    background-color: $info;
+    text-align: center;
+    align-items: center;
 }
 
 .card-text {
@@ -137,6 +149,15 @@ li {
     padding-bottom: 1rem;
 }
 
+.form-check-input {
+    margin-right: 0.25rem;
+}
+
+.list-group {
+    padding-left: 0;
+    margin-top: 0.25rem;
+}
+
 // Offcanvas
 .offcanvas {
     padding-left: 1rem;
@@ -163,7 +184,7 @@ footer {
 }
 
 footer .row {
-    padding-top: 3rem;
+    padding-top: 2rem;
     padding-bottom: 0;
     margin-bottom: 0;
 
@@ -173,19 +194,61 @@ footer .row {
 
     .h4, .h5 {
         color: black;
-        font-family: "Poppins";
-        font-weight: bold;
+        font-weight: 600;
     }
 
-    .nav-item {
+    .nav {
         margin-top: 0.5rem;
-    }
-
-    .nav-item {
-        margin-bottom: 0.5rem;
     }
 
     .nav-link {
         padding: 0;
     }
+}
+
+// Header groups and headers
+h1, h2, h3,
+h4, h5, h6 {
+    font-family: "Poppins", Arial;
+}
+
+hgroup.big {
+    text-align: center;
+    margin-bottom: 1rem;
+
+    h1 {
+        padding-top: 0.5rem;
+        padding-bottom: 0;
+        margin-top: 1rem;
+        color: $primary;
+        font-weight: 600;
+    }
+}
+
+h2, h3 {
+    color: $primary;
+    font-weight: 600;
+}
+
+h2.spaced, h3 {
+        padding-top: 0;
+        padding-bottom: 0.5rem;
+        margin-top: 1rem;
+}
+
+// TODO: Clean this up
+// Double and single panes
+.double, .single {
+    margin-bottom: 1.5rem;
+}
+
+.double-wide .static-pane {
+        margin-bottom: 1.5rem;
+}
+
+.sticky-pane {
+    position: sticky;
+    margin-bottom: 0.5rem;
+    top: 5rem;
+    justify-content: center;    
 }

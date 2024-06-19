@@ -1,0 +1,97 @@
+{% macro tile(image, link, title) %}
+    <div class="col-6 col-md-4">
+        <div class="card">
+            <img src="{{ image }}" class="card-img" alt="{{ title }}">
+            <div class="card-body d-none">
+                <h3 class="card-text h5">
+                    <a href="{{ link }}">{{ title }}</a>
+                </h3>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+
+{% macro ingredient(desc, x) %}
+    <li class="list-group-item">
+        <input class="form-check-input" type="checkbox" value="" id="ingredient_{{ x }}">
+        <label class="form-check-label" for="ingredient_{{ x }}">{{ desc | safe }}</label>
+    </li>
+{% endmacro %}
+
+
+{% macro accordion_item(header, body, x, open=False) %}
+    <div class="accordion-item">
+        <h4 class="accordion-header">
+            {% if open %}
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#step_g{{ x }}" aria-expanded="{{ open }}" aria-controls="step_g{{ 1 }}">
+                    {{ header }}
+                </button>
+            {% else %}
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#step_g{{ x }}" aria-expanded="{{ open }}" aria-controls="step_g{{ 1 }}">
+                    {{ header }}
+                </button>
+            {% endif %}
+        </h4>
+
+        {% if open %}
+            <div id="step_g{{ x }}" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                    {{ body }}
+                </div>
+            </div>
+        {% else %}
+            <div id="step_g{{ x }}" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    {{ body }}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endmacro %}
+
+
+{% macro double(title, content, image, image_alt="", show_title=True) %}
+    {% if show_title %}
+        <hgroup class="col-lg-7 offset-lg-1">
+            <h3>{{ title }}</h3>
+        </hgroup>
+    {% endif %}
+
+    <section class="double row g-5" title="{{ title }}">
+        <div class="col-lg-7 offset-lg-1">{{ content | safe }}</div>
+
+        <div class="col-lg-4 mt-3 mt-lg-5">
+            <div class="sticky-pane d-flex d-lg-block">
+                <img class="img-fluid" src="{{ image }}" alt="{{ image_alt }}">
+            </div>
+        </div>
+    </section>
+{% endmacro %}
+
+
+{% macro double_wide(left, right) %}
+    <div class="double-wide row g-5">
+        <div class="static-pane col-lg-8">
+            {{ left | safe }}
+        </div>
+        <div class="col-lg-4">
+            <div class="sticky-pane border-start border-2 border-primary">
+                {{ right | safe }}
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+
+{% macro single(title, content) %}
+    <hgroup class="col-lg-7 offset-lg-1">
+        <h2 class="spaced">{{ title }}</h2>
+    </hgroup>
+
+    <section class="single row g-5" title="{{ title }}">
+        <div class="col-lg-10 offset-lg-1">
+            {{ content | safe }}
+        </div>
+    </section>
+{% endmacro %}

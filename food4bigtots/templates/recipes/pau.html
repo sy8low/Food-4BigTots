@@ -1,10 +1,14 @@
 {% extends "base.html" %}
 
-{% block title %}Wholemeal Pau with Red Bean Filling{% endblock title %}
+{% from "macros.html" import ingredient, double, single, accordion_item %}
+
+{% set name = "Wholemeal Pau with Red Bean Filling" %}
+
+{% block title %}{{ super() }} | {{ name }}{% endblock title %}
 
 {% block main %}
-<hgroup class="text-center mb-3">
-    <h1 class="pt-2 pb-0 mt-3 poppins-regular text-primary fw-semibold">Wholemeal Pau with Red Bean Filling</h1>
+<hgroup class="big">
+    <h1>{{ name }}</h1>
     <p><time class="h5" datetime="2015-09-30">30 September 2015</time></p>
 </hgroup>
 
@@ -12,244 +16,198 @@
     <img class="col-10 col-lg-6" src="{{ url_for('static', filename='media/pau/pau_2.jpg') }}" alt="">
 </div>
 
-<section class="row g-5 mb-4" title="Intro">
-    <div class="col-md-7 offset-md-1">
-        <p>
-            I love eating Chinese steamed buns (pau) as much as I love making them.
-            Making pau is a lot easier and quicker than baking bread. I can even knead it by hand.
-            But, I must confess that mastering the skill is not easy.
-            After spending months in making pau, I still couldn’t get a batch of completely “wrinkle-free” pau,
-            no matter how much care and attention I put into kneading, proofing and steaming them.
-            In my case, “practice does not always make perfect”. I kept wondering whether I have overlooked something.
-        </p>
-        <p>
-            So, I read through some cookbooks and searched the internet, trying every possible way to find the cause.
-            Recently, I got the answer from one of my favourite cookbooks.
-            I’m thrilled that I finally nailed it and learned something new as well.
-            It was actually the uneven steam pressure in the steamer that caused the ugly surface of my pau.
-            I had used high heat to steam my pau and this led to a spike in the pressure inside the steamer that resulted in
-            the pau expanding too fast and over-extended. After the steaming was done, the drop in temperature inside the steamer
-            made the over-expanded pau failing to hold its shape and thus collapse. This scenario usually occurs when the home use
-            steaming apparatus is comparatively small and is unable to cope with the high heat coming from the gas stove.
-            To rectify this problem, I started off the steaming with cold water on medium heat and reduced it to medium low once
-            the water started boiling. Five minutes before ending the steaming process, I lifted the lid slightly creating a tiny gap
-            to release some of the steam pressure and to maintain an even pressure within the steamer. With all these adjustments,
-            my entire batch of pau turned out to have smooth surfaces!
-        </p>
-        <p>
-            This pau recipe that I share with you is a basic pau recipe that you can make it with or without filling.
-            The wholemeal flour that I added is just my personal choice to make the pau a bit healthier.
-            The recipe still works if you use solely pau flour or plain flour.
-            For filling, I used my <a href="#" class="">homemade red bean paste</a>.
-            But, if you don’t want to do it from scratch, you can opt for ready-made red bean paste.
-            If you do so, you may need a lesser amount than what I recommended in the recipe as the read-made paste is
-            usually overly sweet. Besides that, you are also free to use any filling of your choice, be it sweet or savoury.
-            Alternatively, you can also add some dried fruits, seeds and nuts, and then shape it like mantao.
-            The choice is endless. Have fun!
-        </p>
-    </div>
 
-    <div class="col-md-4 mt-3 mt-md-5">
-        <div class="position-sticky mb-2" style="top: 5rem;">
-            <img class="img-fluid" src="{{ url_for('static', filename='media/pau/pau_4.jpg') }}" alt="">
-        </div>
-    </div>
-</section>
+{% set intro_content %}
+    <p>
+        I love eating Chinese steamed buns (pau) as much as I love making them.
+        Making pau is a lot easier and quicker than baking bread. I can even knead it by hand.
+        But, I must confess that mastering the skill is not easy.
+        After spending months in making pau, I still couldn’t get a batch of completely “wrinkle-free” pau,
+        no matter how much care and attention I put into kneading, proofing and steaming them.
+        In my case, “practice does not always make perfect”. I kept wondering whether I have overlooked something.
+    </p>
+    <p>
+        So, I read through some cookbooks and searched the internet, trying every possible way to find the cause.
+        Recently, I got the answer from one of my favourite cookbooks.
+        I’m thrilled that I finally nailed it and learned something new as well.
+        It was actually the uneven steam pressure in the steamer that caused the ugly surface of my pau.
+        I had used high heat to steam my pau and this led to a spike in the pressure inside the steamer that resulted in
+        the pau expanding too fast and over-extended. After the steaming was done, the drop in temperature inside the steamer
+        made the over-expanded pau failing to hold its shape and thus collapse. This scenario usually occurs when the home use
+        steaming apparatus is comparatively small and is unable to cope with the high heat coming from the gas stove.
+        To rectify this problem, I started off the steaming with cold water on medium heat and reduced it to medium low once
+        the water started boiling. Five minutes before ending the steaming process, I lifted the lid slightly creating a tiny gap
+        to release some of the steam pressure and to maintain an even pressure within the steamer. With all these adjustments,
+        my entire batch of pau turned out to have smooth surfaces!
+    </p>
+    <p>
+        This pau recipe that I share with you is a basic pau recipe that you can make it with or without filling.
+        The wholemeal flour that I added is just my personal choice to make the pau a bit healthier.
+        The recipe still works if you use solely pau flour or plain flour.
+        For filling, I used my <a href="#">homemade red bean paste</a>.
+        But, if you don’t want to do it from scratch, you can opt for ready-made red bean paste.
+        If you do so, you may need a lesser amount than what I recommended in the recipe as the read-made paste is
+        usually overly sweet. Besides that, you are also free to use any filling of your choice, be it sweet or savoury.
+        Alternatively, you can also add some dried fruits, seeds and nuts, and then shape it like mantao.
+        The choice is endless. Have fun!
+    </p>
+{% endset %}
 
-<hgroup class="text-center mb-3">
-    <h2 class="pt-2 pb-0 mt-3 poppins-regular text-primary fw-semibold">Recipe</h2>
+{{ double("Intro", intro_content, url_for("static", filename="media/pau/pau_4.jpg"), show_title=False) }}
+
+
+<hgroup class="big">
+    <h2 class="spaced">Recipe</h2>
     <p class="h5">Yield: 9 pau</p>
 </hgroup>
 
-<hgroup class="col-md-7 offset-md-1">
-    <h3 class="pt-2 pb-0 mt-3 poppins-regular text-primary fw-semibold">Ingredients</h3>
-</hgroup>
 
-<section class="row g-5 mb-4" title="Recipe">
-    <div class="col-md-7 offset-md-1">
-        <ul class="list-group ps-0 mt-1">
-            <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="ingredient_1">
-                <label class="form-check-label" for="ingredient_1">
-                    200 grams pau flour <a href="#note_1">(note 1)</a>
-                </label>
-            </li>
-            <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="ingredient_2">
-                <label class="form-check-label" for="ingredient_2">
-                    50 grams wholemeal flour <a href="#note_1">(note 1)</a>
-                </label>
-            </li>
-            <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="ingredient_3">
-                <label class="form-check-label" for="ingredient_3">3 grams instant yeast</label>
-            </li>
-            <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="ingredient_4">
-                <label class="form-check-label" for="ingredient_4">3 grams baking powder (sieved)</label>
-            </li>
-            <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="ingredient_5">
-                <label class="form-check-label" for="ingredient_5">40 grams sugar</label>
-            </li>
-            <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="ingredient_6">
-                <label class="form-check-label" for="ingredient_6">130 grams water</label>
-            </li>
-            <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="ingredient_7">
-                <label class="form-check-label" for="ingredient_7">10 grams salad oil (or vegetable oil)</label>
-            </li>
-            <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="ingredient_8">
-                <label class="form-check-label" for="ingredient_8">250 grams red bean paste (homemade or ready-made)</label>
-            </li>
-        </ul>
+{% set ingredient_content %}
+    <ul class="list-group">
+        {{ ingredient("200 grams pau flour <a href='#note_1'>(note 1)</a>", 1) }}
+
+        {{ ingredient("50 grams wholemeal flour <a href='#note_1'>(note 1)</a>", 2) }}
+
+        {{ ingredient("3 grams instant yeast", 3) }}
+
+        {{ ingredient("3 grams baking powder (sieved)", 4) }}
+        
+        {{ ingredient("40 grams sugar", 5) }}
+
+        {{ ingredient("130 grams water", 6) }}
+
+        {{ ingredient("10 grams salad oil (or vegetable oil)", 7) }}
+
+        {{ ingredient("250 grams red bean paste (homemade or ready-made)", 8) }}
+    </ul>
+{% endset %}
+
+{{ double("Ingredients", ingredient_content, url_for("static", filename="media/pau/pau_6.jpg")) }}
+
+
+{% set steps_content %}
+    <div class="accordion ms-n1" id="steps">
+
+        {% set accordion_body_1 %}
+            <ol>
+                <li>
+                    Dissolve instant yeast in water.
+                </li>
+                <li>
+                    Combine sugar, flour and baking powder in a mixing bowl.
+                    Make a well in the center and add in the yeast mixture.
+                    Stir to combine until no traces of flour.
+                    Add in oil and knead until a rough dough is formed <a href="#note_3">(note 3)</a>.
+                </li>
+                <li>
+                    Transfer the dough onto a working surface and continue kneading until it is no longer sticky but soft and smooth <a href="#note_3">(note 3)</a>.
+                </li>
+                <li>
+                    Place the dough in a bowl and covered with cling wrap. Let it rest for 10 minutes in room temperature.
+                </li>
+                <li>
+                    Meanwhile, divide the red bean paste into 9 equal portions (about 27 grams) and shape into balls.
+                </li>
+            </ol>
+        {% endset %}
+
+        {{ accordion_item("Preparing the dough", accordion_body_1, 1, True) }}
+
+
+        {% set accordion_body_2 %}
+            <ol start="6">
+                <li>
+                    After resting the dough, remove it from the bowl.
+                    On a working surface, roll the dough into a log shape and divide into 9 equal portions (about 47 grams).
+                    Knead each piece until smooth, deflate it (meaning collapsing all the air pockets formed) and shape into a ball.
+                    Seal the bottom. Repeat the same for the remaining portions.
+                </li>
+                <li>
+                    Take one ball, flatten it lightly with hand and use a rolling pin to roll it out into circle.
+                    Flip it over and roll it out carefully such that the center is thinner and the peripheral rim thinner.
+                    This will prevent the filling from leaking during steaming. Repeat the same for the remaining balls.
+                    This will ensure each pau has about 5 minutes of resting time before moving to step 8.
+                </li>
+                <li>
+                    Take a piece of the flatten dough and place one red bean paste ball (from step 5) onto it.
+                    Bring the edges together and pinch the top to seal the filling completely.
+                    Place it onto a piece of square baking paper, seam side down (so that they have a smooth and round top) and transfer to the steaming basket.
+                    Repeat the same for the remaining dough. Keep the pau apart from each other, allowing rooms from all sides.
+                </li>
+            </ol>
+        {% endset %}
+
+        {{ accordion_item("Making the buns", accordion_body_2, 2) }}
+
+
+        {% set accordion_body_3 %}
+            <ol start="9">
+                <li>
+                    Cover with lid and place a pan filled with water underneath.
+                    Proof until the pau have slightly expanded, soft and fluffy to the touch for about 25 minutes.
+                    The proofing time varies depending on the temperature in the kitchen.
+                    If you use your finger tip to press lightly the surface of the pau, the depression will slowly disappear.
+                    This means the pau are ready for steaming.
+                </li>
+                <li>
+                    Steam the pau for 17-18 minutes, starting from cold water, with medium heat.
+                    When the water starts boiling, reduce heat to medium low.
+                    2-3 minutes before the steaming ends, open the lid slightly to lower the steam pressure so that the surface of the pau will not wrinkle.
+                    Once it’s done, off the heat, let the pau sit inside the steamer for another 5 minutes.
+                    This will ensure they do not shrink due to a sudden change of temperature.
+                </li>
+                <li>
+                    Open the lid, transfer the steamer away from the water and let the pau cool down. Best to serve warm.
+                    If consume the next day, store inside an air-tight container and keep in the fridge.
+                    They can also be kept inside freezer bags and be frozen up to 3 months.
+                    To reheat them, remove from the freezer and steam (with or without defrost) for 3-5 minutes or until the inside is hot.
+                </li>
+            </ol>
+        {% endset %}
+
+        {{ accordion_item("Steaming the buns", accordion_body_3, 3) }}
     </div>
+{% endset %}
 
-    <div class="col-md-4 mt-3 mt-md-5">
-        <div class="position-sticky" style="top: 5rem;">
-            <img class="img-fluid" src="{{ url_for('static', filename='media/pau/pau_6.jpg') }}" alt="">
-        </div>
-    </div>
-</section>
+{{ double("Steps", steps_content, url_for("static", filename="media/pau/pau_7.jpg")) }}
 
-<hgroup class="col-md-7 offset-md-1">
-    <h3 class="pt-2 pb-0 mt-3 poppins-regular text-primary fw-semibold">Steps</h3>
-</hgroup>
 
-<section class="row g-5 mb-4" title="Steps">
-    <div class="col-md-7 offset-md-1">
-        <div class="accordion ms-n1" id="steps">
-            <div class="accordion-item">
-                <h4 class="accordion-header poppins-regular">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#step_g1" aria-expanded="true" aria-controls="step_g1">
-                        Preparing the dough
-                    </button>
-                </h4>
+{% set notes_content %}
+    <ol>
+        <li id="note_1">
+            Pau flour is a specialty flour used in making Chinese steamed buns. It gives the pau softer and fluffy texture.
+            For making pau, pau flour is commonly used in Malaysia whereas in Singapore is Hong Kong flour.
+            If you can’t find either one, you can substitute it with plain flour (all purpose flour).
+        </li>
+        <li>
+            Instead of adding wholemeal flour, you can use entirely pau flour, Hong Kong flour or plain flour.
+            Do take note that increasing the amount of wholemeal flour will make the texture of the pau harder.
+        </li>
+        <li id="note_3">
+            Try not to add extra flour when kneading the dough as it will make the texture of the pau harder.
+        </li>
+        <li>
+            I knead the dough by hands but you can do it with bread making machine or kitchen mixer (with a dough hook).
+        </li>
+        <li>
+            Try to complete step 6-8 as quick as you can so that all the paus are proofed equally.
+        </li>
+        <li>
+            If you use a stainless steel steaming rack, cover the lid with cloth to prevent water dripping onto the pau.
+        </li>
+        <li>
+            I bought my 12” bamboo steamer from a local shop selling kitchenware (Pembekal Peralatan Dapur Gas – Lee Poh Wah) at Jalan Kepong, Kuala Lumpur.
+        </li>
+        <li>
+            With this dough, you can wrap it with or without filling. You can wrap the pau with any filling of choice, be it sweet or savoury.
+            You can also make it into mantao.
+        </li>
+        <li>
+            For beginners, it is best to keep the ratio of dough to filling at 2:1 to ensure easy wrapping.
+        </li>
+    </ol>
+{% endset %}
 
-                <div id="step_g1" class="accordion-collapse collapse show" data-bs-parent="#steps">
-                    <div class="accordion-body">
-                        <ol>
-                            <li>Dissolve instant yeast in water.</li>
-                            <li>
-                                Combine sugar, flour and baking powder in a mixing bowl.
-                                Make a well in the center and add in the yeast mixture.
-                                Stir to combine until no traces of flour.
-                                Add in oil and knead until a rough dough is formed (note 3).
-                            </li>
-                            <li>Transfer the dough onto a working surface and continue kneading until it is no longer sticky but soft and smooth (note 3).</li>
-                            <li>Place the dough in a bowl and covered with cling wrap. Let it rest for 10 minutes in room temperature.</li>
-                            <li>Meanwhile, divide the red bean paste into 9 equal portions (about 27 grams) and shape into balls.</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
+{{ single("Notes", notes_content)}}
 
-            <div class="accordion-item">
-                <h4 class="accordion-header poppins-regular">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#step_g2" aria-controls="step_g2">
-                        Making the buns
-                    </button>
-                </h4>
-
-                <div id="step_g2" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        <ol start="6">
-                            <li>
-                                After resting the dough, remove it from the bowl.
-                                On a working surface, roll the dough into a log shape and divide into 9 equal portions (about 47 grams).
-                                Knead each piece until smooth, deflate it (meaning collapsing all the air pockets formed) and shape into a ball.
-                                Seal the bottom. Repeat the same for the remaining portions.
-                            </li>
-                            <li>
-                                Take one ball, flatten it lightly with hand and use a rolling pin to roll it out into circle.
-                                Flip it over and roll it out carefully such that the center is thinner and the peripheral rim thinner.
-                                This will prevent the filling from leaking during steaming. Repeat the same for the remaining balls.
-                                This will ensure each pau has about 5 minutes of resting time before moving to step 8.
-                            </li>
-                            <li>
-                                Take a piece of the flatten dough and place one red bean paste ball (from step 5) onto it.
-                                Bring the edges together and pinch the top to seal the filling completely.
-                                Place it onto a piece of square baking paper, seam side down (so that they have a smooth and round top) and transfer to the steaming basket.
-                                Repeat the same for the remaining dough. Keep the pau apart from each other, allowing rooms from all sides.
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <h4 class="accordion-header poppins-regular">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#step_g3" aria-controls="step_g3">
-                        Steaming the buns
-                    </button>
-                </h4>
-
-                <div id="step_g3" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        <ol start="9">
-                            <li>
-                                Cover with lid and place a pan filled with water underneath.
-                                Proof until the pau have slightly expanded, soft and fluffy to the touch for about 25 minutes.
-                                The proofing time varies depending on the temperature in the kitchen.
-                                If you use your finger tip to press lightly the surface of the pau, the depression will slowly disappear.
-                                This means the pau are ready for steaming.
-                            </li>
-                            <li>
-                                Steam the pau for 17-18 minutes, starting from cold water, with medium heat.
-                                When the water starts boiling, reduce heat to medium low.
-                                2-3 minutes before the steaming ends, open the lid slightly to lower the steam pressure so that the surface of the pau will not wrinkle.
-                                Once it’s done, off the heat, let the pau sit inside the steamer for another 5 minutes.
-                                This will ensure they do not shrink due to a sudden change of temperature.
-                            </li>
-                            <li>
-                                Open the lid, transfer the steamer away from the water and let the pau cool down. Best to serve warm.
-                                If consume the next day, store inside an air-tight container and keep in the fridge.
-                                They can also be kept inside freezer bags and be frozen up to 3 months.
-                                To reheat them, remove from the freezer and steam (with or without defrost) for 3-5 minutes or until the inside is hot.
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-4 mt-3 mt-md-5">
-        <div class="position-sticky" style="top: 5rem;">
-            <img class="img-fluid" src="{{ url_for('static', filename='media/pau/pau_7.jpg') }}" alt="">
-        </div>
-    </div>
-</section>
-
-<hgroup class="col-md-7 offset-md-1">
-    <h2 class="pt-2 pb-0 mt-3 poppins-regular text-primary fw-semibold">Notes</h2>
-</hgroup>
-
-<section class="row g-5 mb-4" title="Notes">
-    <div class="col-md-10 offset-md-1">
-        <ol>
-            <li id="note_1">
-                Pau flour is a specialty flour used in making Chinese steamed buns. It gives the pau softer and fluffy texture.
-                For making pau, pau flour is commonly used in Malaysia whereas in Singapore is Hong Kong flour.
-                If you can’t find either one, you can substitute it with plain flour (all purpose flour).
-            </li>
-            <li>
-                Instead of adding wholemeal flour, you can use entirely pau flour, Hong Kong flour or plain flour.
-                Do take note that increasing the amount of wholemeal flour will make the texture of the pau harder.
-            </li>
-            <li>Try not to add extra flour when kneading the dough as it will make the texture of the pau harder.</li>
-            <li>I knead the dough by hands but you can do it with bread making machine or kitchen mixer (with a dough hook).</li>
-            <li>Try to complete step 6-8 as quick as you can so that all the paus are proofed equally.</li>
-            <li>If you use a stainless steel steaming rack, cover the lid with cloth to prevent water dripping onto the pau.</li>
-            <li>I bought my 12” bamboo steamer from a local shop selling kitchenware (Pembekal Peralatan Dapur Gas – Lee Poh Wah) at Jalan Kepong, Kuala Lumpur.</li>
-            <li>
-                With this dough, you can wrap it with or without filling. You can wrap the pau with any filling of choice, be it sweet or savoury.
-                You can also make it into mantao.
-            </li>
-            <li>For beginners, it is best to keep the ratio of dough to filling at 2: 1 to ensure easy wrapping.</li>
-        </ol>
-    </div>
-</section>
 {% endblock main %}

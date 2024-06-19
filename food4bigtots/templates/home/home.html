@@ -1,155 +1,77 @@
 {% extends "base.html" %}
 
+{% from "macros.html" import tile, double_wide %}
+
 {% block main %}
-<div class="p-4 p-md-5 align-items-start">
-    <div class="row gx-5">
-        <div class="col-lg-6">
-            <div>
-                <h1 class="display-5 mb-0 pb-3 my-3 lh-0 text-primary poppins-regular fw-bold">
-                    <span>HEALTHY FOOD<br></span>
-                    <span>GOOD FOOD</span>
-                </h1>
-                <p class="mb-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-                <p class="lead mb-0 text-primary"><a href="about.html" class="fw-bold interactive-under">About Us</a></p>
-            </div>
-        </div>
-
-        <div class="col-lg-6 d-flex justify-content-center">
-            <img class="col-10 m-3 w-100 h-auto rounded-3 img-thumbnail" src="{{ url_for('static', filename='media/profile/profile_1.jpg') }}" alt="">
-        </div>
-    </div>
-</div>
-
-<div class="row g-5">
-    <div class="col-md-8 mb-4">
-        <h2 class="pt-0 pb-2 mt-3 poppins-regular text-primary fw-semibold">RECIPES</h2>
-
-        <div class="container justify-content-start ps-0">
-            <div class="row g-4">
-                <div class="col-6 col-md-4">
-                    <div class="card h-100">
-                        <img src="{{ url_for('static', filename='media/pau/pau_1.jpeg') }}" class="card-img" alt="">
-                        <div class="card-body d-none align-items-center text-center border border-primary border-2 bg-info">
-                            <h3 class="card-text h5">
-                                <a href="{{ url_for('recipes.pau') }}">Wholemeal Pau with Red Bean Filling</a>
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-4">
-                    <div class="card h-100">
-                        <img src="{{ url_for('static', filename='media/fish/fish_2.jpeg') }}" class="card-img" alt="">
-                        <div class="card-body d-none align-items-center text-center border border-primary border-2 bg-info">
-                            <h3 class="card-text h5">
-                                <a href="https://food-4tots.com/2011/08/10/oven-baked-fish-fingers/">Oven baked fish fingers</a>
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-4">
-                    <div class="card h-100">
-                        <img src="{{ url_for('static', filename='media/home/almond_1.jpeg') }}" class="card-img" alt="">
-                        <div class="card-body d-none align-items-center text-center border border-primary border-2 bg-info">
-                            <h3 class="card-text h5">
-                                <a href="https://food-4tots.com/2015/02/12/almond-cookies/">Almond Cookies</a>
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-4">
-                    <div class="card h-100">
-                        <img src="{{ url_for('static', filename='media/home/pancake_2.jpeg') }}" class="card-img" alt="">
-                        <div class="card-body d-none align-items-center text-center border border-primary border-2 bg-info">
-                            <h3 class="card-text h5">
-                                <a href="https://food-4tots.com/2011/09/03/mini-fluffy-pancakes/">Mini Fluffy Pancakes</a>
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-4">
-                    <div class="card h-100">
-                        <img src="{{ url_for('static', filename='media/home/cupcake_1.jpeg') }}" class="card-img" alt="">
-                        <div class="card-body d-none align-items-center text-center border border-primary border-2 bg-info">
-                            <h3 class="card-text h5">
-                                <a href="https://food-4tots.com/2015/01/21/steamed-cheddar-cheese-cupcakes/">Steamed Cheddar Cheese Cupcakes</a>
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-4">
-                    <div class="card h-100">
-                        <img src="{{ url_for('static', filename='media/home/cauliflower_1.jpeg') }}" class="card-img" alt="">
-                        <div class="card-body d-none align-items-center text-center border border-primary border-2 bg-info">
-                            <h3 class="card-text h5">
-                                <a href="https://food-4tots.com/2014/01/06/cauliflower-tots/">Cauliflower Tots</a>
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-4">
-                    <div class="card h-100">
-                        <img src="{{ url_for('static', filename='media/home/crackers_2.jpeg') }}" class="card-img" alt="">
-                        <div class="card-body d-none align-items-center text-center border border-primary border-2 bg-info">
-                            <h3 class="card-text h5">
-                                <a href="https://food-4tots.com/2013/07/31/homemade-goldfish-crackers/">Homemade Goldfish Crackers</a>
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-4">
-                    <div class="card h-100">
-                        <img src="{{ url_for('static', filename='media/home/soba_1.jpeg') }}" class="card-img" alt="">
-                        <div class="card-body d-none align-items-center text-center border border-primary border-2 bg-info">
-                            <h3 class="card-text h5">
-                                <a href="https://food-4tots.com/2013/09/16/cold-soba-noodle-salad/">Cold Soba Noodle Salad</a>
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-4">
-                    <div class="card h-100">
-                        <img src="{{ url_for('static', filename='media/home/tamago_1.jpeg') }}" class="card-img" alt="">
-                        <div class="card-body d-none align-items-center text-center border border-primary border-2 bg-info">
-                            <h3 class="card-text h5">
-                                <a href="https://food-4tots.com/2014/04/16/tamago-boro-egg-biscuits/">Tamago Boro (Egg Biscuits)</a>
-                            </h3>
-                        </div>
-                    </div>
+    <div class="p-4 p-md-5 align-items-start">
+        <div class="row gx-5">
+            <div class="col-lg-6">
+                <div>
+                    <h1 class="display-5 mb-0 pb-3 my-3 lh-0 text-primary poppins-regular fw-bold">
+                        HEALTHY FOOD<br>GOOD FOOD
+                    </h1>
+                    <p class="mb-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+                    <p class="lead mb-0 text-primary"><a href="about.html" class="fw-bold interactive-under">About Us</a></p>
                 </div>
             </div>
 
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        <div class="position-sticky mb-2 border-start border-2 border-primary" style="top: 5rem;">
-            <div class="p-5 mb-3">
-                <h2 class="poppins-regular text-primary fw-semibold">ABOUT US</h2>
-                <div class="m-4 d-flex justify-content-center">
-                    <img class="w-75 h-auto rounded-circle" alt="" src="{{ url_for('static', filename='media/profile/profile_3.jpg') }}">
-                </div>
-                <p class="mb-0">
-                    Contrary to popular belief,
-                </p>
-            </div>
-
-            <div class="p-5">
-                <h2 class="poppins-regular text-primary fw-semibold">FIND US</h2>
-                <ol class="list-unstyled pt-2">
-                    <li><a href="#" class="interactive-under">GitHub</a></li>
-                    <li><a href="#" class="interactive-under">Twitter</a></li>
-                    <li><a href="#" class="interactive-under">Facebook</a></li>
-                </ol>
+            <div class="col-lg-6 d-flex justify-content-center">
+                <img class="col-10 m-3 w-100 h-auto rounded-3 img-thumbnail" src="{{ url_for('static', filename='media/profile/profile_1.jpg') }}" alt="">
             </div>
         </div>
     </div>
-</div>
+
+{% set left_content%}
+    <h2 class="spaced">RECIPES</h2>
+
+    <div class="container justify-content-start ps-0">
+        <div class="row g-4">
+            {{ tile(url_for('static', filename="media/pau/pau_1.jpeg"), url_for("recipes.pau"), "Wholemeal Pau with Red Bean Filling") }}
+
+            {{ tile(url_for('static', filename="media/fish/fish_2.jpeg"), "https://food-4tots.com/2011/08/10/oven-baked-fish-fingers/", "Oven baked fish fingers") }}
+
+            {{ tile(url_for('static', filename="media/home/almond_1.jpeg"), "https://food-4tots.com/2015/02/12/almond-cookies/", "Almond Cookies") }}
+
+            {{ tile(url_for('static', filename="media/pau/pau_1.jpeg"), url_for("recipes.pau"), "Wholemeal Pau with Red Bean Filling") }}
+
+            {{ tile(url_for('static', filename="media/fish/fish_2.jpeg"), "https://food-4tots.com/2011/08/10/oven-baked-fish-fingers/", "Oven baked fish fingers") }}
+
+            {{ tile(url_for('static', filename="media/home/almond_1.jpeg"), "https://food-4tots.com/2015/02/12/almond-cookies/", "Almond Cookies") }}
+
+            {{ tile(url_for('static', filename="media/pau/pau_1.jpeg"), url_for("recipes.pau"), "Wholemeal Pau with Red Bean Filling") }}
+
+            {{ tile(url_for('static', filename="media/fish/fish_2.jpeg"), "https://food-4tots.com/2011/08/10/oven-baked-fish-fingers/", "Oven baked fish fingers") }}
+
+            {{ tile(url_for('static', filename="media/home/almond_1.jpeg"), "https://food-4tots.com/2015/02/12/almond-cookies/", "Almond Cookies") }}
+
+        </div>
+
+    </div>
+{% endset%}
+
+{% set right_content%}
+    
+        <div class="p-4 mb-3">
+            <h2>ABOUT US</h2>
+            <div class="m-4 d-flex justify-content-center">
+                <img class="w-75 h-auto rounded-circle" alt="" src="{{ url_for('static', filename='media/profile/profile_3.jpg') }}">
+            </div>
+            <p class="mb-0">
+                Contrary to popular belief,
+            </p>
+        </div>
+
+        <div class="p-4">
+            <h2>FIND US</h2>
+            <ol class="list-unstyled pt-2">
+                <li><a href="#" class="interactive-under">GitHub</a></li>
+                <li><a href="#" class="interactive-under">Twitter</a></li>
+                <li><a href="#" class="interactive-under">Facebook</a></li>
+            </ol>
+        </div>
+    </div>
+{% endset%}
+
+{{ double_wide(left_content, right_content) }}
+
 {% endblock main %}
