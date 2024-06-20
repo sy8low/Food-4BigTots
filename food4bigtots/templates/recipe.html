@@ -8,6 +8,9 @@
     <hgroup class="big">
         <h1>{{ name }}</h1>
         <p><time class="h5" datetime="{{ ISO_date }}">{{ date }}</time></p>
+        {% if original %}
+            <p class="h5">Find the original Food-4Tots recipe <a href="{{ original }}">here</a>.</p>
+        {% endif %}
     </hgroup>
 
 

@@ -91,6 +91,10 @@ a:hover, .nav-link:hover,
     text-align: center;
 }
 
+.dropdown-item:active, .dropdown-item:hover {
+    background-color: transparent;
+}
+
 // Navbar toggler.
 .navbar-toggler {
     border: 0;
@@ -297,4 +301,11 @@ h2.spaced, h3 {
         height: auto;
         border-radius: 0.5rem;
     }
+}
+
+// Empty gallery
+.empty-gallery {
+    text-align: center;
+    align-items: start;
+    height: 45vh;
 }

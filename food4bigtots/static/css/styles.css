@@ -11884,6 +11884,10 @@ a:hover, .nav-link:hover,
   text-align: center;
 }
 
+.dropdown-item:active, .dropdown-item:hover {
+  background-color: transparent;
+}
+
 .navbar-toggler {
   border: 0;
   width: auto;
@@ -12065,6 +12069,12 @@ h2.spaced, .spaced.h2, h3, .h3 {
   width: 100%;
   height: auto;
   border-radius: 0.5rem;
+}
+
+.empty-gallery {
+  text-align: center;
+  align-items: start;
+  height: 45vh;
 }
 
 /*# sourceMappingURL=styles.css.map */

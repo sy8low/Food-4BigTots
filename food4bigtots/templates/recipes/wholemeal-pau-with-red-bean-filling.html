@@ -2,13 +2,7 @@
 
 {% from "macros.html" import ingredient, double, single, accordion_item %}
 
-{% set name = "Wholemeal Pau with Red Bean Filling" %}
-
-{% set date = "30 September 2015" %}
-
-{% set ISO_date = "2015-09-30" %}
-
-{% set cover_img = url_for("static", filename="media/wholemeal-pau-with-red-bean-filling/pau_2.jpg") %}
+{% set cover_img = url_for("static", filename= "pau_2" | media("wholemeal-pau-with-red-bean-filling")) %}
 
 {% set intro_content %}
     <p>
@@ -46,7 +40,7 @@
     </p>
 {% endset %}
 
-{% set intro_img = url_for("static", filename="media/wholemeal-pau-with-red-bean-filling/pau_4.jpg") %}
+{% set intro_img = url_for("static", filename= "pau_4" | media("wholemeal-pau-with-red-bean-filling")) %}
 
 {% set yield = "9 pau" %}
 
@@ -68,7 +62,7 @@
     {{ ingredient("250 grams red bean paste (homemade or ready-made)", 8) }}
 {% endblock ingredient_content %}
 
-{% set ingredient_img = url_for("static", filename="media/wholemeal-pau-with-red-bean-filling/pau_6.jpg") %}
+{% set ingredient_img = url_for("static", filename= "pau_6" | media("wholemeal-pau-with-red-bean-filling")) %}
 
 {% block steps_content %}
     {% set accordion_body_1 %}
@@ -151,7 +145,7 @@
     {{ accordion_item("Steaming the buns", accordion_body_3, 3) }}
 {% endblock steps_content %}
 
-{% set steps_img = url_for("static", filename="media/wholemeal-pau-with-red-bean-filling/pau_7.jpg") %}
+{% set steps_img = url_for("static", filename= "pau_7" | media("wholemeal-pau-with-red-bean-filling")) %}
 
 {% block notes_content %}
     <li id="note_1">

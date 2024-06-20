@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% from "macros.html" import tile, double_wide %}
+{% from "macros.html" import tile, double_wide, gallery %}
 
 {% block main %}
     <div class="cover p-4 p-md-5">
@@ -16,7 +16,7 @@
                     </p>
 
                     <p class="mb-0">
-                        <a href="about.html" class="lead interactive-under">About Us</a>
+                        <a href="{{ url_for('home.about') }}" class="lead interactive-under">About Us</a>
                     </p>
                 </div>
             </div>
@@ -32,9 +32,7 @@
 
     <div class="container">
         <div class="row g-4">
-            {% for entry in entries%}
-                {{ tile(url_for("static", filename="entries['thumbnail']"), url_for("recipes."), "Wholemeal Pau with Red Bean Filling") }}
-            {% endfor %}
+            {{ gallery(recipes) }}
         </div>
 
     </div>

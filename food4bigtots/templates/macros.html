@@ -100,3 +100,29 @@
         </div>
     </section>
 {% endmacro %}
+
+
+{% macro gallery(entries) %}
+    {% if entries %}
+        {% for entry in entries %}
+            {% set path_r = entry["name_r"] | lower | replace(" ", "-") %}
+            {% set path_c = entry["name_c"] | lower | replace(" ", "-") %}
+            {% set thumbnail = ["media/", path_r, "/", entry["thumbnail_r"], ".jpg"] | join %}
+            {{ tile(url_for("static", filename=thumbnail), url_for("recipes.recipe", cat=path_c, path=path_r), entry["name_r"]) }}
+        {% endfor %}
+    {% else %}
+        <div class="empty-gallery">No recipes to show. Back to <a href="{{ url_for('home.home') }}">Home</a>.</div>
+    {% endif %}
+{% endmacro %}
+
+
+{% macro nav_categories() %}
+    {% for cat in session.categories %}
+    {% set path_c = cat["name"] | lower | replace(" ", "-") %}
+    <li class="nav-item">
+        <a class="dropdown-item" href="{{ url_for('recipes.category', cat=path_c) }}">
+            {{ cat["name"] }}
+        </a>
+    </li>
+    {% endfor %}
+{% endmacro %}

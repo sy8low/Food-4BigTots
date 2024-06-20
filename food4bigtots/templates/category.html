@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% from "macros.html" import single, gallery %}
+
+{% block title %}{{ super() }} | {{ name }}{% endblock title %}
+
+{% block main %}
+    <hgroup class="big">
+        <h1>{{ name }}</h1>
+    </hgroup>
+
+    {% set category_gallery %}
+        <div class="row g-4">
+            {{ gallery(recipes) }}
+        </div>
+    {% endset %}
+
+    {{ single(name, category_gallery, False)}}
+{% endblock main %}
