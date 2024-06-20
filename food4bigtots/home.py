@@ -9,4 +9,8 @@ def home():
 
 @bp.get("/about")
 def about():
-    return render_template("home/about.html")
+    entries = query_db(
+        "SELECT name, path, thumbnail FROM recipes"
+    )
+    
+    return render_template("home/about.html", entries=entries)

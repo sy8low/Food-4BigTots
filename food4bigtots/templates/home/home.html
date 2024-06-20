@@ -3,20 +3,26 @@
 {% from "macros.html" import tile, double_wide %}
 
 {% block main %}
-    <div class="p-4 p-md-5 align-items-start">
+    <div class="cover p-4 p-md-5">
         <div class="row gx-5">
             <div class="col-lg-6">
                 <div>
-                    <h1 class="display-5 mb-0 pb-3 my-3 lh-0 text-primary poppins-regular fw-bold">
+                    <h1 class="display-5">
                         HEALTHY FOOD<br>GOOD FOOD
                     </h1>
-                    <p class="mb-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-                    <p class="lead mb-0 text-primary"><a href="about.html" class="fw-bold interactive-under">About Us</a></p>
+
+                    <p class="mb-3">
+                        Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.
+                    </p>
+
+                    <p class="mb-0">
+                        <a href="about.html" class="lead interactive-under">About Us</a>
+                    </p>
                 </div>
             </div>
 
             <div class="col-lg-6 d-flex justify-content-center">
-                <img class="col-10 m-3 w-100 h-auto rounded-3 img-thumbnail" src="{{ url_for('static', filename='media/profile/profile_1.jpg') }}" alt="">
+                <img class="col-10 img-thumbnail" src="{{ url_for('static', filename='media/profile/profile_1.jpg') }}" alt="">
             </div>
         </div>
     </div>
@@ -24,45 +30,32 @@
 {% set left_content%}
     <h2 class="spaced">RECIPES</h2>
 
-    <div class="container justify-content-start ps-0">
+    <div class="container">
         <div class="row g-4">
-            {{ tile(url_for('static', filename="media/pau/pau_1.jpeg"), url_for("recipes.pau"), "Wholemeal Pau with Red Bean Filling") }}
-
-            {{ tile(url_for('static', filename="media/fish/fish_2.jpeg"), "https://food-4tots.com/2011/08/10/oven-baked-fish-fingers/", "Oven baked fish fingers") }}
-
-            {{ tile(url_for('static', filename="media/home/almond_1.jpeg"), "https://food-4tots.com/2015/02/12/almond-cookies/", "Almond Cookies") }}
-
-            {{ tile(url_for('static', filename="media/pau/pau_1.jpeg"), url_for("recipes.pau"), "Wholemeal Pau with Red Bean Filling") }}
-
-            {{ tile(url_for('static', filename="media/fish/fish_2.jpeg"), "https://food-4tots.com/2011/08/10/oven-baked-fish-fingers/", "Oven baked fish fingers") }}
-
-            {{ tile(url_for('static', filename="media/home/almond_1.jpeg"), "https://food-4tots.com/2015/02/12/almond-cookies/", "Almond Cookies") }}
-
-            {{ tile(url_for('static', filename="media/pau/pau_1.jpeg"), url_for("recipes.pau"), "Wholemeal Pau with Red Bean Filling") }}
-
-            {{ tile(url_for('static', filename="media/fish/fish_2.jpeg"), "https://food-4tots.com/2011/08/10/oven-baked-fish-fingers/", "Oven baked fish fingers") }}
-
-            {{ tile(url_for('static', filename="media/home/almond_1.jpeg"), "https://food-4tots.com/2015/02/12/almond-cookies/", "Almond Cookies") }}
-
+            {% for entry in entries%}
+                {{ tile(url_for("static", filename="entries['thumbnail']"), url_for("recipes."), "Wholemeal Pau with Red Bean Filling") }}
+            {% endfor %}
         </div>
 
     </div>
 {% endset%}
 
 {% set right_content%}
-    
-        <div class="p-4 mb-3">
+        <div>
             <h2>ABOUT US</h2>
-            <div class="m-4 d-flex justify-content-center">
-                <img class="w-75 h-auto rounded-circle" alt="" src="{{ url_for('static', filename='media/profile/profile_3.jpg') }}">
+
+            <div class="d-flex justify-content-center m-4">
+                <img src="{{ url_for('static', filename='media/profile/profile_3.jpg') }}" alt="">
             </div>
+
             <p class="mb-0">
                 Contrary to popular belief,
             </p>
         </div>
 
-        <div class="p-4">
+        <div>
             <h2>FIND US</h2>
+
             <ol class="list-unstyled pt-2">
                 <li><a href="#" class="interactive-under">GitHub</a></li>
                 <li><a href="#" class="interactive-under">Twitter</a></li>

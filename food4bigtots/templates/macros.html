@@ -59,7 +59,9 @@
     {% endif %}
 
     <section class="double row g-5" title="{{ title }}">
-        <div class="col-lg-7 offset-lg-1">{{ content | safe }}</div>
+        <div class="col-lg-7 offset-lg-1">
+            {{ content | safe }}
+        </div>
 
         <div class="col-lg-4 mt-3 mt-lg-5">
             <div class="sticky-pane d-flex d-lg-block">
@@ -75,8 +77,9 @@
         <div class="static-pane col-lg-8">
             {{ left | safe }}
         </div>
+
         <div class="col-lg-4">
-            <div class="sticky-pane border-start border-2 border-primary">
+            <div class="sticky-pane">
                 {{ right | safe }}
             </div>
         </div>
@@ -84,10 +87,12 @@
 {% endmacro %}
 
 
-{% macro single(title, content) %}
-    <hgroup class="col-lg-7 offset-lg-1">
-        <h2 class="spaced">{{ title }}</h2>
-    </hgroup>
+{% macro single(title, content, show_title=True) %}
+    {% if show_title %}
+        <hgroup class="col-lg-7 offset-lg-1">
+            <h2 class="spaced">{{ title }}</h2>
+        </hgroup>
+    {% endif %}
 
     <section class="single row g-5" title="{{ title }}">
         <div class="col-lg-10 offset-lg-1">

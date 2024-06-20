@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% from "macros.html" import double, single, accordion_item %}
+
+{% block title %}{{ super() }} | {{ name }}{% endblock title %}
+
+{% block main %}
+    <hgroup class="big">
+        <h1>{{ name }}</h1>
+        <p><time class="h5" datetime="{{ ISO_date }}">{{ date }}</time></p>
+    </hgroup>
+
+
+    <div class="row justify-content-center mb-4">
+        <img class="col-10 col-lg-6" src="{{ cover_img }}" alt="">
+    </div>
+
+    {{ double("Intro", intro_content, intro_img, show_title=False) }}
+
+
+    <hgroup class="big">
+        <h2 class="spaced">Recipe</h2>
+        <p class="h5">Yield: {{ yield }}</p>
+    </hgroup>
+
+
+    {% set ingredient_content %}
+        <ul class="list-group">
+            {% block ingredient_content %}{% endblock ingredient_content %}
+        </ul>
+    {% endset %}
+
+    {{ double("Ingredients", ingredient_content, ingredient_img) }}
+
+
+    {% set steps_content %}
+        <div class="accordion ms-n1" id="steps">
+            {% block steps_content%}{% endblock steps_content %}
+        </div>
+    {% endset %}
+
+    {{ double("Steps", steps_content, steps_img) }}
+
+
+    {% set notes_content %}
+        <ol>
+            {% block notes_content %}{% endblock notes_content %}
+        </ol>
+    {% endset %}
+
+    {{ single("Notes", notes_content)}}
+
+{% endblock main %}

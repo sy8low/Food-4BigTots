@@ -11900,7 +11900,7 @@ a:hover, .nav-link:hover,
 
 .card {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 1;
 }
 
 .card-img {
@@ -11917,6 +11917,7 @@ a:hover, .nav-link:hover,
 
 .card-text {
   text-align: center;
+  width: 100%;
 }
 
 header {
@@ -11970,7 +11971,6 @@ footer {
   border-top: 0.125rem solid #72502E;
   background-color: #E4CFB4;
 }
-
 footer .row {
   padding-top: 2rem;
   padding-bottom: 0;
@@ -12023,15 +12023,48 @@ h2.spaced, .spaced.h2, h3, .h3 {
   margin-bottom: 1.5rem;
 }
 
-.double-wide .static-pane {
-  margin-bottom: 1.5rem;
-}
-
 .sticky-pane {
   position: sticky;
   margin-bottom: 0.5rem;
   top: 5rem;
   justify-content: center;
+}
+
+.double-wide .static-pane {
+  margin-bottom: 1.5rem;
+}
+.double-wide .static-pane .container {
+  padding-left: 0;
+  justify-content: start;
+}
+.double-wide .sticky-pane {
+  border-left: 0.125rem solid #72502E;
+}
+.double-wide .sticky-pane > div {
+  padding: 1.5rem;
+}
+.double-wide .sticky-pane img {
+  border-radius: 50%;
+  width: 75%;
+  height: auto;
+}
+
+.cover h1, .cover .h1 {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  padding-bottom: 1rem;
+  color: #72502E;
+  font-weight: 600;
+}
+.cover a {
+  font-weight: 600;
+  color: #72502E;
+}
+.cover img {
+  margin: 1rem;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
