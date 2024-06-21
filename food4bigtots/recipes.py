@@ -10,7 +10,7 @@ bp = Blueprint('recipes', __name__, url_prefix='/recipes')
 def load_categories():
     if not getattr(session, "categories", None):
         session.categories = query_db(
-            Queries.get_categories
+            Queries.get_all_categories
         )
 
 

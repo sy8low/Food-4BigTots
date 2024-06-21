@@ -8,12 +8,12 @@ from flask import current_app, g
 
 class Queries:
     get_all_recipes = ("SELECT r.name AS name_r, r.thumbnail AS thumbnail_r, c.name AS name_c "
-                       "FROM recipes AS r JOIN categories AS c "
-                       "ON r.category_id = c.id")
+                       "FROM recipes AS r JOIN mapping AS m ON r.id = m.recipe_id "
+                       "JOIN categories AS c ON m.category_id = c.id")
     
     get_recipes_in_category = " ".join((get_all_recipes, "WHERE c.name = ?"))
     
-    get_categories = "SELECT name FROM categories"
+    get_all_categories = "SELECT name FROM categories"
     
     get_recipe = ("SELECT name, date(date) AS ISO_date, original "
                   "FROM recipes WHERE LOWER(name) = ?")
