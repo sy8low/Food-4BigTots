@@ -111,7 +111,7 @@
             {{ tile(url_for("static", filename=thumbnail), url_for("recipes.recipe", cat=path_c, path=path_r), entry["name_r"]) }}
         {% endfor %}
     {% else %}
-        <div class="empty-gallery">No recipes to show. Back to <a href="{{ url_for('home.home') }}">Home</a>.</div>
+        <div class="empty-page">No recipes to show. Back to <a href="{{ url_for('home.home') }}">Home</a>.</div>
     {% endif %}
 {% endmacro %}
 
