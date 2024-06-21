@@ -1,0 +1,44 @@
+[build-system]
+requires = ["flit_core<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "food4bigtots"
+description = "The backend for Food-4BigTots, a refreshed, dynamic upgrade of the original Food-4Tots."
+version = "1.0"
+requires-python = ">= 3.0"
+
+readme = "README.md"
+license = {file = "LICENSE"}
+
+authors = [
+  {name = "Sze Yoong Low"},
+]
+maintainers = [
+  {name = "Sze Yoong Low"},
+]
+
+dependencies = [
+  "Flask >= 3.0.3",
+  "Flask-Session >= 0.8.0",
+]
+
+keywords = ["cs50", "food", "blog", "recipes", "toddlers", "children", "teens", "teenagers", 
+            "family", "mothers", "healthy", "tasty", "delicious", "simple", "beginner", "cooking",
+            "how-to", "guide", "backend", "flask", "database", "sql", "sqlite", "frontend", "html",
+            "css", "javascript", "bootstrap", "sass", "responsive", "web", "dynamic", "app"]
+
+classifiers = [
+  "Programming Language :: Python :: 3.10",
+  "License :: OSI Approved :: GNU Affero General Public License v3",
+  "Operating System :: OS Independent",
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Other Audience",
+  "Natural Language :: English",
+  "Topic :: Internet :: WWW/HTTP :: Dynamic Content :: News/Diary",
+  "Topic :: Internet :: WWW/HTTP :: WSGI :: Server",
+]
+
+[project.urls]
+Repository = "https://github.com/sy8low/Food-4BigTots"
+Youtube = ""
