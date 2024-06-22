@@ -11,6 +11,7 @@ Functions:
     media               : Generate the path to a resource, relative to the static folder.
     handle_generic_http : Handle all non-404 HTTP exceptions registered by Werkzeug.
     handle_not_found    : Handle 404 HTTP exceptions and Jinja TemplateNotFound exceptions.
+    path_format         : Convert the name of a recipe/category into the format used in its path.
     create_app          : Instantiate and configure an app.
 
 Adapted from:
@@ -63,6 +64,19 @@ def handle_not_found(error: Exception) -> Response:
     """
     
     return render_template("errors/404.html"), 404
+
+
+def path_format(name: str) -> str:
+    """Convert the name of a recipe/category into the format used in its path.
+
+    Args:
+        name: The name of a recipe/category
+
+    Returns:
+        The formatted name.
+    """
+    
+    return name.lower().replace("-", " ")
 
 
 def create_app(test_config: dict=None) -> Flask:

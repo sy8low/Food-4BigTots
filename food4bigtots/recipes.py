@@ -8,6 +8,7 @@ Functions:
 
 from datetime import datetime
 from flask import Blueprint, session, render_template, Response
+from food4bigtots import path_format
 from food4bigtots.db import query_db, Queries
 from markupsafe import escape
 from re import sub
@@ -35,7 +36,7 @@ def recipe(cat: str, path: str) -> Response:
         The recipe page.
     """
     
-    name_r = path.lower().replace("-", " ")
+    name_r = path_format(path)
     
     info = query_db(
         Queries.RECIPE_METADATA,
@@ -64,7 +65,7 @@ def category(cat: str) -> Response:
         The category directory.
     """
     
-    name_c = cat.title().replace("-", " ")
+    name_c = path_format(cat)
     recipes = query_db(
         Queries.RECIPES_IN_CATEGORY,
         (name_c,)

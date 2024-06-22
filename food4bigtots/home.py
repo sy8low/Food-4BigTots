@@ -24,6 +24,7 @@ def home() -> Response:
     
     return render_template("home/home.html", recipes=recipes)
 
+
 @bp.get("/about/")
 def about() -> Response:
     """View function for the About page.
