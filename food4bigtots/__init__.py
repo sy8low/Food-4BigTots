@@ -12,6 +12,7 @@ Functions:
     handle_generic_http : Handle all non-404 HTTP exceptions registered by Werkzeug.
     handle_not_found    : Handle 404 HTTP exceptions and Jinja TemplateNotFound exceptions.
     path_format         : Convert the name of a recipe/category into the format used in its path.
+    name_format         : Partially reverse path_format by converting the path back to the name of the recipe/category.
     create_app          : Instantiate and configure an app.
 
 Adapted from:
@@ -70,13 +71,32 @@ def path_format(name: str) -> str:
     """Convert the name of a recipe/category into the format used in its path.
 
     Args:
-        name: The name of a recipe/category
+        name: The name of a recipe/category.
 
     Returns:
         The formatted name.
     """
     
-    return name.lower().replace("-", " ")
+    return name.lower().replace(" ", "-")
+
+
+def name_format(path: str, title: bool=False) -> str:
+    """Partially reverse path_format by converting the path back to the name of the recipe/category.
+
+    Args:
+        name    : The path of a recipe/category.
+        title   : If True, the name will be titlecased; else, it will be left in lowercase. 
+
+    Returns:
+        The lowercase/titlecased name.
+    """
+    
+    name = path.replace("-", " ")
+    
+    if title:
+        return name.title()
+    else:
+        return name
 
 
 def create_app(test_config: dict=None) -> Flask:
@@ -118,6 +138,8 @@ def create_app(test_config: dict=None) -> Flask:
     app.register_blueprint(home.bp)
     
     app.jinja_env.filters["media"] = media
+    app.jinja_env.filters["path_format"] = path_format
+    app.jinja_env.filters["name_format"] = name_format
     
     app.register_error_handler(HTTPException, handle_generic_http)
     app.register_error_handler(404, handle_not_found)

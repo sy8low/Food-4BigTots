@@ -8,7 +8,7 @@ Functions:
 
 from datetime import datetime
 from flask import Blueprint, session, render_template, Response
-from food4bigtots import path_format
+from food4bigtots import name_format
 from food4bigtots.db import query_db, Queries
 from markupsafe import escape
 from re import sub
@@ -36,7 +36,7 @@ def recipe(cat: str, path: str) -> Response:
         The recipe page.
     """
     
-    name_r = path_format(path)
+    name_r = name_format(path)
     
     info = query_db(
         Queries.RECIPE_METADATA,
@@ -49,7 +49,7 @@ def recipe(cat: str, path: str) -> Response:
     # Remove leading zeroes.
     date = sub(r"\b0", r"", date.strftime("%d %B %Y"))
     
-    return render_template(f"recipes/{escape(path)}.html",
+    return render_template(f"recipes/{escape(cat)}/{escape(path)}.html",
                            name=name, ISO_date=ISO_date,
                            date=date, original=original)
 
@@ -65,10 +65,10 @@ def category(cat: str) -> Response:
         The category directory.
     """
     
-    name_c = path_format(cat)
+    name_c = name_format(cat, True)
     recipes = query_db(
         Queries.RECIPES_IN_CATEGORY,
         (name_c,)
     )
     
-    return render_template(f"category.html", name=name_c, recipes=recipes)
+    return render_template(f"recipes/category.html", name=name_c, recipes=recipes)
