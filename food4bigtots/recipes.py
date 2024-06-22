@@ -1,5 +1,13 @@
+"""Implements the view functions for recipes and category directories.
+
+Functions:
+    load_categories : Load the list of all recipe categories into a cookie if not done yet.
+    recipe          : View function for recipe pages.
+    category        : View function for category directories.
+"""
+
 from datetime import datetime
-from flask import Blueprint, session, render_template
+from flask import Blueprint, session, render_template, Response
 from food4bigtots.db import query_db, Queries
 from markupsafe import escape
 from re import sub
@@ -7,19 +15,30 @@ from re import sub
 bp = Blueprint('recipes', __name__, url_prefix='/recipes')
 
 @bp.before_app_request
-def load_categories():
+def load_categories() -> None:
+    """Load the list of all recipe categories into a cookie if not done yet."""
     if not getattr(session, "categories", None):
         session.categories = query_db(
-            Queries.get_all_categories
+            Queries.ALL_CATEGORIES
         )
 
 
 @bp.get("/<cat>/<path>/")
-def recipe(cat, path):
+def recipe(cat: str, path: str) -> Response:
+    """View function for recipe pages.
+    
+    Args:
+        cat : The name of the recipe's category.
+        path: The name of the recipe.
+
+    Returns:
+        The recipe page.
+    """
+    
     name_r = path.lower().replace("-", " ")
     
     info = query_db(
-        Queries.get_recipe,
+        Queries.RECIPE_METADATA,
         (name_r,), True
     )
     
@@ -35,10 +54,20 @@ def recipe(cat, path):
 
 
 @bp.get("/<cat>/")
-def category(cat):
+def category(cat: str) -> Response:
+    """View function for category directories.
+
+    Args:
+        cat: The name of the recipe category.
+        
+    Returns:
+        The category directory.
+    """
+    
     name_c = cat.title().replace("-", " ")
     recipes = query_db(
-        Queries.get_recipes_in_category,
+        Queries.RECIPES_IN_CATEGORY,
         (name_c,)
     )
+    
     return render_template(f"category.html", name=name_c, recipes=recipes)
