@@ -4,13 +4,9 @@
 
 {% set cover_img = url_for("static", filename= "" | media( name | path_format )) %}
 
-{% set cover_alt = {{ name }} %}
-
 {% set intro_content %}{% endset %}
 
 {% set intro_img = url_for("static", filename= "" | media( name | path_format )) %}
-
-{% set intro_alt = {{ name }} %}
 
 {% set adapted = "" %}
 
@@ -25,7 +21,5 @@
 {% block steps_content %}{% endblock steps_content %}
 
 {% set steps_img = url_for("static", filename= "" | media( name | path_format )) %}
-
-{% set steps_alt = ["Step-by-step visual guide on how to make", {{ name }}] | join(" ") %}
 
 {% block notes_content %}{% endblock notes_content%}

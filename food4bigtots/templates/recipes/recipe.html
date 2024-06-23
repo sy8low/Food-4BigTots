@@ -4,7 +4,7 @@
 
 {% block title %}{{ super() }} | {{ name }}{% endblock title %}
 
-{% set description = {{ name }} %}
+{% set description = name %}
 
 {% block og_img %}{{ cover_img }}{% endblock og_img %}
 
@@ -19,10 +19,13 @@
         {% endif %}
     </hgroup>
 
+    {% set cover_alt = name %}
 
     <div class="row justify-content-center mb-4">
         <img class="col-10 col-lg-6" src="{{ cover_img }}" alt="{{ cover_alt }}">        
     </div>
+
+    {% set intro_alt = name %}
 
     {{ double("Intro", intro_content, intro_img, intro_alt, False) }}
 
@@ -52,6 +55,9 @@
             {% block steps_content%}{% endblock steps_content %}
         </div>
     {% endset %}
+
+    
+    {% set steps_alt = ["Step-by-step visual guide on how to make", name] | join(" ") %}
 
     {{ double("Steps", steps_content, steps_img, steps_alt) }}
 
