@@ -6,7 +6,7 @@
 
 {% set intro_content %}
     <p>
-        Almond cookies are one of the popular Chinese New Year (CNY) cookies. They also happen to be my family’s favourite.
+        Almond cookies are one of the popular <abbr title="Chinese New Year">CNY</abbr> (Chinese New Year) cookies. They also happen to be my family’s favourite.
     </p>
     <p>
         These almond cookies are healthier and lighter than the usual butter and sugar loaded cookies.
@@ -30,13 +30,13 @@
     <p>
         There are so many creative ways to make these almond cookies with the same recipe.
         However, I will definitely go for the most humble and idiot proof version (without
-        egg wash and garnishing) as I still haven’t started my CNY baking yet. Haha! How about you?
+        egg wash and garnishing) as I still haven’t started my <abbr title="Chinese New Year">CNY</abbr> baking yet. Haha! How about you?
     </p>
     <p>
-        Chinese New Year is just a week away. I would like to wish all, young and old, a new year of new hope, good health and good fortune.
+        <abbr title="Chinese New Year">CNY</abbr> is just a week away. I would like to wish all, young and old, a new year of new hope, good health and good fortune.
     </p>
     <p>
-        [Note: These almond cookies may not be suitable for young toddlers (below 3 years old)
+        [<b>Note</b>: These almond cookies may not be suitable for young toddlers (below 3 years old)
         and kids who have nut-allergy. If this is the first time you introduce almonds to your child,
         please consult your pediatrician for further advice.]
     </p>
@@ -49,7 +49,7 @@
 {% set yield = "56 round cookies (3cm diameter)" %}
 
 {% block ingredient_content %}
-    <h4>Group A</h4>
+    <h4 id="group_a">Group A</h4>
     {{ ingredient("140g plain flour", x) }}
     {{ ingredient("130g almond flour <a href='#note_1'>(note 1)</a>", x) }}
     {{ ingredient("30g corn flour", x) }}
@@ -68,7 +68,7 @@
 
 {% set ingredient_img = url_for("static", filename= "almond_3" | media( name | path_format )) %}
 
-{% set ingredient_alt = {{ name }} %}
+{% set ingredient_alt = name %}
 
 {% block steps_content %}
     {% set accordion_body_1 %}
@@ -80,7 +80,7 @@
                 Sieve plain flour, corn flour, baking powder, baking soda and icing sugar.
             </li>
             <li>
-                Mix all the ingredients in Group A (except corn oil) with a hand whisk until well combined.
+                Mix all the ingredients in <a href="#group_a">Group A</a> with a hand whisk until well combined.
             </li>
             <li>
                 Add corn oil little by little. Use hand to combine the mixture until it forms a dough.
