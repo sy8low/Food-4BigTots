@@ -14,10 +14,17 @@
         <meta property="og:title" content="{{ self.title() }}">
         <meta property="og:description" content="{{ description }}">
         <meta property="og:image" content="{% block og_img %}{{ url_for('static', filename='FFT_montage' | media('theme', False) ) }}{% endblock og_img %}">
-        <meta property="og:type" content="">
-        <meta property="og:url" content="">
+        <meta property="og:type" content="{% block og_type %}profile{% endblock og_type %}">
+        <meta property="og:url" content="{{ request.url_rule }}">
         <meta property="og:site_name" content="Food-4BigTots">
         <meta property="og:locale" content="en_UK">
+
+        <meta name="twitter:title" content="{{ self.title() }}">
+        <meta name="twitter:description" content="{{ description }}">
+        <meta name="twitter:image" content="{{ self.og_img() }}">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="twitter:domain" content="food-4bigtots.xyz">
+        <meta property="twitter:url" content="{{ request.url_rule }}">
         
         <link rel="icon" href="{{ url_for('static', filename='media/theme/FFT_icon.jpeg') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">

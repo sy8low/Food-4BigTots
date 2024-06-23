@@ -6,7 +6,13 @@
 
 {% set description = {{ name }} %}
 
-{% block main %}
+{% set cover_img = url_for("static", filename= "picky_4" | media( name | path_format )) %}
+
+{% block og_img %}{{ cover_img }}{% endblock og_img %}
+
+{% block og_type %}profile{% endblock og_type %}
+
+{% block main scoped %}
     <hgroup class="big">
         <h1>{{ name }}</h1>
         <p><time class="h5" datetime="{{ ISO_date }}">{{ date }}</time></p>
@@ -15,7 +21,6 @@
         {% endif %}
     </hgroup>
 
-    {% set cover_img = url_for("static", filename= "picky_4" | media( name | path_format )) %}
 
     <div class="row justify-content-center mb-4">
         <img class="col-10 col-lg-6" src="{{ cover_img }}" alt="{{ name }}">        

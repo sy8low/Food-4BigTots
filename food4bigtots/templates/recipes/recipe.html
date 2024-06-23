@@ -6,6 +6,10 @@
 
 {% set description = {{ name }} %}
 
+{% block og_img %}{{ cover_img }}{% endblock og_img %}
+
+{% block og_type %}blog{% endblock og_type %}
+
 {% block main %}
     <hgroup class="big">
         <h1>{{ name }}</h1>
