@@ -1,0 +1,174 @@
+{% extends "recipes/recipe.html" %}
+
+{% from "macros.html" import ingredient, accordion_item %}
+
+{% set cover_img = url_for("static", filename= "pancake_3" | media( name | path_format )) %}
+
+{% set intro_content %}
+    <p>
+        Mini dollar pancakes are those small round pancakes with 3-4cm in diameter.
+        My son was treated with these mini dollar pancakes by his 2nd aunt during our
+        last trip to Penang. It was love at first bite for him. Ever since then, he kept
+        reminding us of his memorable food experience. Knowing that he loved these pancakes
+        so much, I started my mini pancake experiment. After a few rounds of trial and errors,
+        I finally found the secret to making perfect mini soft and fluffy pancakes! Yay!
+    </p>
+    <p>
+        Regardless of  which pancake recipe you follow, place more emphasis on the technique as
+        it helps to produce soft and fluffy pancake texture without having to add too much baking powder.
+    </p>
+    <p>
+        For these mini fluffy pancakes, I use a simple recipe that calls for all the basic ingredients.
+        What makes it so unique is how the eggs are beaten. Eggs are first separated. Then the egg whites
+        are whipped up to form peaks and folded into the batter. This method will help to create more air
+        bubbles in the batter. When the batter is cooked, the pancakes will puff up magically. Being a
+        person who always flunks science exams, this is indeed a great discovery for me. Hehe!
+    </p>
+    <p>
+        You may think making mini round or fun shaped pancakes is difficult. In actual fact, it’s not
+        only easy but the most fun part of all in making pancakes. I learned a cool and neat trick on
+        how to do it from this <a href="http://www.youtube.com/watch?v=BFAAkc-g5RE">VIDEO</a>. By pouring
+        the batter into a refillable ketchup plastic bottle (refer to the photo below), you can control
+        the flow of your batter with ease when creating the size or shape of pancakes that you prefer.
+        Why not get your kids involved and share the fun too? I’m sure they will be very proud to present
+        you with their very own pancake creations. If you can’t find the ketchup bottle, you can also use
+        cookie cutters to cut out different shapes. That’s what I did for the mini love shaped pancakes
+        shown in the photo above.
+    </p>
+    <p>
+        To increase your success rates in making these mini pancakes, remember to apply the following basic rules:
+    </p>
+    <ol>
+        <li>
+            Use a good non-stick pan so the pancake can be loosen easily.
+        </li>
+        <li>
+            Make sure the pan is hot (but not smoking hot) before you put the batter – simply sprinkle a few drops of water
+            onto the pan. If they sizzle away, the pan is hot and ready for use.
+        </li>
+        <li>
+            Set your heat to medium low.
+        </li>
+        <li>
+            Make sure the heat is well distributed so it will give your pancake a more even colour.
+        </li>
+    </ol>
+    <p>
+        I had also included extra tips BELOW.
+    </p>
+    <p>
+        These pancakes are perfect for both breakfast and tea time snack. You can serve them with your choice of topping and
+        filling, be it sweet or savoury. I love to serve them with yogurts (sometimes sorbet or ice cream) and top with fresh fruits
+        and roasted nuts. I hope this fun filled food experiment of mine will bring you and your kids much joy this September
+        school holidays. Let’s get into action now!
+    </p>
+{% endset %}
+
+{% set intro_img = url_for("static", filename= "pancake_4" | media( name | path_format )) %}
+
+{% set adapted %}
+    <a href='http://not-thekitchensink.blogspot.com/2011/07/fluffy-pancakes-ii.html'>Not The Kitchen Sink</a> and<br>
+    <a href='http://www.jamieoliver.com/recipes/other-recipes/pancakes-usa-stylie'>Jamie Oliver’s Happy Days from the Naked Chef</a>
+{% endset %}
+
+{% set yield = "" %}
+
+{% block ingredient_content %}
+    {{ ingredient("1¼ cup plain flour (135g)", 1) }}
+    {{ ingredient("1½ tsp double acting baking powder", 2) }}
+    {{ ingredient("1 cup milk (at room temperature)", 3) }}
+    {{ ingredient("2 tbsp castor sugar", 4) }}
+    {{ ingredient("1 tbsp oil", 5) }}
+    {{ ingredient("2 large eggs, separated (at room temperature) <a href='#note_1'>(note 1)</a>", 6) }}
+    {{ ingredient("Pinch of salt", 7) }}
+{% endblock ingredient_content %}
+
+{% set ingredient_img = url_for("static", filename= "pancake_8" | media( name | path_format )) %}
+
+{% block steps_content %}
+    {% set accordion_body_1 %}
+        <ol>
+            <li>
+                In a bowl, combine flour and baking powder. Sieve and set aside.
+            </li>
+            <li>
+                In another bowl, whisk egg yolks, sugar and milk together until thoroughly combined. Then stir in oil and mix well.
+            </li>
+            <li>
+                Gradually beat in the sifted dry ingredients and mix until a smooth batter is formed.
+                Do not over-mix <a href="#note_2">(note 2)</a>. Set aside.
+            </li>
+            <li>
+                In another bowl, whisk egg whites with salt until they form soft peaks <a href="#note_3">(note 3)</a>.
+                It can be done with an electrical mixer or by hand with a wire balloon whisk.
+                Then gently fold into the batter with the wire balloon whisk to roughly incorporate.
+                After that, change to a rubber spatula to continue the folding until the batter is well incorporated.
+            </li>
+            <li>
+                Pour mixture into a refillable ketchup plastic bottle (refer to photo above). It is now ready to use. <a href="#note_4">(note 4)</a>
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Preparing the batter", accordion_body_1, 1, True) }}
+
+    {% set accordion_body_2 %}
+        <ol start="6">
+            <li>
+                Heat a non-stick pan or griddle on a <b>MEDIUM LOW</b> heat until hot (not smoking hot) <a href="note_5">(note 5)</a>.
+                [Tip: Sprinkling a few drops of water onto the pan. If they sizzle away, the pan is hot]
+            <li>
+                Pour a little oil onto some kitchen papers. Wipe pan to coat. Repeat this step from time to time.
+            </li>
+            <li>
+                To make mini round shaped pancakes, hold the plastic bottle upright and squeeze the batter with
+                gentle pressure. First, form an outer circle and then swirl the batter inward to fill up the gap.
+                Watch the video <a href="http://www.youtube.com/watch?v=BFAAkc-g5RE">HERE</a>.
+            </li>
+            <li>
+                Cook the pancake on one side until air bubbles form and the edges are dry. Loosen the pancake
+                with a spatula or spoon and flip it over. Continue to cook the other side until lightly golden brown.
+                <b>DO NOT OVERCOOK</b>. Once it’s done, remove from pan. Refrain from pressing the pancakes.
+            </li>
+            <li>
+                Serve warm with fresh fruits and a drizzle of honey or maple syrup. It goes well with fruit sauce
+                and yoghurt too. Spread some Nutella or fruit jam would also taste delicious.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Preparing the batter", accordion_body_2, 2) }}
+{% endblock steps_content %}
+
+{% set steps_img = url_for("static", filename= "pancake_9" | media( name | path_format )) %}
+
+{% block notes_content %}
+    <li id="note_1">
+        Eggs are easier to be separated when cold. But, leave to thaw until room temperature before using  them.
+    </li>
+    <li id="note_2">
+        If you do get lumps in your batter at this stage, press it through a sieve using the back of a spoon.
+    </li>
+    <li id="note_3">
+        Salt helps to firm up the proteins (source: <a href="http://www.ochef.com/223.htm">here</a>).
+        You can also beat the egg white until stiff peaks as mentioned in Jamie Oliver’s recipe.
+        I had tried it out myself and it worked as well just that it’s slightly harder to incorporate into the batter.
+    </li>
+    <li id="note_4">
+        For this particular recipe, it is not necessary to rest the batter for 15 minutes. Use the batter as soon as
+        possible before the air bubbles deflate.
+    </li>
+    <li id="note_5">
+        To make pancake with even colour, the distribution of heat must be consistently even.
+    </li>
+    <li>
+        If you do not intend to make mini or different shapes of pancakes, scoop about 1 ladleful of batter onto the pan and cook.
+    </li>
+    <li>
+        For the first batch, make one or two small pancakes to see the end result. Adjust your heat if necessary. You will get
+        better results in your subsequent batches.
+    </li>
+    <li>
+        You can keep your pancakes in air tight container and store in fridge for about 4-5 days. To reheat pancakes,
+        preheat your oven/ toaster oven for 5 minutes. Then place your pancakes in the oven/ toaster oven for another
+        5 minutes (with heat off).
+    </li>
+{% endblock notes_content%}

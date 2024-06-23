@@ -102,12 +102,16 @@
 {% endmacro %}
 
 
-{% macro gallery(entries) %}
+{% macro gallery(entries, random=True) %}
     {% if entries %}
+        {% if random %}
+            {% set entries = entries | reshuffle %}
+        {% endif %}
+        
         {% for entry in entries %}
             {% set path_r = entry["name_r"] | lower | replace(" ", "-") %}
             {% set path_c = entry["name_c"] | lower | replace(" ", "-") %}
-            {% set thumbnail = ["media/", path_r, "/", entry["thumbnail_r"], ".jpg"] | join %}
+            {% set thumbnail = entry["thumbnail_r"] | media(path_r) %}
             {{ tile(url_for("static", filename=thumbnail), url_for("recipes.recipe", cat=path_c, path=path_r), entry["name_r"]) }}
         {% endfor %}
     {% else %}

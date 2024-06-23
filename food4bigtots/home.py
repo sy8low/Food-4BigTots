@@ -5,6 +5,7 @@ Functions:
     about   : View function for the About page.
 """
 
+from datetime import date
 from flask import Blueprint, render_template, Response
 from food4bigtots.db import query_db, Queries
 
@@ -33,4 +34,5 @@ def about() -> Response:
         The About page.
     """
     
-    return render_template("home/about.html")
+    after = date.today().year - 2008
+    return render_template("home/about.html", after=after)

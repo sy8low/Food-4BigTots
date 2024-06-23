@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% from "macros.html" import double, single, accordion_item %}
+{% from "macros.html" import double, single %}
 
 {% block title %}{{ super() }} | {{ name }}{% endblock title %}
 
@@ -9,7 +9,7 @@
         <h1>{{ name }}</h1>
         <p><time class="h5" datetime="{{ ISO_date }}">{{ date }}</time></p>
         {% if original %}
-            <p class="h5">Find the original Food-4Tots recipe <a href="{{ original }}">here</a>.</p>
+            <p class="h5">Find the original Food-4Tots page <a href="{{ original }}">here</a>.</p>
         {% endif %}
     </hgroup>
 
@@ -23,7 +23,12 @@
 
     <hgroup class="big">
         <h2 class="spaced">Recipe</h2>
-        <p class="h5">Yield: {{ yield }}</p>
+        {% if adapted %}
+            <p class="h5">Adapted and modified from {{ adapted | safe }}</p>
+        {% endif %}
+        {% if yield %}
+            <p class="h5">Yield: {{ yield }}</p>
+        {% endif %}
     </hgroup>
 
 

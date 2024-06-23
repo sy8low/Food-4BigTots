@@ -1,0 +1,267 @@
+{% extends "base.html" %}
+
+{% from "macros.html" import double, single, accordion_item, ingredient %}
+
+{% block title %}{{ super() }} | {{ name }}{% endblock title %}
+
+{% block main %}
+    <hgroup class="big">
+        <h1>{{ name }}</h1>
+        <p><time class="h5" datetime="{{ ISO_date }}">{{ date }}</time></p>
+        {% if original %}
+            <p class="h5">Find the original Food-4Tots page <a href="{{ original }}">here</a>.</p>
+        {% endif %}
+    </hgroup>
+
+    {% set cover_img = url_for("static", filename= "crackers_3" | media( name | path_format )) %}
+
+    <div class="row justify-content-center mb-4">
+        <img class="col-10 col-lg-6" src="{{ cover_img }}" alt="">        
+    </div>
+
+    {% set intro_content %}
+        <p>
+            Have you ever tried making your own cookie cutter? I had just made my very first mini fishy cutters, and had used them
+            to make these cute tiny goldfish crackers.  Are you inspired to make them for your little ones too? It’s an easy recipe. If I
+            can do it, so can you.
+        </p>
+        <p>
+            Let’s start with the DIY cookie cutters. All you need is an aluminum can (use more if you plan to have more fun),
+            scissors, adhesive tape, ruler, marker or pen and cardboard paper. However, this DIY project is not recommended for
+            kids as the aluminum sheet has sharp edges which can cause injury to the little hands if not handled carefully. I enjoy
+            doing them very much. I feel like I’m back at school again! Lol!
+        </p>
+        <p>
+            Besides fish, there are many interesting shapes you can make such as star, flower, heart, crescent moon etc. Just be
+            as crafty as you can. If you don’t have time to make them, it’s perfectly fine. Any ready-made cookie cutters will work
+            well too. Pizza cutters or knife are also good tools to score your desired shapes as how I did in
+            <a href="https://food-4tots.com/2012/07/11/gluten-free-brown-rice-quinoa-and-seeds-crackers/2/">THIS POST</a>.
+        </p>
+        <p>
+            This recipe which I adapted from <a href="http://tastykitchen.com/blog/2011/09/homemade-goldfish-crackers/">Tasty Kitchen</a>
+            requires the use of a food processor. Unfortunately, this electrical
+            appliance is still in my wish list but ordering one unit solely for this recipe is taking a step too far. So, I decided to
+            improvise and I did it with a pastry blender. Yay!
+        </p>
+        <p>
+            Cutting these little fishies out of the dough is time-consuming but this is where the fun is. It would be great if your kids
+            could take part too. Try adding eyeballs and curvy lip on the face and you will be amazed how cheerful and happy these
+            little fishies are going to look like.
+        </p>
+        <p>
+            These crackers, once baked, will puff up a bit. They are very chewy and CHEEEEEEEZY. But, if you roll the dough
+            thinner, you will get crispier crackers. Unlike the usual crackers, these crackers will turn soft pretty fast even if you store
+            them in an airtight container. Thus, it’s advisable to consume them immediately or within a day or two. Otherwise, keep
+            them in the fridge and they can last for another week or so. When you’re craving for them, just pop them into a toaster
+            oven and warm them up lightly.
+        </p>
+        <p>
+            I think it’s one of easiest recipe to make. With just a few simple steps and ingredients, it will bring you and your kids a
+            whole load of fun. Don’t miss it!
+        </p>
+    {% endset %}
+
+    {% set intro_img = url_for("static", filename= "crackers_5" | media( name | path_format )) %}
+
+    {{ double("Intro", intro_content, intro_img, show_title=False) }}
+
+
+    <hgroup class="big">
+        <h2 class="spaced">Making the Cookie Cuter</h2>
+    </hgroup>
+
+
+    {% set cutter_material_content %}
+        <ul class="list-group">
+            {{ ingredient("Empty aluminum can (wash, rinse and dry out properly)", 1) }}
+            {{ ingredient("Heavy duty and sharp scissors", 2) }}
+            {{ ingredient("Adhesive tape", 3) }}
+            {{ ingredient("Ruler", 4) }}
+            {{ ingredient("Marker/ pen", 5) }}
+            {{ ingredient("Cardboard papers for folding purposes<br>(cut out 2 strips with ½ inch and ¾ inch width respectively)", 6) }}
+        </ul>
+    {% endset %}
+
+    {% set cutter_material_img = url_for("static", filename= "crackers_4" | media( name | path_format )) %}
+
+    {{ double("Materials", cutter_material_content, cutter_material_img) }}
+
+
+    {% set cutter_steps_content %}
+        <div class="accordion ms-n1" id="steps">
+            {% set accordion_body_1 %}
+                <ol>
+                    <li>
+                        Cut off the top and bottom of the can with scissors and discard them. <a href="#note_a1">(note 1)</a>
+                    </li>
+                    <li>
+                        Cut the remaining part down the side so that you have a rectangle sheet. Trim and straighten
+                        any uneven edges with scissors if needed.
+                    </li>
+                </ol>
+            {% endset %}
+            {{ accordion_item("Preparing the aluminium sheet", accordion_body_1, 1, True) }}
+
+            {% set accordion_body_2 %}
+                <ol start="3">
+                    <li>
+                        Use a rule and marker/pen draw a strip measuring ½ inch width and 4½ inches long. Draw as
+                        many strips as possible. Then, cut them out.
+                    </li>
+                    <li>
+                        Take one strip, hold both its ends overlapping them by ¾ inch. Tape them together.
+                    </li>
+                    <li>
+                        Use the pre-cut cardboard strips as guide to bend or fold the tail of the fish. It should be ¾ inch
+                        for the flag edge and ½ inch for the sides. <a href="#note_a2">(note 2)</a>
+                    </li>
+                </ol>
+            {% endset %}
+            {{ accordion_item("Shaping the cutters", accordion_body_2, 2) }}
+        </div>
+    {% endset %}
+
+    {% set cutter_steps_img = url_for("static", filename= "crackers_6" | media( name | path_format )) %}
+
+    {{ double("Steps", cutter_steps_content, cutter_steps_img) }}
+
+
+    {% set cutter_notes_content %}
+        <ol>
+            <li id="note_a1">
+                Be extra careful when cutting aluminum can as the edges are very sharp.
+            </li>
+            <li id="note_a2">
+                Be gentle when handling these metal strips. They are very filmsy and can easily break if you
+                bend or fold them too much.
+            </li>
+        </ol>
+
+        <p>Other references:</p>
+        <ul>
+            <li><a href="http://tastykitchen.com/blog/2011/09/homemade-goldfish-crackers/">Tasty Kitchen (Homemade Goldfish Crackers)</a></li>
+            <li><a href="http://www.instructables.com/id/10-Minute-Cookie-Cutter-from-Soda-Can/">Instructables (10 minute cookie cutter from soda can)</a></li>
+            <li><a href="http://bubblynaturecreations.com/2011/02/new-feature-cooking-crafts-4-kids.html">Bubbly Nature Creations (New Feature Cooking Crafts 4 Kids – Veggie goldfish)</a></li>
+            <li><a href="http://makingdowiththenotsonew.blogspot.com/2008/10/aluminum-can-fish-cookie-cutter-and.html">Making Do with The Not So New (Aluminum can fish cookie cutter)</a></li>
+            <li><a href="http://www.comeonilene.com/2011/04/28/how-to-make-your-own-cookie-cutter-tutorial/">Come On Ilene (How to make your own cookie cutter)</a></li>
+        <ul>
+    {% endset %}
+
+    {{ single("Notes", cutter_notes_content)}}
+
+    <hgroup class="big">
+        <h2 class="spaced">Making the Crackers</h2>
+        <p>Adapted and modified from <a href="http://tastykitchen.com/blog/2011/09/homemade-goldfish-crackers/">Tasty Kitchen</a></p>
+    </hgroup>
+
+    {% set ingredient_content %}
+        <ul class="list-group">
+            {{ ingredient("1 cup (120g) plain flour <a href='#note_b1'>(note 1)</a>", 1) }}
+            {{ ingredient("8 oz (220g) sharp/ extra sharp cheddar cheese – shredded <a href='#note_b2'>(note 2)</a> <a href='#note_b3'>(note 3)</a>", 2) }}
+            {{ ingredient("60g unsalted butter, cold (cut into cubes)", 3) }}
+            {{ ingredient("¼ -½ teaspoons salt", 4) }}
+            {{ ingredient("2 tablespoons cold water", 5) }}
+        </ul>
+    {% endset %}
+
+    {% set ingredient_img = url_for("static", filename= "crackers_7" | media( name | path_format )) %}
+
+    {{ double("Ingredients", ingredient_content, ingredient_img) }}
+
+
+    {% set steps_content %}
+        <div class="accordion ms-n1" id="steps">
+            {% set accordion_body_1 %}
+                <ol>
+                    <li>
+                        Using a pastry blender, cut butter into the flour until it forms coarse crumbs.
+                    </li>
+                    <li>
+                        Add salt to mix together.
+                    </li>
+                    <li>
+                        Add shredded cheese and cut into the mixture.
+                    </li>
+                    <li>
+                        Add water, 1 tablespoon at a time.
+                    </li>
+                    <li>
+                        Use hand to form dough and divide into 2 portions. Wrap them in plastic and chill for 20 minutes (or longer).
+                    </li>
+                </ol>
+            {% endset %}
+            {{ accordion_item("Making the dough", accordion_body_1, 1, True) }}
+
+            {% set accordion_body_2 %}
+                <ol start="6">
+                    <li>
+                        Preheat oven to 170°C. Line baking trays with parchment papers.
+                    </li>
+                    <li>
+                        Take out one portion of the dough from the fridge. Work with one portion at a time. Place dough
+                        in between two sheets of wax paper or cling wrap. Roll dough out to 3mm (1/8 in) thickness. Cut
+                        out shapes with your choice of cookies cutters (note 4) and transfer to baking tray.
+                    </li>
+                    <li>
+                        Use chopstick or toothpick to make the eye balls, and the prong of a fork (I used crab forks) to
+                        carve a curvy lip. (This step is optional)
+                    </li>
+                    <li>
+                        Gather all the trimmings and re-roll. Repeat until all the dough is used up.
+                    </li>
+                </ol>
+            {% endset %}
+            {{ accordion_item("Shaping the crackers", accordion_body_2, 2) }}
+
+            {% set accordion_body_3 %}
+            <ol start="10">
+                <li>
+                    Bake for approximately 15-17 minutes, until the crackers are crispy and golden around edges.
+                    Timing will vary according to size and shape of your crackers. Cool for 10 minutes on baking tray
+                    before transferring to a wire rack to cool completely. Store in an airtight container.
+                </li>
+            </ol>
+        {% endset %}
+        {{ accordion_item("Baking", accordion_body_3, 3) }}
+        </div>
+    {% endset %}
+
+    {% set steps_img = url_for("static", filename= "crackers_8" | media( name | path_format )) %}
+
+    {{ double("Steps", steps_content, steps_img) }}
+
+
+    {% set notes_content %}
+        <ol>
+            <li id="note_b1">
+                You can substitute it with 50-100% whole wheat flour.
+            </li>
+            <li id="note_b2">
+                Shred the cheese finer than what is shown in the photo so that you can easily cut them into the mixture.
+            </li>
+            <li id="note_b3">
+                Get orange cheese if you can.
+            </li>
+            <li>
+                If you have food processor, pulse everything (except water) together until the dough resembles coarse sand.
+                Then follow with step 4.
+            </li>
+            <li>
+                Thinner dough means crispier crackers; thicker dough means puffier, more bread-like crackers.
+                But, the dough must not be too thin or else the crackers will be difficult to handle.
+            </li>
+            <li>
+                If you don’t have cookie cutter, you can use a pizza cutter or knife to score the desired shapes.
+                Refer to <a href="https://food-4tots.com/2012/07/11/gluten-free-brown-rice-quinoa-and-seeds-crackers/2/">THIS POST</a>.
+            </li>
+            <li>
+                Crackers will turn soft pretty fast even they are kept inside an airtight container. Best to be eaten
+                immediately or within a day or two. To extend them for a week or so, I keep them in the fridge.
+                Lightly warm them up in the toaster oven when I want to eat them.
+            </li>
+        </ol>
+    {% endset %}
+
+    {{ single("Notes", notes_content)}}
+
+{% endblock main %}

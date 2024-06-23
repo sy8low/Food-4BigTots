@@ -1,182 +1,321 @@
-{% extends "recipes/recipe.html" %}
+{% extends "base.html" %}
 
 {% from "macros.html" import double, single, accordion_item %}
 
-{% set cover_img = url_for("static", filename= "picky_2" | media("wholemeal-pau-with-red-bean-filling")) %}
+{% block title %}{{ super() }} | {{ name }}{% endblock title %}
 
-{% set intro_content %}
-    <p>
-        I love eating Chinese steamed buns (pau) as much as I love making them.
-        Making pau is a lot easier and quicker than baking bread. I can even knead it by hand.
-        But, I must confess that mastering the skill is not easy.
-        After spending months in making pau, I still couldn’t get a batch of completely “wrinkle-free” pau,
-        no matter how much care and attention I put into kneading, proofing and steaming them.
-        In my case, “practice does not always make perfect”. I kept wondering whether I have overlooked something.
-    </p>
-    <p>
-        So, I read through some cookbooks and searched the internet, trying every possible way to find the cause.
-        Recently, I got the answer from one of my favourite cookbooks.
-        I’m thrilled that I finally nailed it and learned something new as well.
-        It was actually the uneven steam pressure in the steamer that caused the ugly surface of my pau.
-        I had used high heat to steam my pau and this led to a spike in the pressure inside the steamer that resulted in
-        the pau expanding too fast and over-extended. After the steaming was done, the drop in temperature inside the steamer
-        made the over-expanded pau failing to hold its shape and thus collapse. This scenario usually occurs when the home use
-        steaming apparatus is comparatively small and is unable to cope with the high heat coming from the gas stove.
-        To rectify this problem, I started off the steaming with cold water on medium heat and reduced it to medium low once
-        the water started boiling. Five minutes before ending the steaming process, I lifted the lid slightly creating a tiny gap
-        to release some of the steam pressure and to maintain an even pressure within the steamer. With all these adjustments,
-        my entire batch of pau turned out to have smooth surfaces!
-    </p>
-    <p>
-        This pau recipe that I share with you is a basic pau recipe that you can make it with or without filling.
-        The wholemeal flour that I added is just my personal choice to make the pau a bit healthier.
-        The recipe still works if you use solely pau flour or plain flour.
-        For filling, I used my <a href="#">homemade red bean paste</a>.
-        But, if you don’t want to do it from scratch, you can opt for ready-made red bean paste.
-        If you do so, you may need a lesser amount than what I recommended in the recipe as the read-made paste is
-        usually overly sweet. Besides that, you are also free to use any filling of your choice, be it sweet or savoury.
-        Alternatively, you can also add some dried fruits, seeds and nuts, and then shape it like mantao.
-        The choice is endless. Have fun!
-    </p>
-{% endset %}
+{% block main %}
+    <hgroup class="big">
+        <h1>{{ name }}</h1>
+        <p><time class="h5" datetime="{{ ISO_date }}">{{ date }}</time></p>
+        {% if original %}
+            <p class="h5">Find the original Food-4Tots page <a href="{{ original }}">here</a>.</p>
+        {% endif %}
+    </hgroup>
 
-{% set intro_img = url_for("static", filename= "pau_4" | media("wholemeal-pau-with-red-bean-filling")) %}
+    {% set cover_img = url_for("static", filename= "picky_4" | media( name | path_format )) %}
 
-{% set yield = "9 pau" %}
+    <div class="row justify-content-center mb-4">
+        <img class="col-10 col-lg-6" src="{{ cover_img }}" alt="">        
+    </div>
 
-{% block ingredient_content %}
-    {{ ingredient("200 grams pau flour <a href='#note_1'>(note 1)</a>", 1) }}
-
-    {{ ingredient("50 grams wholemeal flour <a href='#note_1'>(note 1)</a>", 2) }}
-
-    {{ ingredient("3 grams instant yeast", 3) }}
-
-    {{ ingredient("3 grams baking powder (sieved)", 4) }}
-
-    {{ ingredient("40 grams sugar", 5) }}
-
-    {{ ingredient("130 grams water", 6) }}
-
-    {{ ingredient("10 grams salad oil (or vegetable oil)", 7) }}
-
-    {{ ingredient("250 grams red bean paste (homemade or ready-made)", 8) }}
-{% endblock ingredient_content %}
-
-{% set ingredient_img = url_for("static", filename= "pau_6" | media("wholemeal-pau-with-red-bean-filling")) %}
-
-{% block steps_content %}
-    {% set accordion_body_1 %}
-        <ol>
-            <li>
-                Dissolve instant yeast in water.
-            </li>
-            <li>
-                Combine sugar, flour and baking powder in a mixing bowl.
-                Make a well in the center and add in the yeast mixture.
-                Stir to combine until no traces of flour.
-                Add in oil and knead until a rough dough is formed <a href="#note_3">(note 3)</a>.
-            </li>
-            <li>
-                Transfer the dough onto a working surface and continue kneading until it is no longer sticky but soft and smooth <a href="#note_3">(note 3)</a>.
-            </li>
-            <li>
-                Place the dough in a bowl and covered with cling wrap. Let it rest for 10 minutes in room temperature.
-            </li>
-            <li>
-                Meanwhile, divide the red bean paste into 9 equal portions (about 27 grams) and shape into balls.
-            </li>
-        </ol>
+    {% set intro_content %}
+        <p>
+            What should I do if my child:
+        </p>
+        <ul>
+            <li>refuses to eat vegetables?</li>
+            <li>refuses to try new food?</li>
+            <li>refuses to eat on his own?</li>
+            <li>is not interested in food?</li>
+            <li>never sit still during mealtime?</li>
+            <li>love to watch TV during mealtime?</li>
+        </ul>
+        <p>
+            Do any of these sound familiar to you?
+            These are the questions frequently asked by my readers since I started blogging.
+            When parents or caregivers encounter such problems, it is likely that the child
+            will get the blame. But, if we analyze their situation carefully, we may be alarmed
+            that root of these problems may lie more on the parents or caregivers than the child himself.
+        </p>
     {% endset %}
 
-    {{ accordion_item("Preparing the dough", accordion_body_1, 1, True) }}
+    {{ single("Intro", intro_content, show_title=False) }}
 
 
-    {% set accordion_body_2 %}
-        <ol start="6">
-            <li>
-                After resting the dough, remove it from the bowl.
-                On a working surface, roll the dough into a log shape and divide into 9 equal portions (about 47 grams).
-                Knead each piece until smooth, deflate it (meaning collapsing all the air pockets formed) and shape into a ball.
-                Seal the bottom. Repeat the same for the remaining portions.
-            </li>
-            <li>
-                Take one ball, flatten it lightly with hand and use a rolling pin to roll it out into circle.
-                Flip it over and roll it out carefully such that the center is thinner and the peripheral rim thinner.
-                This will prevent the filling from leaking during steaming. Repeat the same for the remaining balls.
-                This will ensure each pau has about 5 minutes of resting time before moving to step 8.
-            </li>
-            <li>
-                Take a piece of the flatten dough and place one red bean paste ball (from step 5) onto it.
-                Bring the edges together and pinch the top to seal the filling completely.
-                Place it onto a piece of square baking paper, seam side down (so that they have a smooth and round top) and transfer to the steaming basket.
-                Repeat the same for the remaining dough. Keep the pau apart from each other, allowing rooms from all sides.
-            </li>
-        </ol>
+    {% set do_not_content %}
+        <div class="accordion ms-n1" id="steps">
+            {% set accordion_body_1 %}
+                <p>
+                    If mealtime rules are not set, parents or caregivers will find it challenging to
+                    control or discipline their child during mealtime. Even though some have put efforts
+                    to do so, most of the time they give in easily.
+                </p>
+            {% endset %}
+            {{ accordion_item("No mealtime rules", accordion_body_1, 1, open=True) }}
+
+            {% set accordion_body_2 %}
+                <p>
+                    Without having a proper routine for breakfast, lunch and dinner, a child will have a
+                    tendency of over or under-eating. He might stuff his/her stomach with more junks than
+                    healthy foods. This may cause him to lose his appetite when it comes to the actual mealtime.
+                </p>
+            {% endset %}
+            {{ accordion_item("No mealtime routine", accordion_body_2, 2) }}
+            
+            {% set accordion_body_3 %}
+                <p>
+                    Generally, most parents or caregivers are reluctant to introduce new food as they
+                    are afraid that the child may reject the food and go hungry as a result. This will
+                    eventually limit his choice of food and also lead to lack of essential nutrition for growth.
+                    He will also get bored eating the same food over a long period of time.
+                </p>
+            {% endset %}
+            {{ accordion_item("Limited choice of food", accordion_body_3, 3) }}
+
+            {% set accordion_body_4 %}
+                <p>
+                    Some parents or caregivers can get anxious easily when the child dislikes the taste
+                    of certain healthy foods.  They will tend to either force him to eat or make him eat
+                    a larger portion. This method may cause the child to react negatively towards the food.
+                </p>
+            {% endset %}
+            {{ accordion_item("Wrong approach to encourage eating", accordion_body_4, 4) }}
+
+            {% set accordion_body_5 %}
+                <p>
+                    When a child is slow in eating, the parents or caregivers will become impatient and
+                    quickly start feeding the child. This may delay the child from picking up the
+                    self-feeding skill. To avoid choking, Asian parents or caregivers tend to blend the
+                    food for their child even when they are over a year old. As the blended food doesn’t
+                    look and taste appealing, the child will eventually lost his interest during mealtime.
+                </p>
+            {% endset %}
+            {{ accordion_item("Speed up the eating process", accordion_body_5, 5) }}
+
+            {% set accordion_body_6 %}
+                <p>
+                    Bribe the child with sweet treat or distract him with toys, mobile app or television may
+                    seem an easy way out to deal with the mealtime battle in the short run. As a result,
+                    the child will not be able to learn the correct mealtime manners as well as chew his food
+                    properly due to these distractions.
+                </p>
+            {% endset %}
+            {{ accordion_item("Bribery", accordion_body_6, 6) }}                
+        </div>
     {% endset %}
 
-    {{ accordion_item("Making the buns", accordion_body_2, 2) }}
+    {% set do_not_img = url_for("static", filename= "picky_2" | media( name | path_format )) %}
+
+    {{ double("What are the common mistakes made by parents or caregivers?", do_not_content, do_not_img) }}
 
 
-    {% set accordion_body_3 %}
-        <ol start="9">
-            <li>
-                Cover with lid and place a pan filled with water underneath.
-                Proof until the pau have slightly expanded, soft and fluffy to the touch for about 25 minutes.
-                The proofing time varies depending on the temperature in the kitchen.
-                If you use your finger tip to press lightly the surface of the pau, the depression will slowly disappear.
-                This means the pau are ready for steaming.
-            </li>
-            <li>
-                Steam the pau for 17-18 minutes, starting from cold water, with medium heat.
-                When the water starts boiling, reduce heat to medium low.
-                2-3 minutes before the steaming ends, open the lid slightly to lower the steam pressure so that the surface of the pau will not wrinkle.
-                Once it’s done, off the heat, let the pau sit inside the steamer for another 5 minutes.
-                This will ensure they do not shrink due to a sudden change of temperature.
-            </li>
-            <li>
-                Open the lid, transfer the steamer away from the water and let the pau cool down. Best to serve warm.
-                If consume the next day, store inside an air-tight container and keep in the fridge.
-                They can also be kept inside freezer bags and be frozen up to 3 months.
-                To reheat them, remove from the freezer and steam (with or without defrost) for 3-5 minutes or until the inside is hot.
-                </li>
-        </ol>
+    {% set do_content %}
+        <div class="accordion ms-n1" id="steps">
+            {% set accordion_body_1 %}
+                <p>
+                    Teach your child the right eating manners from young. Start by letting him join the family
+                    at the dining table so he can pick up the right mealtime manners. Avoid distraction like toys,
+                    mobile app and television during mealtime.
+                </p>
+            {% endset %}
+            {{ accordion_item("Teach the right eating manners", accordion_body_1, 1, open=True) }}
+
+            {% set accordion_body_2 %}
+                <p>
+                    Offer your child more fresh fruits and vegetables. (Refer to
+                    <a href="https://food-4tots.com/2011/05/05/long-bean-omelette/">this post</a> 
+                    for more tips on how to encourage your child to love green).
+                    Cut down on fats, oils and sweets. Avoid food with colouring and preservatives.
+                    Snacks that are offered in between meals should be healthy and nutritious (eg,
+                    <a href="https://food-4tots.com/2012/02/13/sweet-potato-crisps/">sweet potato crisps</a>,
+                    <a href="https://food-4tots.com/2009/08/30/power-packed-oat-bars/">power-packed oat bars</a>
+                    and <a href="https://food-4tots.com/2009/09/09/oatmeal-banana-raisin-muffins/">oatmeal raisin banana muffins</a>).
+                    Soft drinks, sweets and packaged food (such as potato chips) should not be allowed.
+                </p>
+            {% endset %}
+            {{ accordion_item("Cultivate healthy eating habit", accordion_body_2, 2) }}
+            
+            {% set accordion_body_3 %}
+                <p>
+                    If you don’t want your child to become a picky eater, start to exhibit a good example by following a
+                    healthy diet. Do not show your feeling on the food you dislike as it will influence your child to dislike it.
+                </p>
+            {% endset %}
+            {{ accordion_item("Set a good example", accordion_body_3, 3) }}
+
+            {% set accordion_body_4 %}
+                <p>
+                    Set reasonable rules and routine for mealtime, and stand firm on it. Eg, no playing, having meal at the
+                    dining table only, must not leave the table until the meal is finished etc.
+                </p>
+            {% endset %}
+            {{ accordion_item("Set mealtime rules and routine", accordion_body_4, 4) }}
+
+            {% set accordion_body_5 %}
+                <p>
+                    Small kids response positively to praises. Praise your child whenever he demonstrates good mealtime
+                    manner or is willing to try new food. But, avoid over-praising.
+                </p>
+            {% endset %}
+            {{ accordion_item("Praise wisely", accordion_body_5, 5) }}
+
+            {% set accordion_body_6 %}
+                <p>
+                    Try to relax when feeding or having meals with your child as he can easily sense your anxiety. Don’t put
+                    too much pressure on yourself as it will make matter worst.
+                </p>
+            {% endset %}
+            {{ accordion_item("Relax yourself", accordion_body_6, 6) }}
+
+            {% set accordion_body_7 %}
+                <p>
+                    Do not make your child eat just to please you. Starting teaching your child from young the benefits of
+                    having healthy eating habits by saying “milk makes your bones strong”, “salmon makes you smarter”,
+                    “sweets will cause tooth decay”. Reinforce these messages to him from time to time.
+                </p>
+            {% endset %}
+            {{ accordion_item("Emphasize the importance of healthy eating", accordion_body_7, 7) }}
+
+            {% set accordion_body_8 %}
+                <p>
+                    Reading books and singing songs relating to healthy eating habit can arouse a child’s interest in healthy
+                    food. My son loves apple after he learns the song “an apple a day keeps the doctor away.” (Eg,
+                    <a href="https://food-4tots.com/2009/07/25/apple-soup/">apple soup</a> and
+                    <a href="https://food-4tots.com/2010/10/06/apple-flapjacks/">apple flapjacks</a>)
+                </p>
+            {% endset %}
+            {{ accordion_item("Use books and songs", accordion_body_8, 8) }}
+
+            {% set accordion_body_9 %}
+                <p>
+                    Healthy food may not taste blanch or look bored. Be creative and make the food looks interesting by
+                    playing around with shape, colour, taste and texture. Here are some suggestions:
+                </p>
+
+                <ul>
+                    <b>Shape</b>: Ingredients can be minced, diced, sliced or julienned. Cookies cutter and rice mould are my
+                    favourite tools for making different type of shapes. (eg,
+                    <a href="https://food-4tots.com/2008/09/25/fancy-sandwiches-with-sardine-fillings/">fancy sandwiches with sardine filling</a>,
+                    <a href="https://food-4tots.com/2010/03/22/onigiri-rice-ball-with-salmon-and-cucumber/">onigiri with salmon and cucumber</a>,
+                    <a href="https://food-4tots.com/2011/08/10/oven-baked-fish-fingers/">oven baked fish fingers</a>)
+                </ul>
+                <ul>
+                    <b>Colour</b>: Use different combination of colour to not only brighten up your dish but also provide more nutrients to your
+                    child’s diet. (eg, <a href="https://food-4tots.com/2009/01/11/rainbow-seafood-pasta-salad/">rainbow seafood pasta salad</a>
+                    and <a href="https://food-4tots.com/2009/10/21/stir-fry-udon-with-prawns/">stir-fry udon with prawns</a>)
+                </ul>
+                <ul>
+                    <b>Taste</b>: Enhance the flavour of the food with condiments, spices and herbs. (eg,
+                    <a href="https://food-4tots.com/2010/06/29/orange-pilaf/">orange pilaf</a>
+                    and <a href="https://food-4tots.com/2010/07/26/oven-baked-fries/">oven baked fries</a>)
+                </ul>
+                <ul>
+                    <b>Texture</b>: Vary your cooking methods. For example, fish can be steamed, pan-fried or baked.
+                    It can also be made into patties or added into soup. If your child doesn’t like cooked vegetables,
+                    try offering him raw vegetables instead such as cucumber and carrots sticks with a tasty dip. (eg,
+                    <a href="https://food-4tots.com/2010/02/08/teriyaki-salmon-in-a-parcel/">salmon in a parcel</a>,
+                    <a href="https://food-4tots.com/2008/11/23/teriyaki-chicken-skew-yakitori/">teriyaki chicken skew</a>
+                    and <a href="https://food-4tots.com/2010/11/15/japanese-egg-salad-sandwiches/">Japanese egg salad sandwiches</a>)
+                </ul>
+            {% endset %}
+            {{ accordion_item("Make food look interesting", accordion_body_9, 9) }}
+
+            {% set accordion_body_10 %}
+                <p>
+                    For babies, you can create imaginative stories with food. Eg,”The helicopter (aka spoon) is going to
+                    crash! Hurry, open your mouth to rescue it.”
+                </p>
+                <p>
+                    For toddlers, let them have some “pretentious games” with their food such as using broccoli to make
+                    “hair” of a face, “mini tree” or “little flower” or just about anything based on your creative imagination (eg,
+                    <a href="https://food-4tots.com/2011/04/19/broccoli-and-bow-tie-pasta/">broccoli and bow-tie</a>). This will definitely make them look forward to their next mealtime.
+                </p>
+                <p>
+                    Use colourful and cute cutlery and plate to serve the food.
+                </p>
+            {% endset %}
+            {{ accordion_item("Make mealtime fun and enjoyable", accordion_body_10, 10) }}
+
+            {% set accordion_body_11 %}
+                <p>
+                    Be more adventurous with new food but limit to one new food at a time. Pair the new food with his
+                    favourite and familiar food such as cheese and eggs or homemade sauce. Eg, my son dislikes eggplant
+                    but loves cheese and tomato sauce. So when I baked
+                    <a href="https://food-4tots.com/2010/06/06/baked-eggplants-with-bolognese-sauce/">eggplants with bolognese sauce</a>,
+                    it became a big hit. (Another example is <a href="https://food-4tots.com/2010/08/24/cauliflower-cheese/">cauliflower cheese</a>
+                    and <a href="https://food-4tots.com/2011/09/18/burdock-root-soup/">burdock root soup</a>)
+                </p>
+                <p>
+                    Offer new food in small portion but do not force him to eat. Take no offense if he refuses it or couldn’t
+                    finish it. Give praise even if he just takes one bite. If he still rejects, stop for a while and reintroduce a few
+                    weeks later. Sometimes, it may take 10 attempts or more for him to accept the new food. (Eg, I managed
+                    to convince my son to eat coconut with this <a href="https://food-4tots.com/2011/10/02/coconut-banana-muffins/">coconut banana muffins</a>)
+                </p>
+            {% endset %}
+            {{ accordion_item("Introduce new food as frequent as possible", accordion_body_11, 11) }}
+
+            {% set accordion_body_12 %}
+                <p>
+                    Kids have smaller appetite than adults. So, do not pressure your child to eat as much as an adult.
+                    Start with a small serving. If he can finish and request for more, then offer a second helping.
+                    Also, do not rush your child to finish his meal. Allow him time to consume his food. His stomach
+                    will be able to signal if he is full. This helps to avoid over-eating.
+                </p>
+            {% endset %}
+            {{ accordion_item("Keep portion small", accordion_body_12, 12) }}
+
+            {% set accordion_body_13 %}
+                <p>
+                    Get your child involved in shopping, preparing and cooking his food. It will excite him and chances
+                    are he will be more willing to try out the food. You can try simple baking recipes with your child
+                    such as <a href="https://food-4tots.com/2011/05/18/almond-crisps/">almond crisps</a>,
+                    <a href="https://food-4tots.com/2011/09/03/mini-fluffy-pancakes/">mini fluffy pancakes</a>,
+                    <a href="https://food-4tots.com/2010/02/26/banana-muffins/">banana muffins</a>,
+                    <a href="https://food-4tots.com/2012/01/11/simple-breadsticks/">simple breadsticks</a>,
+                    <a href="https://food-4tots.com/2011/06/28/wholemeal-cookies/">wholemeal cookies</a>,
+                    <a href="https://food-4tots.com/2010/01/07/cheesy-cookies/">cheesy cookies</a> and
+                    <a href="https://food-4tots.com/2010/12/15/gingerbread-man-cookies/">gingerbread man cookies</a>.
+                </p>
+            {% endset %}
+            {{ accordion_item("Involved your kid in food preparation and simple cooking process", accordion_body_13, 13) }}
+
+            {% set accordion_body_14 %}
+                <p>
+                    Rather than letting your child decide freely on what he wants to eat, give him scope to assert his
+                    independence. Eg, let him choose two out of three vegetables offered to him.
+                </p>
+            {% endset %}
+            {{ accordion_item("Offer smart choices", accordion_body_14, 14) }}
+
+            {% set accordion_body_15 %}
+            <p>
+                When a child reaches one year, encourage him to self-feed and master mealtime skills. Though it can be
+                messy and the child may take a longer time to eat, it’s worth the effort to train him to be more independent.            </p>
+        {% endset %}
+        {{ accordion_item("Relax yourself", accordion_body_15, 15) }}
+        </div>
     {% endset %}
 
-    {{ accordion_item("Steaming the buns", accordion_body_3, 3) }}
-{% endblock steps_content %}
+    {% set do_img = url_for("static", filename= "picky_3" | media( name | path_format )) %}
 
-{% set steps_img = url_for("static", filename= "pau_7" | media("wholemeal-pau-with-red-bean-filling")) %}
+    {{ double("What should parents or caregivers do to cope with picky eaters and mealtime problems?", do_content, do_img) }}
 
-{% block notes_content %}
-    <li id="note_1">
-        Pau flour is a specialty flour used in making Chinese steamed buns. It gives the pau softer and fluffy texture.
-        For making pau, pau flour is commonly used in Malaysia whereas in Singapore is Hong Kong flour.
-        If you can’t find either one, you can substitute it with plain flour (all purpose flour).
-    </li>
-    <li>
-        Instead of adding wholemeal flour, you can use entirely pau flour, Hong Kong flour or plain flour.
-        Do take note that increasing the amount of wholemeal flour will make the texture of the pau harder.
-    </li>
-    <li id="note_3">
-        Try not to add extra flour when kneading the dough as it will make the texture of the pau harder.
-    </li>
-    <li>
-        I knead the dough by hands but you can do it with bread making machine or kitchen mixer (with a dough hook).
-    </li>
-    <li>
-        Try to complete step 6-8 as quick as you can so that all the paus are proofed equally.
-    </li>
-    <li>
-        If you use a stainless steel steaming rack, cover the lid with cloth to prevent water dripping onto the pau.
-    </li>
-    <li>
-        I bought my 12” bamboo steamer from a local shop selling kitchenware (Pembekal Peralatan Dapur Gas – Lee Poh Wah) at Jalan Kepong, Kuala Lumpur.
-    </li>
-    <li>
-        With this dough, you can wrap it with or without filling. You can wrap the pau with any filling of choice, be it sweet or savoury.
-        You can also make it into mantao.
-    </li>
-    <li>
-        For beginners, it is best to keep the ratio of dough to filling at 2:1 to ensure easy wrapping.
-    </li>
-{% endblock notes_content%}
+
+    {% set notes_content %}
+        <p>
+            These tips are written based on my research and personal experience in raising my son.
+            They work for my son. Please use them with your own discretion and do not expect miracle to happen overnight.
+            But, never give up so soon. It is important to be persistence and consistent with your approach.
+            As long as you are determined and keep trying, you will definitely see progress in your child’s eating habits.
+        </p>
+ 
+        <p>
+            <b>Note</b>: This post has been re-written for Singapore Motherhood and Parenting Forum.
+            Please refer to <a href="http://www.mummysg.com/forums/content/128-15-ways-deal-picky-eater.html">THIS LINK</a> for the featuring.
+        </p>
+    {% endset %}
+
+    {{ single("Notes", notes_content, show_title=False) }}
+
+{% endblock main %}

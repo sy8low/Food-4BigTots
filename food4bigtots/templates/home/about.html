@@ -13,28 +13,27 @@
 
     {% set story_content %}
         <p>
-            Lai Kuan started cooking for her son, Sze Yoong, when he was a weaning toddler.
-            While he was not a picky eater, he had his pet peeves: eggplant, zucchini, beetroot, cauliflower,
-            coconut, papaya, watermelon... She wanted to nourish him with all the nutrients he needed, without
-            relying on the usual tactics of blending vegetables into porridges and indulging him with french fries.
+            My mum (Lai Kuan) started cooking for me (Sze Yoong) when I was a weaning toddler.
+            While I was not a picky eater, I had my pet peeves: eggplant, zucchini, beetroot, cauliflower,
+            coconut, papaya, watermelon... She wanted to nourish me with all the nutrients I needed, without
+            relying on the usual tactics of blending vegetables into porridges and indulging me with french fries.
         </p>
         <p>
-            Inspired by Nicola Graimes’ “Children’s Healthy &amp; Fun Cookbook”, Lai Kuan crafted simple yet
-            delicious recipes that allowed their ingredients to shine through. Even though she started off with
-            zero cooking knowledge, she not only managed to convince her son to try them, but even to ask for more!
-            This motivated her to set up the original <a href="https://food-4tots.com/">Food-4Tots</a> in 2008 to
-            share her experience with other mums around the world. If she could do it, anyone can!
+            Inspired by Nicola Graimes’ “Children’s Healthy &amp; Fun Cookbook”, my mum crafted simple yet delicious
+            recipes that allowed their ingredients to shine through. Even though she started off with zero cooking
+            knowledge, she not only managed to convince me to try them, but even to ask for more! This motivated her
+            to set up the original <a href="https://food-4tots.com/">Food-4Tots</a> in 2008 to share her experience
+            with other mums around the world. If she could do it, anyone can!
         </p>
         <p>
-            16 years later, Sze Yoong is now a happy and healthy young man. After his A Levels, he decided to
-            venture into Computer Science and learn to cook all the delicious goodies that he grew up eating.
-            He challenged himself to redesign <a href="https://food-4tots.com/">Food-4Tots</a>, by refreshing its
-            layout and transforming the static WordPress website into a dynamic Flask web app. He hopes that the
-            new app, <a href="{{ url_for('home.home') }}">Food-4BigTots</a>, will continue
-            to bring back sweet memories from his childhood and help everyone make healthy food that also tastes
-            really good.
+            {{ after }} years later, I am now a happy and healthy young man. After my A Levels, I decided to venture
+            into Computer Science and learn to cook all the delicious goodies that I grew up eating.
+            I challenged myself to redesign <a href="https://food-4tots.com/">Food-4Tots</a>, by refreshing its layout
+            and transforming the static WordPress website into a dynamic Flask web app. I hope that the new app,
+            <a href="{{ url_for('home.home') }}">Food-4BigTots</a>, will continue to bring back sweet memories from my
+            childhood and help everyone make healthy food that also tastes really good.
         </p>
     {% endset %}
 
-    {{ double("Story", story_content, url_for('static', filename='media/profile/profile_2.jpg'), show_title=False) }}
+    {{ double("Story", story_content, url_for("static", filename= "profile_2" | media("profile", False)), show_title=False) }}
 {% endblock main %}

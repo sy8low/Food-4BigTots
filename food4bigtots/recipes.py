@@ -65,10 +65,15 @@ def category(cat: str) -> Response:
         The category directory.
     """
     
-    name_c = name_format(cat, True)
+    name_c = name_format(cat)
     recipes = query_db(
         Queries.RECIPES_IN_CATEGORY,
         (name_c,)
     )
     
-    return render_template(f"recipes/category.html", name=name_c, recipes=recipes)
+    full_name_c = query_db(
+        Queries.CATEGORY_NAME,
+        (name_c,), True
+    )["name"]
+    
+    return render_template(f"recipes/category.html", name=full_name_c, recipes=recipes)

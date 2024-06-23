@@ -1,21 +1,23 @@
 {% extends "recipes/recipe.html" %}
 
-{% from "macros.html" import ingredient, double, single, accordion_item %}
+{% from "macros.html" import ingredient, accordion_item %}
 
-{% set cover_img = None %}
+{% set cover_img = url_for("static", filename= "" | media( name | path_format )) %}
 
 {% set intro_content %}{% endset %}
 
-{% set intro_img = None %}
+{% set intro_img = url_for("static", filename= "" | media( name | path_format )) %}
 
-{% set yield = None %}
+{% set adapted = "" %}
+
+{% set yield = "" %}
 
 {% block ingredient_content %}{% endblock ingredient_content %}
 
-{% set ingredient_img = None %}
+{% set ingredient_img = url_for("static", filename= "" | media( name | path_format )) %}
 
 {% block steps_content %}{% endblock steps_content %}
 
-{% set steps_img = None %}
+{% set steps_img = url_for("static", filename= "" | media( name | path_format )) %}
 
 {% block notes_content %}{% endblock notes_content%}

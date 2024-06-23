@@ -13,6 +13,7 @@ Functions:
     handle_not_found    : Handle 404 HTTP exceptions and Jinja TemplateNotFound exceptions.
     path_format         : Convert the name of a recipe/category into the format used in its path.
     name_format         : Partially reverse path_format by converting the path back to the name of the recipe/category.
+    reshuffle           : Reshuffle the results yielded by a query.
     create_app          : Instantiate and configure an app.
 
 Adapted from:
@@ -24,22 +25,29 @@ from flask import Flask, render_template, Response
 from flask_session import Session  # type: ignore
 from jinja2.exceptions import TemplateNotFound
 from os import path, makedirs
+from random import sample
 from werkzeug.exceptions import HTTPException
 
 
-def media(filename: str, path_r: str="misc") -> str:
+def media(filename: str, path_r: str="misc", recipe=True) -> str:
     """Generate the path to a resource, relative to the static folder.
 
     Args:
         filename            : The name of the resource without the extension name (assumed to be .jpg).
         path_r (optional)   : The folder containing the resource (usually the recipe's name).
                               Defaults to "misc".
+        recipe (optional)   : Whether the resource is located under the "recipes" folder. Defaults to "True".
 
     Returns:
         The relative path to the resource to be used in a url_for function.
     """
-        
-    return "".join(["media/", path_r, "/", filename, ".jpg"])
+    
+    string = ["media/", path_r, "/", filename, ".jpg"]
+    
+    if recipe:
+        string.insert(1, "recipes/")
+    
+    return "".join(string)
     
     
 def handle_generic_http(error: HTTPException) -> Response:
@@ -99,6 +107,19 @@ def name_format(path: str, title: bool=False) -> str:
         return name
 
 
+def reshuffle(results: list) -> list:
+    """Reshuffle the results yielded by a query.
+
+    Args:
+        results: A list of sqlite3.Rows returned by the query_db function.
+
+    Returns:
+        list: The reshuffled list.
+    """
+    
+    return sample(results, k=len(results))
+
+
 def create_app(test_config: dict=None) -> Flask:
     """Instantiate and configure an app, and register database, blueprints, filters, and error handlers.
 
@@ -140,6 +161,7 @@ def create_app(test_config: dict=None) -> Flask:
     app.jinja_env.filters["media"] = media
     app.jinja_env.filters["path_format"] = path_format
     app.jinja_env.filters["name_format"] = name_format
+    app.jinja_env.filters["reshuffle"] = reshuffle
     
     app.register_error_handler(HTTPException, handle_generic_http)
     app.register_error_handler(404, handle_not_found)

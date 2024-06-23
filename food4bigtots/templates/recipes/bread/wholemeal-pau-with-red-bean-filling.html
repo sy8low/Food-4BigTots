@@ -1,6 +1,6 @@
 {% extends "recipes/recipe.html" %}
 
-{% from "macros.html" import ingredient, double, single, accordion_item %}
+{% from "macros.html" import ingredient, accordion_item %}
 
 {% set cover_img = url_for("static", filename= "pau_2" | media( name | path_format )) %}
 
@@ -31,7 +31,7 @@
         This pau recipe that I share with you is a basic pau recipe that you can make it with or without filling.
         The wholemeal flour that I added is just my personal choice to make the pau a bit healthier.
         The recipe still works if you use solely pau flour or plain flour.
-        For filling, I used my <a href="#">homemade red bean paste</a>.
+        For filling, I used my <a href="https://food-4tots.com/2015/09/10/how-to-make-red-bean-paste/">homemade red bean paste</a>.
         But, if you don’t want to do it from scratch, you can opt for ready-made red bean paste.
         If you do so, you may need a lesser amount than what I recommended in the recipe as the read-made paste is
         usually overly sweet. Besides that, you are also free to use any filling of your choice, be it sweet or savoury.
@@ -41,6 +41,8 @@
 {% endset %}
 
 {% set intro_img = url_for("static", filename= "pau_4" | media( name | path_format )) %}
+
+{% set adapted = "" %}
 
 {% set yield = "9 pau" %}
 
