@@ -54,7 +54,8 @@ a:hover, .nav-link:hover,
 }
 
 // Interactive underline.
-// Adapted from Jacob G's answer: https://stackoverflow.com/questions/30352431/css-transition-not-working-with-underline
+// Adapted from Jacob G's answer on StackOverflow:
+// https://stackoverflow.com/questions/30352431/css-transition-not-working-with-underline
 .interactive-under {
     display: inline-block;
 }
@@ -301,4 +302,19 @@ h2.spaced, h3 {
     text-align: center;
     align-items: start;
     height: 45vh;
+}
+
+// Copyleft
+// From Manuel M. Almeida on Medium:
+// https://medium.com/@mmeida/how-to-insert-the-copyleft-symbol-f093113cc2cf
+.copy-left {
+    display: inline-block;
+    text-align: right;
+    margin: 0px;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: “FlipH”;
 }
