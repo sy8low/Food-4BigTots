@@ -19,7 +19,9 @@
             relying on the usual tactics of blending vegetables into porridges and indulging me with french fries.
         </p>
         <p>
-            Inspired by Nicola Graimes’ “Children’s Healthy &amp; Fun Cookbook”, my mum crafted simple yet delicious
+            Inspired by Nicola Graimes’
+            <a href="https://www.dk.com/us/book/9781553633044-kids-fun-and-healthy-cookbook/">“Children’s Healthy &amp; Fun Cookbook”</a>,
+            my mum crafted simple yet delicious
             recipes that allowed their ingredients to shine through. Even though she started off with zero cooking
             knowledge, she not only managed to convince me to try them, but even to ask for more! This motivated her
             to set up the original <a href="https://food-4tots.com/">Food-4Tots</a> in 2008 to share her experience
@@ -27,7 +29,7 @@
         </p>
         <p>
             {{ after }} years later, I am now a happy and healthy young man. After my A Levels, I decided to venture
-            into Computer Science and learn to cook all the delicious goodies that I grew up eating.
+            into Computer Science and also learn to cook all the delicious goodies that I grew up eating.
             I challenged myself to redesign <a href="https://food-4tots.com/">Food-4Tots</a>, by refreshing its layout
             and transforming the static WordPress website into a dynamic Flask web app. I hope that the new app,
             <a href="{{ url_for('home.home') }}">Food-4BigTots</a>, will continue to bring back sweet memories from my
@@ -35,5 +37,5 @@
         </p>
     {% endset %}
 
-    {{ double("Story", story_content, url_for("static", filename= "profile_2" | media("profile", False)), show_title=False) }}
+    {{ double("Story", story_content, url_for("static", filename= "profile_2" | media("profile", False)), "Lai Kuan and Sze Yoong",False) }}
 {% endblock main %}

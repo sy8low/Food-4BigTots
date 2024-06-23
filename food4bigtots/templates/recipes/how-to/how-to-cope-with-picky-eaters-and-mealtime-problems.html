@@ -16,7 +16,7 @@
     {% set cover_img = url_for("static", filename= "picky_4" | media( name | path_format )) %}
 
     <div class="row justify-content-center mb-4">
-        <img class="col-10 col-lg-6" src="{{ cover_img }}" alt="">        
+        <img class="col-10 col-lg-6" src="{{ cover_img }}" alt="{{ name }}">        
     </div>
 
     {% set intro_content %}
@@ -107,7 +107,7 @@
 
     {% set do_not_img = url_for("static", filename= "picky_2" | media( name | path_format )) %}
 
-    {{ double("What are the common mistakes made by parents or caregivers?", do_not_content, do_not_img) }}
+    {{ double("What are the common mistakes made by parents or caregivers?", do_not_content, do_not_img, "A picky eater") }}
 
 
     {% set do_content %}
@@ -299,7 +299,7 @@
 
     {% set do_img = url_for("static", filename= "picky_3" | media( name | path_format )) %}
 
-    {{ double("What should parents or caregivers do to cope with picky eaters and mealtime problems?", do_content, do_img) }}
+    {{ double("What should parents or caregivers do to cope with picky eaters and mealtime problems?", do_content, do_img, "A happy and healthy eater") }}
 
 
     {% set notes_content %}

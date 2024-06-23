@@ -85,6 +85,8 @@
 
 {% set ingredient_img = url_for("static", filename= "pancake_8" | media( name | path_format )) %}
 
+{% set ingredient_alt = "Refillable ketchup plastic bottle" %}
+
 {% block steps_content %}
     {% set accordion_body_1 %}
         <ol>

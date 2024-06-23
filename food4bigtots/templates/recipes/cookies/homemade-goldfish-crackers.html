@@ -16,7 +16,7 @@
     {% set cover_img = url_for("static", filename= "crackers_3" | media( name | path_format )) %}
 
     <div class="row justify-content-center mb-4">
-        <img class="col-10 col-lg-6" src="{{ cover_img }}" alt="">        
+        <img class="col-10 col-lg-6" src="{{ cover_img }}" alt="{{ name }}">        
     </div>
 
     {% set intro_content %}
@@ -63,7 +63,7 @@
 
     {% set intro_img = url_for("static", filename= "crackers_5" | media( name | path_format )) %}
 
-    {{ double("Intro", intro_content, intro_img, show_title=False) }}
+    {{ double("Intro", intro_content, intro_img, name, show_title=False) }}
 
 
     <hgroup class="big">
@@ -84,7 +84,7 @@
 
     {% set cutter_material_img = url_for("static", filename= "crackers_4" | media( name | path_format )) %}
 
-    {{ double("Materials", cutter_material_content, cutter_material_img) }}
+    {{ double("Materials", cutter_material_content, cutter_material_img, "Samples of cookie cutters") }}
 
 
     {% set cutter_steps_content %}
@@ -123,7 +123,7 @@
 
     {% set cutter_steps_img = url_for("static", filename= "crackers_6" | media( name | path_format )) %}
 
-    {{ double("Steps", cutter_steps_content, cutter_steps_img) }}
+    {{ double("Steps", cutter_steps_content, cutter_steps_img, "Step-by-step visual guide on how to make the cookie cutters") }}
 
 
     {% set cutter_notes_content %}
@@ -166,7 +166,7 @@
 
     {% set ingredient_img = url_for("static", filename= "crackers_7" | media( name | path_format )) %}
 
-    {{ double("Ingredients", ingredient_content, ingredient_img) }}
+    {{ double("Ingredients", ingredient_content, ingredient_img), "Extra sharp cheddar cheese" }}
 
 
     {% set steps_content %}
@@ -228,7 +228,7 @@
 
     {% set steps_img = url_for("static", filename= "crackers_8" | media( name | path_format )) %}
 
-    {{ double("Steps", steps_content, steps_img) }}
+    {{ double("Steps", steps_content, steps_img, "Step-by-step visual guide on how to make the goldfish crackers") }}
 
 
     {% set notes_content %}

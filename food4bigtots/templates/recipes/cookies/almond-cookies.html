@@ -68,6 +68,8 @@
 
 {% set ingredient_img = url_for("static", filename= "almond_3" | media( name | path_format )) %}
 
+{% set ingredient_alt = {{ name }} %}
+
 {% block steps_content %}
     {% set accordion_body_1 %}
         <ol>

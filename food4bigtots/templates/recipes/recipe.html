@@ -15,10 +15,10 @@
 
 
     <div class="row justify-content-center mb-4">
-        <img class="col-10 col-lg-6" src="{{ cover_img }}" alt="">        
+        <img class="col-10 col-lg-6" src="{{ cover_img }}" alt="{{ cover_alt }}">        
     </div>
 
-    {{ double("Intro", intro_content, intro_img, show_title=False) }}
+    {{ double("Intro", intro_content, intro_img, intro_alt, False) }}
 
 
     <hgroup class="big">
@@ -38,7 +38,7 @@
         </ul>
     {% endset %}
 
-    {{ double("Ingredients", ingredient_content, ingredient_img) }}
+    {{ double("Ingredients", ingredient_content, ingredient_img, ingredient_alt) }}
 
 
     {% set steps_content %}
@@ -47,7 +47,7 @@
         </div>
     {% endset %}
 
-    {{ double("Steps", steps_content, steps_img) }}
+    {{ double("Steps", steps_content, steps_img, steps_alt) }}
 
 
     {% set notes_content %}
