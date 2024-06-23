@@ -1,0 +1,153 @@
+{% extends "recipes/recipe.html" %}
+
+{% from "macros.html" import ingredient, accordion_item %}
+
+{% set cover_img = url_for("static", filename= "cauliflower_2" | media( name | path_format )) %}
+
+{% set intro_content %}
+    <p>
+        In the past, my family and I didn’t quite like cauliflower. No matter how it was cooked, it’s always not as attractive or as
+        tasty as broccoli. But ever since we have tasted these cauliflower tots, cauliflower is no longer a boring vegetable to us.
+    </p>
+    <p>
+        These cauliflower tots are made basically by mixing cauliflower with cheese, coriander leaves, onion, bread crumbs,
+        egg white and some simple seasonings. The mixture is then shaped into small ovals and baked. The end result is
+        incredibly delicious and we just eat them plain without any dipping. We also can’t resist the temptation munching one
+        after another. It is simply the <b>best</b> cauliflower recipe we have ever tasted so far!
+    </p>
+    <p>
+        This awesome creation is originated from <a href="http://www.skinnytaste.com/2013/11/cauliflower-tots.html">Skinny Taste</a>.
+        When I first came across it, I was so inspired on how kid-friendly and healthy it is (baked not fried).
+        Other than that, it is also easy to make (if you read my pointers and notes carefully) and happens to be meatless too.
+        However, I have given the original recipe a tweak to incorporate my personal preference.
+    </p>
+    <p>
+        Making these cauliflower tots is no doubt easy but still tricky for certain steps. Before attempting this recipe, here are
+        some helpful pointers you must take note:
+    </p>
+    <ul>
+        <li>
+            Make sure that the cauliflower florets are steamed to the right texture – slightly cooked (still hard) and not mushy.
+        </li>
+        <li>
+            The cauliflower tots may easily stuck to the baking tray during baking. You can use either a non-stick baking tray
+            (as what Skinny Taste did) or a baking tray lined with good quality grease-proof parchment paper (lightly oiled).
+        </li>
+        <li>
+            You will find that the mixture is a bit wet. Thus, chill first then shape. After that, freeze again before baking. Do
+            not skip these two steps if you want perfect looking tots like mine.
+        </li>
+    </ul>
+    <p>
+        Last but not least, do also read all the tips in my recipe so that you will achieve the best results.
+    </p>
+    <p>
+        This is a perfect finger food for kids! Once they have a bite, they will definitely get addicted and ask for more. I bet they won’t realise that they are eating cauliflower.
+    </p>
+{% endset %}
+
+{% set intro_img = url_for("static", filename= "cauliflower_3" | media( name | path_format )) %}
+
+{% set adapted = "<a href='http://www.skinnytaste.com/2013/11/cauliflower-tots.html'>Skinny Taste</a>" %}
+
+{% set yield = "About 28 cauliflower tots" %}
+
+{% block ingredient_content %}
+    {{ ingredient("200 grams cauliflower", 1) }}
+    {{ ingredient("35 grams onion, chopped finely", 2) }}
+    {{ ingredient("6 grams fresh coriander/ cilantro (leaves only),chopped finely", 3) }}
+    {{ ingredient("33 grams cheddar cheese, grated", 4) }}
+    {{ ingredient("30 grams breadcrumbs <a href='#note_1'>(note 1)</a>", 5) }}
+    {{ ingredient("30-35 grams mayonnaise", 6) }}
+    {{ ingredient("½ – 1 egg white <a href='#note_2'>(note 2)</a>", 7) }}
+    {{ ingredient("2 teaspoons corn flour", 8) }}
+    {{ ingredient("⅓ teaspoon salt", 9) }}
+    {{ ingredient("¼ teaspoon black pepper", 10) }}
+{% endblock ingredient_content %}
+
+{% set ingredient_img = url_for("static", filename= "cauliflower_4" | media( name | path_format )) %}
+
+{% set ingredient_alt = "Hand holding a cauliflower tot dipped in tomato ketchup." %}
+
+{% block steps_content %}
+    {% set accordion_body_1 %}
+        <ol>
+            <li>
+                Prepare the cauliflower – wash and cut off the stems. Cut the cauliflower into small florets.
+                Steam a little for about 4-5 minutes <a href="#note_3">(note 3)</a> or until tender but not mushy.
+                Drain well and pat dry on paper towel. Using a knife, chop the cauliflower finely and set aside 200g.
+            </li>
+            <li>
+                In a mixing bowl, combine cauliflower, onion, coriander leaves, cheddar cheese and breadcrumbs.
+                Then, stir in mayonnaise, salt and pepper. Followed by egg white <a href="#note_2">(use accordingly and refer note 2)</a>
+                and lastly corn flour. With clean hand, mix up all the ingredients until well combined.
+                Give the mixture a taste test. Before adding extra salt and pepper, do take into account the saltiness of the cheese.
+            </li>
+            <li>
+                At this point, the mixture is a little soft to form small ovals but it is fine.
+            </li>
+            <li>
+                Cover the bowl with cling wrap and transfer it to the fridge to chill for an hour or until it firms up slightly.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Preparing the batter", accordion_body_1, 1, True) }}
+
+    {% set accordion_body_2 %}
+        <ol start="5">
+            <li>
+                After an hour, remove bowl from the fridge. Lightly oil both your palms. Scoop 1 tablespoon
+                mixture and form into small ovals. Place on a baking tray lined with aluminium foil. Freeze for 1-2 hours until solid
+                <a href="#note_4">(note 4)</a>
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Shaping the cauliflower tots", accordion_body_2, 2) }}
+
+    {% set accordion_body_3 %}
+        <ol start="6">
+            <li>
+                Preheat oven at 200°C for 15 minutes. Prepare a baking tray lined with non-stick parchment paper
+                <a href="#note_5">(note 5)</a>. Brush the paper with oil.
+            </li>
+            <li>
+                Five minutes before the preheating ends, remove the cauliflower tots from the freezer. Do not need to thaw.
+            </li>
+            <li>
+                Brush a little oil on the frozen tots and place on the baking tray.
+            </li>
+            <li>
+                Bake for 12 minutes, or until the cauliflower tots are firmed enough to flip over.
+            </li>
+            <li>
+                Gently flip the cauliflower tots over and bake for another 12 minutes or until golden. Turn the
+                baking tray halfway to ensure even colour.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Baking the cauliflower tots", accordion_body_3, 3) }}
+{% endblock steps_content %}
+
+{% set steps_img = url_for("static", filename= "cauliflower_7" | media( name | path_format )) %}
+
+{% block notes_content %}
+    <li id="note_1">
+        I use homemade wholemeal breadcrumbs. You can use any brand that you like.
+    </li>
+    <li id="note_2">
+        You don’t need to use all the egg white. I only used about <u>½ large egg white</u> for binding.
+    </li>
+    <li id="note_3">
+        The time required for steaming should only be served as a guide. If you steam without any
+        preheating, the time is about 10-12 minutes.
+    </li>
+    <li id="note_4">
+        These cauliflower can be frozen and cooked on a later date. Just pop the frozen tots into a zip
+        lock bag or any Cook them direct from freezer. No need to thaw.
+    </li>
+    <li id="note_5">
+        To avoid that the cauliflower from sticking on your baking tray, use good quality parchment paper
+        or greased proof paper. I used <a href="https://food-4tots.com/wp-content/uploads/2011/05/P4170720-copy.jpg">GLAD BAKE</a>
+        non stick baking and cooking paper.
+    </li>
+{% endblock notes_content%}

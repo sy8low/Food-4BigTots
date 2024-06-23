@@ -13,39 +13,35 @@
 
     {% set story_content %}
         <p>
-            I love eating Chinese steamed buns (pau) as much as I love making them.
-            Making pau is a lot easier and quicker than baking bread. I can even knead it by hand.
-            But, I must confess that mastering the skill is not easy.
-            After spending months in making pau, I still couldn’t get a batch of completely “wrinkle-free” pau,
-            no matter how much care and attention I put into kneading, proofing and steaming them.
-            In my case, “practice does not always make perfect”. I kept wondering whether I have overlooked something.
+            My mum (Lai Kuan) started cooking for me (Sze Yoong) when I was a weaning toddler.
+            While I was not a picky eater, I had my pet peeves: eggplant, zucchini, beetroot, cauliflower,
+            coconut, papaya, watermelon... She wanted to nourish me with all the nutrients I needed, without
+            relying on the usual tactics of blending vegetables into porridges and indulging me with french fries.
         </p>
         <p>
-            So, I read through some cookbooks and searched the internet, trying every possible way to find the cause.
-            Recently, I got the answer from one of my favourite cookbooks.
-            I’m thrilled that I finally nailed it and learned something new as well.
-            It was actually the uneven steam pressure in the steamer that caused the ugly surface of my pau.
-            I had used high heat to steam my pau and this led to a spike in the pressure inside the steamer that resulted in
-            the pau expanding too fast and over-extended. After the steaming was done, the drop in temperature inside the steamer
-            made the over-expanded pau failing to hold its shape and thus collapse. This scenario usually occurs when the home use
-            steaming apparatus is comparatively small and is unable to cope with the high heat coming from the gas stove.
-            To rectify this problem, I started off the steaming with cold water on medium heat and reduced it to medium low once
-            the water started boiling. Five minutes before ending the steaming process, I lifted the lid slightly creating a tiny gap
-            to release some of the steam pressure and to maintain an even pressure within the steamer. With all these adjustments,
-            my entire batch of pau turned out to have smooth surfaces!
+            Inspired by Nicola Graimes’
+            <a href="https://www.dk.com/us/book/9781553633044-kids-fun-and-healthy-cookbook/">“Children’s Healthy &amp; Fun Cookbook”</a>,
+            my mum crafted simple yet delicious
+            recipes that allowed their ingredients to shine through. Even though she started off with zero cooking
+            knowledge, she not only managed to convince me to try them, but even to ask for more! This motivated her
+            to set up the original <a href="https://food-4tots.com/">Food-4Tots</a> in 2008 to share her experience
+            with other mums around the world. If she could do it, anyone can!
         </p>
         <p>
-            This pau recipe that I share with you is a basic pau recipe that you can make it with or without filling.
-            The wholemeal flour that I added is just my personal choice to make the pau a bit healthier.
-            The recipe still works if you use solely pau flour or plain flour.
-            For filling, I used my <a href="paste.html" class="">homemade red bean paste</a>.
-            But, if you don’t want to do it from scratch, you can opt for ready-made red bean paste.
-            If you do so, you may need a lesser amount than what I recommended in the recipe as the read-made paste is
-            usually overly sweet. Besides that, you are also free to use any filling of your choice, be it sweet or savoury.
-            Alternatively, you can also add some dried fruits, seeds and nuts, and then shape it like mantao.
-            The choice is endless. Have fun!
+            {{ after }} years later, I am now a happy and healthy young man. After my A Levels, I decided to venture
+            into Computer Science and also learn to cook all the delicious goodies that I grew up eating.
+            I challenged myself to redesign <a href="https://food-4tots.com/">Food-4Tots</a>, by refreshing its layout
+            and transforming the static WordPress website into a dynamic Flask web app.
+            If you're interested to learn more about how I did it, do check out my
+            <a href="#">Youtube video</a> and
+            <a href="https://github.com/sy8low/Food-4BigTots">GitHub repository</a>.
+        </p>
+        <p>
+            I hope that the new app,
+            <a href="{{ url_for('home.home') }}">Food-4BigTots</a>, will continue to bring back sweet memories from my
+            childhood and help everyone make healthy food that also tastes really good.
         </p>
     {% endset %}
 
-    {{ double("Story", story_content, url_for('static', filename='media/profile/profile_2.jpg'), show_title=False) }}
+    {{ double("Story", story_content, url_for("static", filename= "profile_2" | media("profile", False)), "Lai Kuan and Sze Yoong",False) }}
 {% endblock main %}

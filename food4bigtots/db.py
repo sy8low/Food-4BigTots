@@ -29,18 +29,21 @@ class Queries:
         RECIPES_IN_CATEGORY : Retrieve the name, thumbnail, and category of recipes in a category.
         ALL_CATEGORIES      : Retrieve the name of every category.
         RECIPE_METADATA     : Retrieve the name, date of creation, and original URL for a recipe.
+        CATEGORY_NAME       : Retrieve the properly capitalised name of a category.
     """
     
     ALL_RECIPES = ("SELECT r.name AS name_r, r.thumbnail AS thumbnail_r, c.name AS name_c "
                    "FROM recipes AS r JOIN mapping AS m ON r.id = m.recipe_id "
                    "JOIN categories AS c ON m.category_id = c.id")
     
-    RECIPES_IN_CATEGORY = " ".join((ALL_RECIPES, "WHERE c.name = ?"))
+    RECIPES_IN_CATEGORY = " ".join((ALL_RECIPES, "WHERE LOWER(c.name) = ?"))
     
     ALL_CATEGORIES = "SELECT name FROM categories"
     
     RECIPE_METADATA = ("SELECT name, date(date) AS ISO_date, original "
                        "FROM recipes WHERE LOWER(name) = ?")
+    
+    CATEGORY_NAME = "SELECT name FROM categories WHERE LOWER(name) = ? LIMIT 1"
     
 
 def get_db() -> sqlite3.Connection:

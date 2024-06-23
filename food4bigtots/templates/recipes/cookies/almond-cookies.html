@@ -1,0 +1,155 @@
+{% extends "recipes/recipe.html" %}
+
+{% from "macros.html" import ingredient, accordion_item %}
+
+{% set cover_img = url_for("static", filename= "almond_2" | media( name | path_format )) %}
+
+{% set intro_content %}
+    <p>
+        Almond cookies are one of the popular <abbr title="Chinese New Year">CNY</abbr> (Chinese New Year) cookies. They also happen to be my family’s favourite.
+    </p>
+    <p>
+        These almond cookies are healthier and lighter than the usual butter and sugar loaded cookies.
+        They are butter-free, shortening-free, milk-free and egg-free (if you skip the egg wash).
+        Not only healthy, they are absolutely delicious, crumbly, nutty and less sweet.
+    </p>
+    <p>
+        I can’t believe that they are so incredibly easy to make, a lot easier than making
+        <a href="https://food-4tots.com/2012/01/17/peanut-cookies/">peanut cookies</a>.
+        All the ingredients are common items that can be easily purchased from any local baking supply stores.
+        You don’t need any complicated kitchen appliance, not even an electric mixer.
+        To make them, you basically mix the ingredients together with a hand whisk and use your hand to form
+        a dough. Once the dough is ready, the fun begins. You can use a cookie cutter to cut out the shape.
+        Feel free to use any design you like. No cookie cutter? Don’t worry. You can shape them into small
+        balls. The egg wash and garnishing are optional. You can skip them if you wish. If you find that it
+        is too tedious to top the cookies with almond nibs but also like to have some crunchy bits, you can
+        add them into the dough. Almond nibs can be substituted with almond flakes to give you a different
+        feel of crunchiness. If you do so, remember to toast the almond nibs or flakes first to bring out the
+        nutty flavour.
+    </p>
+    <p>
+        There are so many creative ways to make these almond cookies with the same recipe.
+        However, I will definitely go for the most humble and idiot proof version (without
+        egg wash and garnishing) as I still haven’t started my <abbr title="Chinese New Year">CNY</abbr> baking yet. Haha! How about you?
+    </p>
+    <p>
+        <abbr title="Chinese New Year">CNY</abbr> is just a week away. I would like to wish all, young and old, a new year of new hope, good health and good fortune.
+    </p>
+    <p>
+        [<b>Note</b>: These almond cookies may not be suitable for young toddlers (below 3 years old)
+        and kids who have nut-allergy. If this is the first time you introduce almonds to your child,
+        please consult your pediatrician for further advice.]
+    </p>
+{% endset %}
+
+{% set intro_img = url_for("static", filename= "almond_3" | media( name | path_format )) %}
+
+{% set adapted = "" %}
+
+{% set yield = "56 round cookies (3cm diameter)" %}
+
+{% block ingredient_content %}
+    <h4 id="group_a">Group A</h4>
+    {{ ingredient("140g plain flour", x) }}
+    {{ ingredient("130g almond flour <a href='#note_1'>(note 1)</a>", x) }}
+    {{ ingredient("30g corn flour", x) }}
+    {{ ingredient("½ teaspoon baking powder", x) }}
+    {{ ingredient("½ teaspoon baking soda", x) }}
+    {{ ingredient("¼ heaped teaspoon salt", x) }}
+    {{ ingredient("60g icing sugar", x) }}
+
+    <h4 class="mt-3">Group B</h4>
+    {{ ingredient("100-120g corn oil or any vegetable oil<br>(depending on the texture of the dough)", x) }}
+    
+    <h4 class="mt-3">Group C</h4>
+    {{ ingredient("Egg wash (optional):<br>1 egg yolk diluted with 1-2 teaspoon milk or water", x) }}
+    {{ ingredient("Garnishing (optional):<br>Handful of almond nibs or almond flakes (raw)", x) }}
+{% endblock ingredient_content %}
+
+{% set ingredient_img = url_for("static", filename= "almond_3" | media( name | path_format )) %}
+
+{% set ingredient_alt = name %}
+
+{% block steps_content %}
+    {% set accordion_body_1 %}
+        <ol>
+            <li>
+                Preheat oven at 150°C. Line baking trays with parchment papers.
+            </li>
+            <li>
+                Sieve plain flour, corn flour, baking powder, baking soda and icing sugar.
+            </li>
+            <li>
+                Mix all the ingredients in <a href="#group_a">Group A</a> with a hand whisk until well combined.
+            </li>
+            <li>
+                Add corn oil little by little. Use hand to combine the mixture until it forms a dough.
+                To test it, take a small portion of the dough and roll into a ball between your palms.
+                If it doesn’t fall apart, then the dough is ready. If not, add a bit more oil, combine and test again.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Preparing the mixture", accordion_body_1, 1, True) }}
+
+    {% set accordion_body_2 %}
+        <ol start="5">
+            <li>
+                Work with a small portion at a time. Roll a small piece of dough out into 1cm thickness <a href="#note_2">(note 2)</a>.
+                Use a round cookie cutter to cut out the shape <a href="#note_3">(note 3)</a> and transfer it to a lined baking tray.
+                Repeat the same until all the dough is used up.
+            </li>
+            <li>
+                Brush a layer of egg wash on the cookies. Garnish the top with some almond nibs or almond flakes <a href="#note_3">(note 3)</a>.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Shaping the cookies", accordion_body_2, 2) }}
+
+    {% set accordion_body_3 %}
+        <ol start="7">
+            <li>
+                Bake at 150°C for 15 minutes or until the cookies are golden brown. After the baking time, leave
+                the cookies inside with the oven door shut. Let the residue heat in the oven cook the cookies for
+                a further 5 minutes <a href="#note_4">(note 4)</a>.
+            </li>
+            <li>
+                Remove the baking tray from the oven. Transfer the cookies to a cooling rack to cool completely.
+                Then store them in an airtight container.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Baking the cookies", accordion_body_3, 3) }}
+{% endblock steps_content %}
+
+{% set steps_img = url_for("static", filename= "almond_4" | media( name | path_format )) %}
+
+{% block notes_content %}
+    <li id="note_1">
+        Almond flour is simply raw blanched whole almonds (without skins) that have been ground into
+        powder whereas almond meal can be made both with whole or blanched almonds.
+    </li>
+    <li id="note_2">
+        How to get an even 1cm thickness sheet: Place a piece a parchment paper on the working
+        surface. Tap the four corners with cellophane tape. Put a piece of dough on top and cover it with
+        a plastic paper or cling wrap. Put 2 wooden spatulas on both sides. Roll out the dough (refer photo below).
+    </li>
+    <li id="note_3">
+        You can use any type of cookie cutter you like. If you don’t have cookie cutter, you can shape them into balls.
+        The weight is around 10g.
+    </li>
+    <li id="note_4">
+        The garnishing is optional. For a variation, you can incorporate toasted almond nibs or almond flakes into the
+        dough during step 3. The amount is about 60g.
+    </li>
+    <li>
+        Rotate the baking tray 180 degree half way during baking for even colour.
+    </li>
+    <li>
+        If the cookies turn brown too fast, place another baking tray on top (refer to <a href="https://food-4tots.com/2014/04/16/tamago-boro-egg-biscuits/2/">this link</a>)
+        or an aluminum foil to cut down the heat.
+    </li>
+    <li>
+        The stated baking time and oven temperatures should only be used as a reference. They vary depending on the size of the cookies, types and models of your oven.
+        So, please use your own judgement.
+    </li>
+{% endblock notes_content%}

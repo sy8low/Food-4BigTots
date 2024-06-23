@@ -1,0 +1,321 @@
+{% extends "base.html" %}
+
+{% from "macros.html" import double, single, accordion_item %}
+
+{% block title %}{{ super() }} | {{ name }}{% endblock title %}
+
+{% block main %}
+    <hgroup class="big">
+        <h1>{{ name }}</h1>
+        <p><time class="h5" datetime="{{ ISO_date }}">{{ date }}</time></p>
+        {% if original %}
+            <p class="h5">Find the original Food-4Tots page <a href="{{ original }}">here</a>.</p>
+        {% endif %}
+    </hgroup>
+
+    {% set cover_img = url_for("static", filename= "picky_4" | media( name | path_format )) %}
+
+    <div class="row justify-content-center mb-4">
+        <img class="col-10 col-lg-6" src="{{ cover_img }}" alt="{{ name }}">        
+    </div>
+
+    {% set intro_content %}
+        <p>
+            What should I do if my child:
+        </p>
+        <ul>
+            <li>refuses to eat vegetables?</li>
+            <li>refuses to try new food?</li>
+            <li>refuses to eat on his own?</li>
+            <li>is not interested in food?</li>
+            <li>never sit still during mealtime?</li>
+            <li>love to watch TV during mealtime?</li>
+        </ul>
+        <p>
+            Do any of these sound familiar to you?
+            These are the questions frequently asked by my readers since I started blogging.
+            When parents or caregivers encounter such problems, it is likely that the child
+            will get the blame. But, if we analyze their situation carefully, we may be alarmed
+            that root of these problems may lie more on the parents or caregivers than the child himself.
+        </p>
+    {% endset %}
+
+    {{ single("Intro", intro_content, show_title=False) }}
+
+
+    {% set do_not_content %}
+        <div class="accordion ms-n1" id="steps">
+            {% set accordion_body_1 %}
+                <p>
+                    If mealtime rules are not set, parents or caregivers will find it challenging to
+                    control or discipline their child during mealtime. Even though some have put efforts
+                    to do so, most of the time they give in easily.
+                </p>
+            {% endset %}
+            {{ accordion_item("No mealtime rules", accordion_body_1, 1, open=True) }}
+
+            {% set accordion_body_2 %}
+                <p>
+                    Without having a proper routine for breakfast, lunch and dinner, a child will have a
+                    tendency of over or under-eating. He might stuff his/her stomach with more junks than
+                    healthy foods. This may cause him to lose his appetite when it comes to the actual mealtime.
+                </p>
+            {% endset %}
+            {{ accordion_item("No mealtime routine", accordion_body_2, 2) }}
+            
+            {% set accordion_body_3 %}
+                <p>
+                    Generally, most parents or caregivers are reluctant to introduce new food as they
+                    are afraid that the child may reject the food and go hungry as a result. This will
+                    eventually limit his choice of food and also lead to lack of essential nutrition for growth.
+                    He will also get bored eating the same food over a long period of time.
+                </p>
+            {% endset %}
+            {{ accordion_item("Limited choice of food", accordion_body_3, 3) }}
+
+            {% set accordion_body_4 %}
+                <p>
+                    Some parents or caregivers can get anxious easily when the child dislikes the taste
+                    of certain healthy foods.  They will tend to either force him to eat or make him eat
+                    a larger portion. This method may cause the child to react negatively towards the food.
+                </p>
+            {% endset %}
+            {{ accordion_item("Wrong approach to encourage eating", accordion_body_4, 4) }}
+
+            {% set accordion_body_5 %}
+                <p>
+                    When a child is slow in eating, the parents or caregivers will become impatient and
+                    quickly start feeding the child. This may delay the child from picking up the
+                    self-feeding skill. To avoid choking, Asian parents or caregivers tend to blend the
+                    food for their child even when they are over a year old. As the blended food doesn’t
+                    look and taste appealing, the child will eventually lost his interest during mealtime.
+                </p>
+            {% endset %}
+            {{ accordion_item("Speed up the eating process", accordion_body_5, 5) }}
+
+            {% set accordion_body_6 %}
+                <p>
+                    Bribe the child with sweet treat or distract him with toys, mobile app or television may
+                    seem an easy way out to deal with the mealtime battle in the short run. As a result,
+                    the child will not be able to learn the correct mealtime manners as well as chew his food
+                    properly due to these distractions.
+                </p>
+            {% endset %}
+            {{ accordion_item("Bribery", accordion_body_6, 6) }}                
+        </div>
+    {% endset %}
+
+    {% set do_not_img = url_for("static", filename= "picky_2" | media( name | path_format )) %}
+
+    {{ double("What are the common mistakes made by parents or caregivers?", do_not_content, do_not_img, "A picky eater") }}
+
+
+    {% set do_content %}
+        <div class="accordion ms-n1" id="steps">
+            {% set accordion_body_7 %}
+                <p>
+                    Teach your child the right eating manners from young. Start by letting him join the family
+                    at the dining table so he can pick up the right mealtime manners. Avoid distraction like toys,
+                    mobile app and television during mealtime.
+                </p>
+            {% endset %}
+            {{ accordion_item("Teach the right eating manners", accordion_body_7, 7, open=True) }}
+
+            {% set accordion_body_8 %}
+                <p>
+                    Offer your child more fresh fruits and vegetables. (Refer to
+                    <a href="https://food-4tots.com/2011/05/05/long-bean-omelette/">this post</a> 
+                    for more tips on how to encourage your child to love green).
+                    Cut down on fats, oils and sweets. Avoid food with colouring and preservatives.
+                    Snacks that are offered in between meals should be healthy and nutritious (eg,
+                    <a href="https://food-4tots.com/2012/02/13/sweet-potato-crisps/">sweet potato crisps</a>,
+                    <a href="https://food-4tots.com/2009/08/30/power-packed-oat-bars/">power-packed oat bars</a>
+                    and <a href="https://food-4tots.com/2009/09/09/oatmeal-banana-raisin-muffins/">oatmeal raisin banana muffins</a>).
+                    Soft drinks, sweets and packaged food (such as potato chips) should not be allowed.
+                </p>
+            {% endset %}
+            {{ accordion_item("Cultivate healthy eating habit", accordion_body_8, 8) }}
+            
+            {% set accordion_body_9 %}
+                <p>
+                    If you don’t want your child to become a picky eater, start to exhibit a good example by following a
+                    healthy diet. Do not show your feeling on the food you dislike as it will influence your child to dislike it.
+                </p>
+            {% endset %}
+            {{ accordion_item("Set a good example", accordion_body_9, 9) }}
+
+            {% set accordion_body_10 %}
+                <p>
+                    Set reasonable rules and routine for mealtime, and stand firm on it. Eg, no playing, having meal at the
+                    dining table only, must not leave the table until the meal is finished etc.
+                </p>
+            {% endset %}
+            {{ accordion_item("Set mealtime rules and routine", accordion_body_10, 10) }}
+
+            {% set accordion_body_11 %}
+                <p>
+                    Small kids response positively to praises. Praise your child whenever he demonstrates good mealtime
+                    manner or is willing to try new food. But, avoid over-praising.
+                </p>
+            {% endset %}
+            {{ accordion_item("Praise wisely", accordion_body_11, 11) }}
+
+            {% set accordion_body_12 %}
+                <p>
+                    Try to relax when feeding or having meals with your child as he can easily sense your anxiety. Don’t put
+                    too much pressure on yourself as it will make matter worst.
+                </p>
+            {% endset %}
+            {{ accordion_item("Relax yourself", accordion_body_12, 12) }}
+
+            {% set accordion_body_13 %}
+                <p>
+                    Do not make your child eat just to please you. Starting teaching your child from young the benefits of
+                    having healthy eating habits by saying “milk makes your bones strong”, “salmon makes you smarter”,
+                    “sweets will cause tooth decay”. Reinforce these messages to him from time to time.
+                </p>
+            {% endset %}
+            {{ accordion_item("Emphasize the importance of healthy eating", accordion_body_13, 13) }}
+
+            {% set accordion_body_14 %}
+                <p>
+                    Reading books and singing songs relating to healthy eating habit can arouse a child’s interest in healthy
+                    food. My son loves apple after he learns the song “an apple a day keeps the doctor away.” (Eg,
+                    <a href="https://food-4tots.com/2009/07/25/apple-soup/">apple soup</a> and
+                    <a href="https://food-4tots.com/2010/10/06/apple-flapjacks/">apple flapjacks</a>)
+                </p>
+            {% endset %}
+            {{ accordion_item("Use books and songs", accordion_body_14, 14) }}
+
+            {% set accordion_body_15 %}
+                <p>
+                    Healthy food may not taste blanch or look bored. Be creative and make the food looks interesting by
+                    playing around with shape, colour, taste and texture. Here are some suggestions:
+                </p>
+
+                <ul>
+                    <b>Shape</b>: Ingredients can be minced, diced, sliced or julienned. Cookies cutter and rice mould are my
+                    favourite tools for making different type of shapes. (eg,
+                    <a href="https://food-4tots.com/2008/09/25/fancy-sandwiches-with-sardine-fillings/">fancy sandwiches with sardine filling</a>,
+                    <a href="https://food-4tots.com/2010/03/22/onigiri-rice-ball-with-salmon-and-cucumber/">onigiri with salmon and cucumber</a>,
+                    <a href="https://food-4tots.com/2011/08/10/oven-baked-fish-fingers/">oven baked fish fingers</a>)
+                </ul>
+                <ul>
+                    <b>Colour</b>: Use different combination of colour to not only brighten up your dish but also provide more nutrients to your
+                    child’s diet. (eg, <a href="https://food-4tots.com/2009/01/11/rainbow-seafood-pasta-salad/">rainbow seafood pasta salad</a>
+                    and <a href="https://food-4tots.com/2009/10/21/stir-fry-udon-with-prawns/">stir-fry udon with prawns</a>)
+                </ul>
+                <ul>
+                    <b>Taste</b>: Enhance the flavour of the food with condiments, spices and herbs. (eg,
+                    <a href="https://food-4tots.com/2010/06/29/orange-pilaf/">orange pilaf</a>
+                    and <a href="https://food-4tots.com/2010/07/26/oven-baked-fries/">oven baked fries</a>)
+                </ul>
+                <ul>
+                    <b>Texture</b>: Vary your cooking methods. For example, fish can be steamed, pan-fried or baked.
+                    It can also be made into patties or added into soup. If your child doesn’t like cooked vegetables,
+                    try offering him raw vegetables instead such as cucumber and carrots sticks with a tasty dip. (eg,
+                    <a href="https://food-4tots.com/2010/02/08/teriyaki-salmon-in-a-parcel/">salmon in a parcel</a>,
+                    <a href="https://food-4tots.com/2008/11/23/teriyaki-chicken-skew-yakitori/">teriyaki chicken skew</a>
+                    and <a href="https://food-4tots.com/2010/11/15/japanese-egg-salad-sandwiches/">Japanese egg salad sandwiches</a>)
+                </ul>
+            {% endset %}
+            {{ accordion_item("Make food look interesting", accordion_body_15, 15) }}
+
+            {% set accordion_body_16 %}
+                <p>
+                    For babies, you can create imaginative stories with food. Eg,”The helicopter (aka spoon) is going to
+                    crash! Hurry, open your mouth to rescue it.”
+                </p>
+                <p>
+                    For toddlers, let them have some “pretentious games” with their food such as using broccoli to make
+                    “hair” of a face, “mini tree” or “little flower” or just about anything based on your creative imagination (eg,
+                    <a href="https://food-4tots.com/2011/04/19/broccoli-and-bow-tie-pasta/">broccoli and bow-tie</a>). This will definitely make them look forward to their next mealtime.
+                </p>
+                <p>
+                    Use colourful and cute cutlery and plate to serve the food.
+                </p>
+            {% endset %}
+            {{ accordion_item("Make mealtime fun and enjoyable", accordion_body_16, 16) }}
+
+            {% set accordion_body_17 %}
+                <p>
+                    Be more adventurous with new food but limit to one new food at a time. Pair the new food with his
+                    favourite and familiar food such as cheese and eggs or homemade sauce. Eg, my son dislikes eggplant
+                    but loves cheese and tomato sauce. So when I baked
+                    <a href="https://food-4tots.com/2010/06/06/baked-eggplants-with-bolognese-sauce/">eggplants with bolognese sauce</a>,
+                    it became a big hit. (Another example is <a href="https://food-4tots.com/2010/08/24/cauliflower-cheese/">cauliflower cheese</a>
+                    and <a href="https://food-4tots.com/2011/09/18/burdock-root-soup/">burdock root soup</a>)
+                </p>
+                <p>
+                    Offer new food in small portion but do not force him to eat. Take no offense if he refuses it or couldn’t
+                    finish it. Give praise even if he just takes one bite. If he still rejects, stop for a while and reintroduce a few
+                    weeks later. Sometimes, it may take 10 attempts or more for him to accept the new food. (Eg, I managed
+                    to convince my son to eat coconut with this <a href="https://food-4tots.com/2011/10/02/coconut-banana-muffins/">coconut banana muffins</a>)
+                </p>
+            {% endset %}
+            {{ accordion_item("Introduce new food as frequent as possible", accordion_body_17, 17) }}
+
+            {% set accordion_body_18 %}
+                <p>
+                    Kids have smaller appetite than adults. So, do not pressure your child to eat as much as an adult.
+                    Start with a small serving. If he can finish and request for more, then offer a second helping.
+                    Also, do not rush your child to finish his meal. Allow him time to consume his food. His stomach
+                    will be able to signal if he is full. This helps to avoid over-eating.
+                </p>
+            {% endset %}
+            {{ accordion_item("Keep portion small", accordion_body_18, 18) }}
+
+            {% set accordion_body_19 %}
+                <p>
+                    Get your child involved in shopping, preparing and cooking his food. It will excite him and chances
+                    are he will be more willing to try out the food. You can try simple baking recipes with your child
+                    such as <a href="https://food-4tots.com/2011/05/18/almond-crisps/">almond crisps</a>,
+                    <a href="https://food-4tots.com/2011/09/03/mini-fluffy-pancakes/">mini fluffy pancakes</a>,
+                    <a href="https://food-4tots.com/2010/02/26/banana-muffins/">banana muffins</a>,
+                    <a href="https://food-4tots.com/2012/01/11/simple-breadsticks/">simple breadsticks</a>,
+                    <a href="https://food-4tots.com/2011/06/28/wholemeal-cookies/">wholemeal cookies</a>,
+                    <a href="https://food-4tots.com/2010/01/07/cheesy-cookies/">cheesy cookies</a> and
+                    <a href="https://food-4tots.com/2010/12/15/gingerbread-man-cookies/">gingerbread man cookies</a>.
+                </p>
+            {% endset %}
+            {{ accordion_item("Involved your kid in food preparation and simple cooking process", accordion_body_19, 19) }}
+
+            {% set accordion_body_20 %}
+                <p>
+                    Rather than letting your child decide freely on what he wants to eat, give him scope to assert his
+                    independence. Eg, let him choose two out of three vegetables offered to him.
+                </p>
+            {% endset %}
+            {{ accordion_item("Offer smart choices", accordion_body_20, 20) }}
+
+            {% set accordion_body_21 %}
+            <p>
+                When a child reaches one year, encourage him to self-feed and master mealtime skills. Though it can be
+                messy and the child may take a longer time to eat, it’s worth the effort to train him to be more independent.            </p>
+        {% endset %}
+        {{ accordion_item("Relax yourself", accordion_body_21, 21) }}
+        </div>
+    {% endset %}
+
+    {% set do_img = url_for("static", filename= "picky_3" | media( name | path_format )) %}
+
+    {{ double("What should parents or caregivers do to cope with picky eaters and mealtime problems?", do_content, do_img, "A happy and healthy eater") }}
+
+
+    {% set notes_content %}
+        <p>
+            These tips are written based on my research and personal experience in raising my son.
+            They work for my son. Please use them with your own discretion and do not expect miracle to happen overnight.
+            But, never give up so soon. It is important to be persistence and consistent with your approach.
+            As long as you are determined and keep trying, you will definitely see progress in your child’s eating habits.
+        </p>
+ 
+        <p>
+            <b>Note</b>: This post has been re-written for Singapore Motherhood and Parenting Forum.
+            Please refer to <a href="http://www.mummysg.com/forums/content/128-15-ways-deal-picky-eater.html">THIS LINK</a> for the featuring.
+        </p>
+    {% endset %}
+
+    {{ single("Notes", notes_content, show_title=False) }}
+
+{% endblock main %}
