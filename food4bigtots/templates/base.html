@@ -8,8 +8,16 @@
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="desciption" content="The much-awaited sequel to Food-4Tots.com.">
+        <meta name="desciption" content="{{ description }}">
         <meta name="author" content="Low Sze Yoong, Low Lai Kuan">
+
+        <meta property="og:title" content="{{ self.title() }}">
+        <meta property="og:description" content="{{ description }}">
+        <meta property="og:image" content="{% block og_img %}{{ url_for('static', filename='FFT_montage' | media('theme', False) ) }}{% endblock og_img %}">
+        <meta property="og:type" content="">
+        <meta property="og:url" content="">
+        <meta property="og:site_name" content="Food-4BigTots">
+        <meta property="og:locale" content="en_UK">
         
         <link rel="icon" href="{{ url_for('static', filename='media/theme/FFT_icon.jpeg') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">

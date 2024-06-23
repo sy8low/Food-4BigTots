@@ -4,6 +4,8 @@
 
 {% block title %}{{ super() }} | {{ name }}{% endblock title %}
 
+{% set description = {{ name }} %}
+
 {% block main %}
     <hgroup class="big">
         <h1>{{ name }}</h1>
