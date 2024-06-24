@@ -11845,6 +11845,8 @@ a, .nav-link,
   font-weight: bold;
 }
 
+.nav-item > .nav-link.active,
+.nav-item.dropdown > .nav-link.dropdown-toggle:focus,
 a:hover, .nav-link:hover,
 .dropdown-item:hover {
   color: #9B7854;
@@ -11878,7 +11880,8 @@ a:hover, .nav-link:hover,
   text-align: center;
 }
 
-.dropdown-item:active, .dropdown-item:hover {
+.dropdown-item:active,
+.dropdown-item:hover {
   background-color: transparent;
 }
 
@@ -12075,6 +12078,14 @@ h2.spaced, .spaced.h2, h3, .h3 {
   min-height: 60vh;
 }
 
+@media (min-height: 875px) and (min-width: 768px) {
+  .empty-page {
+    height: 80vh;
+  }
+  .sparse-pane {
+    min-height: 80vh;
+  }
+}
 .copy-left {
   display: inline-block;
   text-align: right;
