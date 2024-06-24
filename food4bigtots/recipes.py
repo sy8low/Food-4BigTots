@@ -37,13 +37,13 @@ def recipe(cat: str, path: str) -> Response:
     """
     
     name_r = name_format(path)
-    
     info = query_db(
         Queries.RECIPE_METADATA,
         (name_r,), True
     )
     
-    name, ISO_date, original, thumbnail = info["name"], info["ISO_date"], info["original"], info["thumbnail"]
+    (name, ISO_date, original, thumbnail) = (info["name"], info["ISO_date"],
+                                             info["original"], info["thumbnail"])
 
     date = datetime.strptime(ISO_date, "%Y-%m-%d")
     # Remove leading zeroes.
@@ -82,4 +82,5 @@ def category(cat: str) -> Response:
     else:
         full_name_c = name_c.title()
     
-    return render_template(f"recipes/category.html", name=full_name_c, recipes=recipes)
+    return render_template(f"recipes/category.html",
+                           name=full_name_c, recipes=recipes)

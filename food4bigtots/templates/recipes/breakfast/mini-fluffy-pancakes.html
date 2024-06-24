@@ -75,12 +75,19 @@
 
 {% block ingredient_content %}
     {{ ingredient("1¼ cup plain flour (135g)", 1) }}
+
     {{ ingredient("1½ tsp double acting baking powder", 2) }}
+
     {{ ingredient("1 cup milk (at room temperature)", 3) }}
+
     {{ ingredient("2 tbsp castor sugar", 4) }}
+
     {{ ingredient("1 tbsp oil", 5) }}
+
     {{ ingredient("2 large eggs, separated (at room temperature) <a href='#note_1'>(note 1)</a>", 6) }}
+    
     {{ ingredient("Pinch of salt", 7) }}
+
 {% endblock ingredient_content %}
 
 {% set ingredient_img = url_for("static", filename= "pancake_8" | media( name | path_format )) %}

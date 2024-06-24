@@ -297,11 +297,15 @@ h2.spaced, h3 {
     }
 }
 
-// Empty page
+// Empty page/sparse pane
 .empty-page {
     text-align: center;
     align-items: start;
     height: 60vh;
+}
+
+.sparse-pane {
+    min-height: 60vh;
 }
 
 // Copyleft

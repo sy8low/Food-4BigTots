@@ -12071,6 +12071,10 @@ h2.spaced, .spaced.h2, h3, .h3 {
   height: 60vh;
 }
 
+.sparse-pane {
+  min-height: 60vh;
+}
+
 .copy-left {
   display: inline-block;
   text-align: right;

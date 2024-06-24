@@ -59,6 +59,7 @@ def handle_generic_http(error: HTTPException) -> Response:
     Returns:
         The error page.
     """
+    
     return render_template("errors/error.html", error=error), error.code
     
     

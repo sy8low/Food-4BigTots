@@ -26,10 +26,15 @@ class Queries:
     
     Constants:
         ALL_RECIPES         : Retrieve the name, thumbnail, and category of every recipe.
+                              (Ordered by id/time of insertion)
         RECIPES_IN_CATEGORY : Retrieve the name, thumbnail, and category of recipes in a category.
+                              (Ordered by id/time of insertion)
         ALL_CATEGORIES      : Retrieve the name of every category.
+                              (Ordered alphabetically)
         RECIPE_METADATA     : Retrieve the name, date of creation, and original URL for a recipe.
+                              (Only 1 result)
         CATEGORY_NAME       : Retrieve the properly capitalised name of a category.
+                              (Only 1 result)
     """
     
     ALL_RECIPES = ("SELECT r.name AS name_r, r.thumbnail AS thumbnail_r, c.name AS name_c "
@@ -38,10 +43,10 @@ class Queries:
     
     RECIPES_IN_CATEGORY = " ".join((ALL_RECIPES, "WHERE LOWER(c.name) = ?"))
     
-    ALL_CATEGORIES = "SELECT name FROM categories"
+    ALL_CATEGORIES = "SELECT name FROM categories ORDER BY name"
     
     RECIPE_METADATA = ("SELECT name, date(date) AS ISO_date, original, thumbnail "
-                       "FROM recipes WHERE LOWER(name) = ?")
+                       "FROM recipes WHERE LOWER(name) = ? LIMIT 1")
     
     CATEGORY_NAME = "SELECT name FROM categories WHERE LOWER(name) = ? LIMIT 1"
     
