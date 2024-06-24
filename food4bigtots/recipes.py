@@ -72,9 +72,14 @@ def category(cat: str) -> Response:
         (name_c,)
     )
     
-    full_name_c = query_db(
+    category = query_db(
         Queries.CATEGORY_NAME,
         (name_c,), True
-    )["name"]
+    )
+    
+    if category:
+        full_name_c = category["name"]
+    else:
+        full_name_c = name_c.title()
     
     return render_template(f"recipes/category.html", name=full_name_c, recipes=recipes)
