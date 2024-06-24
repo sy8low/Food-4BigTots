@@ -43,7 +43,7 @@ def recipe(cat: str, path: str) -> Response:
         (name_r,), True
     )
     
-    name, ISO_date, original = info["name"], info["ISO_date"], info["original"]
+    name, ISO_date, original, thumbnail = info["name"], info["ISO_date"], info["original"], info["thumbnail"]
 
     date = datetime.strptime(ISO_date, "%Y-%m-%d")
     # Remove leading zeroes.
@@ -51,7 +51,8 @@ def recipe(cat: str, path: str) -> Response:
     
     return render_template(f"recipes/{escape(cat)}/{escape(path)}.html",
                            name=name, ISO_date=ISO_date,
-                           date=date, original=original)
+                           date=date, original=original,
+                           thumbnail=thumbnail)
 
 
 @bp.get("/<cat>/")

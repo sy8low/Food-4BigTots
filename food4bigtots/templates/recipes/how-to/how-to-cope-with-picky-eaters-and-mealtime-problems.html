@@ -8,7 +8,7 @@
 
 {% set cover_img = url_for("static", filename= "picky_4" | media( name | path_format )) %}
 
-{% block og_img %}{{ cover_img }}{% endblock og_img %}
+{% block og_img %}{{ url_for("static", filename=thumbnail | media( name | path_format )) }}{% endblock og_img %}
 
 {% block og_type %}profile{% endblock og_type %}
 

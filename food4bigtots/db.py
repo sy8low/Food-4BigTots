@@ -40,7 +40,7 @@ class Queries:
     
     ALL_CATEGORIES = "SELECT name FROM categories"
     
-    RECIPE_METADATA = ("SELECT name, date(date) AS ISO_date, original "
+    RECIPE_METADATA = ("SELECT name, date(date) AS ISO_date, original, thumbnail "
                        "FROM recipes WHERE LOWER(name) = ?")
     
     CATEGORY_NAME = "SELECT name FROM categories WHERE LOWER(name) = ? LIMIT 1"
