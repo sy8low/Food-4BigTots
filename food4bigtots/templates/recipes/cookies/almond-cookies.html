@@ -59,11 +59,11 @@
     {{ ingredient("60g icing sugar", 7) }}
 
     <h4 class="mt-3">Group B</h4>
-    {{ ingredient("100-120g corn oil or any vegetable oil<br>(depending on the texture of the dough)", x) }}
+    {{ ingredient("100-120g corn oil or any vegetable oil<br>(depending on the texture of the dough)", 8) }}
     
     <h4 class="mt-3">Group C</h4>
-    {{ ingredient("Egg wash (optional):<br>1 egg yolk diluted with 1-2 teaspoon milk or water", x) }}
-    {{ ingredient("Garnishing (optional):<br>Handful of almond nibs or almond flakes (raw)", x) }}
+    {{ ingredient("Egg wash (optional):<br>1 egg yolk diluted with 1-2 teaspoon milk or water", 9) }}
+    {{ ingredient("Garnishing (optional):<br>Handful of almond nibs or almond flakes (raw)", 10) }}
 {% endblock ingredient_content %}
 
 {% set ingredient_img = url_for("static", filename= "almond_3" | media( name | path_format )) %}
