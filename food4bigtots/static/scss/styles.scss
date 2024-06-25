@@ -159,8 +159,15 @@ li {
     padding-bottom: 1rem;
 }
 
+// Solution provided by Jason Anello on treehouse
+// (https://teamtreehouse.com/community/keep-label-next-to-checkbox-with-same-indentation-when-text-breaks-onto-two-or-more-lines).
 .form-check-input {
-    margin-right: 0.25rem;
+    float: left;
+    margin-right: 0.3125rem;
+}
+
+.form-check-label {
+    display: block;
 }
 
 .list-group {

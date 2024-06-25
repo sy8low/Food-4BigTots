@@ -11950,7 +11950,12 @@ li {
 }
 
 .form-check-input {
-  margin-right: 0.25rem;
+  float: left;
+  margin-right: 0.3125rem;
+}
+
+.form-check-label {
+  display: block;
 }
 
 .list-group {
