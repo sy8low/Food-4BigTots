@@ -42,9 +42,13 @@
 
 
     {% set ingredient_content %}
-        <ul class="list-group">
-            {% block ingredient_content %}{% endblock ingredient_content %}
-        </ul>
+        <form>
+            <ul class="list-group">
+                {% block ingredient_content %}{% endblock ingredient_content %}
+            </ul>
+
+            <input type="reset" value="Reset">
+        </form>
     {% endset %}
 
     {{ double("Ingredients", ingredient_content, ingredient_img, ingredient_alt) }}
