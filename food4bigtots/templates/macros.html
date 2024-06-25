@@ -14,8 +14,8 @@
 
 {% macro ingredient(desc, x) %}
     <li class="list-group-item">
-        <input class="form-check-input" type="checkbox" value="" id="ingredient_{{ x }}">
-        <label class="form-check-label" for="ingredient_{{ x }}">{{ desc | safe }}</label>
+        <input class="form-check-input" type="checkbox" value="" id="ingredient-{{ x }}">
+        <label class="form-check-label" for="ingredient-{{ x }}">{{ desc | safe }}</label>
     </li>
 {% endmacro %}
 
