@@ -47,9 +47,9 @@
 {% set yield = "9 pau" %}
 
 {% block ingredient_content %}
-    {{ ingredient("200 grams pau flour <a href='#note_1'>(note 1)</a>", 1) }}
+    {{ ingredient("200 grams pau flour <a href='#note-1'>(note 1)</a>", 1) }}
 
-    {{ ingredient("50 grams wholemeal flour <a href='#note_1'>(note 1)</a>", 2) }}
+    {{ ingredient("50 grams wholemeal flour <a href='#note-1'>(note 1)</a>", 2) }}
 
     {{ ingredient("3 grams instant yeast", 3) }}
 
@@ -78,10 +78,10 @@
                 Combine sugar, flour and baking powder in a mixing bowl.
                 Make a well in the center and add in the yeast mixture.
                 Stir to combine until no traces of flour.
-                Add in oil and knead until a rough dough is formed <a href="#note_3">(note 3)</a>.
+                Add in oil and knead until a rough dough is formed <a href="#note-3">(note 3)</a>.
             </li>
             <li>
-                Transfer the dough onto a working surface and continue kneading until it is no longer sticky but soft and smooth <a href="#note_3">(note 3)</a>.
+                Transfer the dough onto a working surface and continue kneading until it is no longer sticky but soft and smooth <a href="#note-3">(note 3)</a>.
             </li>
             <li>
                 Place the dough in a bowl and covered with cling wrap. Let it rest for 10 minutes in room temperature.
@@ -152,7 +152,7 @@
 {% set steps_img = url_for("static", filename= "pau_7" | media( name | path_format )) %}
 
 {% block notes_content %}
-    <li id="note_1">
+    <li id="note-1">
         Pau flour is a specialty flour used in making Chinese steamed buns. It gives the pau softer and fluffy texture.
         For making pau, pau flour is commonly used in Malaysia whereas in Singapore is Hong Kong flour.
         If you can’t find either one, you can substitute it with plain flour (all purpose flour).
@@ -161,7 +161,7 @@
         Instead of adding wholemeal flour, you can use entirely pau flour, Hong Kong flour or plain flour.
         Do take note that increasing the amount of wholemeal flour will make the texture of the pau harder.
     </li>
-    <li id="note_3">
+    <li id="note-3">
         Try not to add extra flour when kneading the dough as it will make the texture of the pau harder.
     </li>
     <li>

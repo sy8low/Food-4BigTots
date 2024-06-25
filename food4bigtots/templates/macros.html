@@ -12,6 +12,10 @@
 {% endmacro %}
 
 
+<!-- Best practices for id naming recommended by somameeta on 
+     Medium (https://medium.com/@somameeta/best-practices-for-naming-ids-in-html-elements-32a929b5f6bc)-->
+
+
 {% macro ingredient(desc, x) %}
     <li class="list-group-item">
         <input class="form-check-input" type="checkbox" value="" id="ingredient-{{ x }}">
@@ -24,24 +28,24 @@
     <div class="accordion-item">
         <h4 class="accordion-header">
             {% if open %}
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#step_g{{ x }}" aria-expanded="{{ open }}" aria-controls="step_g{{ 1 }}">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#step-group-{{ x }}" aria-expanded="{{ open }}" aria-controls="step-group-{{ 1 }}">
                     {{ header }}
                 </button>
             {% else %}
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#step_g{{ x }}" aria-expanded="{{ open }}" aria-controls="step_g{{ 1 }}">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#step-group-{{ x }}" aria-expanded="{{ open }}" aria-controls="step-group-{{ 1 }}">
                     {{ header }}
                 </button>
             {% endif %}
         </h4>
 
         {% if open %}
-            <div id="step_g{{ x }}" class="accordion-collapse collapse show">
+            <div id="step-group-{{ x }}" class="accordion-collapse collapse show">
                 <div class="accordion-body">
                     {{ body }}
                 </div>
             </div>
         {% else %}
-            <div id="step_g{{ x }}" class="accordion-collapse collapse">
+            <div id="step-group-{{ x }}" class="accordion-collapse collapse">
                 <div class="accordion-body">
                     {{ body }}
                 </div>
