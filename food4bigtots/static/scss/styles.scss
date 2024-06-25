@@ -41,7 +41,8 @@ $offcanvas-color: $primary;
 // Custom CSS
 // Links.
 a, .nav-link,
-.dropdown-item {
+.dropdown-item,
+input[type=reset] {
     color: $primary;
     font-weight: bold;
 }
@@ -49,7 +50,8 @@ a, .nav-link,
 .nav-item > .nav-link.active,
 .nav-item.dropdown > .nav-link.dropdown-toggle:focus,
 a:hover, .nav-link:hover,
-.dropdown-item:hover {
+.dropdown-item:hover,
+input[type=reset]:hover {
     color: $secondary;
 }
 
@@ -145,6 +147,12 @@ header {
 // List-group.
 input[type=checkbox] {
     accent-color: $primary;
+}
+
+input[type=reset] {
+    margin-top: 0.5rem;
+    background-color: transparent;
+    border: transparent;
 }
 
 li {

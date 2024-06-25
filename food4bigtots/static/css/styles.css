@@ -11840,7 +11840,8 @@ textarea.form-control-lg {
   }
 }
 a, .nav-link,
-.dropdown-item {
+.dropdown-item,
+input[type=reset] {
   color: #72502E;
   font-weight: bold;
 }
@@ -11848,7 +11849,8 @@ a, .nav-link,
 .nav-item > .nav-link.active,
 .nav-item.dropdown > .nav-link.dropdown-toggle:focus,
 a:hover, .nav-link:hover,
-.dropdown-item:hover {
+.dropdown-item:hover,
+input[type=reset]:hover {
   color: #9B7854;
 }
 
@@ -11935,6 +11937,12 @@ header {
 
 input[type=checkbox] {
   accent-color: #72502E;
+}
+
+input[type=reset] {
+  margin-top: 0.5rem;
+  background-color: transparent;
+  border: transparent;
 }
 
 li {
