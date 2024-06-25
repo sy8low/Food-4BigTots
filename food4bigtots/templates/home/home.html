@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% from "macros.html" import tile, double_wide, gallery %}
+{% from "macros.html" import tile, double_wide, gallery, custom_JS %}
 
 {% set description = "Home" %}
 
@@ -93,3 +93,6 @@
 {{ double_wide(left_content, right_content) }}
 
 {% endblock main %}
+
+{% block script %}{{ custom_JS() }}{% endblock script %}
+

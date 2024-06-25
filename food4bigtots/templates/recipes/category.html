@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% from "macros.html" import single, gallery %}
+{% from "macros.html" import single, gallery, custom_JS %}
 
 {% block title %}{{ super() }} | {{ name }}{% endblock title %}
 
@@ -19,3 +19,5 @@
 
     {{ single(name, category_gallery, False)}}
 {% endblock main %}
+
+{% block script %}{{ custom_JS() }}{% endblock script %}

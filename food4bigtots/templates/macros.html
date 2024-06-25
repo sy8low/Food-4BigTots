@@ -133,3 +133,8 @@
     </li>
     {% endfor %}
 {% endmacro %}
+
+{% macro custom_JS() %}
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="{{ url_for('static', filename='js/interactive.js') }}"></script>
+{% endmacro%}
