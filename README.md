@@ -6,7 +6,7 @@ I took up this project to relive my sweet childhood memories of helping my mum w
 
 * Click **[here](https://www.food-4bigtots.xyz/about/)** to read our story!
 
-* Click **[here](https://youtu.be/5aG8SreoxTM?si=9ckqu47DKdCIV6HR)** to watch my Youtube video explaining the project.
+* Click **[here](https://youtu.be/5aG8SreoxTM?si=9ckqu47DKdCIV6HR)** to watch my YouTube video explaining the project.
 
 * Click **[here](food4bigtots/)** to view the source code for the project.
 
@@ -195,7 +195,7 @@ And with this, **[Food-4Tots’](https://food-4tots.com/)** new chapter began!
 ## 💖 Show Us Some Love! 
 Do give **[Food-4BigTots](https://www.food-4bigtots.xyz/)** and **[Food-4Tots](https://food-4tots.com/)** a visit, my mum and I would really appreciate your support!
 
-If you like our blogs or if there’s any recipe on **[Food-4Tots](https://food-4tots.com/)** that you’d like me to bring over to **[Food-4BigTots](https://www.food-4bigtots.xyz/)**, feel free to leave a comment on my **[Youtube video](https://youtu.be/5aG8SreoxTM?si=9ckqu47DKdCIV6HR)** or reach out to us via our socials!
+If you like our blogs or if there’s any recipe on **[Food-4Tots](https://food-4tots.com/)** that you’d like me to bring over to **[Food-4BigTots](https://www.food-4bigtots.xyz/)**, feel free to leave a comment on my **[YouTube video](https://youtu.be/5aG8SreoxTM?si=9ckqu47DKdCIV6HR)** or reach out to us via our socials!
 
 * FFT's **[email](mailto:foodfortots@yahoo.com)**
 
