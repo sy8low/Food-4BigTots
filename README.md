@@ -2,7 +2,7 @@
 
 **[Food-4BigTots](https://www.food-4bigtots.xyz/)** is a tribute to my mum’s food blog, **[Food-4Tots](https://food-4tots.com/)**.
 
-I took up this project to relive my sweet childhood memories of helping my mum with the blog (testing food and modelling for photos 😁), and to continue its mission of helping everyone make simple, healthy food that also tastes really good 😋.
+I took up this project to relive my sweet childhood memories of helping my mum with the blog (testing food and modelling for photos 😁), and to continue its mission of helping everyone make simple, healthy food that also tastes really good. 😋
 
 * Click **[here](https://www.food-4bigtots.xyz/about/)** to read our story!
 
@@ -27,7 +27,7 @@ I set out to redesign **[Food-4Tots](https://food-4tots.com/)**:
 ## Model (Database)
 Click **[here](food4bigtots/schema.sql)** to view the database's schema (structure).
 
-### Relational Database (SQL, SQLite) 🖇️
+### 🖇️ Relational Database (SQL, SQLite)
 * Data about recipes and categories are stored in separate tables, and each entry has its own ID (identification) number, called a **Primary Key**.
 
 * The recipes are then mapped to categories via a **mapping** table, which references their respective IDs as **Foreign Keys**.
@@ -36,7 +36,7 @@ Click **[here](food4bigtots/schema.sql)** to view the database's schema (structu
 
 ## View (Frontend)
 
-### Templates (HTML, Jinja) 📜
+### 📜 Templates (HTML, Jinja)
 Since all my **HTML** pages share a similar layout, I wrote them as **templates** using **Jinja**.
 
 Click **[here](food4bigtots/templates)** to view the templates.
@@ -68,10 +68,10 @@ Click **[here](food4bigtots/templates)** to view the templates.
 
     * The **ingredient checklists** in the recipe pages.
 
-### Styling 💅
+### 💅 Styling
 Click **[here](food4bigtots/static/scss/styles.scss)** to view the my custom pre-compiled SASS stylesheet (both my custom SASS stylesheet and the one provided by Bootstrap were compiled into a single CSS stylesheet, which is used to style pages).
 
-Styling was the most challenging part of this project 😵‍💫.
+Styling was the most challenging part of this project. 😵‍💫
 
 #### Bootstrap Utility Classes & Custom CSS Stylesheet
 * I like **Bootstrap’s utility classes**, as they offer great convenience and are neater than inline styling and IDs.
@@ -92,7 +92,7 @@ Styling was the most challenging part of this project 😵‍💫.
 
 * Furthermore, SASS’s nesting feature made it easier to write highly specific selectors and eliminate redundant declarations by taking advantage of CSS’s **cascading** nature (another best practice).
 
-### Responsive UI 🐍
+### 🐍 Responsive UI
 #### Bootstrap's Grid Layout & Breakpoints
 * To make the UI responsive to **different screen sizes**, I used Bootstrap’s **grid layout** and placed page components into containers, rows, and columns. 
 
@@ -112,7 +112,7 @@ Styling was the most challenging part of this project 😵‍💫.
 
 * I corrected this by using CSS **media queries** to size the page differently for big and small screens.
 
-### Interactive UI 👋
+### 👋 Interactive UI
 The original **[Food-4Tots](https://food-4tots.com/)** page had interesting content and beautiful images, but it did not have an attractive UI. I wanted to make my app more engaging by making it more **interactive**.
 
 #### Bootstrap JavaScript Plugins & Components
@@ -131,16 +131,16 @@ However, I had to make the gallery interactive on my own using **jQuery** and **
 
 * This is achieved by the **callback function** passed into the event listener which toggles the Bootstrap classes on the tiles that control their CSS display properties.
 
-### Sharing 🌎
+### 🌎 Sharing
 #### Open Graph Tags
-* I hope to use **[Food-4BigTots](https://www.food-4bigtots.xyz/)** to share my family’s love for cooking, and convince everyone that making healthy and delicious food is quite easy 🥰.
+* I hope to use **[Food-4BigTots](https://www.food-4bigtots.xyz/)** to share my family’s love for cooking, and convince everyone that making healthy and delicious food is quite easy. 🥰
 
 * To help it leave a stronger impression, I utilized **Open Graph tags** to design **rich previews** that will show up when my app is shared on social media and messaging platforms.
 
 ## Controller (Backend)
 Click **[here](food4bigtots/)** to view the source code for the backend.
 
-### View Functions & Error Handlers (Flask, Python) 🔭
+### 🔭 View Functions & Error Handlers (Flask, Python)
 When the **Flask** app receives a HTTP **request** from a visitor, it matches the incoming request URL to the correct **view function** to be handled.
 
 * For example, if the user visits (i.e. requests for) a category page, the request will be passed to the view function for category pages, which generates a **response** to be sent to the user by **rendering the correct template**.
@@ -149,26 +149,26 @@ When the **Flask** app receives a HTTP **request** from a visitor, it matches th
 
 * However, if the URL cannot be matched to any view function, or a template cannot be found, it will be handled by an **error handler**, which renders an error page instead.
 
-### Variable URL Rules, Stateful URLs 📦
+### 📦 Variable URL Rules, Stateful URLs
 * Since my app has many pages that need to be rendered through the same process, and the incoming URLs are **stateful** (i.e. contain information about which page the user is requesting for), I allowed the view functions to take **variable URL rules**.
 
 * This means that they take the components of the URL as **arguments** (i.e. inputs), and use them to find the correct template to be rendered.
 
 * Since one view function can handle any requests for one type of page, my code can be kept DRY (i.e. minimal duplication) and **scalable** to accommodate new pages with no changes.
 
-### sqlite3 Queries ❓
+### ❓ sqlite3 Queries
 * These arguments are also passed into **queries** of the database using **Python’s** built-in **sqlite3** library.
 
 * The database returns **metadata** about the recipe or category, such as its properly capitalized title, date of publication, the filename of its thumbnail, and the original **[Food-4Tots](https://food-4tots.com/)** page.
 
 * These are all passed into templates to set the values of **variables**.
 
-### Jinja Filters & Flask Path Builders 🛣️
+### 🛣️ Jinja Filters & Flask Path Builders
 * To automatically generate links to pictures and pages on my app, I used **Flask’s file path builder function** and my **custom Jinja filters**.
 
 * By minimizing **hardcoded** information in the templates, I made the frontend more flexible and resilient to changes.
 
-### Cookies 🍪
+### 🍪 Cookies
 * The list of categories in the navigation bar and footer are dynamically rendered by querying the database.
 
 * However, since these features appear on every page, my app will be slowed down by repeated querying, and computational resources will be wasted.
@@ -192,7 +192,7 @@ Finally, to make **[Food-4BigTots](https://www.food-4bigtots.xyz/)** available o
 
 And with this, **[Food-4Tots’](https://food-4tots.com/)** new chapter began!
 
-## Show Us Some Love! 💖 
+## 💖 Show Us Some Love! 
 Do give **[Food-4BigTots](https://www.food-4bigtots.xyz/)** and **[Food-4Tots](https://food-4tots.com/)** a visit, my mum and I would really appreciate your support!
 
 If you like our blogs or if there’s any recipe on **[Food-4Tots](https://food-4tots.com/)** that you’d like me to bring over to **[Food-4BigTots](https://www.food-4bigtots.xyz/)**, feel free to leave a comment on my **[Youtube video](https://youtu.be/5aG8SreoxTM?si=9ckqu47DKdCIV6HR)** or reach out to us via our socials!
