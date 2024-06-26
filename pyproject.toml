@@ -26,7 +26,8 @@ dependencies = [
 keywords = ["cs50", "food", "blog", "recipes", "toddlers", "children", "teens", "teenagers", 
             "family", "mothers", "healthy", "tasty", "delicious", "simple", "beginner", "cooking",
             "how-to", "guide", "backend", "flask", "database", "sql", "sqlite", "frontend", "html",
-            "css", "javascript", "bootstrap", "sass", "responsive", "web", "dynamic", "app"]
+            "css", "javascript", "bootstrap", "sass", "responsive", "web", "dynamic", "app",
+            "jquery", "jinja", "open graph", "python", "hosting", "git", "github", "pythonanywhere"]
 
 classifiers = [
   "Programming Language :: Python :: 3.10",
@@ -40,5 +41,7 @@ classifiers = [
 ]
 
 [project.urls]
+Food-4BigTots = "https://www.food-4bigtots.xyz/"
+Food-4Tots = "https://food-4tots.com/"
 Repository = "https://github.com/sy8low/Food-4BigTots"
-Youtube = ""
+Youtube = "https://youtu.be/5aG8SreoxTM?si=9ckqu47DKdCIV6HR"
