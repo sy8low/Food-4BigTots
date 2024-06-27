@@ -10,6 +10,12 @@ I took up this project to relive my sweet childhood memories of helping my mum w
 
 * Click **[here](food4bigtots/)** to view the source code for the project.
 
+* Click **[here](https://shimmering-appliance-09d.notion.site/Food-4BigTots-64364e04a6f64fc0bc89dff5a4afdec6?pvs=74)** to view our Notion Wiki, where we’re sharing about our journey making this blog a reality.
+
+You can find our socials and contact details **[below](https://github.com/sy8low/Food-4BigTots?tab=readme-ov-file#-show-us-some-love)**.
+
+* Click **[here](https://linktr.ee/food4bigtots)** for our Linktree.
+
 I set out to redesign **[Food-4Tots](https://food-4tots.com/)**:
 
 * The original blog is built on a clunky, rudimental **WordPress template**. It is also covered with advertisements that often disrupt the layout and UX (user experience). I wanted the new blog to have all the old favorites; no advertisements; and a **clean, modern layout**.
@@ -192,7 +198,7 @@ Finally, to make **[Food-4BigTots](https://www.food-4bigtots.xyz/)** available o
 
 And with this, **[Food-4Tots’](https://food-4tots.com/)** new chapter began!
 
-## 💖 Show Us Some Love! 
+## 💖 Show Us Some Love!
 Do give **[Food-4BigTots](https://www.food-4bigtots.xyz/)** and **[Food-4Tots](https://food-4tots.com/)** a visit, my mum and I would really appreciate your support!
 
 If you like our blogs or if there’s any recipe on **[Food-4Tots](https://food-4tots.com/)** that you’d like me to bring over to **[Food-4BigTots](https://www.food-4bigtots.xyz/)**, feel free to leave a comment on my **[YouTube video](https://youtu.be/5aG8SreoxTM?si=9ckqu47DKdCIV6HR)** or reach out to us via our socials!
@@ -202,3 +208,7 @@ If you like our blogs or if there’s any recipe on **[Food-4Tots](https://food-
 * FFT's **[Facebook page](https://www.facebook.com/FoodForToddlers)**
 
 * SY's **[LinkedIn](https://www.linkedin.com/in/sze-yoong-low-b52438210/)**
+
+* SY's **[Quora](https://www.quora.com/profile/Sze-Yoong-Low)**
+
+* SY's **[Stack Exchange](https://stackoverflow.com/users/23177658/sze-yoong-low)**
