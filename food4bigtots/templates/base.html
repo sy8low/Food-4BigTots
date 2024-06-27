@@ -2,13 +2,15 @@
 
 {% from "macros.html" import nav_categories %}
 
+{% set description %}No child is born a picky eater. Learn how to make simple, healthy food that also taste really good!{% endset %}
+
 <html lang="en">
     <head>
         <title>{% block title %}Food-4BigTots{% endblock title %}</title>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="desciption" content="{{ description }}">
+        <meta name="desciption" content="">
         <meta name="author" content="Low Sze Yoong, Low Lai Kuan">
 
         <meta property="og:title" content="{{ self.title() }}">

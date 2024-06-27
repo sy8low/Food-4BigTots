@@ -4,8 +4,6 @@
 
 {% block title %}{{ super() }} | {{ name }}{% endblock title %}
 
-{% set description = name %}
-
 {% set cover_img = url_for("static", filename= "crackers_3" | media( name | path_format )) %}
 
 {% block og_img %}{{ url_for("static", filename=thumbnail | media( name | path_format )) }}{% endblock og_img %}
