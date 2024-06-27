@@ -23,11 +23,12 @@ dependencies = [
   "Flask-Session >= 0.8.0",
 ]
 
-keywords = ["cs50", "food", "blog", "recipes", "toddlers", "children", "teens", "teenagers", 
+keywords = ["cs50", "food", "blog", "recipes", "toddlers", "children", "teens", "teenagers", "kids",
             "family", "mothers", "healthy", "tasty", "delicious", "simple", "beginner", "cooking",
             "how-to", "guide", "backend", "flask", "database", "sql", "sqlite", "frontend", "html",
             "css", "javascript", "bootstrap", "sass", "responsive", "web", "dynamic", "app",
-            "jquery", "jinja", "open graph", "python", "hosting", "git", "github", "pythonanywhere"]
+            "jquery", "jinja", "open graph", "python", "hosting", "git", "github", "pythonanywhere",
+            "food-4tots", "food for tots", "food for toddlers", "food-4bigtots", "picky eaters"]
 
 classifiers = [
   "Programming Language :: Python :: 3.10",
