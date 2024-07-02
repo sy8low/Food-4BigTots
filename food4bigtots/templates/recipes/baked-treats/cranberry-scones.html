@@ -1,0 +1,163 @@
+{% extends "recipes/recipe.html" %}
+
+{% from "macros.html" import ingredient, accordion_item %}
+
+{% set cover_img = url_for("static", filename= "scone_1" | media( name | path_format )) %}
+
+{% set intro_content %}
+    <p>
+        I have been making scones quite often as they are extremely easy to make.
+        Without having to bring out the electrical beater,
+        I can easily whip up a batch of warm scones in no time for breakfast, brunch and teatime.
+    </p>
+    <p>
+        The key to the making of a good scone lies in the technique itself.
+        Do not overwork the dough as it can make the scones hard. 
+    </p>
+    <p>
+        This cranberry scone recipe is adapted from
+        <a href="http://foodiefarmgirl.blogspot.com/2005/12/cranberry-christmas-scones.html">Farmgirl’s Cranberry Christmas Scones</a>.
+        They yield a better texture than the <a href="https://food-4tots.com/2009/04/07/raisin-scones/">raisin scones</a> I featured earlier.
+        When they are fresh from the oven, the inside is tender and moist with a light crunch on the outside. The dried cranberries go really
+        well with the buttery scones. It is not too sweet and would suit just anyone even, the elderly and those who have no particular
+        liking for sweet things. The scones can stay fresh for 1-2 days at room temperature or you can even freeze them for future consumption.
+    </p>
+    <p>
+        Christmas is just around the corner. If you still haven’t decided what to bake for your friends and loved ones on this coming
+        Christmas holidays, these mini scones with ruby-like cranberries will surely brighten up your holiday table.
+    </p>
+{% endset %}
+
+{% set intro_img = url_for("static", filename= "scone_3" | media( name | path_format )) %}
+
+{% set adapted %}
+    <a href="http://foodiefarmgirl.blogspot.com/2005/12/cranberry-christmas-scones.html">Farmgirl’s Cranberry Christmas Scones</a> (Recipe)
+    <br>and <a href="http://chezannies.blogspot.com/2008/07/best-cream-scones-recipe-ever.html">House of Annie</a> (originated from Fine Cooking Magazine) (Technique).
+{% endset %}
+
+{% set yield = "26 small scones (if you use 3cm cookie cutters)" %}
+
+{% block ingredient_content %}
+    {{ ingredient("2¼ cups plain flour (note: 1 cup = 115 gram)", 1) }}
+
+    {{ ingredient("1 tbsp baking powder", 2) }}
+
+    {{ ingredient("½ tsp baking soda", 3) }}
+
+    {{ ingredient("¼ cup castor sugar", 4) }}
+
+    {{ ingredient("½ tsp salt", 5) }}
+
+    {{ ingredient("½ cup (110g) unsalted butter, chilled and cut into small cubes (1cm)", 6) }}
+
+    {{ ingredient("2 tbsp plain yogurt + ½ egg (about 30g) + milk –> make up to 2/3 cup yogurt mixture", 7) }}
+
+    {{ ingredient("1 cup dried cranberries – rinse, put into a zip lock bag, soak with 3 tbsp of water and keep in a fridge for at least 1 hour, then squeeze away the excess water and pat dry with kitchen towel", 8) }}
+
+    <h4 class="mt-3">Egg Glaze</h4>
+    {{ ingredient("½ egg + 1 tbsp milk – beat well with a fork", 9) }}
+
+{% endblock ingredient_content %}
+
+{% set ingredient_img = url_for("static", filename= "scone_5" | media( name | path_format )) %}
+
+{% set ingredient_alt = "A pastry blender" %}
+
+{% block steps_content %}
+    {% set accordion_body_1 %}
+        <ol>
+            <li>
+                Preheat oven to 190ºC. Line a baking tray with grease-proof paper.
+            </li>
+            <li>
+                Combine plain flour, baking powder and baking soda in a large mixing bowl.
+                Then sieve 2-3 times <a href="#note-1">(see Note 1)</a>
+            </li>
+            <li>
+                Add in sugar and salt, and mix well.
+            </li>
+            <li>
+                Using a pastry blender, fork or finger tips, cut butter into the flour mixture until it forms coarse crumbs.
+                <a href="#note-2">(see Note 2)</a>
+            </li>
+            <li>
+                Add in dried cranberries and toss gently until well combined.
+            </li>
+            <li>
+                Using a fork or hand whisk, beat yogurt, milk and egg until well combined.
+                Then gently fold yoghurt mixture into the dry ingredients and mix lightly until well blended.
+                Do not pour all the mixture into the dry ingredients in one go.
+                Add in little by little and stop once a loose dough is formed.
+                You need not use up all the yogurt mixture.
+                At this stage, the dough will be wet and sticky but manageable.
+                Add additional flour if dough is too sticky to handle.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Making the dough", accordion_body_1, 1, True) }}
+
+    {% set accordion_body_2 %}
+        <ol>
+            <li>
+                Sprinkle flour lightly on both the dough and the work top. Turn the dough out and roughly work it into a ball.
+                Press the ball down into a rectangular shape. Sprinkle some flour if the dough is still wet.
+            </li>
+            <li>
+                Fold the dough like the way you fold a business envelope (divide dough into 3 sections,
+                1st fold upper third to center, then  fold lower third to center).
+                It is alright if the dough is still quite shaggy and loose at this stage. <b>Do not knead or over-work the dough.</b>
+                The less you work on the dough the more tender and flakier the scone will be.
+            </li>
+            <li>
+                Then press the dough down to form either a circle or rectangular dough.
+            </li>
+            <li>
+                For circle dough, cut it into 8 large or 16 small wedges.
+            </li>
+            <li>
+                For rectangular dough, cut it into 13 large or 26 small squares.
+                Push the edges roughly to shape it into a round scone.
+            </li>
+            <li>
+                Alternatively, use cookie cutter or an upside-down juice glass to cut out the scones.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Shaping the scones", accordion_body_2, 2) }}
+
+    {% set accordion_body_3 %}
+        <ol>
+            <li>
+                Brush tops and sides of the scones with the egg glaze. Place them on the baking tray, spacing them about 4cm apart.
+            </li>
+            <li>
+                Bake in the preheat oven (at 190ºC) for 15–18 minutes (depending on the shape and size of your scones), or until golden brown.
+            </li>
+            <li>
+                Cool on a wire rack and serve warm. Alternatively, let it cool completely and store in an airtight container
+                or freeze <a href="#note-5">(refer note 5)</a>.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Baking the scones", accordion_body_3, 3) }}
+{% endblock steps_content %}
+
+{% set steps_img = url_for("static", filename= "scone_4" | media( name | path_format )) %}
+
+{% block notes_content %}
+    <li id="note-1">
+        Sieve flour mixture 2-3 times to avoid any bitter taste due to the large amount of baking powder and baking soda used in this recipe.
+    </li>
+    <li id="note-2">
+        Using a pastry blender to cut the butter can help to prevent melting the butter before the mixing process.
+    </li>
+    <li>
+        The quality of butter used is important so as to give your scones a more buttery flavour. It is worthwhile to invest in a premium brand of butter when making your scones.  It would definitely make a difference in the taste.
+    </li>
+    <li>
+        For frozen scones, defrost them at room temperature and heat at 180 ºC for 5-7 minutes.
+    </li>
+    <li id="note-5">
+        How to eat scones? Cut the scones into half and spread butter/cream/jam onto it. And, it is best enjoyed with a cup of coffee or tea.
+    </li>
+{% endblock notes_content%}
