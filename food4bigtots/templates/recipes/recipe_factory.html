@@ -13,7 +13,7 @@
 {% set yield = "" %}
 
 {% block ingredient_content %}
-    {{ ingredient("", x) }}
+    {{ ingredient("", 1) }}
 {% endblock ingredient_content %}
 
 {% set ingredient_img = url_for("static", filename= "" | media( name | path_format )) %}
@@ -21,14 +21,14 @@
 {% set ingredient_alt = "" %}
 
 {% block steps_content %}
-    {% set accordion_body_x %}
+    {% set accordion_body_1 %}
         <ol>
             <li>
                 
             </li>
         </ol>
     {% endset %}
-    {{ accordion_item("", accordion_body_x, x, True) }}
+    {{ accordion_item("", accordion_body_1, 1, True) }}
 {% endblock steps_content %}
 
 {% set steps_img = url_for("static", filename= "" | media( name | path_format )) %}

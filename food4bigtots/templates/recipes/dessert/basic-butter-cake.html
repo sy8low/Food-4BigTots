@@ -1,0 +1,184 @@
+{% extends "recipes/recipe.html" %}
+
+{% from "macros.html" import ingredient, accordion_item %}
+
+{% set cover_img = url_for("static", filename= "butter_1" | media( name | path_format )) %}
+
+{% set intro_content %}
+    <p>
+        Butter cake is the first cake I learnt to bake during my high school years.
+        It was also the easiest and fastest cake to bake that I know of at that time.
+        I still remember that I would wait till my mother took her afternoon nap to do the baking as it
+        was the best time to “invade” her kitchen. By the time she woke up, there would be no traces of
+        mess I created and the cake was already inside the oven.
+    </p>
+    <p>
+        From what I can recall, none of the butter cakes I baked came close to my expectation.
+        Somehow, somewhere, something would surely go wrong. Nevertheless, I still love baking this cake
+        over and over again whenever I had the urge to do baking. Maybe it was the baking process that I enjoyed the most.
+        Since I left home (for both studies and work), I had no opportunity to bake this butter cake anymore.
+    </p>
+    <p>
+        A couple of years ago, I came to know that my mother-in-law was a big fan for butter cake.
+        I promised myself that I would bake one for her if I got an oven and the right baking utensils.
+        Time passed and nothing was done. Promise still remains a promise. During her recent stay with us last month,
+        I made good my promise and baked this cake for her. It may not be the best butter cake in town, but she loved it so much.
+        Now I can happily strike off this long outstanding item from my to-bake list.
+    </p>
+    <p>
+        This recipe was adapted from <b>Agnes Chan’s cookbook (蓝赛珍，轻轻松松学烘焙)</b>
+        which provides photos showing detailed step-by-step procedures in baking this cake.
+        I find it very helpful as it makes my baking much more easier.
+        However, in my first attempt, although the texture was soft, the cake turned out to be a little bit dry.
+        As for its taste, it came out slightly plain as I used unsalted butter and omitted the salt during the process.
+        As what I read from the internet, self-raising flour contained salt. So I suspected the shortage of salt could be
+        the main cause of these two problems.
+    </p>
+    <p>
+        On my second attempt, I added a bit of salt and reduced the amount of flour used. I also paid extra attention
+        to the mixing and baking process. This time the end product turned out to be very soft and moist.
+        It also got the buttery smell, and yet did not give one a heavy feeling when eaten.
+        However, it tasted slightly sweeter to my liking. What completely surprised me was the feedback I got from my friend
+        whom I gave half of my loaf, as I did in my first attempt. She told me that both her daughters finished the cake in
+        split seconds leaving only one slice for her to taste. Although the cake done in second attempt was sweeter,
+        they found the taste as simply fantastic and suited their taste buds as well. Besides them, my family also enjoyed eating
+        this cake. But I will not consider it as “The Ultimate” butter cake. (Am I setting the bar for my expectation far too high?).
+    </p>
+    <p>
+        It doesn’t matter anyway as it is still the “best” recipe I had tried and tested so far, and much better compared to the ones
+        I had baked during my high school days.
+    </p>
+    <p>
+        Well, I shall leave it to you to be the judge of this recipe.
+        Meanwhile, I will continue to “fine tune” it to get closer to my expectation of “The Ultimate” butter cake.
+        So, what’s your favourite butter cake recipe? Please share with me! I love to hear from you.
+    </p>
+    <p>
+        To all the mothers (including myself) and mother-to-be out there, <b>Happy Mothers' Day</b>!
+    </p>
+    <p>
+        Who has tried and tested my recipe?
+    </p>
+    <ul>
+        <li><a href="http://rasamalaysia.com/raisin-butter-cake-recipe/">Rasa Malaysia</a></li>
+        <li><a href="http://bits-of-taste.blogspot.sg/2012/07/moist-butter-cake.html">Bits of Taste</a></li>
+        <li><a href="http://theamateurbaker.blogspot.com/2010/08/butter-cake-oily.html">Diary of Faithy, The Baker</a></li>
+        <li><a href="http://tastesofhome.blogspot.com/2010/10/butter-cake-plain-or-with-almonds.html">Taste of Home</a></li>
+        <li><a href="http://kuriouskitteh.wordpress.com/2010/05/09/pasta-healthy-fast-dessert/">Kurious, Kitteh, Kooks!</a></li>
+    </ul>
+{% endset %}
+
+{% set intro_img = url_for("static", filename= "butter_4" | media( name | path_format )) %}
+
+{% set adapted = "Agnes Chang’s Baking Make Easy (蓝赛珍，轻轻松松学烘焙)" %}
+
+{% set yield = "1 x 22cm square baking tin" %}
+
+{% block ingredient_content %}
+    {{ ingredient("250g unsalted butter, at room temperature", 1) }}
+
+    {{ ingredient("200g plain flour/ all purpose flour", 2) }}
+
+    {{ ingredient("2 tsp double action baking powder", 3) }}
+
+    {{ ingredient("180-200g castor sugar", 4) }}
+
+    {{ ingredient("4 eggs", 5) }}
+
+    {{ ingredient("½ tsp salt", 6) }}
+
+    {{ ingredient("4 tbsp fresh milk", 7) }}
+
+    {{ ingredient("1 tsp vanilla essence", 8) }}
+{% endblock ingredient_content %}
+
+{% set ingredient_img = url_for("static", filename= "butter_3" | media( name | path_format )) %}
+
+{% set ingredient_alt = "Clockwise from top left: Baking powder, eggs, flour, butter, milk, vanilla essence, castor sugar" %}
+
+{% block steps_content %}
+    {% set accordion_body_1 %}
+        <ol>
+            <li>
+                Preheat oven to 180°C. (Best to preheat for 15 mins)
+            </li>
+            <li>
+                Lightly grease a 22cm square baking tin with melted butter or oil and line it with grease-proof paper.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Preparing for baking", accordion_body_1, 1, True) }}
+
+    {% set accordion_body_2 %}
+        <ol start="3">
+            <li>
+                Mix plain flour and baking powder together and sieve. Add in salt and mix well. Set aside.
+            </li>
+            <li>
+                Use low speed to mix butter and sugar until well combined.
+                Change to medium speed and beat until light and pale in yellow.
+                (Note: Sugar has not dissolved yet).
+            </li>
+            <li>
+                Add in the first egg. Beat well after each addition of egg until creamy.
+            </li>
+            <li>
+                Scrape down the sides for even mixing.
+            </li>
+            <li>
+                Add in vanilla essence and mix well.
+            </li>
+            <li>
+                Divide flour into three portions, use lowest speed to mix in flour. Scrape down sides for even mixing.
+            </li>
+            <li>
+                Finally, add milk bit by bit.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Preparing the batter", accordion_body_2, 2) }}
+
+    {% set accordion_body_3 %}
+        <ol start="10">
+            <li>
+                Pour the mixture into the greased baking tin. Shake it lightly to distribute cake mixture evenly.
+            </li>
+            <li>
+                Bake for 45 minutes or until golden brown and cooked. If a toothpick/skewer comes out clean, it is done.
+            </li>
+            <li>
+                Remove it from the oven and leave the cake in the tin to cool on the wire rack for another 5 minutes.
+            </li>
+            <li>
+                Best to serve warm.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Baking the butter cake", accordion_body_3, 3) }}
+{% endblock steps_content %}
+
+{% set steps_img = url_for("static", filename= "butter_5" | media( name | path_format )) %}
+
+{% block notes_content %}
+    <li>
+        When adding egg, use low speed to mix until well combined and then change to medium speed.
+    </li>
+    <li>
+        If the eggs are added to the sugar-fat mixture too quickly, it will cause the mixture to curdle (or separate).
+        If this happens, add 1-2 tbsp of plain flour and mix well.
+    </li>
+    <li>
+        Break egg into a bowl before adding into the cake mixture. This is to prevent any spoil egg from ruining the whole cake mixture.
+    </li>
+    <li>
+        If the cake turns brown too quickly, cover it loosely with a piece of aluminum foil towards the last 15 minutes.
+    </li>
+    <li>
+        If you want to level your cake, place another cooling rack on top of the cake tin.
+        Hold both the cooling racks tightly with the cake tin in between and turn it upside down.
+        Press the center lightly and turn it back again.
+    </li>
+    <li>
+        The baking time and oven temperatures vary depending on the types of oven, so use your own judgment to experiment.
+    </li>
+{% endblock notes_content%}
