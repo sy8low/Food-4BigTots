@@ -1,0 +1,152 @@
+{% extends "recipes/recipe.html" %}
+
+{% from "macros.html" import ingredient, accordion_item %}
+
+{% set cover_img = url_for("static", filename= "orange_muffin_1" | media( name | path_format )) %}
+
+{% set intro_content %}
+    <p>
+        "Didn’t you post a <a href="https://food-4tots.com/2009/08/22/how-to-make-muffins/2/">blueberry muffin</a>
+        recipe before?" asked my hubby when he saw me editing the photos for this post.
+        I replied "They are not the same, my dear. Both use different ingredients and different methods.
+        I know it’s not the blueberry season now but I just can’t wait till the next season to share this recipe with my readers. Isn’t it your favourite?"
+    </p>
+    <p>
+        "Yes, in fact, it’s the best muffin you have baked so far. I love that tangy taste and smell most." He said with a grin.
+    </p>
+    <p>
+        This recipe, which originated from <a href="http://www.annabelkarmel.com/recipes/gluten-free/blueberry-muffins">Annabel Karmel’s website</a>,
+        was highly recommended to me by my dearest friend Alice of <a href="http://bits-of-taste.blogspot.com/">Bit-Of-Taste</a>.
+        She had already tried and tested it herself, and the result was very satisfying. You can find her lovely
+        <a href="http://bits-of-taste.blogspot.com/2010/07/blueberry-lemon-muffins.html">blueberry muffins</a> post in her blog.
+    </p>
+    <p>
+        On my first attempt at baking these muffins, I used lemon according to the original recipe. My hubby didn’t like the lemony taste at all.
+        So I decided to swap lemon with orange on my second attempt. Unexpectedly, the outcome for this blueberry and orange combination turned
+        out to be so delightful! This variation pleased not only my hubby’s palate but even my mother-in-law who was never really a big fan of
+        muffins. Needless to say, my son had the biggest shares as he adored blueberry very much. The orange zest gave these muffins a hint of
+        tangy and fruity smell whereas orange juice was full of natural sweetness.  These muffins got their extra moisture from the blueberries
+        and yogurt. They stayed soft and velvety even left overnight. It was such a joy to savour them.
+    </p>
+    <p>
+        As this recipe uses the <a href="https://food-4tots.com/2009/08/22/how-to-make-muffins/">mixing method</a> (which no electrical mixer is required),
+        it’s perfect for any beginners at baking. Recently, I choose this recipe to show a friend of mine on how to bake muffins.
+        Being a working mom of two little gals, two and five respectively, she always thought that baking was very time-consuming.
+        But, after seeing how I made these blueberry orange muffins, she was convinced that she could do it too.
+        She also agreed that homemade muffins are indeed easy-to-bake, healthy, tasty and economical.
+        A week later, she told me that she had bought an oven and was ready to jump on the home baking bandwagon. I was really happy to hear this.
+    </p>
+    <p>
+        These muffins are great for breakfast and tea break.
+        Filled in a mini cup, they are good to pack for lunch box and easy to handle by your little ones.
+    </p>
+    <p>
+        You can use either fresh or frozen blueberries to make these muffins.
+        For variation, you can try to experiment with other type of berries.
+        Another possible option is to use dried fruits such as raisins.
+        Bake some in advance and keep them in the freezer.
+        Thaw and reheat them when you want to consume.
+    </p>
+    <p>
+        This recipe is also tried and tested by:
+    </p>
+    <ul>
+        <li><a href="http://anncoojournal.blogspot.com/2010/11/blueberry-orange-muffins.html">Anncoo Journal</a></li>
+        <li><a href="http://pengskitchen.blogspot.com/">Peng’s Kitchen</a></li>
+    </ul>
+{% endset %}
+
+{% set intro_img = url_for("static", filename= "orange_muffin_3" | media( name | path_format )) %}
+
+{% set adapted = "<a href='http://www.annabelkarmel.com/recipes/gluten-free/blueberry-muffins'>Annabel Karmel</a>" %}
+
+{% set yield = "7 mini muffins" %}
+
+{% block ingredient_content %}
+    {{ ingredient("125g plain flour", 1) }}
+
+    {{ ingredient("1½ tsp baking powder", 2) }}
+
+    {{ ingredient("60g castor sugar", 3) }}
+
+    {{ ingredient("Pinch of salt", 4) }}
+
+    {{ ingredient("1 egg (at room temperature) – lightly beaten", 5) }}
+
+    {{ ingredient("2 tbsp fresh orange juice", 6) }}
+
+    {{ ingredient("1 tsp orange zest", 7) }}
+
+    {{ ingredient("90 ml extra light olive oil/ sunflower oil", 8) }}
+
+    {{ ingredient("½ tsp vanilla extract", 9) }}
+
+    {{ ingredient("80g plain yogurt (I used Greek-style yogurt which is thicker and creamier)", 10) }}
+
+    {{ ingredient("60g fresh/ frozen blueberries (see <a href='#note_3'>note 3</a> and <a href='#note_4'>4</a>)", 11) }}
+{% endblock ingredient_content %}
+
+{% set ingredient_img = url_for("static", filename= "orange_muffin_4" | media( name | path_format )) %}
+
+{% set ingredient_alt = "Fresh blueberries" %}
+
+{% block steps_content %}
+    {% set accordion_body_1 %}
+        <ol>
+            <li>
+                Pre-heat oven to 210°c. <a href="#note_1">(see note 1)</a>.
+            </li>
+            <li>
+                In a mixing bowl, sieve flour and baking powder. Add in sugar and salt and mix well. Set aside.
+            </li>
+            <li>
+                In a separate bowl, whisk together the lighted beaten egg, oil, yogurt, vanilla extract, orange juice
+                and zest until it is creamier. It will look a bit cuddled. Be careful not to overbeat the mixture.
+            </li>
+            <li>
+                Add the wet mixture into the dry ingredients. Use a spatula, combine the ingredients with fold in method
+                until they are well combined and no traces of flour. Stir in blueberries and mix well. Do not over-mix the batter.
+                The batter should be thick (“spoonable” not “pourable”).
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Preparing the batter", accordion_body_1, 1, True) }}
+
+    {% set accordion_body_2 %}
+        <ol start="5">
+            <li>
+                Transfer the batter into a piping bag <a href="#note_2">(see note 2)</a> and pipe batter into the muffin cups until each cup is 80% full.
+            </li>
+            <li>
+                Bake at 190°c for 15-20 minutes.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Baking the muffins", accordion_body_2, 2) }}
+{% endblock steps_content %}
+
+{% set steps_img = url_for("static", filename= "orange_muffin_2" | media( name | path_format )) %}
+
+{% block notes_content %}
+    <li id="note_1">
+        Start off the oven hot – This sets the top crust quickly which allows the batter underneath to stay liquid,
+        build up pressure and eventually burst up like a volcano. It will yield a dome effect to the muffins.
+        However, the baking time and oven temperatures vary depending on the types of oven, size of muffins,
+        or whether you are using a paper cup or muffin tray to bake. So use your own judgment to experiment.
+    </li>
+    <li id="note_2">
+        You can create your own piping bag by using a clean square or rectangular plastic bag.
+        Transfer the mixture into the bag, tighten the opening with a rubber band and cut a small corner for squeezing.
+        You may need to cut a bigger hole so you can squeeze the blueberries out easily.
+    </li>
+    <li id="note_3">
+        For variation, try to experiment with other type of berries.
+        Another possible option is to use fruits such as raisins and cranberries. It’s important to condition them before use.
+        (<b>Note</b>: Conditioning dried fruits will help to prevent them from absorbing the moisture from the muffins.
+        To do that, you need to put the dried fruits in a plastic bag, pour water inside the bag and immediately pour it out.
+        Retaining a little bit of water inside. Leave the plastic bag overnight at room temperature. Pat dry any excess water before using).
+    </li>
+    <li id="note_4">
+        There is no need to defrost the frozen blueberries.
+    </li>
+{% endblock notes_content%}
