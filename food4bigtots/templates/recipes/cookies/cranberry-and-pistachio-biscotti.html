@@ -1,0 +1,163 @@
+{% extends "recipes/recipe.html" %}
+
+{% from "macros.html" import ingredient, accordion_item %}
+
+{% set cover_img = url_for("static", filename= "cran_biscotti_2" | media( name | path_format )) %}
+
+{% set intro_content %}
+    <p>
+        One of the things I look forward to having coffee at Dome Cafe is not its coffee but the biscotti that
+        is served together with it. This little treat compliments the coffee so well! I always wanted to grab hold
+        of a packet to bring home. But, after seeing the price, I decided to give this homemade version a go.
+        That’s when I realized how cheap, healthier and tastier they could be!! Moving forward,
+        I can happily say bye-bye to all the tasteless and expensive biscotti sold at the stores.
+    </p>
+    <p>
+        Biscotti originates from Italy. It is baked twice; first in log shape and then as individual slices.
+        This method will yield a dry and hard, yet crisp texture for the biscuit which allows them to be kept longer at room temperature.
+    </p>
+    <p>
+        Some biscotti contain oil, some not. This biscotti recipe I am sharing now is oil and butter free and uses
+        egg as a binding agent. It’s definitely a healthier option compared to the other oil or butter rich baked goods.
+        When mixing the ingredients, don’t be fret if you get a sticky dough. Rest assured that nothing goes wrong.
+        Just dust your hands and the work top with more flours will make the dough more manageable.
+    </p>
+    <p>
+        Biscotti is as easy-to-make as other cookies. However, it may need slightly more time and extra steps to produce
+        its unique  hard, dry and crisp texture. At the first baking, the biscotti log is baked using longer baking time to
+        ensure it is well risen and firm but not hard. Then it is left to cool down so that it can be easily cut into thin
+        and neat slices with the use of a serrated knife. The purpose of the second baking is to dry up the biscotti until
+        it becomes crunchy but not overly browned. Both baking sessions are done under low baking temperature.
+    </p>
+    <p>
+        The biscotti is so full of flavour. Cranberry lends some natural sweetness and moisture to it.
+        I love the combination of cranberry and pistachio as the pairing of red and green creates a cheerful and
+        festive look for the biscotti. I think it makes a perfect gift for all occasions especially this coming Father’s Day.
+    </p>
+    <p>
+        Earlier on, I had tried an all-nuts combination with pistachios, almonds and hazelnuts,
+        but i still prefer a mix of nuts and dried fruits. The latter is more moist and tastier.
+        However, feel free to use any combination of your choice. If your child is not ready for nuts or is allergic to them,
+        then you can opt for 100% dried fruits for this recipe. Whether dunking into hot beverage or eating it alone,
+        this biscotti is definitely going to be my family’s favourite year round snack.
+    </p>
+    <p>
+        For a note, this biscotti may not be suitable for young toddlers. For older toddlers,
+        dunk it into their milk or hot drink to soften it.
+    </p>
+{% endset %}
+
+{% set intro_img = url_for("static", filename= "cran_biscotti_1" | media( name | path_format )) %}
+
+{% set yield = "40 Biscotti" %}
+
+{% block ingredient_content %}
+    {{ ingredient("150g plain flour (all purpose flour)", 1) }}
+    
+    {{ ingredient("½ tsp baking powder", 2) }}
+
+    {{ ingredient("1 large egg (about 70g) – at room temperature", 3) }}
+
+    {{ ingredient("70g castor sugar", 4) }}
+
+    {{ ingredient("Pinch of salt", 5) }}
+
+    {{ ingredient("60g pistachios", 6) }}
+
+    {{ ingredient("50g dried cranberries", 7) }}
+
+    {{ ingredient("⅛ tsp vanilla extract, more or less (optional)", 8) }}
+
+    {{ ingredient("Grated orange zest (from 1 medium orange)", 9) }}
+{% endblock ingredient_content %}
+
+{% set ingredient_img = url_for("static", filename= "cran_biscotti_3" | media( name | path_format )) %}
+
+{% set ingredient_alt = "Cranberry and pistachio biscotti on saucers and in a jar." %}
+
+{% block steps_content %}
+    {% set accordion_body_1 %}
+        <ol>
+            <li>
+                Rehydrate cranberries – put in a plastic bag, pour water inside and immediately
+                pour it out retaining some. Leave at room temperature for at least 2-3 hours or overnight.
+                Before using, remove cranberries from the bag and pat dry with kitchen towel.
+            </li>
+            <li>
+                Rinse pistachios lightly. Pat dry with kitchen towel. (This step is optional)
+            </li>
+            <li>
+                Roast pistachios in a preheated oven for 2-3 minutes at 160°C. Set aside.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Preparing the ingredients", accordion_body_1, 1, True) }}
+
+    {% set accordion_body_2 %}
+        <ol start="4">
+            <li>
+                In a mixing bowl, combine flour and baking powder and sieve.
+                Add in orange zest and mix well. Use finger tips to break the lumps if any.
+            </li>
+            <li>
+                In another bowl, beat the egg lightly with a hand whisk or electrical mixer.
+                Then add in sugar and salt. Beat until the mixture is fluffy and pale.
+            </li>
+            <li>
+                Add in vanilla extract (if used) and mix.
+            </li>
+            <li>
+                Add in flour and baking powder (from step 4). Use a plastic scraper to mix all the ingredients until well combined. You can use technique such as cut, press and scrape to mix.
+            </li>
+            <li>
+                Then add in the pistachios and cranberries. Mix until well combined and form a dough. At this stage, the dough is quite sticky. So, dust your hands and counter top with more flours before proceeding to the next step.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Preparing the dough", accordion_body_2, 2) }}
+
+    {% set accordion_body_3 %}
+        <ol start="9">
+            <li>
+                Transfer the dough to a floured surface. Divide the dough into two equal portions,
+                roll into log shapes (20cm length x 5cm width x 2cm thickness) and then flatten slightly.
+                <a href="#note-4">(refer to note 4)</a>
+            </li>
+            <li>
+                Place the logs on a baking tray lined with grease-proof paper.
+                Transfer the tray to oven, place at the lower rack and bake at 160°C for 30 minutes or until well risen and firm.
+                If your logs show uneven colour, rotate them at 180 degree towards the last 5 minutes.
+            </li>
+            <li>
+                Remove from the oven and let it cool for about 10 minutes.
+            </li>
+            <li>
+                When the logs are cooled, use <b>serrated knife</b> to cut it diagonally into thin slices
+                (0.8cm thickness or lesser). Arrange slices on the lined baking tray, transfer to oven,
+                place at the lowest rack and bake for a further 150°c for 12 minutes (6 minutes for each side)
+                or until slightly golden brown.
+            </li>
+            <li>
+                Cool on rack and keep in an air-tight container for several weeks.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Baking the biscotti", accordion_body_3, 3) }}
+{% endblock steps_content %}
+
+{% set steps_img = url_for("static", filename= "cran_biscotti_4" | media( name | path_format )) %}
+
+{% block notes_content %}
+    <li>
+        Dried cranberries can substituted with dried cherries.
+    </li>
+    <li>
+        You can substitute pistachios with other nuts (such almonds) or dried cranberries.
+    </li>
+    <li>
+        After keeping the biscotti for some time, they may turn soft. To crisp them, bake in a preheated oven at 150°c for 5-10 minutes.
+    </li>
+    <li id="note-4">
+        Watch <a href="http://www.youtube.com/watch?feature=player_embedded&v=FQwgweL7Sls">this video</a> on how to rough the dough.
+    </li>
+{% endblock notes_content%}
