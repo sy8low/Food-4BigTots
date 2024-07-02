@@ -1,4 +1,4 @@
-# Food-4BigTots ![Food-4BigTots logo](food4bigtots/static/media/theme/FFT_icon_nobg.png)
+# Food-4BigTots ![Food-4BigTots logo](food4bigtots/static/media/brand/FFT_icon_nobg.png)
 
 **[Food-4BigTots](https://www.food-4bigtots.xyz/)** is a tribute to my mum’s food blog, **[Food-4Tots](https://food-4tots.com/)**.
 
