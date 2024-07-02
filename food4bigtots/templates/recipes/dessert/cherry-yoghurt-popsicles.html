@@ -1,0 +1,199 @@
+{% extends "recipes/recipe.html" %}
+
+{% from "macros.html" import ingredient, accordion_item %}
+
+{% set cover_img = url_for("static", filename= "cherry_popsicle_1" | media( name | path_format )) %}
+
+{% set intro_content %}
+    <p>
+        If you had been blog-hopping, you would have discovered many posts on popsicles during this summer season.
+        Everyone has his/her most favourite method of making popsicles to share.
+        I can’t tell you how much I love looking at those unique creations. None of them are 100% identical.
+        I’m truly amazed by how a simple recipe can be tweaked in so many interesting ways. So I told myself that I must join the fun too.
+        Without much ado, I bought 2 sets of Ikea popsicle moulds and got ready for action.
+        But deciding on which one to follow based on the recipes I had bookmarked earlier can be a real headache.
+        They all look so GOOD!! In the end, I decided to pick a bit from here and there to come out with my own version which
+        combined fresh fruit, yogurt and honey.
+    </p>
+    <p>
+        What’s so special with my so-called “healthy” version?
+        First, I used creamy and tangy Greek-style yogurt.
+        Of course, you can always substitute it with any plain yogurt or vanilla yogurt. Second, I used fresh fruit.
+        (This is another fun way to include fruit into your toddler’s diet).
+        The cherries I used to make these popsicles were bought from a <a href="http://www.sunmoonfood.com/">fruit wholesaler</a>
+        near my hubby’s workplace. They were so sweet and juicy! But this shouldn’t limit your choice of other seasonal fruits.
+        You can choose to use concentrated fruit juice too. Lastly, you will find lemon juice in my recipe.
+        It is because blending yogurt with lemon juice results in an airy mixture that is more delicious when frozen.
+        This marvellous tip is adapted from <a href="http://www.marthastewart.com/article/tie-dye-pops">Martha Stewart’s site</a>. 
+    </p>
+    <p>
+        So, what is the result? The popsicles tasted so fruity, creamy and delicious.
+        The perfect summer treat for kids! Needless to say, my son enjoyed it very much.
+        Let the photos speak for themselves.
+    </p>
+    <p>
+        This recipe is very versatile as you can make the pops in layers, swirl the ingredients to give it an artistic look,
+        or even combine everything together. Get adventurous and be creative in your experiment. No matter how terrible you
+        are as a cook, you should be able to handle these homemade popsicles with ease. Not much effort is involved.
+        Althought it only takes a few minutes to make, it can bring your kids an abundance of joy.
+        Better still if you and your kids make them together. Have fun and enjoy!!!
+    </p>
+    <p>
+        Other gorgeous popsicle recipes:
+    </p>
+    <ul>
+        <li>
+            <a href="http://blog.annabelkarmel.com/kids-cooking/tropical-ice-lollies.html">Tropical ice lollies by Annabel Karmel</a>
+        </li>
+        <li>
+            <a href="http://bread-and-honey.blogspot.com/2008/08/berry-and-yogurt-popsicles.html">Berry and yogurt popsicles by Bread &amp; Honey</a>
+        </li>
+        <li>
+            <a href="http://naturallyella.com/2010/07/26/cherry-yogurt-popsicles/">Cherry yogurt popsicles by Naturally Ella</a>
+        </li>
+        <li>
+            <a href="http://www.cookingwithmykid.com/recipes/gummy-pops/">Gummy pops by Cooking With My Kid</a>
+        </li>
+        <li>
+            <a href="http://themagiconions.blogspot.com/2010/06/patiotic-fruit-pops.html">Patriotic fruit pops by The Magic Onions</a>
+        </li>
+        <li>
+            <a href="http://andthenidothedishes.blogspot.com/2010/07/strawberry-watermelon-yogurt-ice-pops.html">
+                Strawberry watermelon yogurt ice pops by And Then I Do The Dishes
+            </a> (without popsicle moulds)
+        </li>
+        <li>
+            <a href="http://zoomyummy.com/2010/04/16/looting-ikea-and-strawberry-yogurt-popsicles/">Strawberry yogurt popsicles by Zoom Yummy</a>
+        </li>
+        <li>
+            <a href="http://www.thekitchn.com/thekitchn/dessert/grownup-popsicles-pomegranate-yogurt-pops-119600">
+                Pomegranate yogurt pops by The Kitchn
+            </a>
+        </li>
+        <li>
+            <a href="http://www.howdoesshe.com/popsicles-for-breakfast">Popsicles for breakfast by How Does She</a>
+        </li>
+        <li>
+            <a href="http://www.marthastewart.com/article/tie-dye-pops">Tie Dye Pops by Martha Stewart</a>
+        </li>
+    </ul>
+{% endset %}
+
+{% set intro_img = url_for("static", filename= "cherry_popsicle_3" | media( name | path_format )) %}
+
+{% set adapted %}
+    <br><a href="http://naturallyella.com/2010/07/26/cherry-yogurt-popsicles/">Cherry yogurt popsicles by Naturally Ella</a>
+    <br>and <a href="http://www.marthastewart.com/article/tie-dye-pops">Tie Dye Pops by Martha Stewart</a>
+{% endset %}
+
+{% set yield = "Roughly six 3-ounce popsicles<br>(you may come out with 7-8 sticks with Ikea popsicle moulds)" %}
+
+{% block ingredient_content %}
+    <h4>For cherry puree:</h4>
+    {{ ingredient("250g cherries (pits removed and cut into pieces)", 1) }}
+
+    {{ ingredient("1 tbsp honey", 2) }}
+
+    {{ ingredient("1 tsp lemon juice", 3) }}
+    
+    <h4 class="mt-3">For yogurt mixture:</h4>
+    {{ ingredient("180g (3/4 cup) Greek-style yogurt <a href='#note_2'>(refer to note 2)</a>", 4) }}
+
+    {{ ingredient("1/8 cup fresh milk", 5) }}
+
+    {{ ingredient("1 tbsp honey", 6) }}
+
+    {{ ingredient("1 tsp lemon juice", 7) }}
+{% endblock ingredient_content %}
+
+{% set ingredient_img = url_for("static", filename= "cherry_popsicle_8" | media( name | path_format )) %}
+
+{% set ingredient_alt = "Top: Popsicle Moulds; Bottom: Farmers Union Greek Style Natural Yoghurt" %}
+
+{% block steps_content %}
+    {% set accordion_body_1 %}
+        <ol>
+            <li>
+                Place cherries in a blender and puree. Pass through a fine sieve into a measuring cup.
+                (You should have ¾ cup puree). Stir in honey and lemon juice. Adjust to taste. Set aside.
+            </li>
+            <li>
+                Scoop the yogurt into a cup. Stir in the milk a little at a time until the yogurt is thinned
+                enough that it can be poured. Stir in the honey and lemon juice. Adjust to taste. Set aside.
+                <a href="#note_3">(refer to note 3)</a>.
+            </li>
+            <li>
+                Pour an inch of yogurt into the popsicle moulds, then an inch of cherry puree,
+                and repeat until the moulds are filled. Use a chopstick or skewer to gently swirl the liquids together.
+                If your moulds don’t come with their own sticks, insert wooden popsicle sticks after 1 hour of freezing.
+                Freeze at least 8 hours or overnight, until the popsicles solidify.
+            </li>
+            <li>
+                Run the moulds under tap/ warm water and gently wiggle the sticks to free the popsicles from the moulds.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Swirled pops", accordion_body_1, 1, True) }}
+
+    {% set accordion_body_2 %}
+        <ol>
+            <li>
+                Place cherries in a blender and puree. Pass through a fine sieve into a measuring cup.
+                (You should have ¾ cup puree). Stir in honey and lemon juice. Adjust to taste. Set aside.
+            </li>
+            <li>
+                Scoop the yogurt into a cup. Stir in the milk a little at a time until the yogurt is thinned
+                enough that it can be poured. Stir in the honey and lemon juice. Adjust to taste. Set aside.
+                <a href="#note_3">(refer to note 3)</a>.
+            </li>
+            <li>
+                Pour an inch or so of yogurt into the bottom of each popsicle mould.
+                Freeze this until the yogurt is just set, about 45 minutes.
+                Pour an inch of cherry puree on top and freeze until just set, another 45 minutes or so.
+                Repeat in layers until the pops are filled. If your moulds don’t come with their own sticks,
+                insert wooden popsicle sticks along with the third layer. Freeze another 2-3 hours or overnight,
+                until the popsicles solidify.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Layered pops", accordion_body_2, 2) }}
+
+    {% set accordion_body_3 %}
+        <ol>
+            <li>
+                Place cherries in a blender and puree. Pass through a fine sieve into a measuring cup.
+                (You should have ¾ cup puree).
+            </li>
+            <li>
+                Add cherry puree and the rest of the ingredients into the blender and blend until smooth.
+                Add extra honey if needed.
+            </li>
+            <li>
+                Pour into the moulds and freeze at least 8 hours or overnight, until the popsicles solidify.
+                If your moulds don’t come with their own sticks, insert wooden popsicle sticks after 1 hour of freezing.
+            </li>
+            <li>
+                Run the moulds under tap/ warm water and gently wiggle the sticks to free the popsicles from the moulds.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Normal pops", accordion_body_3, 3) }}
+{% endblock steps_content %}
+
+{% set steps_img = url_for("static", filename= "cherry_popsicle_6" | media( name | path_format )) %}
+
+{% block notes_content %}
+    <li>
+        If you do not have popsicle moulds, substitute with empty yogurt pots. Or else, try out
+        <a href="http://andthenidothedishes.blogspot.com/2010/07/strawberry-watermelon-yogurt-ice-pops.html">this method</a>.
+    </li>
+    <li id="note_2">
+        You can replace Greek-style yogurt with plain yogurt or vanilla yogurt.
+    </li>
+    <li id="note_3">
+        Alternatively, you can blend everything until smooth. But be careful not over-blend as the yogurt mixture will be very watery.
+    </li>
+    <li>
+        Concentrated fruit juice can be used to substitute fresh fruit juice. But you need to adjust the sweetness accordingly.
+    </li>
+{% endblock notes_content%}

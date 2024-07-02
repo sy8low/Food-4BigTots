@@ -34,7 +34,7 @@
             <p class="h5">Adapted and modified from {{ adapted | safe }}</p>
         {% endif %}
         {% if yield %}
-            <p class="h5">Yield: {{ yield }}</p>
+            <p class="h5">Yield: {{ yield | safe }}</p>
         {% endif %}
     </hgroup>
 
