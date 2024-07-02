@@ -1,0 +1,171 @@
+{% extends "recipes/recipe.html" %}
+
+{% from "macros.html" import ingredient, accordion_item %}
+
+{% set cover_img = url_for("static", filename= "donut_1" | media( name | path_format )) %}
+
+{% set intro_content %}
+    <p>
+        “There is a child in every one of us”.
+    </p>
+    <p>
+        The “little child” in me will automatically pop up when it comes to donuts.
+        Hey, who doesn’t love donuts? The classic, ring-shaped, sugar-coated donut is my all-time favourite.
+        They were so yummy, and I can never have enough of them.
+    </p>
+    <p>
+        I have started making my own donuts four years ago. I baked rather than deep-fried them.
+        From then on, I have never turned back to deep-fried version.
+        I love baked version as I don’t have to feel guilty when chomping them away.
+    </p>
+    <p>
+        “Are they as good as those deep-fried ones?” You may wonder.
+        I would say no for their texture but the taste is equally good.
+        As these donuts are leavened with baking powder, the texture is more like cake.
+        But, I don’t mind to compromise it for healthier donuts.
+    </p>
+    <p>
+        Hmmm….what should I bake this time?
+    </p>
+    <p>
+        “Pssst…..how about a chocolate treat?” whispered the “little child” in me.
+    </p>
+    <p>
+        “YES, I WANT! I WANT!!” (Ooops! Sorry, I’m getting a little too excited here!)
+    </p>
+    <p>
+        So, here come the irresistible “Baked Mini Chocolate Donuts” – cute, petite, soft, moist, not overly sweet, cakey, chocolatey donuts!
+        HOLY MOLY! They are soooo delicious (seriously)! All the goodness doesn’t just stop there. These donuts are light and not oily as I choose
+        coconut oil instead of butter. They won’t turn dry even the next day as the yogurt keeps them moist.
+        I have skipped the glazing part as I find that the sweetness is just right for my palate.
+        You may dress up these cuties with glaze or sprinkle to suit your own liking.
+    </p>
+    <p>
+        This recipe only takes about 30 minutes from start to finish. No electrical mixer is required.
+        That’s the beauty of it – a lot less stressful as compared to deep-fried, yeast-raised donuts.
+    </p>
+    <p>
+        I use a 12-count mini donut pan to bake these donuts. If you don’t have one, don’t fret.
+        I think it’s still doable with mini muffin tins as I have seen some food bloggers did that successfully.
+        If you are going for this option, please share with me the outcome.
+    </p>
+    <p>
+        I have baked these donuts, not once but thrice in a row. My son shared them with his entire class – 34 of them including his form teacher.
+        He was so surprised to see his classmates dashing out from their seats to grab a bite of them. Some of them even requested for extras!
+        At the end of the day, he made many more new friends (and fans!). Don’t you think these donuts have magical power?
+    </p>
+    <p>
+        This recipe yields 24 mini donuts. But, it’s worth double the batches if you plan to share them with others.
+        Any leftovers can be stored in the fridge and they can last for days! Before serving, just warm them up lightly,
+        and your teatime snack will be ready in no time!
+    </p>
+{% endset %}
+
+{% set intro_img = url_for("static", filename= "donut_3" | media( name | path_format )) %}
+
+{% set adapted = "<a href='http://www.recipelink.com/msgbrd/board_0/2012/FEB/87341.html'>Norpro Recipe</a>" %}
+
+{% set yield = "24 mini donuts" %}
+
+{% block ingredient_content %}
+    {{ ingredient("1¼ cups plain flour/ all purpose flour <a href='#note_1'>(note 1)</a>", 1) }}
+
+    {{ ingredient("1/3 cup unsweetened cocoa powder", 2) }}
+
+    {{ ingredient("1 teaspoon baking powder", 3) }}
+
+    {{ ingredient("1/4 teaspoon salt", 4) }}
+
+    {{ ingredient("2 large eggs at room temperature (about 65g each)", 5) }}
+    
+    {{ ingredient("½ cup castor or granulated sugar <a href='#note_2'>(note 2)</a>", 6) }}
+
+    {{ ingredient("¼- ½ teaspoon vanilla extract", 7) }}
+
+    {{ ingredient("½ cup milk mixture (3 tablespoons Greek-style yogurt plus milk) at room temperature <a href='#note_3'>(note 3)</a>", 8) }}
+
+    {{ ingredient("3 tablespoons salad oil <a href='#note_4'>(note 4)</a>", 9) }}
+{% endblock ingredient_content %}
+
+{% set ingredient_img = url_for("static", filename= "donut_2" | media( name | path_format )) %}
+
+{% set ingredient_alt = "Donuts in mould before and after baking" %}
+
+{% block steps_content %}
+    {% set accordion_body_1 %}
+        <ol>
+            <li>
+                Pre-heat oven to 160°C. Greased the donut pans with cooking spraying or brush with oil.
+            </li>
+            <li>
+                Combine milk and yogurt in a small bowl. Add oil and mix well. Set aside.
+            </li>
+            <li>
+                Combine flour, baking powder and cocoa powder in a medium bowl. Sieve and set aside.
+            </li>
+            <li>
+                In a large bowl, beat eggs lightly. Add sugar and continue to beat until foamy.
+                Add vanilla and salt. Mix well. Scraping the sides at least once.
+            </li>
+            <li>
+                Combine egg mixture and milk mixture with flour mixture alternately. Mix until the batter is smooth.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Preparing the batter", accordion_body_1, 1, True) }}
+
+    {% set accordion_body_2 %}
+        <ol start="6">
+            <li>
+                Pour the batter into a piping bag <a href="#note_5">(note 5)</a>.
+                Fill each donut count or cavity until 80% full.
+            </li>
+            <li>
+                Bake for 6-8 minutes or until when a toothpick inserted into the donut come out clean.
+                Allow the donuts to cool in the pan for 5 minutes and then invert them onto a cooling rack.
+            </li>
+            <li>
+                Repeat the same step for the second donut pan.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Baking the donuts", accordion_body_2, 2) }}
+{% endblock steps_content %}
+
+{% set steps_img = url_for("static", filename= "donut_4" | media( name | path_format )) %}
+
+{% block notes_content %}
+    <li id="note_1">
+        I used unbleached plain flour. Do not pack the flour, just fill it loosely.
+    </li>
+    <li id="note_2">
+        I used organic raw cane sugar.
+    </li>
+    <li id="note_3">
+        Greek-style yogurt is creamier than plain yogurt. But it’s still fine using plain yogurt.
+    </li>
+    <li id="note_4">
+        I used extra virgin coconut oil.
+    </li>
+    <li id="note_5">
+        You can DIY piping bag with a clean square or rectangular plastic bag.
+        Transfer the mixture into the bag, tighten the opening with a rubber band and cut out a small
+        corner for the batter to be squeezed out.
+    </li>
+    <li>
+        Use dry measuring cup to measure flour, cocoa powder and sugar.
+    </li>
+    <li>
+        The baking time and oven temperatures vary depending on the types of oven, so use your own judgment to experiment.
+    </li>
+    <li>
+        I have skipped the glazing part but you may do so to suit your own liking.
+    </li>
+    <li>
+        Any leftovers can be stored in the fridge and they can last for a couple of days.
+        Just lightly warmed them up in a toasted oven before serving.
+    </li>
+    <li>
+        The texture will be slightly dense if you bake the donuts with normal size donut pan.
+    </li>
+{% endblock notes_content%}

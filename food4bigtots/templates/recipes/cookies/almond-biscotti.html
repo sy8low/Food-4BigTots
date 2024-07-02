@@ -91,7 +91,7 @@
             </li>
         </ol>
     {% endset %}
-    {{ accordion_item("Roast almonds", accordion_body_1, 1, True) }}
+    {{ accordion_item("Roasting the almonds", accordion_body_1, 1, True) }}
 
     {% set accordion_body_2 %}
         <ol start="3">
@@ -116,7 +116,7 @@
                 <a href="#note_4">(refer to note 4)</a>.
         </ol>
     {% endset %}
-    {{ accordion_item("Prepare batter", accordion_body_2, 2) }}
+    {{ accordion_item("Preparing the dough", accordion_body_2, 2) }}
 
     {% set accordion_body_3 %}
         <ol start="8">
@@ -139,7 +139,7 @@
             </li>
         </ol>
     {% endset %}
-    {{ accordion_item("Baking", accordion_body_3, 3) }}
+    {{ accordion_item("Baking the biscotti", accordion_body_3, 3) }}
 {% endblock steps_content %}
 
 {% set steps_img = url_for("static", filename= "alm_biscotti_5" | media( name | path_format )) %}
