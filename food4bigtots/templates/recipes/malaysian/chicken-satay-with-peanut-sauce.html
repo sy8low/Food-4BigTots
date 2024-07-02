@@ -1,0 +1,287 @@
+{% extends "base.html" %}
+
+{% from "macros.html" import double, single, ingredient, accordion_item %}
+
+{% block title %}{{ super() }} | {{ name }}{% endblock title %}
+
+{% block og_img %}{{ url_for("static", filename=thumbnail | media( name | path_format )) }}{% endblock og_img %}
+
+{% block og_type %}blog{% endblock og_type %}
+
+{% block main %}
+    <hgroup class="big">
+        <h1>{{ name }}</h1>
+        <p><time class="h5" datetime="{{ ISO_date }}">{{ date }}</time></p>
+        {% if original %}
+            <p class="h5">Find the original Food-4Tots page <a href="{{ original }}">here</a>.</p>
+        {% endif %}
+    </hgroup>
+
+    {% set cover_img = url_for("static", filename= "satay_1" | media( name | path_format )) %}
+
+    {% set cover_alt = name %}
+
+    <div class="row justify-content-center mb-4">
+        <img class="col-10 col-lg-6" src="{{ cover_img }}" alt="{{ cover_alt }}">        
+    </div>
+
+
+    {% set intro_content %}
+        <p>
+            My family and I love satay. Whenever we want to eat satay, we will usually head to Kajang,
+            a small town 25km from Kuala Lumpur where our favourite satay stall is located. As it is too far from our place,
+            we only visit it once in a while. Nevertheless, I have figured out a way to fix our satay craving,
+            and that’s making my own satay!!
+        </p>
+        <p>
+            Making authentic Malaysian satay with peanut dipping sauce is a very tedious process which I dread to follow.
+            Hence, an easy and simple version will definitely be a better choice for me. For that, I use ground spices and
+            store bought peanut butter to make the sauce instead of making them from scratch. I have also chosen common ingredients
+            that can be easily found in the supermarket. Usually coconut milk is added to make the peanut sauce, but I skip it for
+            this recipe. Even then, the taste of the sauce is surprisingly good! It has a balance of salty, sweet and spicy flavour.
+            My hubby said that it tasted better than
+            <a href="https://food-4tots.com/2012/08/28/peanut-satay-sauce/">the one</a>
+            I shared earlier.
+        </p>
+        <p>
+            With all these short-cuts, I have successfully recreated a hassle-free chicken satay and peanut sauce at home!
+            YAY!!! Even though the taste still can’t beat our favourite satay, it has far exceeded my family’s expectation.
+            The meat is so flavourful and succulent that you can even eat it on its own but the peanut sauce will make a perfect companion.
+        </p>
+        <p>
+            I cooked my satay on a grilled pan but an outdoor charcoal grill would be ideal.
+            If you don’t have any of them, you can still pan fry it first and then broil in the oven.
+        </p>
+        <p>
+            This recipe is not just easy to follow but it also allows you to prepare some tasks ahead of time such as marinating
+            the chicken and making the peanut sauce. The actual cooking time only requires about 15 minutes and they are ready to serve.
+        </p>
+        <p>
+            These chicken satays make great appetizer for parties and potlucks! The peanut sauce can be served as a dip to encourage your
+            kids to eat more vegetables.
+        </p>
+        <p>
+            <b>Note</b>: Peanut is one of the most common food allergies. Hence, this recipe is not recommended for kid below 3 years old
+            (age as recommended by American Academy of Pediatrics), kid who has a family history of allergies or kid who has had a food allergy
+            in the past. If you want to introduce peanuts to your child, please consult your pediatrician for further advice.
+        </p>
+    {% endset %}
+
+    {% set intro_img = url_for("static", filename= "satay_2" | media( name | path_format )) %}
+
+    {% set intro_alt = name %}
+
+    {{ double("Intro", intro_content, intro_img, intro_alt, False) }}
+
+
+    <hgroup class="big">
+        <h2 class="spaced">Recipe for the Chicken Satay</h2>
+        <p class="h5">Yield: 10 sticks</p>
+    </hgroup>
+
+
+    {% set ingredient_content_satay %}
+        <form>
+            <ul class="list-group">
+                {{ ingredient("280g chicken fillet (鸡柳), about 8 strips <a href='#note-a1'>(note 1)</a>", 1) }}
+                
+                {{ ingredient("2 stalks of lemongrass (chopped) <a href='#note-a2'>(note 2)</a>", 2) }}
+
+                {{ ingredient("3 cloves of garlic (chopped)", 3) }}
+
+                {{ ingredient("4 shallots (chopped)", 4) }}
+
+                {{ ingredient("1 ½ tablespoons light soy sauce", 5) }}
+
+                {{ ingredient("2 teaspoons dark soy sauce", 6) }}
+
+                {{ ingredient("1 teaspoon turmeric powder", 7) }}
+
+                {{ ingredient("1 ½ tablespoons brown sugar", 8) }}
+
+                {{ ingredient("2 teaspoons honey", 9) }}
+
+                {{ ingredient("¼ teaspoon pepper", 10) }}
+
+                {{ ingredient("2 teaspoons oil (I used extra light olive oil)", 11) }}
+
+                {{ ingredient("10-12 bamboo skewers (I bought mine from Daiso)", 12) }}
+            </ul>
+
+            <input type="reset" value="Reset">
+        </form>
+    {% endset %}
+
+    {% set ingredient_img_satay = url_for("static", filename= "satay_4" | media( name | path_format )) %}
+
+    {% set ingredient_alt_satay = "A bunch of chicken satay on a plate and one chicken satay dipped in peanut sauce" %}
+
+    {{ double("Ingredients for Chicken Satay", ingredient_content_satay, ingredient_img_satay, ingredient_alt_satay) }}
+
+
+    {% set steps_content_satay %}
+        <div class="accordion ms-n1" id="steps">
+            {% set accordion_body_1 %}
+                <ol>
+                    <li>
+                        Soak satay skewers in water for at least 30 minutes. This is to prevent them from burning or charred during grilling.
+                    </li>
+                    <li>
+                        Wash and pat dry chicken fillet. Remove the white tendon and cut into bite size about 2cm cube.
+                    </li>
+                    <li>
+                        Pound lemongrass, garlic and shallots with a pestle and mortar or with a food processor until fine.
+                        Transfer to a small bowl and combine with light soy sauce, dark soy sauce, turmeric powder, brown sugar, honey, pepper and oil.
+                    </li>
+                    <li>
+                        Add the chicken pieces to the marinade to mix until well coated. Refrigerate for 2 hours or overnight.
+                    </li>
+                </ol>
+            {% endset %}
+            {{ accordion_item("Marinading the chicken", accordion_body_1, 1, True) }}
+
+            {% set accordion_body_2 %}
+                <ol start="5">
+                    <li>
+                        When ready to cook, thread the chicken pieces onto the skewers. Discard any excess marinade.
+                    </li>
+                    <li>
+                        Preheat a grill pan over medium heat. Lightly brush it, as well as the chicken satay with oil.
+                        Cook the chicken satay for about 3 minutes per side, depending on the thickness of your chicken.
+                        Or, you can broil them in an oven using the grill function.
+                    </li>
+                    <li>
+                        Serve with cucumber, onion and peanut satay sauce.
+                    </li>
+                </ol>
+            {% endset %}
+            {{ accordion_item("Grilling the chicken", accordion_body_2, 2) }}
+        </div>
+    {% endset %}
+    
+    {% set steps_img_satay = url_for("static", filename= "satay_5" | media( name | path_format )) %}
+
+    {% set steps_alt_satay = ["Step-by-step visual guide on how to make", name] | join(" ") %}
+
+    {{ double("Steps", steps_content_satay, steps_img_satay, steps_alt_satay) }}
+
+
+    {% set notes_content_satay %}
+        <ol>
+            <li id="note-a1">
+                You can also use skinless and boneless chicken breast or thigh.
+            </li>
+            <li id="note-a2">
+                For lemongrass, discard the outer layer, cut off the upper green stalk and use only the tender inner white bulb.
+            </li>
+            <li>
+                If you don’t have a grill, you can cook them on a frying pan until lightly brown and finish off by baking in the oven.
+            </li>
+        </ol>
+    {% endset %}
+
+    {{ single("Notes", notes_content_satay)}}
+
+
+    <hgroup class="big">
+        <h2 class="spaced">Recipe for the Peanut Sauce</h2>
+        <p class="h5">Adapted from <a href="https://food-4tots.com/2012/08/28/peanut-satay-sauce/">Food-4Tots Peanut Satay Sauce</a></p>
+        <p class="h5">Yield: 1 rice bowl</p>
+    </hgroup>
+
+
+    {% set ingredient_content %}
+        <form>
+            <ul class="list-group">
+                <h4 id="ingredients-a" class="mt-3">Ingredients (A)</h4>
+                {{ ingredient("3 shallots (chopped)", 13) }}
+
+                {{ ingredient("1 clove of garlic (chopped)", 14) }}
+
+                {{ ingredient("1 red chili (removed seeds and chopped)", 15) }}
+
+                {{ ingredient("¼ teaspoon garlic powder", 16) }}
+
+                {{ ingredient("¼ teaspoon turmeric powder", 17) }}
+
+                {{ ingredient("1 ½ teaspoons coriander powder", 18) }}
+
+                {{ ingredient("2 tablespoons oil (I used extra light olive oil)", 19) }}
+
+                <h4 id="seasonings-a" class="mt-3">Seasonings (A)</h4>
+                {{ ingredient("1 tablespoon light soy sauce", 20) }}
+
+                {{ ingredient("1 tablespoon brown sugar", 21) }}
+
+                {{ ingredient("3 ½ tablespoons <a href='https://food-4tots.com/2012/07/25/homemade-peanut-butter/'>peanut butter</a> (chunky or creamy)", 22) }}
+
+                {{ ingredient("110ml water", 23) }}
+
+                <h4 id="seasonings-b" class="mt-3">Seasonings (B)</h4>
+                {{ ingredient("Salt and sugar to taste", 24) }}
+            </ul>
+
+            <input type="reset" value="Reset">
+        </form>
+    {% endset %}
+
+    {% set ingredient_img = url_for("static", filename= "satay_7" | media( name | path_format )) %}
+
+    {% set ingredient_alt = "Homemade Peanut Butter" %}
+
+    {{ double("Ingredients", ingredient_content, ingredient_img, ingredient_alt) }}
+
+
+    {% set steps_content %}
+        <div class="accordion ms-n1" id="steps">
+            {% set accordion_body_3 %}
+                <ol>
+                    <li>
+                        Put all the <a href="#ingredients-a">ingredients (A)</a> in a food processor and process until it becomes paste.
+                    </li>
+                    <li>
+                        Heat oil in a skillet or frying pan under low heat. Sauté the spice paste (from step 1) until it’s fragrant
+                        and a bit of oil will rise to the top.
+                    </li>
+                    <li>
+                        Add in <a href="#seasonings-a">seasonings (A)</a> and stir until well combined.
+                        Bring it to a boil, and then simmer the mixture in low heat until it is thickened.
+                        Stir occasionally to avoid the mixture from sticking to the bottom of the pan.
+                    </li>
+                    <li>
+                        Adjust taste with <a href="#seasonings-b">seasonings (B)</a>.
+                    </li>
+                    <li>
+                        The sauce is ready for serving.
+                    </li>
+                </ol>
+            {% endset %}
+            {{ accordion_item("Making the Sauce", accordion_body_3, 3, True) }}
+        </div>
+    {% endset %}
+    
+    {% set steps_img = url_for("static", filename= "satay_3" | media( name | path_format )) %}
+
+    {% set steps_alt = "Peanut Sauce" %}
+
+    {{ double("Steps", steps_content, steps_img, steps_alt) }}
+
+
+    {% set notes_content %}
+        <ol>
+            <li>
+                If you want a kid-friendly version, adjust the amount of red chilli as you like or omit it totally.
+            </li>
+            <li>
+                If you want to make your own peanut butter or your own peanuts, you can refer to <a href="https://food-4tots.com/2012/07/25/homemade-peanut-butter/">this post</a>.
+            </li>
+            <li>
+                After the sauce has cooled down, there will be a thin layer of oil rising to the surface of the sauce.
+                It can be removed without affecting the taste of this sauce. But leaving some behind will prevent the sauce from turning dry.
+            </li>
+        </ol>
+    {% endset %}
+
+    {{ single("Notes", notes_content)}}
+
+{% endblock main %}

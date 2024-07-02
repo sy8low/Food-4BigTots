@@ -68,7 +68,7 @@
 {% set yield = "24 mini donuts" %}
 
 {% block ingredient_content %}
-    {{ ingredient("1¼ cups plain flour/ all purpose flour <a href='#note_1'>(note 1)</a>", 1) }}
+    {{ ingredient("1¼ cups plain flour/ all purpose flour <a href='#note-1'>(note 1)</a>", 1) }}
 
     {{ ingredient("1/3 cup unsweetened cocoa powder", 2) }}
 
@@ -78,13 +78,13 @@
 
     {{ ingredient("2 large eggs at room temperature (about 65g each)", 5) }}
     
-    {{ ingredient("½ cup castor or granulated sugar <a href='#note_2'>(note 2)</a>", 6) }}
+    {{ ingredient("½ cup castor or granulated sugar <a href='#note-2'>(note 2)</a>", 6) }}
 
     {{ ingredient("¼- ½ teaspoon vanilla extract", 7) }}
 
-    {{ ingredient("½ cup milk mixture (3 tablespoons Greek-style yogurt plus milk) at room temperature <a href='#note_3'>(note 3)</a>", 8) }}
+    {{ ingredient("½ cup milk mixture (3 tablespoons Greek-style yogurt plus milk) at room temperature <a href='#note-3'>(note 3)</a>", 8) }}
 
-    {{ ingredient("3 tablespoons salad oil <a href='#note_4'>(note 4)</a>", 9) }}
+    {{ ingredient("3 tablespoons salad oil <a href='#note-4'>(note 4)</a>", 9) }}
 {% endblock ingredient_content %}
 
 {% set ingredient_img = url_for("static", filename= "donut_2" | media( name | path_format )) %}
@@ -117,7 +117,7 @@
     {% set accordion_body_2 %}
         <ol start="6">
             <li>
-                Pour the batter into a piping bag <a href="#note_5">(note 5)</a>.
+                Pour the batter into a piping bag <a href="#note-5">(note 5)</a>.
                 Fill each donut count or cavity until 80% full.
             </li>
             <li>
@@ -135,19 +135,19 @@
 {% set steps_img = url_for("static", filename= "donut_4" | media( name | path_format )) %}
 
 {% block notes_content %}
-    <li id="note_1">
+    <li id="note-1">
         I used unbleached plain flour. Do not pack the flour, just fill it loosely.
     </li>
-    <li id="note_2">
+    <li id="note-2">
         I used organic raw cane sugar.
     </li>
-    <li id="note_3">
+    <li id="note-3">
         Greek-style yogurt is creamier than plain yogurt. But it’s still fine using plain yogurt.
     </li>
-    <li id="note_4">
+    <li id="note-4">
         I used extra virgin coconut oil.
     </li>
-    <li id="note_5">
+    <li id="note-5">
         You can DIY piping bag with a clean square or rectangular plastic bag.
         Transfer the mixture into the bag, tighten the opening with a rubber band and cut out a small
         corner for the batter to be squeezed out.

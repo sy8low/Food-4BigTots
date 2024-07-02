@@ -83,7 +83,7 @@
 
     {{ ingredient("80g plain yogurt (I used Greek-style yogurt which is thicker and creamier)", 10) }}
 
-    {{ ingredient("60g fresh/ frozen blueberries (see <a href='#note_3'>note 3</a> and <a href='#note_4'>4</a>)", 11) }}
+    {{ ingredient("60g fresh/ frozen blueberries (see <a href='#note-3'>note 3</a> and <a href='#note-4'>4</a>)", 11) }}
 {% endblock ingredient_content %}
 
 {% set ingredient_img = url_for("static", filename= "orange_muffin_4" | media( name | path_format )) %}
@@ -94,7 +94,7 @@
     {% set accordion_body_1 %}
         <ol>
             <li>
-                Pre-heat oven to 210°c. <a href="#note_1">(see note 1)</a>.
+                Pre-heat oven to 210°c. <a href="#note-1">(see note 1)</a>.
             </li>
             <li>
                 In a mixing bowl, sieve flour and baking powder. Add in sugar and salt and mix well. Set aside.
@@ -115,7 +115,7 @@
     {% set accordion_body_2 %}
         <ol start="5">
             <li>
-                Transfer the batter into a piping bag <a href="#note_2">(see note 2)</a> and pipe batter into the muffin cups until each cup is 80% full.
+                Transfer the batter into a piping bag <a href="#note-2">(see note 2)</a> and pipe batter into the muffin cups until each cup is 80% full.
             </li>
             <li>
                 Bake at 190°c for 15-20 minutes.
@@ -128,25 +128,25 @@
 {% set steps_img = url_for("static", filename= "orange_muffin_2" | media( name | path_format )) %}
 
 {% block notes_content %}
-    <li id="note_1">
+    <li id="note-1">
         Start off the oven hot – This sets the top crust quickly which allows the batter underneath to stay liquid,
         build up pressure and eventually burst up like a volcano. It will yield a dome effect to the muffins.
         However, the baking time and oven temperatures vary depending on the types of oven, size of muffins,
         or whether you are using a paper cup or muffin tray to bake. So use your own judgment to experiment.
     </li>
-    <li id="note_2">
+    <li id="note-2">
         You can create your own piping bag by using a clean square or rectangular plastic bag.
         Transfer the mixture into the bag, tighten the opening with a rubber band and cut a small corner for squeezing.
         You may need to cut a bigger hole so you can squeeze the blueberries out easily.
     </li>
-    <li id="note_3">
+    <li id="note-3">
         For variation, try to experiment with other type of berries.
         Another possible option is to use fruits such as raisins and cranberries. It’s important to condition them before use.
         (<b>Note</b>: Conditioning dried fruits will help to prevent them from absorbing the moisture from the muffins.
         To do that, you need to put the dried fruits in a plastic bag, pour water inside the bag and immediately pour it out.
         Retaining a little bit of water inside. Leave the plastic bag overnight at room temperature. Pat dry any excess water before using).
     </li>
-    <li id="note_4">
+    <li id="note-4">
         There is no need to defrost the frozen blueberries.
     </li>
 {% endblock notes_content%}
