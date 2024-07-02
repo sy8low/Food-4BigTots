@@ -1,0 +1,150 @@
+{% extends "recipes/recipe.html" %}
+
+{% from "macros.html" import ingredient, accordion_item %}
+
+{% set cover_img = url_for("static", filename= "choc_muffin_2" | media( name | path_format )) %}
+
+{% set intro_content %}
+    <p>
+        Chocolate is my son’s best friend. Whatever I baked that has chocolate in it will definitely please him more
+        than anything else. However, I don’t bake with chocolate that often as I don’t want to over-indulge him with it.
+    </p>
+    <p>
+        These double chocolate muffins are something that my son has been looking forward to all these while.
+        As his final exam was just over recently, I thought it would be a good time to make him this sweet treat as a way to “de-stress”.
+        He was very excited and eager to learn how to make them.
+    </p>
+    <p>
+        I showed him how to measure both dry and wet ingredients, and the right way to mix them. When the batter was ready,
+        I said, “Let’s fill up the muffin cups. And, they can go straight to the oven. ” My son was puzzled and asked,
+        “Don’t you need to proof the batter first?” “No, dear. Making muffins is a lot easier and quicker than making bread.”
+        I replied. He was so amazed and told me that he planned to make his own muffins soon. Is it a good news?
+    </p>
+    <p>
+        My little helper had problem spooning the batter into the mini muffin cups. He spilled some batter on the cups
+        and created quite a mess. It was my mistake for not using a piping bag. Lesson learned!
+    </p>
+    <p>
+        After 15 minutes of baking, I let the muffins sit inside the oven for another 3 minutes. They turned out beautiful
+        with a nice domed top and no overflow. Taste wise, they were delicious, very chocolaty (which comes from cocoa powder
+        and chocolate chips) and have the right sweetness. These double chocolate muffins are truly every chocolate lover’s dream!
+    </p>
+    <p>
+        When I shared them with my friend, she had mistakenly thought they were steamed muffins. She never expected baked muffins
+        to have such a soft and moist texture. She was even more surprised when I told her how quick and easy to make, and no
+        electrical mixer is needed.
+    </p>
+    <p>
+        I had baked these muffins twice so far, and they had disappeared at a rate faster than my previous muffins.
+        These muffins can be kept at the fridge for 2-3 days, or frozen for future consumption. As for mine, they never
+        made it to the freezer!
+    </p>
+{% endset %}
+
+{% set intro_img = url_for("static", filename= "choc_muffin_1" | media( name | path_format )) %}
+
+{% set adapted = "<a href='http://www.foodnetwork.com/recipes/nigella-lawson/chocolate-chocolate-chip-muffins-recipe.html'>Nigella Lawson</a>" %}
+
+{% set yield = "14 small muffins<br>(6ch opening diameter x 4cm base diameter x 3.5cm depth)" %}
+
+{% block ingredient_content %}
+    <h4 id="dry" class="h5">Group 1 (dry ingredients)</h4>
+    {{ ingredient("250 grams plain flour (all purpose flour)", 1) }}
+
+    {{ ingredient("25 grams cocoa powder", 2) }}
+
+    {{ ingredient("2 teaspoons baking powder", 3) }}
+
+    {{ ingredient("½ teaspoon baking soda", 4) }}
+
+    {{ ingredient("110 grams castor sugar", 5) }}
+
+    {{ ingredient("¼ teaspoon salt", 6) }}
+
+    {{ ingredient("100-150g chocolate chips (reserve 20g for sprinkling)", 7) }}
+
+    <h4 id="wet" class="h5 mt-3">Group 2 (wet ingredients)</h4>
+    {{ ingredient("1 large egg at room temperature (about 65g with shell) – lightly beaten", 8) }}
+
+    {{ ingredient("250ml milk mixture at room temperature (3 tablespoons Greek-style yogurt <a href='#note-1'>(note 1)</a>, filled the remaining amount with milk)", 9) }}
+
+    {{ ingredient("90ml vegetable oil (I used extra virgin coconut oil)", 10) }}
+{% endblock ingredient_content %}
+
+{% set ingredient_img = url_for("static", filename= "choc_muffin_3" | media( name | path_format )) %}
+
+{% set ingredient_alt = "A half-eaten double chocolate muffin" %}
+
+{% block steps_content %}
+    {% set accordion_body_1 %}
+        <ol>
+            <li>
+                Pre-heat oven to 210°c.
+            </li>
+            <li>
+                Sift plain flour, cocoa powder, baking powder and baking soda in a large mixing bowl.
+                Add in sugar, salt and chocolate chips and whisk to combine. Make a well in the center of the mixture. Set aside.
+            </li>
+            <li>
+                In a separate small bowl or jug, whisk milk, yogurt, egg and oil until well combined.
+            </li>
+            <li>
+                Pour the <a href="#wet">wet ingredients</a> over the <a href="#dry">dry ingredients</a>.
+                Mix using a hand whisk and half way change to a rubber spatula. Fold until the flour just disappears
+                (do not over mix, or else the muffins will be hard and dense). The batter will be slightly lumpy.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Making the batter", accordion_body_1, 1, True) }}
+
+    {% set accordion_body_2 %}
+        <ol>
+            <li>
+                Pour the batter into a piping bag <a href="#note-2">(note 2)</a> and pipe into the muffin cups until each cup is 90% full.
+                Another way is to spoon the batter into the muffin paper cups.
+                Sprinkle the remaining chocolate chips on top.
+            </li>
+            <li>
+                Bake at 210°c for 2 minutes, 190°c for 11 minutes and 180°c for a further 2 minutes (<a href="#note-3">note 3</a>,
+                <a href="#note-4">4</a> and <a href="#note-5">5</a>),
+                or until the muffins are dark, risen and springy. After baking, leave the muffins inside with the oven for a further 3 minutes.
+                Let the residue heat in the oven cook the muffins.
+            </li>
+            <li>
+                Transfer the muffins to a wire rack to cool.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Baking the muffins", accordion_body_2, 2) }}
+{% endblock steps_content %}
+
+{% set steps_img = url_for("static", filename= "choc_muffin_4" | media( name | path_format )) %}
+
+{% block notes_content %}
+    <li id="note-1">
+        Yogurt makes the muffins stay moist. Greek-style yogurt is creamier and thicker than normal plain yogurt.
+        You can use either one, or substitute the amount with milk.
+    </li>
+    <li id="note-2">
+        You can create your own piping bag by using a clean square or rectangular plastic bag.
+        Transfer the mixture into the bag, tighten the opening with a rubber band and cut a small corner for squeezing.
+        You may need to cut a bigger hole so you can squeeze the chocolate chips out easily.
+    </li>
+    <li id="note-3">
+        Start off the oven hot – This sets the top crust quickly which allows the batter underneath to stay liquid,
+        build up pressure and eventually burst up like a volcano. You may refer to
+        <a href="https://food-4tots.com/2009/08/22/how-to-make-muffins/">my early post</a> on how to get a nice dome effect.
+    </li>
+    <li id="note-4">
+        Baking time for small muffins is 15 minutes, and large muffin is 20 minutes.
+    </li>
+    <li id="note-5">
+        The baking time and oven temperatures may vary depending on the oven, the size of muffins or the type of muffin cups.
+        So please do your own experiment.
+    </li>
+    <li>
+        You can keep these muffins for 2-3 days in the fridge, or freeze inside a zip-lock bag for future consumtion.
+        Whenever you feel like eating them, thaw them completely first and then place them inside a preheated oven/
+        toaster oven for 5 minutes (power off) before serving.
+    </li>
+{% endblock notes_content%}
