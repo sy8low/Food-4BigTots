@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% from "macros.html" import double, single %}
+
+{% block title %}{{ super() }} | {{ name }}{% endblock title %}
+
+{% block og_img %}{{ url_for("static", filename=thumbnail | media( name | path_format )) }}{% endblock og_img %}
+
+{% block og_type %}blog{% endblock og_type %}
+
+{% block main %}
+    <hgroup class="big">
+        <h1>{{ name }}</h1>
+        <p><time class="h5" datetime="{{ ISO_date }}">{{ date }}</time></p>
+        {% if original %}
+            <p class="h5">Find the original Food-4Tots page <a href="{{ original }}">here</a>.</p>
+        {% endif %}
+    </hgroup>
+
+    {% set cover_img = url_for("static", filename= "foodbuzz_1" | media( name | path_format )) %}
+
+    {% set cover_alt = "Sze Yoong modelling with Foodbuzz's apron and spatula" %}
+
+    <div class="row justify-content-center mb-4">
+        <img class="col-10 col-lg-6" src="{{ cover_img }}" alt="{{ cover_alt }}">        
+    </div>
+
+
+    {% set intro_content %}
+        <p>
+            Few weeks ago, I received a package from Foodbuzz. It was the much awaited Foodbuzz apron and spatula
+            – goodies for all the Featured Publishers in celebration of the Foodbuzz Publisher Community. Thanks Foodbuzz!
+        </p>
+        <p>
+            My son was even more anxious than I am to try on the apron and spatula, and posed for the camera.
+        </p>
+    {% endset %}
+
+    {{ single("Intro", intro_content, False) }}
+
+
+    {% set foodbuzz_content %}
+        <p>
+            Foodbuzz is the only online community with content created by food bloggers and rated by foodies,
+            offering over 20,000 pieces of new food and dining content weekly. Members can vote for their
+            favorite pieces of content (recipes, photos, blog posts, videos, restaurant reviews) by “buzzing”
+            them up to the top of the daily menu of submissions.
+        </p>
+    {% endset %}
+
+    {% set foodbuzz_img = url_for("static", filename= "foodbuzz_3" | media( name | path_format )) %}
+
+    {% set foodbuzz_alt = "Foodbuzz logo" %}
+
+    {{ double("What is Foodbuzz?", foodbuzz_content, foodbuzz_img, foodbuzz_alt) }}
+
+
+    {% set event_content %}
+        <p>
+            The inaugural 24 Meals, 24 Hours, 24 Blogs event—which aims to showcase 24 Featured Publisher
+            blog posts around the globe in a 24-hour period—kicked off on Sept. 20 and successfully displayed
+            to online food enthusiasts an international, virtual street festival of food and diversity.
+        </p>
+        <p>
+            On October 13, Foodbuzz, Inc. announced the official launch of the Foodbuzz Publisher Community,
+            which is comprised of more than 1,000 global food bloggers, our “Featured Publishers.” At launch,
+            the Foodbuzz community ranks as one of the top-10 Internet destinations for food and dining (Quantcast),
+            with bloggers based in 45 countries and 863 cities serving up daily food content. Foodbuzz currently logs
+            over 13 million monthly page views and over three million monthly unique visitors!”
+        <p>
+        <p>
+            <small>(Source: Foodbuzz Editorial Launch Post)</small>
+        </p>
+        <p>
+            So hurry up! Come and catch the buzz. Sign up for <b>FREE</b> now:
+        </p>
+        <ol>
+            <li>
+                <a href="http://www.foodbuzz.com/account/signup">Foodbuzz Foodie</a> or
+            </li>
+            <li>
+                If you have a food blog, join
+                <a href="http://www.foodbuzz.com/pages/join-featured-publisher-program">Foodbuzz Featured Publisher</a>.
+                (don’t forget to put food-4tots.blogspot.com as your referral in the Foodbuzz referral form)
+            </li>
+            <li>
+                email me at <a href="mailto:foodfortots@yahoo.com">foodfortots@yahoo.com</a>
+            </li>
+        </ol>
+        <p>
+            Still not sure? Read more about
+            <a href="http://www.foodbuzz.com/pages/about">Foodbuzz</a>,
+            <a href="http://www.foodbuzz.com/pages/how_it_works">How it works</a> and
+            <a href="http://www.foodbuzz.com/pages/join-featured-publisher-program">Foodbuzz Featured Publisher Program</a>.
+        </p>
+    {% endset %}
+
+    {% set event_img = url_for("static", filename= "foodbuzz_2" | media( name | path_format )) %}
+
+    {% set event_alt = "Sze Yoong modelling with Foodbuzz's apron and spatula" %}
+
+    {{ double("Latest BUZZING events", event_content, event_img, event_alt) }}
+
+{% endblock main %}
