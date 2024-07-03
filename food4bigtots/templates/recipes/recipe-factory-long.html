@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% from "macros.html" import double, single, ingredient, accordion_item %}
+
+{% block title %}{{ super() }} | {{ name }}{% endblock title %}
+
+{% block og_img %}{{ url_for("static", filename=thumbnail | media( name | path_format )) }}{% endblock og_img %}
+
+{% block og_type %}blog{% endblock og_type %}
+
+{% block main %}
+    <hgroup class="big">
+        <h1>{{ name }}</h1>
+        <p><time class="h5" datetime="{{ ISO_date }}">{{ date }}</time></p>
+        {% if original %}
+            <p class="h5">Find the original Food-4Tots page <a href="{{ original }}">here</a>.</p>
+        {% endif %}
+    </hgroup>
+
+    {% set cover_img = url_for("static", filename= "" | media( name | path_format )) %}
+
+    {% set cover_alt = name %}
+
+    <div class="row justify-content-center mb-4">
+        <img class="col-10 col-lg-6" src="{{ cover_img }}" alt="{{ cover_alt }}">        
+    </div>
+
+    {% set intro_content %}
+        <p>
+            
+        </p>
+    {% endset %}
+    
+    {% set intro_img = url_for("static", filename= "" | media( name | path_format )) %}
+
+    {% set intro_alt = name %}
+
+    {% set intro_caption = "" %}
+
+    {{ double("Intro", intro_content, intro_img, intro_alt, False, intro_caption) }}
+
+
+    <hgroup class="big">
+        <h2 class="spaced">Recipe</h2>
+        <p class="h5">Adapted and modified from</p>
+        <p class="h5">Yield:</p>
+    </hgroup>
+
+
+    {% set ingredient_content %}
+        <form>
+            <ul class="list-group">
+                {{ ingredient("", 1) }}
+                <h4 class="h5 mt-3"></h4>
+            </ul>
+
+            <input type="reset" value="Reset">
+        </form>
+    {% endset %}
+
+    {% set ingredient_img = url_for("static", filename= "" | media( name | path_format )) %}
+
+    {% set ingredient_alt = "" %}
+
+    {% set ingredient_caption = "" %}
+
+    {{ double("Ingredients", ingredient_content, ingredient_img, ingredient_alt, ingredient_caption) }}
+
+
+    {% set steps_content %}
+        <div class="accordion ms-n1" id="steps">
+            {% set accordion_body_1 %}
+                <ol>
+                    <li>
+                        
+                    </li>
+                </ol>
+            {% endset %}
+            {{ accordion_item("", accordion_body_1, 1, True) }}
+        </div>
+    {% endset %}
+
+    {% set steps_img = url_for("static", filename= "" | media( name | path_format )) %}
+
+    {% set steps_alt = ["Step-by-step visual guide on how to make", name] | join(" ") %}
+
+    {% set steps_caption = "" %}
+
+    {{ double("Steps", steps_content, steps_img, steps_alt, steps_caption) }}
+
+
+    {% set notes_content %}
+        <ol>
+            <li>
+            
+            </li>
+        </ol>
+    {% endset %}
+
+    {{ single("Notes", notes_content)}}
+
+{% endblock main %}
