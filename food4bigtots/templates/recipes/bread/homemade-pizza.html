@@ -1,0 +1,290 @@
+{% extends "base.html" %}
+
+{% from "macros.html" import double, single, ingredient, accordion_item %}
+
+{% block title %}{{ super() }} | {{ name }}{% endblock title %}
+
+{% block og_img %}{{ url_for("static", filename=thumbnail | media( name | path_format )) }}{% endblock og_img %}
+
+{% block og_type %}blog{% endblock og_type %}
+
+{% block main %}
+    <hgroup class="big">
+        <h1>{{ name }}</h1>
+        <p><time class="h5" datetime="{{ ISO_date }}">{{ date }}</time></p>
+        {% if original %}
+            <p class="h5">Find the original Food-4Tots page <a href="{{ original }}">here</a>.</p>
+        {% endif %}
+    </hgroup>
+
+    {% set cover_img = url_for("static", filename= "pizza_2" | media( name | path_format )) %}
+
+    {% set cover_alt = name %}
+
+    <div class="row justify-content-center mb-4">
+        <img class="col-10 col-lg-6" src="{{ cover_img }}" alt="{{ cover_alt }}">        
+    </div>
+
+    {% set intro_content %}
+        <p>
+            Homemade pizza can be either simple or difficult depending on which approach you adopt. The simple approach is to buy frozen pizza base and ready made sauce. But I chose the the difficult one, which means making the dough and sauce from scratch. As what my hubby had predicted, I failed terribly in my first attempt. I had a tough time kneading the dough and the pizza base was not cooked thoroughly. I hate it when he made this kind of prediction. Is it a curse?
+        </p>
+        <p>
+            The experience on my 2nd attempt was even worst. While waiting for the dough to rise, my son came down with high fever during his afternoon nap. It left me no choice but to send the dough straight to the freezer. Luckily, the dough was still edible after my long holiday in December.
+        </p>
+        <p>
+            From all these failures, I learnt 3 important things – (1) the dough must be well-kneaded until it is smooth and elastic, (2) the dough must get enough time to rise and (3) tossing pizza – I have not mastered this skill yet. To save time, I cheated by rolling out the pizza and then strecthing it further using my knuckles. You can say that practice makes perfect and your hands are the best judge when the dough is done just right.
+        </p>
+        <p>
+            As a non risk-taker, I plan to make a small-sized pizza so it is less wastage in case of failure. However, most of the wonderful pizza recipes that I like, yield larger size pizza. After much searching, I decided to adapt and modify a recipe from Mitong’s blog (click here) as her recipe requires only a small amount of ingredients. It is also very easy to follow thru with her step-by-step instruction. Although it may not be the most “authentic” pizza recipe, it had at least boosted my confidence to take the first step in my pizza making journey. Meanwhile, I had also incorporated some useful tips from Rose’s Recipe in my recipe.
+        </p>
+        <p>
+            During my past few attempts in making pizza, I had encountered many technical issues which I couldn’t figure out. Luckily, there are some kind-hearted people who are willing to share their valuable advices and tips with me. Hence, let me take this opportunity to thanks everyone who had advised me before. Without them, I will not be able to write up this posting.
+        </p>
+        <p>
+            I had tried to keep this recipe as simple as possible so that it will be easy for any beginner to bake their first successful homemade pizza. Making your own pizza is not really as difficult as you think. The more you try, the more you will love making it. You don’t need to bake the best pizza in town. But I can guarantee you that your kids will be the happiest people in the world when eating your homemade pizza. Look at the photos below. Do you agree with me?
+        </p>
+    {% endset %}
+    
+    {% set intro_img = url_for("static", filename= "pizza_1" | media( name | path_format )) %}
+
+    {% set intro_alt = name %}
+
+    {% set intro_caption = "" %}
+
+    {{ double("Intro", intro_content, intro_img, intro_alt, False, intro_caption) }}
+
+
+    <hgroup class="big">
+        <h2 class="spaced">Recipe for the Pizza Sauce</h2>
+    </hgroup>
+
+
+    {% set ingredient_content_sauce %}
+        <form>
+            <ul class="list-group">
+                {{ ingredient("½ can diced tomatoes (I used tomato sauce when I made this pizza. But diced tomato is still a better choice)", 1) }}
+                
+                {{ ingredient("2 tsp tomato paste", 2) }}
+
+                {{ ingredient("1 tsp minced garlic", 3) }}
+
+                {{ ingredient("½ onion (minced)", 4) }}
+
+                {{ ingredient("1 pc bay leaf", 5) }}
+
+                {{ ingredient("1 tsp mixed herbs", 6) }}
+                
+                {{ ingredient("2 tbsp olive oil", 7) }}
+
+                {{ ingredient("100ml stock", 8) }}
+
+                {{ ingredient("2 tsp sugar", 9) }}
+
+                {{ ingredient("Salt and pepper to taste", 10) }}
+            </ul>
+
+            <input type="reset" value="Reset">
+        </form>
+    {% endset %}
+
+    {% set ingredient_img_sauce = url_for("static", filename= "pizza_6" | media( name | path_format )) %}
+
+    {% set ingredient_alt_sauce = "Clockwise from top left: Diced toppings (clockwise from top left: sliced sausages, mushrooms, pineapple cubs, capsicum), cheese, tomato paste" %}
+
+    {% set ingredient_caption_sauce = "" %}
+
+    {{ double("Ingredients", ingredient_content_sauce, ingredient_img_sauce, ingredient_alt_sauce, ingredient_caption_sauce) }}
+
+
+    {% set steps_content_sauce %}
+        <div class="accordion ms-n1" id="steps">
+            {% set accordion_body_1 %}
+                <ol>
+                    <li>
+                        Heat up oil in a pan. Stir-fry garlic, onion and mixed herbs until fragrant.
+                    </li>
+                    <li>
+                        Add in diced tomatoes, stock, bay leaf, tomato paste, salt, sugar and pepper.
+                    </li>
+                    <li>
+                        Simmer for 30 mins, or until the tomatoes have reduced to a thick pulp.
+                    </li>
+                    <li>
+                        If you prefer a smooth pizza sauce, let the sauce cool a little and then puree it in a blender.
+                    </li>
+                    <li>
+                        If the sauce is too watery, add some cornstarch to thicken it.
+                    </li>
+                    <li>
+                        You can make this sauce one day in advance.
+                    </li>
+                </ol>
+            {% endset %}
+            {{ accordion_item("Making the tomato sauce", accordion_body_1, 1, True) }}
+        </div>
+    {% endset %}
+
+    {% set steps_img_sauce = url_for("static", filename= "pizza_7" | media( name | path_format )) %}
+
+    {% set steps_alt_sauce = "Pizza in the oven" %}
+
+    {% set steps_caption_sauce = "" %}
+
+    {{ double("Steps", steps_content_sauce, steps_img_sauce, steps_alt_sauce, steps_caption_sauce) }}
+
+
+    <hgroup class="big">
+        <h2 class="spaced">Recipe for the Pizza Dough</h2>
+        <p class="h5">Yield: One 11-inch pizza</p>
+    </hgroup>
+
+
+    {% set ingredient_content_dough %}
+        <form>
+            <ul class="list-group">
+                {{ ingredient("200g bread flour (high protein flour)", 11) }}
+
+                {{ ingredient("1 tsp instant yeast", 12) }}
+
+                {{ ingredient("½ tsp salt", 13) }}
+
+                {{ ingredient("2 tbsp olive oil", 14) }}
+
+                {{ ingredient("120g lukewarm water (45 C)", 15) }}
+            </ul>
+
+            <input type="reset" value="Reset">
+        </form>
+    {% endset %}
+
+    {% set ingredient_img_dough = url_for("static", filename= "pizza_8" | media( name | path_format )) %}
+
+    {% set ingredient_alt_dough = "A pizza pan with holes" %}
+
+    {% set ingredient_caption_dough = "" %}
+
+    {{ double("Ingredients", ingredient_content_dough, ingredient_img_dough, ingredient_alt_dough, ingredient_caption_dough) }}
+
+
+    {% set steps_content_dough %}
+        <div class="accordion ms-n1" id="steps">
+            {% set accordion_body_2 %}
+                <ol>
+                    <li>
+                        In a small bowl, dissolve yeast with some lukewarm water. Let it stand until the yeast becomes creamy (about 8-10 mins).
+                    </li>
+                    <li>
+                        In a large mixing bowl, whisk bread flour and salt to mix. Make a well in the center. Pour in yeast (from step 1) and oil.
+                        Fold with a large spoon or spatula. Add in the remaining water little by little till all the ingredients are well combined.
+                        Flour your hands and knead briefly to form a soft dough.
+                    </li>
+                    <li>
+                        Bring the dough out and continue kneading on a lightly floured surface until smooth and elastic (about 10 mins).
+                        During kneading, if the dough is too wet, sprinkle in a little more flour. If the dough is too dry, dribble in 1-2 tsp of water.
+                    </li>
+                    <li>
+                        Place the dough in a lightly greased bowl, turning once (to make sure it is coated with oil) and cover with a damp cloth/
+                        cling wrap.
+                    </li>
+                    <li>
+                        Let it to rise in a warm place until the dough has doubled in size. It takes about 1-1 ½ hours.
+                    </li>
+                </ol>
+            {% endset %}
+            {{ accordion_item("Making and proofing the dough", accordion_body_2, 2, True) }}
+
+            {% set accordion_body_3 %}
+                <ol start="6">
+                    <li>
+                        Gently punch down to deflate the dough. Knead and shape into a ball.
+                    </li>
+                    <li>
+                        Stretch the dough using your hands or roll it out using rolling pins to your desired thickness.
+                        Tossing pizza is an important step in producing a more tender and crispy crust.
+                        Watch this <a href="http://www.youtube.com/watch?v=SjYqw1CLZsA">video clip</a> for the technique.
+                    </li>
+                    <li>
+                        Place the dough on a lightly greased pizza pan. Push up the dough to make a rim or a twisted border.
+                        Use a fork to prick some holes on the pizza. (This is my personal preference. You can omit this).
+                        Brush or spray the dough lightly with olive oil. Cover with cling wrap and let it rest for 15 mins.
+                    </li>
+                </ol>
+            {% endset %}
+            {{ accordion_item("Rolling out the pizza dough", accordion_body_3, 3) }}
+
+            {% set accordion_body_4 %}
+                <ol start="9">
+                    <li>
+                        Prepare your toppings (such as capsicum, sliced black olive, pineapple cubes, cherry tomatoes,
+                        fresh sliced mushrooms, sweet corns, cooked shredded chicken, cooked prawns, hams, sliced sausages, canned tuna, pepperoni etc).
+                    </li>
+                    <li>
+                        Preheat oven to 200°C.
+                    </li>
+                    <li>
+                        After 15 mins, lightly spread the dough with pizza sauce, and then follow by cheese and lastly your choice of toppings.
+                        You can also add some extra cheese on top of your toppings.
+                    </li>
+                    <li>
+                        Bake at 200°C for 15-20 mins, or until it turns golden brown.
+                    </li>
+                    <li>
+                        Remove the pizza from the oven and transfer to a cutting board. Wait for 3-5 mins before slicing to allow the cheese to set.
+                    </li>
+                </ol>
+            {% endset %}
+            {{ accordion_item("Baking the pizza", accordion_body_4, 4) }}
+        </div>
+    {% endset %}
+
+    {% set steps_img_dough = url_for("static", filename= "pizza_10" | media( name | path_format )) %}
+
+    {% set steps_alt_dough = "Top to bottom: Pizza dough before proofing; pizza dough after proofing; pizza dough stretched out in a pizza pan" %}
+
+    {% set steps_caption_dough = "" %}
+
+    {{ double("Steps", steps_content_dough, steps_img_dough, steps_alt_dough, steps_caption_dough) }}
+
+
+    {% set notes_content %}
+        <ol>
+            <li>
+                To help the baking process and make the crust more crispy, use pizza pan with holes.
+                Thanks to <b>CY</b> from <a href="http://eatfirstdietlater.blogspot.com/search/label/Pizza">Eat First, Diet Later</a>
+                for this recommendation.
+            </li>
+            <li>
+                To absorb the moisture of the dough and add some crunchiness to the pizza,
+                I used semolina flour before pushing out my pizza. Watch this <a href="http://www.youtube.com/watch?v=SjYqw1CLZsA">video clip</a>.
+                Thanks to <b>Sedazh of Annemin Sable Biskuvisi</b> for her recommendation on using semolina.
+            </li>
+            <li>
+                Do not overload the pizza with your toppings. Otherwise, the dough will not be cooked thoroughly. Avoid using ingredients that are too wet.
+            </li>
+            <li>
+                You can freeze the dough after kneading (step 3), put it in a lightly oiled container/zipper bag and freeze. On the day of making pizza, bring it out from the fridge. Cover and thaw for 2 hours. Let it rise according to the spec.
+            </li>
+            <li>
+                You can also half bake the pizza dough and keep for future usage. This result is similar to those pre-baked dough sold in the supermarket.
+            </li>
+            <li>
+                Other useful references:
+                <ul>
+                    <li>
+                        Video clip (how to make pizza) – <a href="http://www.youtube.com/watch?v=Yhg02ALLT6c&feature=related">click here</a>
+                    </li>
+                    <li>
+                        <a href="http://gattinamia.blogspot.com/2007/01/perfect-recipe.html">Kitchen unplugged</a>
+                    </li>
+                    <li>
+                        <a href="http://eatfirstdietlater.blogspot.com/search/label/Pizza">Eat First, Diet Later</a>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    {% endset %}
+
+    {{ single("Notes", notes_content)}}
+
+{% endblock main %}
