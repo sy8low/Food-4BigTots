@@ -1,0 +1,297 @@
+{% extends "base.html" %}
+
+{% from "macros.html" import double, single, ingredient, accordion_item %}
+
+{% block title %}{{ super() }} | {{ name }}{% endblock title %}
+
+{% block og_img %}{{ url_for("static", filename=thumbnail | media( name | path_format )) }}{% endblock og_img %}
+
+{% block og_type %}blog{% endblock og_type %}
+
+{% block main %}
+    <hgroup class="big">
+        <h1>{{ name }}</h1>
+        <p><time class="h5" datetime="{{ ISO_date }}">{{ date }}</time></p>
+        {% if original %}
+            <p class="h5">Find the original Food-4Tots page <a href="{{ original }}">here</a>.</p>
+        {% endif %}
+    </hgroup>
+
+    {% set cover_img = url_for("static", filename= "ginger_2" | media( name | path_format )) %}
+
+    {% set cover_alt = name %}
+
+    <div class="row justify-content-center mb-4">
+        <img class="col-10 col-lg-6" src="{{ cover_img }}" alt="{{ cover_alt }}">        
+    </div>
+
+
+    {% set intro_content %}
+        <p>
+            <b>“All I want for Christmas is my gingerbread man cookies!!”</b> That’s my son’s wish for each Christmas.
+            In the past, I would buy it from the bakery shop to save the hassle. But this year, I decided to make them
+            by myself as I find it easy to do. Most importantly, mother and son had a whole load of fun making them together!!
+        </p>
+        <p>
+            Originally I planned to make gingerbread much earlier. Unfortunately, both my son and I were hit by the sick bugs
+            at the beginning of the month. Thankfully we were only down for a week. Once we had fully recovered, we quickly
+            kicked start our special “project” to be in time for Christmas. But, it was not a smooth start. When we headed
+            to the baking supply shop to buy our ingredients, some of the items were out-of-stock due to high seasonal demand.
+            Nevertheless, we still managed to complete our shopping list by visiting other stores.
+        </p>
+        <p>
+            During the process of making these cookies, I encountered some difficulties in cutting out the dough.
+            The dough turned soft easily and I had to put it back to the fridge to harden it for several times.
+            I think it may be due to hot temperature in my kitchen. Well, it’s just my guess. If you have better ways
+            of dealing with this problem of mine, I love to hear from you.
+        </p>
+        <p>
+            I had bookmarked a few recipes for gingerbread cookies, but as a first timer at making these spicy cookies
+            I was quite unsure of which recipe to pick. Each recipe has its own combination of spices. Some use black
+            treacle/molasses while others use honey. After much contemplation, I decided to follow the ginger biscuits
+            recipe from <a href="http://astore.amazon.co.uk/annabelkcom-21/detail/1405350709">You Can Cook</a> cookbook written by
+            <a href="http://www.annabelkarmel.com/">Annabel Karmel</a>. She is my favourite cookbook author for children recipes.
+            I had tried so many of her recipes and so far none had disappointed me. I also incorporated some steps and tips from
+            <a href="http://snagwiremedia.com/gingerbread-cookies-for-you/">Martha Stewart</a>,
+            <a href="http://simplyrecipes.com/recipes/gingerbread_man_cookies/">Simply Recipes</a>,
+            <a href="http://www.joyofbaking.com/GingerbreadMen.html">Joy of Baking</a> and
+            <a href="http://zh-tw.ebookcn.com/book/117102">孟老師的100道手工餅干</a> respectively.
+        </p>
+        <p>
+            As it turns out, the gingerbread cookies taste really delicious!! The sweetness is just right and the spices are
+            not overpowering. They are easy-to-follow and fun-to-make too. You can bake it soft or crispy according to your liking.
+            If you are running out of time, you can make the dough one day ahead, and bake the cookies the next day. My son enjoys
+            cutting and decorating his gingerbread men.
+        </p>
+        <p>
+            As for the royal icing, I didn’t follow the traditional way which uses egg whites, lemon juice and powdered sugar due
+            to concern for salmonella contamination from raw eggs. As a result, I used meringue powder as substitute for egg white.
+            I also bought one ready-to-use writing icing. Both worked well for me.
+        </p>
+        <p>
+            There are still 10 more days to go before Christmas. I hope this recipe comes in time for those who want to make some
+            festive goodies for friends and the love ones. This is also a great opportunity for you to cook with your kids.
+        </p>
+    {% endset %}
+
+    {% set intro_img = url_for("static", filename= "ginger_1" | media( name | path_format )) %}
+
+    {% set intro_alt = name %}
+
+    {% set intro_caption = '"Don’t run, gingerbread men! I want to eat you for my tea!"' %}
+
+    {{ double("Intro", intro_content, intro_img, intro_alt, False, intro_caption) }}
+
+
+    <hgroup class="big">
+        <h2 class="spaced">Recipe for Gingerbread Men</h2>
+        <p class="h5">
+            Adapted and modified from
+            <a href="http://astore.amazon.co.uk/annabelkcom-21/detail/1405350709">You Can Cook (for kids) by Annabel Karmel</a><br>and
+            <a href="http://snagwiremedia.com/gingerbread-cookies-for-you/">Martha Stewart</a>
+        </p>
+        <p class="h5">
+            Yield: 4 baking trays<br>(about 80 small gingerbread men or 24 large gingerbread men )
+        </p>
+    </hgroup>
+
+
+    {% set ingredient_content_cookies %}
+        <form>
+            <ul class="list-group">
+                {{ ingredient("400g plain flour", 1) }}
+                
+                {{ ingredient("3/4 tsp bicarbonate of soda", 2) }}
+
+                {{ ingredient("2 tsp ground ginger", 3) }}
+
+                {{ ingredient("1 tsp ground cinnamon", 4) }}
+
+                {{ ingredient("½ tsp mixed spice", 5) }}
+
+                {{ ingredient("½ tsp salt", 6) }}
+
+                {{ ingredient("170g unsalted butter, at room temperature", 7) }}
+
+                {{ ingredient("110g soft dark brown sugar", 8) }}
+
+                {{ ingredient("100g black treacle (or unsulfured molasses) – <a href='#note-a1'>(refer to note 1)</a>", 9) }}
+
+                {{ ingredient("1 large egg (lightly beaten)", 10) }}
+
+                {{ ingredient("Egg wash – 1 egg white", 11) }}
+            </ul>
+
+            <input type="reset" value="Reset">
+        </form>
+    {% endset %}
+
+    {% set ingredient_img_cookies = url_for("static", filename= "ginger_11" | media( name | path_format )) %}
+
+    {% set ingredient_alt_cookies = "Top: Molasses; Bottom: Dark brown sugar" %}
+
+    {{ double("Ingredients", ingredient_content_cookies, ingredient_img_cookies, ingredient_alt_cookies) }}
+
+
+    {% set steps_content_cookies %}
+        <div class="accordion ms-n1" id="steps">
+            {% set accordion_body_1 %}
+                <ol>
+                    <li>
+                        In a mixing bowl, whisk and sift flour, bicarbonate of soda, cinnamon, ground ginger and mixed spice.
+                        Add in salt and mix well. Set aside.
+                    </li>
+                    <li>
+                        Let the butter soften at room temperature <a href="#note-a2">(refer to note 2)</a>.
+                        Transfer softened butter to a mixing bowl. Add in brown sugar. Use a rubber spatula to combine the ingredients.
+                    </li>
+                    <li>
+                        Use a hand held electrical mixer, beat them until light and fluffy.
+                    </li>
+                    <li>
+                        Add in molasses and then slowly add in egg in 2-3 batches. Beat at high speed till creamy.
+                    </li>
+                    <li>
+                        Gradually add the flour mixture. Just a few tablespoons at a time at first, and then in larger batches.
+                        Use a rubber spatula to roughly mix the flour mixture with the wet mixture. Do not stir the mixture in a circular movement.
+                        Use “cutting”, “pressing” and “scraping” actions to just combine the ingredients. Then use hand to form the dough.
+                        Do not overwork the dough.
+                    </li>
+                </ol>
+            {% endset %}
+            {{ accordion_item("Making the dough", accordion_body_1, 1, True) }}
+
+            {% set accordion_body_2 %}
+                <ol start="5">
+                    <li>
+                        Divide the dough into 3 portions. Flatten each into disc about 2½cm (1 in) thick and wrap in cling film. Refrigerate until firm, for at least 2 hours or overnight.
+                    </li>
+                    <li>
+                        Working with one disc at a time. Let the dough sit at room temperature for 5-10 minutes. Place dough on lightly floured parchment paper and cover with a cling film. Using a rolling pin, roll the dough out to 3mm (1/8 in) thickness. Then return the dough to the fridge, refrigerate or freeze until firm for about 15-20 minutes.
+                    <li>
+                        Preheat oven to 170°C. Line baking trays with parchment papers.
+                    </li>
+                    <li>
+                        Remove dough from the fridge, cut out shapes with cookies cutters and transfer to baking tray. Gather all the trimmings, re-roll and briefly refrigerate or freeze to firm up. Repeat until all the dough is used up.
+                    </li>
+                    <li>
+                        Using pastry brush, brush cookies with egg white.
+                    </li>
+                </ol>
+            {% endset %}
+            {{ accordion_item("Shaping the gingerbread men", accordion_body_2, 2) }}
+
+            {% set accordion_body_3 %}
+                <ol start="11">
+                    <li>
+                        Place the baking tray at the lowest rack. Bake at 170°C for about 8-12 minutes <a href="#note-a3">(refer to note 3)</a>,
+                        rotating the baking tray halfway through. After that, turn off the oven, leave the cookies inside with the oven door shut.
+                        Let the residue heat in the oven cook the cookies for a further 5 minutes.
+                    </li>
+                    <li>
+                        Remove the baking tray from the oven. Leave the cookies to cool slightly on the baking tray before
+                        turning onto racks to cool completely. Decorate with royal icing as desired. Then store them in an airtight container.
+                    </li>
+                </ol>
+            {% endset %}
+            {{ accordion_item("Baking the gingerbread men", accordion_body_3, 3) }}
+        </div>
+    {% endset %}
+
+    {% set steps_img_cookies = url_for("static", filename= "ginger_6" | media( name | path_format )) %}
+
+    {% set steps_alt_cookies = ["Step-by-step visual guide on how to make", name] | join(" ") %}
+
+    {{ double("Steps", steps_content_cookies, steps_img_cookies, steps_alt_cookies) }}
+
+
+    {% set notes_content_cookies %}
+        <ol>
+            <li id="note-a1">
+                I bought molasses from Phoon Huat, a local baking ingredient supply shop. Before you measure the treacle/ molasses, dip your spoon into oil and grease the measuring cup so it doesn’t stick.
+            </li>
+            <li id="note-a2">
+                Use your finger tip to press lightly on the butter to test (refer to photo below).
+            </li>
+            <li id="note-a3">
+                Set the baking time depending on the texture and size of the cookies. For smaller or softer cookies, bake 8-10 minutes. For bigger or crunchier copies, bake 11-12 minutes.
+            </li>
+            <li>
+                If you are making these cookies as gift tags, make a hole at the top of the cookies with a straw before baking.
+            </li>
+        </ol>
+    {% endset %}
+
+    {{ single("Notes", notes_content_cookies)}}
+
+
+    <hgroup class="big">
+        <h2 class="spaced">Recipe for Royal Icing</h2>
+        <p class="h5">Adapted and modified from Wilton Method</p>
+        <p class="h5">Yield: 1½ cup</p>
+    </hgroup>
+
+
+    {% set ingredient_content_icing %}
+        <form>
+            <ul class="list-group">
+                {{ ingredient("1½ tbsp meringue powder <a href='#note-b1'>(refer to note 1)</a>", 12) }}
+
+                {{ ingredient("2 cups sifted confectioner’s sugar", 13) }}
+
+                {{ ingredient("3 tbsp warm water", 14) }}
+            </ul>
+
+            <input type="reset" value="Reset">
+        </form>
+    {% endset %}
+
+    {% set ingredient_img_icing = url_for("static", filename= "ginger_10" | media( name | path_format )) %}
+
+    {% set ingredient_alt_icing = "Clockwise from top left: Meringue powder, Wilton white decorating icing, piping tip, food colouring" %}
+
+    {{ double("Ingredients", ingredient_content_icing, ingredient_img_icing, ingredient_alt_icing) }}
+
+
+    {% set steps_content_icing %}
+        <div class="accordion ms-n1" id="steps">
+            {% set accordion_body_4 %}
+                <ol>
+                    <li>
+                        Beat all ingredients until icing forms peaks (about 8-10 minutes).
+                    </li>
+                    <li>
+                        Adjust the consistency if needed. If it’s too runny, add more sugars. If it’s too hard, add more water.
+                        Add colouring and mix well. Transfer icing to a piping bag with a small tip, decorate as desired.
+                        Keep the icing covered or else it will dry out.
+                    </li>
+                </ol>
+            {% endset %}
+            {{ accordion_item("Making the royal icing", accordion_body_4, 4, True) }}
+        </div>
+    {% endset %}
+
+    {% set steps_img_icing = url_for("static", filename= "ginger_3" | media( name | path_format )) %}
+
+    {% set steps_alt_icing = ["Step-by-step visual guide on how to make", "Royal Icing"] | join(" ") %}
+
+    {{ double("Steps", steps_content_icing, steps_img_icing, steps_alt_icing) }}
+
+
+    {% set notes_content_icing %}
+        <ol>
+            <li id="note-b1">
+                I use Wilton brand which is available in local baking ingredient supply shop.
+                Meringue powder is made from dehydrated egg whites, sugar, gum, corn starch and an array of stabilizers and flavoring agents.
+                For further info, please read these links (<a href="http://www.buzzle.com/articles/meringue-powder-substitute.html">buzzle</a>
+                and <a href="http://www.wisegeek.com/what-is-meringue-powder.htm">wisegeek</a>).
+            </li>
+            <li>
+                Instead of making the royal icing, you can buy the ready-made icing ie Wilton decorative icing tube (as shown in photo above).
+            </li>
+        </ol>
+    {% endset %}
+
+    {{ single("Notes", notes_content_icing)}}
+
+{% endblock main %}

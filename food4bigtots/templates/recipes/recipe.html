@@ -25,7 +25,7 @@
 
     {% set intro_alt = name %}
 
-    {{ double("Intro", intro_content, intro_img, intro_alt, False) }}
+    {{ double("Intro", intro_content, intro_img, intro_alt, False, intro_caption) }}
 
 
     <hgroup class="big">
@@ -49,19 +49,19 @@
         </form>
     {% endset %}
 
-    {{ double("Ingredients", ingredient_content, ingredient_img, ingredient_alt) }}
+    {{ double("Ingredients", ingredient_content, ingredient_img, ingredient_alt, ingredient_caption) }}
 
 
     {% set steps_content %}
         <div class="accordion ms-n1" id="steps">
-            {% block steps_content%}{% endblock steps_content %}
+            {% block steps_content %}{% endblock steps_content %}
         </div>
     {% endset %}
 
     
     {% set steps_alt = ["Step-by-step visual guide on how to make", name] | join(" ") %}
 
-    {{ double("Steps", steps_content, steps_img, steps_alt) }}
+    {{ double("Steps", steps_content, steps_img, steps_alt, steps_caption) }}
 
 
     {% set notes_content %}

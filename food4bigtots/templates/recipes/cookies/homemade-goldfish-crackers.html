@@ -76,7 +76,7 @@
     </hgroup>
 
 
-    {% set cutter_material_content %}
+    {% set material_content_cutter %}
         <form>
             <ul class="list-group">
                 {{ ingredient("Empty aluminum can (wash, rinse and dry out properly)", 1) }}
@@ -96,12 +96,14 @@
         </form>
     {% endset %}
 
-    {% set cutter_material_img = url_for("static", filename= "crackers_4" | media( name | path_format )) %}
+    {% set material_img_cutter = url_for("static", filename= "crackers_4" | media( name | path_format )) %}
 
-    {{ double("Materials", cutter_material_content, cutter_material_img, "Samples of cookie cutters") }}
+    {% set material_alt_cutter = "Samples of cookie cutters" %}
+
+    {{ double("Materials", material_content_cutter, material_img_cutter, material_alt_cutter) }}
 
 
-    {% set cutter_steps_content %}
+    {% set steps_content_cutter %}
         <div class="accordion ms-n1" id="steps">
             {% set accordion_body_1 %}
                 <ol>
@@ -135,12 +137,14 @@
         </div>
     {% endset %}
 
-    {% set cutter_steps_img = url_for("static", filename= "crackers_6" | media( name | path_format )) %}
+    {% set steps_img_cutter = url_for("static", filename= "crackers_6" | media( name | path_format )) %}
 
-    {{ double("Steps", cutter_steps_content, cutter_steps_img, "Step-by-step visual guide on how to make the cookie cutters") }}
+    {% set steps_alt_cutter = "Step-by-step visual guide on how to make the cookie cutters" %}
+
+    {{ double("Steps", steps_content_cutter, steps_img_cutter, steps_alt_cutter) }}
 
 
-    {% set cutter_notes_content %}
+    {% set notes_content_cutter %}
         <ol>
             <li id="note-a1">
                 Be extra careful when cutting aluminum can as the edges are very sharp.
@@ -161,14 +165,14 @@
         <ul>
     {% endset %}
 
-    {{ single("Notes", cutter_notes_content)}}
+    {{ single("Notes", notes_content_cutter)}}
 
     <hgroup class="big">
         <h2 class="spaced">Making the Crackers</h2>
         <p>Adapted and modified from <a href="http://tastykitchen.com/blog/2011/09/homemade-goldfish-crackers/">Tasty Kitchen</a></p>
     </hgroup>
 
-    {% set ingredient_content %}
+    {% set ingredient_content_crackers %}
         <form>
             <ul class="list-group">
                 {{ ingredient("1 cup (120g) plain flour <a href='#note-b1'>(note 1)</a>", 7) }}
@@ -186,12 +190,14 @@
         </form>
     {% endset %}
 
-    {% set ingredient_img = url_for("static", filename= "crackers_7" | media( name | path_format )) %}
+    {% set ingredient_img_crackers = url_for("static", filename= "crackers_7" | media( name | path_format )) %}
 
-    {{ double("Ingredients", ingredient_content, ingredient_img, "Extra sharp cheddar cheese") }}
+    {% set ingredient_alt_crackers = "Extra sharp cheddar cheese" %}
+
+    {{ double("Ingredients", ingredient_content_crackers, ingredient_img_crackers, ingredient_alt_crackers) }}
 
 
-    {% set steps_content %}
+    {% set steps_content_crackers %}
         <div class="accordion ms-n1" id="steps">
             {% set accordion_body_1 %}
                 <ol>
@@ -248,12 +254,14 @@
         </div>
     {% endset %}
 
-    {% set steps_img = url_for("static", filename= "crackers_8" | media( name | path_format )) %}
+    {% set steps_img_crackers = url_for("static", filename= "crackers_8" | media( name | path_format )) %}
 
-    {{ double("Steps", steps_content, steps_img, "Step-by-step visual guide on how to make the goldfish crackers") }}
+    {% set steps_alt_crackers = "Step-by-step visual guide on how to make the goldfish crackers" %}
+
+    {{ double("Steps", steps_content_crackers, steps_img_crackers, steps_alt_crackers) }}
 
 
-    {% set notes_content %}
+    {% set notes_content_crackers %}
         <ol>
             <li id="note-b1">
                 You can substitute it with 50-100% whole wheat flour.
@@ -284,6 +292,6 @@
         </ol>
     {% endset %}
 
-    {{ single("Notes", notes_content)}}
+    {{ single("Notes", notes_content_crackers)}}
 
 {% endblock main %}

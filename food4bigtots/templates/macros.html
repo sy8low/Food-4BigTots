@@ -55,7 +55,7 @@
 {% endmacro %}
 
 
-{% macro double(title, content, image, image_alt="Picture", show_title=True) %}
+{% macro double(title, content, image, image_alt="Picture", show_title=True, caption=None) %}
     {% if show_title %}
         <hgroup class="col-lg-7 offset-lg-1">
             <h3>{{ title }}</h3>
@@ -69,7 +69,12 @@
 
         <div class="col-lg-4 mt-3 mt-lg-5">
             <div class="sticky-pane d-flex d-lg-block">
-                <img class="img-fluid" src="{{ image }}" alt="{{ image_alt }}">
+                <figure class="figure text-center">
+                    <img class="figure-img img-fluid"  src="{{ image }}" alt="{{ image_alt }}">
+                    {% if caption %}
+                        <figcaption class="figure-caption">{{ caption }}</figcaption>
+                    {% endif %}
+                </figure>
             </div>
         </div>
     </section>

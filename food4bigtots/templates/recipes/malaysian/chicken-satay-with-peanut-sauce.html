@@ -190,7 +190,7 @@
     </hgroup>
 
 
-    {% set ingredient_content %}
+    {% set ingredient_content_sauce %}
         <form>
             <ul class="list-group">
                 <h4 id="ingredients-a" class="h5 mt-3">Ingredients (A)</h4>
@@ -225,14 +225,14 @@
         </form>
     {% endset %}
 
-    {% set ingredient_img = url_for("static", filename= "satay_3" | media( name | path_format )) %}
+    {% set ingredient_img_sauce = url_for("static", filename= "satay_3" | media( name | path_format )) %}
 
-    {% set ingredient_alt = "Homemade Peanut Butter" %}
+    {% set ingredient_alt_sauce = "Homemade Peanut Butter" %}
 
-    {{ double("Ingredients", ingredient_content, ingredient_img, ingredient_alt) }}
+    {{ double("Ingredients", ingredient_content_sauce, ingredient_img_sauce, ingredient_alt_sauce) }}
 
 
-    {% set steps_content %}
+    {% set steps_content_sauce %}
         <div class="accordion ms-n1" id="steps">
             {% set accordion_body_3 %}
                 <ol>
@@ -260,14 +260,14 @@
         </div>
     {% endset %}
     
-    {% set steps_img = url_for("static", filename= "satay_3" | media( name | path_format )) %}
+    {% set steps_img_sauce = url_for("static", filename= "satay_3" | media( name | path_format )) %}
 
-    {% set steps_alt = "Peanut Sauce" %}
+    {% set steps_alt_sauce = "Peanut Sauce" %}
 
-    {{ double("Steps", steps_content, steps_img, steps_alt) }}
+    {{ double("Steps", steps_content_sauce, steps_img_sauce, steps_alt_sauce) }}
 
 
-    {% set notes_content %}
+    {% set notes_content_sauce %}
         <ol>
             <li>
                 If you want a kid-friendly version, adjust the amount of red chilli as you like or omit it totally.
@@ -282,6 +282,6 @@
         </ol>
     {% endset %}
 
-    {{ single("Notes", notes_content)}}
+    {{ single("Notes", notes_content_sauce)}}
 
 {% endblock main %}
