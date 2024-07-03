@@ -1,0 +1,160 @@
+{% extends "recipes/recipe.html" %}
+
+{% from "macros.html" import ingredient, accordion_item %}
+
+{% set cover_img = url_for("static", filename= "korean_1" | media( name | path_format )) %}
+
+{% set intro_content %}
+    <p>
+        I have always wanted to learn how to cook Korean food, and these Korean vegetable pancakes
+        are my very first experience in doing so. These savoury pancakes look a little like omelette but
+        the texture is slightly crispy outside and chewy inside. They are usually served with a dipping sauce.
+    </p>
+    <p>
+        These pancakes are quick and easy to make. All it takes is to prepare some vegetables of your choice,
+        coat them with a basic batter and then pan-fry the mixture with a bit of oil till golden brown.
+    </p>
+    <p>
+        This recipe has no hard and fast rule to follow, and you can easily improvise with any leftover vegetables
+        in your pantry and fridge. So, feel free to experiment with any variety of vegetables, or incorporate meat,
+        seafood or poultry if you prefer a non-vegetarian version.
+    </p>
+    <p>
+        The basic batter that I have created is made up of flour, potato, egg, salt, oil, pepper and water.
+        Potato is not a must have ingredient but it does add extra touch to the overall texture and flavour of the finished pancakes.
+        There is no need to pre-cook the potato. Just puree the potato and retain the starch which acts as a useful binder for the batter.
+        You can puree the potato with grater, food processor or blender, but I still find
+        <a href="https://food-4tots.com/wp-content/uploads/2014/07/asian-grater.jpg">Asian style grater</a> the best.
+        Potato oxidizes easily. So, leave the pureeing task last.
+    </p>
+    <p>
+        This is one dish that will let you sneak in load of veggies into your kids’ diet.
+        I’m pretty sure that your picky eater won’t mind to pick them up, and one is definitely not enough.
+    </p>
+{% endset %}
+
+{% set intro_img = url_for("static", filename= "korean_5" | media( name | path_format )) %}
+
+{% set intro_caption = "" %}
+
+{% set adapted = "" %}
+
+{% set yield = "" %}
+
+{% block ingredient_content %}
+    <h4 class="h5">For Filling</h4>
+    {{ ingredient("200g potato (1 medium size)", 1) }}
+
+    {{ ingredient("200g mixed vegetables <a href='#note-1'>(note 1)</a>", 2) }}
+
+    <h4 class="h5 mt-3">For the Batter</h4>
+    {{ ingredient("35g plain flour", 3) }}
+
+    {{ ingredient("20g corn flour/ corn starch", 4) }}
+
+    {{ ingredient("200g potato (1 medium size)", 5) }}
+
+    {{ ingredient("1 large egg", 6) }}
+
+    {{ ingredient("1 teaspoon salt", 7) }}
+
+    {{ ingredient("1 tablespoon of oil", 8) }}
+
+    {{ ingredient("Dash of white pepper", 9) }}
+
+    {{ ingredient("Potato starch (refer to step 3)", 10) }}
+
+    {{ ingredient("5-6 tablespoons iced water", 11) }}
+
+    <h4 class="h5 mt-3">For the Dipping Sauce</h4>
+    {{ ingredient("2 tablespoons light soy sauce", 12) }}
+
+    {{ ingredient("2 teaspoons rice wine vinegar", 13) }}
+
+    {{ ingredient("2 teaspoons sugar", 14) }}
+
+    {{ ingredient("1 tablespoon water", 15) }}
+
+    {{ ingredient("½ teaspoon shallot infused oil or sesame oil", 16) }}
+
+    {{ ingredient("¼ teaspoon minced garlic (optional, unless you like spicy food)", 17) }}
+
+{% endblock ingredient_content %}
+
+{% set ingredient_img = url_for("static", filename= "korean_6" | media( name | path_format )) %}
+
+{% set ingredient_alt = "Asian-style grater" %}
+
+{% set ingredient_caption = "" %}
+
+{% block steps_content %}
+    {% set accordion_body_1 %}
+        <ol>
+            <li>
+                Whisk all the ingredients for dipping sauce until the sugar dissolved, and set aside <a href="#note-2">(note 2)</a>.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Making the dipping sauce", accordion_body_1, 1, True) }}
+
+    {% set accordion_body_2 %}
+        <ol start="2">
+            <li>
+                Cut, julienne or shred your choice of vegetables into 2-3cm length. Set aside.
+            </li>
+            <li>
+                Peel a potato. Puree the potato with an Asian-style grater (refer photo above), blender or food processor. If you can’t find any of them, use a normal grater just like what I did. It works fine as well.
+            </li>
+            <li>
+                Place the pureed potato onto a strainer over a bowl or container. Press the pureed potato gently with a spoon to drain out the liquid. Let the liquid sit for a minute or two. Then, carefully pour away the liquid and retain the potato starch that sinks to the bottom.
+            </li>
+            <li>
+                Place all the ingredients for batter (except for iced water) in a mixing bowl and mix until well combined. Slowly add in iced water and mix until you get a smooth batter.
+            </li>
+            <li>
+                Add the mixed veggies and stir to combine. Divide the mixture into 2 equal portions.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Making the batter", accordion_body_2, 2) }}
+
+    {% set accordion_body_3 %}
+        <ol start="7">
+            <li>
+                Heat up a frying pan (make sure it is clean) with medium high heat. When the pan is hot, add 1-2 tablespoons of oil. Swirl the oil to coat the pan. Reduce the heat to medium, pour the batter onto it. Use a spatula or spoon to spread the mixture out evenly to form a pancake. Flatten the batter as much as possible, depending on the thickness you prefer. Let it cook for 2-3 minutes or until the the base of pancake is browned nicely.
+            </li>
+            <li>
+                Then, carefully slide the pancake onto a large plate. Place another plate on top to cover it. Hold these plates together and flip over. Then, return the pancake to the pan with the uncooked portion underneath. Continue to cook for another 2-3 minutes or until the ingredients are thoroughly cooked and the pancake is lightly browned.
+            </li>
+            <li>
+                Slice the pancake onto serving plates and leave them to cool.
+            </li>
+            <li>
+                Repeat step 7 and 8 for the second portion.
+            </li>
+            <li>
+                Slice the pancakes into triangle or grid shape. Serve with the dipping sauce.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Frying the pancake", accordion_body_3, 3) }}
+{% endblock steps_content %}
+
+{% set steps_img = url_for("static", filename= "korean_7" | media( name | path_format )) %}
+
+{% set steps_caption = "" %}
+
+{% block notes_content %}
+    <li id="note-1">
+        I used zucchini, red capsicum, pumpkin, spring onion and red onion. Other veggies you can use: yellow capsicum, green capsicum, yellow onion, carrot, leek and Asian chives. For other variations, you can mix veggies with precooked seafood, meat or poultry.
+    </li>
+    <li id="note-2">
+        You can adjust the amount of ingredients according to your own preference.
+    </li>
+    <li>
+        Prepare all the ingredients first, and leave grating the potato last as grated potato can turn brown easily when contacting with air.
+    </li>
+    <li>
+        The Asian-style grater (refer photo above) can be found at Daiso.
+    </li>
+{% endblock notes_content %}
