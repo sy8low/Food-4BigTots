@@ -1,0 +1,120 @@
+{% extends "recipes/recipe.html" %}
+
+{% from "macros.html" import ingredient, accordion_item %}
+
+{% set cover_img = url_for("static", filename= "lassi_1" | media( name | path_format )) %}
+
+{% set intro_content %}
+    <p>
+        We just returned from Malaysia where we spent our short vacation at our hometowns of Kuala Lumpur and Penang.
+        It was real fun to get together with relatives and old friends, as well as pampering our tummies with our favourite local cuisines.
+        But, sad to say, the quality for some of them had deteriorated and didn’t quite keep up to our expectation.
+        Meanwhile, the food prices were marked higher than what we used to pay previously.
+    </p>
+    <p>
+        After coming back to Singapore, we stayed home most of the time as the weather has been unbearably hot and humid.
+        To keep our body cool, we drink plenty of fluid everyday. One drink that we got hooked lately is mango lassi.
+        It’s a seriously delicious, inexpensive and healthy pick-me-up which pleases both the eyes and the palate.
+        Best of all, it’s incredibly easy to make even younger kids (with an adult’s supervision) can do it.
+        Just put fresh mangoes, yogurt, milk, ice cubes and a little honey into a blender and blend until smooth.
+        In less than 10 seconds, Ta-Da! A creamy, nourishing and refreshing mango lassi is ready!
+        This superfast and super good drink is a must to try when mango is in season. Now, it’s just the right timing!
+        You can choose any variety you like (ranging from India, Malaysia, Thailand and very soon Pakistan) but make sure
+        pick those that are meaty, sweet, fragrant, fully and less fibrous.
+    </p>
+    <p>
+        Mango can be eaten unripe or ripen. When ripen, it is naturally sweet. It’s rich in amino acids, vitamin C and E,
+        flavonoids, beta carotene, niacin, calcium, iron, magnesium and potassium. Your child can gain many health benefits
+        by eating mango, such as:
+    </p>
+    <ul>
+        <li>
+            reduce risk of cancer
+        </li>
+        <li>
+            promote good eye sight
+        </li>
+        <li>
+            help in digestion
+        </li>
+        <li>
+            improve skin complexion
+        </li>
+        <li>
+            help in anemia
+        </li>
+        <li>
+            boost memory
+        </li>
+        <li>
+            good for gaining weight – maybe not for me, hehe!
+        </li>
+    </ul>
+    <p>
+        <small>(Read more: <a href="http://www.lifemojo.com/lifestyle/top-10-health-benefits-of-mangoes-23759891#ixzz1xmdmjheh">Lifemojo</a>).</small>
+    </p>
+    <p>
+        If you are looking for something cool to beat the heat, this drink is definitely healthier choice
+        than commercial packet drink or soft drink. It’s also a simple and practical way to help your picky
+        eaters enjoy the goodness of mango, milk and yoghurt all in one go.
+    </p>
+    <p>
+        Father’s Day falls on this coming Sunday. Join me and let’s toss with this mango lassi drink wishing all the wonderful dads
+        <b>“A Happy Father’s Day”</b>.
+    </p>
+{% endset %}
+
+{% set intro_img = url_for("static", filename= "lassi_3" | media( name | path_format )) %}
+
+{% set intro_caption = "" %}
+
+{% set adapted = "" %}
+
+{% set yield = "2" %}
+
+{% block ingredient_content %}
+    {{ ingredient("2 large fully ripen mangoes (about 430g) – peeled, removed and cut into chunks", 1) }}
+    
+    {{ ingredient("8 tbsp plain yoghurt <a href='#note-1'>(note 1)</a>", 2) }}
+
+    {{ ingredient("4 tbsp milk (preferably chilled)", 3) }}
+
+    {{ ingredient("6 small ice cubes (or crushed ice)", 4) }}
+
+    {{ ingredient("3 tbsp honey (more or less, depending on the type of mango)", 5) }}
+{% endblock ingredient_content %}
+
+{% set ingredient_img = url_for("static", filename= "lassi_4" | media( name | path_format )) %}
+
+{% set ingredient_alt = "Two bottles of mango lassi with straws and decorative flags on a white cloth" %}
+
+{% set ingredient_caption = "" %}
+
+{% block steps_content %}
+    {% set accordion_body_1 %}
+        Put all ingredients in a blender and blend until smooth. Adjust the sweetness if necessary.
+        Pour into individual glasses and serve immediately. If not, keep in the refrigerator for later consumption.
+        Best to be consumed within a day.
+    {% endset %}
+    {{ accordion_item("Blending the mangoes", accordion_body_1, 1, True) }}
+{% endblock steps_content %}
+
+{% set steps_img = url_for("static", filename= "lassi_5" | media( name | path_format )) %}
+
+{% set steps_caption = "" %}
+
+{% block notes_content %}
+    <li id="note-1">
+        I used <a href="https://food-4tots.com/ingredients/9/">Greek style yoghurt</a> which is creamier than normal yogurt.
+    </li>
+    <li>
+        You can learn how to cut a mango from <a href="https://food-4tots.com/2011/04/06/fresh-mango-pudding/2/">this link</a>.
+    </li>
+    <li>
+        If your blender is not suitable for crushing ice, then you have to crush them first by putting the ice cubes into a
+        plastic bag and crush roughly with a mortar or rolling pin.
+    </li>
+    <li>
+        Choose mango that is fully ripen, sweet, fragrant and less fibrous. I used Thailand honey mangoes.
+    </li>
+{% endblock notes_content %}
