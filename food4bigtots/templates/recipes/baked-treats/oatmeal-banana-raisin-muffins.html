@@ -1,0 +1,151 @@
+{% extends "recipes/recipe.html" %}
+
+{% from "macros.html" import ingredient, accordion_item %}
+
+{% set cover_img = url_for("static", filename= "oat_muffin_1" | media( name | path_format )) %}
+
+{% set intro_content %}
+    <p>
+        My son loves oats to bits. He can polish up a whole bowl of oatmeal breakfast that his dad often made for him during weekends.
+        I, unlike him, dislike oats, and will only eat oats in muesli breakfast cereal. Whenever I see oatmeal, it reminds me of the
+        oatmeal I ate when I was sick during childhood. And, this perception has stuck deep into my memory and was tough to erase.
+        That was until recently…….
+    </p>
+    <p>
+        I began to discover many interesting ways to use oats in my experiment with baking, such as the <a href="https://food-4tots.com/2009/08/30/power-packed-oat-bars/">power-packed oat bars</a>
+        I featured earlier. Today, this muffin recipe I am going to share also uses oats. It is another recipe that is packed
+        with all the simple and healthy ingredients that you can easily get hold of. Because it only requires <a href="https://food-4tots.com/2009/08/22/how-to-make-muffins/">“the mixing method”</a>
+        to prepare the baking mixture, a spatula is all that is needed to do the bulk of the job and then onto the oven to finish.
+        (Note: If you like to try out <a href="https://food-4tots.com/2009/08/22/how-to-make-muffins/">“the creaming method”</a> for making muffins, you can refer to my
+        <a href="https://food-4tots.com/2009/08/22/how-to-make-muffins/">blueberry muffins recipe</a>.)
+    </p>
+    <p>
+        For the muffins I featured in this post, I prepared part of the ingredients before dinner and continued thereafter
+        with the final preparation of putting them into the muffin cups and place in the oven.
+        By the time I finished all the after meal cleaning, I can have a batch of freshly baked muffins ready on the dining table.
+        Doesn’t that sound simple and hassle-free to you? These muffins are “zero-failure”. All you need to remember is:
+        <b>"do not overmix"</b> (so that the gluten in the flour will not be developed).
+    </p>
+    <p>
+        I strongly recommend these wholesome muffins to those who, like me, dislike eating plain oatmeal.
+        In this recipe you can’t even find any traces of oats in the muffins, except for the oat flakes used for
+        garnishing. So, you will be consuming oats without realizing it. 😉
+    </p>
+    <p>
+        The taste of these muffins is not sweet as brown sugar is used. By adding bananas, these muffins will still be
+        moist even if they are consumed the next day. And, they are best served as snack or breakfast.
+    </p>
+{% endset %}
+
+{% set intro_img = url_for("static", filename= "oat_muffin_2" | media( name | path_format )) %}
+
+{% set intro_caption = "" %}
+
+{% set adapted = "The Malaysian Women’s Weekly Foodbook – Easy healthy meals" %}
+
+{% set yield = "12 medium muffins ( 13-14 small muffin cups)" %}
+
+{% block ingredient_content %}
+    {{ ingredient("½ cup quick cooking oats/ rolled oats  <a href='#note-1'>(Note 1)</a> (plus extra 1 tbsp for garnishing)", 1) }}
+    
+    {{ ingredient("½ cup fresh milk", 2) }}
+
+    {{ ingredient("1 ½ cups plain flour", 3) }}
+
+    {{ ingredient("½ cup brown sugar", 4) }}
+
+    {{ ingredient("1 tsp baking powder", 5) }}
+
+    {{ ingredient("¼ tsp baking soda", 6) }}
+    
+    {{ ingredient("½ cup extra light olive oil", 7) }}
+
+    {{ ingredient("1 medium egg (at room temperature)", 8) }}
+
+    {{ ingredient("½ cup black raisins (80g)", 9) }}
+
+    {{ ingredient("2 fully ripen and soft bananas (medium, 5-6 inches), mashed <a href='#note-2'>(Note 2)</a>", 10) }}    
+{% endblock ingredient_content %}
+
+{% set ingredient_img = url_for("static", filename= "oat_muffin_4" | media( name | path_format )) %}
+
+{% set ingredient_alt = name %}
+
+{% set ingredient_caption = "" %}
+
+{% block steps_content %}
+    {% set accordion_body_1 %}
+        <ol>
+            <li>
+                Preheat oven to 200°C. Prepare muffin cups.
+            </li>
+            <li>
+                Put raisins in a small plastic bag, soak with 1 tbsp water, and keep it in the fridge.
+                It is best to do it 2-3 hours in advance before baking.
+                This is to prevent the raisins from absorbing too much of water from the muffins.
+                Remove the soaked raisins from the fridge and squeeze away any excess water. Slightly pat dry with kitchen towel.
+            </li>
+            <li>
+                Sieve flour, baking powder and baking soda. Set aside.
+            </li>
+            <li>
+                Combine oats and milk in a small bowl. Set aside.
+            </li>
+            <li>
+                In a mixing bowl, use a whisk to combine flour, sugar, baking powder and baking soda.
+                Make sure there is no lump. Use finger tips to break them if any.
+            </li>
+            <li>
+                In a separate bowl, beat egg until light and foamy, add in oil and mix well.
+                Then add in mashed bananas and mix again until well combined.
+            </li>
+            <li>
+                Make a well in the flour mixture. Use a spatula to gently fold in the wet ingredient in step (6)
+                until all the ingredients are well-combined and no traces of flours. The batter may be lumpy but this is fine.
+            </li>
+            <li>
+                Then fold in the milk mixture in step (4), and then followed by soaked raisins in step (2).
+                Do not over-mix. The batter should be thick (“spoonable” not “pourable”).
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Making the batter", accordion_body_1, 1, True) }}
+
+    {% set accordion_body_2 %}
+        <ol start="9">
+            <li>
+                Spoon batter into the prepared muffin cups until each cup is 80% full. Sprinkle some oats on top of each muffin
+                <a href="#note-4">(Note 4)</a>.
+            </li>
+            <li>
+                Bake in the oven at 190°c for 10 minutes, then lower to 180°c for another 10 minutes,
+                or until the muffins have risen and turned to slightly golden brown. Insert a toothpick/ skewer
+                into the centre to test. If it comes out clean, it means that the muffins are cooked. Cool on a wire rack.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Baking the muffins", accordion_body_2, 2) }}
+{% endblock steps_content %}
+
+{% set steps_img = url_for("static", filename= "oat_muffin_5" | media( name | path_format )) %}
+
+{% set steps_caption = "" %}
+
+{% block notes_content %}
+    <li id="note-1">
+        For rolled oats, use the flakes instead of whole.
+    </li>
+    <li id="note-2">
+        I use the “pisang berangan” variety of banana as they are naturally sweet once fully ripen.
+        If you do not have bananas on hand, you can substitute with ½ cup of raisins or blueberries.
+    </li>
+    <li>
+        If you want a dome effect muffin, you can increase to 90% full. I used muffin paper cups which
+        could not handle batter with 90% full. But this may not be the case for muffin tray.
+        You may need to do your own experiment to achieve the best results.
+    </li>
+    <li id="note-4">
+        The baking time and oven temperatures vary depending on the types of oven, size of muffins,
+        or whether you are using a paper cup or muffin tray to bake. So use your own judgment to experiment.
+    </li>
+{% endblock notes_content %}
