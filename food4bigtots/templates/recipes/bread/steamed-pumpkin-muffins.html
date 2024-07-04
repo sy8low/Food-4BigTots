@@ -1,0 +1,176 @@
+{% extends "recipes/recipe.html" %}
+
+{% from "macros.html" import ingredient, accordion_item %}
+
+{% set cover_img = url_for("static", filename= "pumpkin_muffin_1" | media( name | path_format )) %}
+
+{% set intro_content %}
+    <p>
+        My family had a wonderful time during our recent holidays. We went to Kuala Lumpur first,
+        then to Cameron Highlands and lastly ended in Penang. The only regret was that our duration
+        in Penang was too short to cover our usual to-eat (no, must-eat) list. Just thinking of this food heaven,
+        my stomach has already started rumblimg….oh my! I will share with you some photos I had taken during our
+        Cameron Highlands trip in my next post.
+    </p>
+    <p>
+       Have you heard, seen or eaten Japanese steamed cake/ bread (mushi pan) before? I was very intrigued with
+       this mushi pan when I first saw it sold at a specialty store in a shopping mall. Since then, I had been searching
+       for the recipe. Lately, I had bought some mushi pan cookbooks and had tried out some of the recipes. However,
+       some failed while some were far from perfection. Undaunted, I will continue my experiment and hopefully I can
+       share my success story with you soon. So, wish me luck!
+    </p>
+    <p>
+       Meanwhile, here is my favourite steamed pumpkin muffin recipe that is especially dedicated for people who love
+       baking but have neither oven nor electrical mixer, or both. The recipe is fairly simple and quick to make even
+       if you are a novice in baking. It applies the same
+       <a href="https://food-4tots.com/2009/08/22/how-to-make-muffins/">muffin/mixing method</a>
+       used to make baked muffins. You just need a hand whisk and a mixing bowl. Yes, it’s as simple as that.
+       The wet ingredients are combined with the dry ingredients to form a batter. Then the batter is spooned
+       into the moulds and steamed instead of baking. It’s so hassle-free and requires less washing too!
+    </p>
+    <p>
+        Even though the muffins are steamed, they produce soft and fluffy cake-like texture unlike the tradition
+        Chinese prosperity cakes (“fatt gou/ huat kueh” 发糕) that are dense and chewy. Its gorgeous “open mouth”
+        effect (which according to the Chinese’s belief symbolizes good luck) is what I adore most about these muffins.
+    </p>
+    <p>
+        Besides that, they taste yummy too!!! Each bite is packed with subtle smell and taste of coconut milk that blends
+        well with the pumpkin flavour. As Australian pumpkin comes with  natural sweetness, I use lesser sugar than what
+        is required in the original recipe. So the sweetness could be just perfect for those who don’t have a sweet tooth.
+        By mashing the pumpkins and mixing it well with the batter, I am sure your picky eater won’t notice its existence
+        when consuming it.
+    </p>
+    <p>
+        These muffins are not only enjoyed a lot by our family but my friend’s family as well. After sampling my muffins,
+        she (a working mom with 2 kids) quickly requested for the recipe and made them on the same weekend – 2 days in a row!
+    </p>
+    <p>
+        These muffins can be frozen in the fridge for later consumption. On the day you want to eat them,
+        just take them out from the freezer to thaw lightly and steam again under high heat for 10-12 minutes.
+        It’s best to serve them warm. You can also add a dollop of jam to go with it.
+    </p>
+{% endset %}
+
+{% set intro_img = url_for("static", filename= "pumpkin_muffin_2" | media( name | path_format )) %}
+
+{% set intro_caption = "" %}
+
+{% set adapted %}
+    <a href="http://wendyinkk.blogspot.com/2011/01/steamed-pumpkin-muffins-pumpkin-trio-1.html">Table for Two and More</a><br>
+    and originated from <a href="http://auntyyochana.blogspot.com/2009/02/steamed-pumpkin-muffin.html">Yochana Cake’s Delight</a>
+{% endset %}
+
+{% set yield %}
+    11-12 muffins<br>
+    (6.5cm diameter (opening)x 5cm diameter (base) x 3.5cm depth pudding mould) – <a href="#note-1">note 1</a>
+{% endset %}
+
+{% block ingredient_content %}
+    {{ ingredient("125 grams pumpkin <a href='#note-2'>(note 2)</a>", 1) }}
+    
+    {{ ingredient("1 egg (large) – 64g (with shell), at room temperature", 2) }}
+
+    {{ ingredient("85 grams castor sugar", 3) }}
+
+    {{ ingredient("½ teaspoon salt", 4) }}
+
+    {{ ingredient("100 grams thick coconut milk (canned or fresh) – (I used Kara UHT coconut cream)", 5) }}
+
+    {{ ingredient("30 grams salad oil (I used extra virgin olive oil)", 6) }}
+
+    {{ ingredient("200 grams cake flour (low protein flour)", 7) }}
+
+    {{ ingredient("1½ teaspoons double acting baking powder <a href='#note-3'>(note 3)</a>", 8) }}
+{% endblock ingredient_content %}
+
+{% set ingredient_img = url_for("static", filename= "pumpkin_muffin_3" | media( name | path_format )) %}
+
+{% set ingredient_alt = "Steamed pumpkin muffins on a cooling rack" %}
+
+{% set ingredient_caption = "" %}
+
+{% block steps_content %}
+    {% set accordion_body_1 %}
+        <ol>
+            <li>
+                Mix cake flour and baking powder together. Sieve and set aside.
+            </li>
+            <li>
+                De-skin pumpkin, cut into small cubes, steam and mash with a fork. Set aside.
+            </li>
+            <li>
+                Preheat steamer – Fill a cooking pot/ wok with water and bring water to a boil. Place a steaming rack
+                (it’s optional if you are using AMC steaming pot). Wrap the lid with a piece of cloth to avoid condensation
+                during steaming (see photo below).
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Preparing the ingredients", accordion_body_1, 1, True) }}
+
+    {% set accordion_body_2 %}
+        <ol start="4">
+            <li>
+                In a mixing bowl, beat egg until foamy with a hand whisk.
+            </li>
+            <li>
+                Add in sugar and salt. Continue beating until well combined and the sugar and salt are dissolved.
+            </li>
+            <li>
+                Add in coconut milk, oil and pumpkin in sequence. Mix until well combined for each addition.
+            </li>
+            <li>
+                Make a well in the middle of the flour mixture from step (2). Pour the wet mixture from step (6)
+                into it in 2-3 batches. Use a spatula to fold in the wet mixture until blended and no traces of flour.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Making the batter", accordion_body_2, 2) }}
+
+    {% set accordion_body_3 %}
+        <ol start="9">
+            <li>
+                Steam on high heat for about 15 minutes.
+            </li>
+            <li>
+                Once it’s done, remove the pudding moulds from the cooking pot/ wok and transfer to a cooling rack.
+            </li>
+            <li>
+                Best to serve warm.
+            </li>
+        </ol>
+        {% endset %}
+        {{ accordion_item("Steaming the muffins", accordion_body_3, 3) }}
+    {% endblock steps_content %}
+
+{% set steps_img = url_for("static", filename= "pumpkin_muffin_6" | media( name | path_format )) %}
+
+{% set steps_caption = "" %}
+
+{% block notes_content %}
+    <li id="note-1">
+        I bought these pudding moulds from Daiso.
+    </li>
+    <li id="note-2">
+        I used Australian pumpkin. If you use local pumpkin, then you need to add more sugar.
+    </li>
+    <li id="note-3">
+        <b>Double acting vs single acting</b>: Most baking powders are double-acting, which means
+        the baking powder reacts twice; contain one acid that dissolves when it comes in contact
+        with water and another acid that does not dissolve until it reaches a higher temperature
+        in a hot oven. This type of double action ensures that the finished product is light and fluffy.
+        Single-acting baking powders are mainly used by manufacturers and are usually not available for retail sale.
+        (Source: <a href="http://whatscookingamerica.net/Q-A/BakingPowder.htm">What is cooking America</a>)
+    </li>
+    <li>
+        Extra muffins can be frozen in the fridge for later consumption. Before eating, remove from the freezer,
+        thaw slightly and steam again for 10-12 minutes until the muffins are soft.
+    </li>
+    <li>
+        If you find the muffins are a bit dry, add a dollop of jam (ie strawberry jam) onto the muffins.
+    </li>
+    <li>
+        Use a knife to score the top of the muffin batter (just like how you score your bread). It helps to split
+        the top of the muffins, hence creating the smiling effect. (This tip is shared by
+        <a href="http://sugarplumgal.blogspot.sg/2012/06/steamed-pumpkin-muffins.html">Sugar &amp; Spice &amp; EverythingNice</a>)
+    </li>
+{% endblock notes_content %}
