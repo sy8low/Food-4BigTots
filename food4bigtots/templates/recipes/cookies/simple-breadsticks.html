@@ -1,0 +1,174 @@
+{% extends "recipes/recipe.html" %}
+
+{% from "macros.html" import ingredient, accordion_item %}
+
+{% set cover_img = url_for("static", filename= "breadstick_1" | media( name | path_format )) %}
+
+{% set intro_content %}
+    <p>
+        Hi everyone, Happy New Year !!
+    </p>
+    <p>
+        Time flies! It has been three months since my last update. Sorry to keep everyone waiting, but thanks so much for your kind patience and continuing support!!!
+    </p>
+    <p>
+        During this period, life was exceptionally hectic with many unexpected things happened. Last December, instead of having Mr Santa, sick bug paid us a surprise visit. I had to battle with a persistent fever for 3 consecutive weeks. It was initially caused by the dengue virus but led to further complication with pneumonia. For this, I had to be hospitalized. Soon after this episode, it was my son’s turn to have a throat infection and fever. So, it was quite a miserable and unforgettable month for both of us. Nevertheless, we feel blessed that we have finally recovered and are back in good health now.
+    </p>
+    <p>
+        After taking such a long break, I can’t wait to start my baking again especially making my homemade bread. Though I love making bread a lot,  I dread kneading bread dough with hands. The reason is that I always ended up with a pair of arching arms. Having a KitchenAid standing mixer is really a great relief to me. However, if the amount of dough is small, it would be more practical to knead with hands than machine. This simple breadsticks recipe is a good example for kneading bread dough with hands.
+    </p>
+    <p>
+        This recipe was adapted and modified from a basic thin crust pizza recipe. Hence, you have a choice to make either one of the options or both. The recipe is very simple and easy to follow. With just a few basic ingredients, you can begin almost immediately, perfectly suitable for any first timers to have some hands on experience in kneading bread dough. I hope this recipe will give them a boost of confidence in their bread making journey in future.
+    </p>
+    <p>
+        As compared to my <a href="https://food-4tots.com/2011/01/03/cheese-breadsticks-tangzhong-water-roux-method/">cheesy breadsticks</a>, the texture of these sticks is not soft like bread but crispy and crunchy like cookies. Based on individual preference, the dough can be easily shaped into strip or stick. Both types taste equally great. My 6 year-old son had so much fun rolling the sticks.
+    </p>
+    <p>
+        These sticks can be eaten on its own or even go well with dips. Thus, it makes them a tasty snack for both kids and even adults too. If you are looking for some healthy and guilt free snack for your toddlers, this little treat will surely bring a smile to their face.
+    </p>
+    <p>
+        Chinese New Year is just two weeks away from now. I am counting down the days!!! Aren’t you? Are you going to bake any festive cookies for your family and little ones this year?  I had baked my hubby’s favourite cookies and will share with you in my next post. Do stay tuned!
+    </p>
+{% endset %}
+
+{% set intro_img = url_for("static", filename= "breadstick_3" | media( name | path_format )) %}
+
+{% set intro_caption = "" %}
+
+{% set adapted = "一学就会做匹萨—美食讲堂系列 – 白锦霞" %}
+
+{% set yield = "" %}
+
+{% block ingredient_content %}
+    {{ ingredient("250g high gluten flour (or bread flour)", 1) }}
+    
+    {{ ingredient("130-150g water (<a href='#note-1'>note 1</a> and <a href='#note-2'>2</a>)", 2) }}
+
+    {{ ingredient("2g instant yeast", 3) }}
+
+    {{ ingredient("4g salt", 4) }}
+
+    {{ ingredient("12g extra light olive oil", 5) }}
+{% endblock ingredient_content %}
+
+{% set ingredient_img = url_for("static", filename= "breadstick_2" | media( name | path_format )) %}
+
+{% set ingredient_alt = name %}
+
+{% set ingredient_caption = "" %}
+
+{% block steps_content %}
+    {% set accordion_body_1 %}
+        <ol>
+            <li>
+                In a small bowl, dissolve yeast with water (130g).
+            </li>
+            <li>
+                In a large mixing bowl, add flour and make a well in the center. Pour the yeast mixture into it and mix well.
+                Then follow by salt. Add the remaining water little by little. It’s not necessary to use all the water.
+                Knead until a dough is formed.
+            </li>
+            <li>
+                Add in olive oil and continue kneading until the oil is fully absorbed into the dough. It’s fine if
+                the dough is wet and sticky at the initial stage. Continue kneading until the dough is less sticky and more manageable.
+            </li>
+            <li>
+                Transfer the dough to a lightly floured surface and knead until soft and smooth. <a href='#note-3'>(note 3)</a>.
+            </li>
+            <li>
+                Test the dough to see whether it is well kneaded by doing a <b>membrane test</b>
+                (refer to this <a href="https://food-4tots.com/2011/01/03/cheese-breadsticks-tangzhong-water-roux-method/2/">cheese breadsticks post</a>).
+                Take out a small piece of dough, gently stretch it outwards at all the directions to form a thin layer of “membrane”.
+                If your dough has not reached this stage, continue kneading.
+            </li>
+            <li>
+                Place the dough in a lightly greased bowl, cover with cling wrap and proof for 20 minutes at room temperature.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Making the dough", accordion_body_1, 1, True) }}
+
+    {% set accordion_body_2 %}
+        <ol start="7">
+            <li>
+                Divide the dough into 3 equal portions and shape into balls. Place them into a large container/
+                tray, cover with cling wrap and proof in the fridge for another one hour. <a href="#note-4">(note 4)</a>
+            </li>
+            <li>
+                Remove the chilled dough from the fridge. Let it sit in the room temperature for 5 minutes. Work on one dough at a time.
+            </li>
+            <li>
+                On a lightly floured surface, roll the dough into a rectangular shape with 0.2-0.3cm thickness.
+                Roll from center towards outside at four different directions. Make sure the dough has equal thinness.
+                You may need to roll it several times to achieve this thickness. Sprinkle some flour (on the surface and
+                the rolling pin) as and when required to avoid dough from sticking.
+            </li>
+            <li>
+                Brush the dough lightly with olive oil. Use a pizza cutter to cut the dough into small strips (about
+                8-10cm long x 1cm width each). Hold both ends and twist the strip.
+            </li>
+            <li>
+                Place on a lighted greased baking tray. Cover with clip wrap and proof for another 15 minutes.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Shaping the breadsticks", accordion_body_2, 2) }}
+
+    {% set accordion_body_3 %}
+        <ol start="12">
+            <li>
+                Bake at a preheated oven at 180°C for 8-10 minutes or until golden brown <a href="#note-5">(note 5)</a>.
+                Then leave it the oven (without heat) for another 2 minutes.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Baking the breadsticks", accordion_body_3, 3) }}
+{% endblock steps_content %}
+
+{% set steps_img = url_for("static", filename= "breadstick_4" | media( name | path_format )) %}
+
+{% set steps_caption = "" %}
+
+{% block notes_content %}
+    <li id="note-1">
+        If the weather is hot, just use normal tap water. If the weather is cold, then use luke warm water (45°C).
+    </li>
+    <li id="note-2">
+        Start with 130g and slow add the remaining during kneading. You may not need to finish all.
+    </li>
+    <li id="note-3">
+        The following videos will demonstrate how to knead dough with hands.
+        <ul>
+            <li>
+                <a href="http://www.thekitchn.com/thekitchn/how-to/how-to-knead-bread-dough-the-video-home-hacks-108771">The Kitchn</a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/watch?v=R9vHaN07Q9w&list=TLwbTu4vkzBx_Z1M48mxDjfQ2d7xgLgr-P">Carol 自在生活</a>
+                (even if you don’t understand Chinese, you must watch video no. 6 and 7 to learn the technique of “smashing”甩打.
+                It helps to improve the texture of the dough.)
+            </li>
+        </ul>
+    </li>
+    <li id="note-4">
+        Proofing the dough in fridge helps to improve the crunchiness of the breadsticks.
+    </li>
+    <li id="note-5">
+        The baking temperature and time should be used as a reference. You can reduce the heat after 5 minutes.
+    </li>
+    <li>
+        You may need to bake these breadsticks in 3 batches.
+    </li>
+    <li>
+        Instead of strips, you can roll the dough into long strips. For this, you need to divide the dough into 10g dough at step (8).
+        Roll into 25cm long strip (refer to photo (h) at this
+        <a href="https://food-4tots.com/2011/01/03/cheese-breadsticks-tangzhong-water-roux-method/2/">cheese breadsticks post</a>).
+        If you can’t get the required length at first attempt, set it aside and work on other strips.
+        You may need to roll it 2-3 times to achieve this length as the strips will shrink slightly.
+        Brush the long strips with olive oil. Cover with cling wrap and proof for 15 minutes. Then continue with step (12).
+    </li>
+    <li>
+        This dough is suitable for making <a href="https://food-4tots.com/2010/12/06/thin-crust-pizza/">thin crust pizza</a>.
+        You can follow step (1) to (8) in this recipe and refer to this thin crust pizza post and this
+        <a href="https://food-4tots.com/2009/03/12/homemade-pizza/">homemade pizza post</a> for the remaining steps.
+    </li>
+{% endblock notes_content %}
