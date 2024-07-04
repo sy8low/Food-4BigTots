@@ -12112,4 +12112,12 @@ h2.spaced, .spaced.h2, h3, .h3 {
   -ms-filter: “FlipH”;
 }
 
+.alert {
+  text-align: center;
+  color: black;
+  border: #72502E, solid, 0.125rem;
+  padding-bottom: 0.5rem;
+  margin-top: 1.25rem;
+}
+
 /*# sourceMappingURL=styles.css.map */

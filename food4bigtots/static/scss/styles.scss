@@ -349,3 +349,12 @@ h2.spaced, h3 {
     filter: FlipH;
     -ms-filter: “FlipH”;
 }
+
+// Alert
+.alert {
+    text-align: center;
+    color: black;
+    border: $primary, solid, 0.125rem;
+    padding-bottom: 0.5rem;
+    margin-top: 1.25rem;
+}
