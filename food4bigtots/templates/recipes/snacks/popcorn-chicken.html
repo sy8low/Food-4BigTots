@@ -1,0 +1,171 @@
+{% extends "recipes/recipe.html" %}
+
+{% from "macros.html" import ingredient, accordion_item %}
+
+{% set cover_img = url_for("static", filename= "popcorn_1" | media( name | path_format )) %}
+
+{% set intro_content %}
+    <p>
+        “Kids love fast food” – that’s a common perception that I strongly disagree with.
+        Given so many healthy choices around, do I have to introduce this unhealthy stuff to my son?
+        No, of course I don’t. To set a good example to my son, my hubby and I have decided to stop
+        eating fast food since we moved to Singapore five years ago. For that, my son also happily follows our footsteps.
+        The only exception was that he had a KFC happy meal during his school field trip, which is pretty fine for him
+        to enjoy this once-in-a-while treat. Even after that, he never requests to go to fast food restaurant. I’m really
+        that he can understand and fully support our stand.
+    </p>
+    <p>
+        Although I dislike those deep-frying, unhealthy fast food, I do welcome the idea of creating healthy “fast food”
+        for my family. These baked popcorn chickens are one low-in-fat “fast food” version that I can’t wait to share with you.
+        We named it popcorn chicken because they resemble KFC popcorn chicken. How close they are to the real one, I will leave
+        it to your own judgement.
+    </p>
+    <p>
+        These popcorn chickens are made of bite-sized chicken pieces. They are pounded and lightly marinated for a tender and tasty
+        inside, and then breaded (or double-breaded) with cornflake crumbs, cheese and spices for more irresistible tasty and crispy
+        crunch. The way to assemble them is extremely simple and straight forward, just like how I did for my oven baked fish fingers.
+        You may get your kids to help out as this is such a fun and interesting baking activity. A great parent-and-child bonding too!
+    </p>
+    <p>
+        When served warm, these popcorn chickens are so moist, delicious and super crunchy. I have made them many times and they
+        remain popular with my family. Served with dips, it makes a superb finger food for kids. They also make a good brunch for
+        the whole family during weekends.
+    </p>
+{% endset %}
+
+{% set intro_img = url_for("static", filename= "popcorn_3" | media( name | path_format )) %}
+
+{% set intro_caption = "" %}
+
+{% set adapted = "" %}
+
+{% set yield = "4-5" %}
+
+{% block ingredient_content %}
+    {{ ingredient("230g chicken breast, skinless (2 small chicken breast halves)", 1) }}
+
+    {{ ingredient("100g cornflakes (I used Nestle Whole Wheat Cornflakes)", 2) }}
+
+    {{ ingredient("60g plain flour", 3) }}
+
+    {{ ingredient("2 egg whites", 4) }}
+
+    <h4 class="h5 mt-3">For the Marinade</h4>
+    {{ ingredient("1½ tsp oyster sauce", 5) }}
+
+    {{ ingredient("1½ tsp light soy sauce", 6) }}
+
+    {{ ingredient("½ tsp sesame oil", 7) }}
+
+    {{ ingredient("¼ tsp white pepper", 8) }}
+
+    {{ ingredient("Pinch of sugar", 9) }}
+
+    <h4 class="h5 mt-3">For the Breading</h4>
+    {{ ingredient("4 tsp garlic powder (refer to photo)", 10) }}
+
+    {{ ingredient("15g (about 4 tbsp) Parmesan cheese, freshly grated", 11) }}
+
+    {{ ingredient("¼ tsp <a href='https://food-4tots.com/wp-content/uploads/2010/07/P6011465-copy.jpg'>paprika</a>", 12) }}
+
+    {{ ingredient("¼ tsp freshly ground black pepper", 13) }}
+{% endblock ingredient_content %}
+
+{% set ingredient_img = url_for("static", filename= "popcorn_4" | media( name | path_format )) %}
+
+{% set ingredient_alt = "MasterFoods Garlic Powder" %}
+
+{% set ingredient_caption = "" %}
+
+{% block steps_content %}
+    {% set accordion_body_1 %}
+        <ol>
+            <li>
+                Preheat oven to 200°C.
+            </li>
+            <li>
+                Trim excess fat, rinse and pat dry chicken breast with kitchen towels. Put inside a plastic bag,
+                pound with a rolling pin/ empty glass bottle to flatten it. Cut into 1 inch small cubes.
+                Mix together the seasonings for the marinade in a large bowl. Add chicken cubes to coat.
+                Cover with plastic wrap and refrigerate for at least 1 hour or overnight. You can do the coating
+                in a reusable bag and transfer the bag straight to the fridge.
+            </li>
+            <li>
+                Put the cornflakes into a food processor and process until they become small crumbs.
+                You can also put the cornflakes into a plastic bag and crush with your fingers or rolling pin to make the crumbs.
+                Add in garlic powder, Parmesan cheese, paprika and black pepper, and mix well. Set aside.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Perparing the ingredients", accordion_body_1, 1, True) }}
+
+    {% set accordion_body_2 %}
+        <ol start="4">
+            <li>
+                Set up your assemble line. Get ready with 3 bowls (even plates or small pan sheets are possible) which are large enough for coating the chicken cubes.
+            </li>
+            <li>
+                The first one is for flour.
+            </li>
+            <li>
+                The second one (preferably use bowl) is for egg white. Crack an egg, extract the egg white and whisk lightly.
+            </li>
+            <li>
+                The third one is for cornflakes mixture.
+            </li>
+            <li>
+                Use a pair of tongs or clean hands, dip chicken cubes in the flour, egg and then cornflakes mixture.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Coating the chicken", accordion_body_2, 2) }}
+
+    {% set accordion_body_3 %}
+        <ol start="9">
+            <li>
+                Prepare a baking tray lined aluminum foil. Grease the tray with oil to prevent the chicken cubes from sticking to it.
+            </li>
+            <li>
+                Arrange the coated chicken cubes on the tray. Drizzle/ spray some oil over them.
+            </li>
+            <li>
+                Bake in a preheated oven for 15 minutes or until lightly golden brown. Turn the chicken cubes over halfway through. Do not overcook the chicken as they will be dry and hard.
+            </li>
+            <li>
+                Remove the baking sheet from the oven. Transfer to serving plates.
+            </li>
+            <li>
+                Serve warm and best to go with dips such as tomato ketchup, sweet chilli sauce or tartar sauce.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Baking the popcorn chicken", accordion_body_3, 3) }}
+{% endblock steps_content %}
+
+{% set steps_img = url_for("static", filename= "popcorn_5" | media( name | path_format )) %}
+
+{% set steps_caption = "" %}
+
+{% block notes_content %}
+    <li>
+        To minimize messiness, complete the entire batch for one particular step before moving to the next one.
+    </li>
+    <li>
+        Instead of cubes, you may also cut them into strips.
+    </li>
+    <li>
+        You may not use all the coating, but having more will make your work easier.
+    </li>
+    <li>
+        If you don’t have oven, you can pan-fry them.
+    </li>
+    <li>
+        To add extra crunchiness, you can do double breading for the chicken cubes. After step (8),
+        dip the chicken cubes again to the egg mixture and then the cornflakes mixture.
+        (Remember to complete the entire batch for step (8) first before proceeding to the second round breading.
+        This is to ensure you have enough leftover egg mixture and cornflakes for that.)
+    </li>
+    <li>
+        If your kids who are not ready for paprika and garlic powder, you can omit them. It works equally well too.
+    </li>
+{% endblock notes_content %}
