@@ -1,0 +1,159 @@
+{% extends "recipes/recipe.html" %}
+
+{% from "macros.html" import ingredient, accordion_item %}
+
+{% set cover_img = url_for("static", filename= "banana_pancake_1" | media( name | path_format )) %}
+
+{% set intro_content %}
+    <p>
+        If you don’t have an oven but plan to make a simple snack for your kid, what could you make?
+        My answer is definitely PANCAKE! With just a few ingredients and some simple cooking equipment,
+        a batch of homemade pancakes will be ready in no time.
+    </p>
+    <p>
+        There are lots of methods in making pancakes. Each method has its own uniqueness. Interestingly,
+        even for the same recipe, a slight change will yield a different outcome. Each time I tried a new pancake recipe,
+        I learned something new.
+    </p>
+    <p>
+        After making these wholemeal banana chocolate chip pancakes, I truly agree that making pancakes with 100% wholemeal
+        flour isn’t a bad idea at all. What could be more exciting than having chocolate chips to cheer your kids’ up.
+        These wholemeal banana chocolate chip pancakes are very tasty and nutritious! Their texture is surprisingly soft
+        and fluffy, and the Greek yogurt and banana keep these pancakes really moist. I have baked a few batches of these
+        pancakes lately. They are “highly in demand” by my family especially my son who absolutely falls in love with them.
+    </p>
+    <p>
+        Like the usual pancakes, they are easy to prepare without the need for an electric mixer. However, when mixing the ingredients,
+        it is important to make sure that the batter is not over-mixed and yet is free of lumps. I usually use a wire balloon hand whisk
+        to stir the dry ingredients into the wet ingredients, and change to a spatula towards the end to scrape off any batter that sticks
+        to the sides and bottom of the mixing bowl. During cooking, the chocolate chips will melt. So, get ready with some kitchen papers
+        to wipe off any residue on the pan before you continue with the next batch.
+    </p>
+    <p>
+        These healthy pancakes are perfect for breakfast, or even great as teatime snacks, whichever way you choose to enjoy them.
+        I like to eat them plain, but you can dress them up with a drizzle of honey or maple syrup, fruit sauce, yogurt or a handful
+        of fresh fruits instead.
+    </p>
+{% endset %}
+
+{% set intro_img = url_for("static", filename= "banana_pancake_3" | media( name | path_format )) %}
+
+{% set intro_caption = "" %}
+
+{% set adapted = "<a href='http://sallysbakingaddiction.com/2014/01/02/whole-wheat-banana-pancakes/'>Sally’s Baking Addition</a>" %}
+
+{% set yield = "" %}
+
+{% block ingredient_content %}
+    {{ ingredient("165grams (1 1/3 cups) wholemeal flour (fine) – <a href='#note-1'>note 1</a>", 1) }}
+    
+    {{ ingredient("2 teaspoons baking powder", 2) }}
+
+    {{ ingredient("¼ teaspoon salt", 3) }}
+
+    {{ ingredient("1½ tablespoons brown sugar (or white sugar)", 4) }}
+
+    {{ ingredient("1 large egg at room temperature (about 65g, gross)", 5) }}
+
+    {{ ingredient("220ml (1 cup) fresh milk at room temperature", 6) }}
+    
+    {{ ingredient("80g (1/3 cup) Greek style yogurt at room temperature", 7) }}
+
+    {{ ingredient("100g mashed fully ripened banana (about 2 medium bananas) – <a href='#note-2'>note 2</a>", 8) }}
+
+    {{ ingredient("1 tablespoon extra-virgin coconut oil (or any flavourless vegetable oil)", 9) }}
+
+    {{ ingredient("½ teaspoon vanilla extract", 10) }}
+
+    {{ ingredient("50g (1/3 cup) chocolate chips or other add-ins such as raisins or cranberries (optional)", 11) }}
+{% endblock ingredient_content %}
+
+{% set ingredient_img = url_for("static", filename= "banana_pancake_2" | media( name | path_format )) %}
+
+{% set ingredient_alt = "" %}
+
+{% set ingredient_caption = "" %}
+
+{% block steps_content %}
+    {% set accordion_body_1 %}
+        <ol>
+            <li>
+                In a large bowl, mix together wholemeal flour and baking powder, and sieve. Do not discard any residue on the sieve.
+                Put it back to the flour mixture and whisk to combine. Set aside.
+            </li>
+            <li>
+                In a small bowl, combine milk with yogurt. Set aside.
+            </li>
+            <li>
+                In a separate bowl, use a wire balloon hand whisk to beat egg lightly. Stir in sugar and beat until well combined.
+                Then add in salt, milk mixture (from step 2), mashed bananas, vanilla extract and oil respectively.
+                Stir until well mixed for each addiction.
+            </li>
+            <li>
+                Stir the dry ingredients (from step 1) into the wet ingredients (from step 3) in 2-3 batches. Stir gently
+                until just combined (without lumps) for each addition. After that, change to a rubber spatula to scrape off
+                the batter that sticks to the sides and bottom of the bowl.
+            </li>
+            <li>
+                Add in chocolate chips (or other add-ins of your choice) and mix well.
+            </li>
+            <li>
+                Do not over-mix the batter or the pancakes will be tough and very dense.
+            </li>
+            <li>
+                Cover the bowl and let it rest for 15 minutes. This will make the pancakes lighter.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Making the batter", accordion_body_1, 1, True) }}
+
+    {% set accordion_body_2 %}
+        <ol start="8">
+            <li>
+                Heat up a griddle or skillet over medium heat. When the pan is hot, use an oiled kitchen paper to wipe
+                the pan until it is well coated.
+            </li>
+            <li>
+                Drop about ¼ cup of batter (or any amount you prefer, <a href="#note-3">note 3</a>) onto the pan. When you see the edges look
+                dry and bubbles appearing on the surface, flip and cook the other side until cook through. It takes about
+                1-2 minutes for each side depending on the size of your pancake.
+            </li>
+            <li>
+                Do the same until the entire batter is used up. No oil is required for subsequent batches.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Cooking the pancakes", accordion_body_2, 2) }}
+{% endblock steps_content %}
+
+{% set steps_img = url_for("static", filename= "banana_pancake_4" | media( name | path_format )) %}
+
+{% set steps_caption = "" %}
+
+{% block notes_content %}
+    <li id="note-1">
+        You can substitute with whole wheat flour, plain flour or cake flour, all or any combination.
+    </li>
+    <li id="note-2">
+        You can use fresh or frozen banana. I used frozen bananas to make this pancake. Choose fully ripen banana
+        (with black dots) as under-ripe bananas are more difficult to digest and can give you stomach ache.
+    </li>
+    <li id="note-3">
+        At the first batch, make one or two small pancakes to test out the end result. Adjust your heat if necessary.
+    </li>
+    <li>
+        You can make any size you like but it is ideal to use ¼ cup of batter to get a fluffier and thicker texture.
+    </li>
+    <li>
+        Make sure your pan is clean before you cook another batch. Chocolate chips may melt during cooking. Wipe it off
+        with kitchen paper if any.
+    </li>
+    <li>
+        You can keep these pancakes in an air tight container and store in fridge for about 4-5 days. To reheat the pancakes,
+        thaw the pancakes first, preheat oven or toaster oven for 5 minutes. Place pancakes on a lined baking tray. Spray some
+        water on the surface and place them in the oven or toaster oven for another 5 minutes (without heat).
+    </li>
+    <li>
+        The measurement in cups should only be used as a guide. To get the best results, please follow the measurement in grams.
+    </li>
+{% endblock notes_content %}
