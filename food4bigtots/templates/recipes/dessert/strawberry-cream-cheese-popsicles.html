@@ -1,0 +1,114 @@
+{% extends "recipes/recipe.html" %}
+
+{% from "macros.html" import ingredient, accordion_item %}
+
+{% set cover_img = url_for("static", filename= "strawberry_popsicle_1" | media( name | path_format )) %}
+
+{% set intro_content %}
+    <p>
+        On a scorching hot afternoon, nothing could be better than having a cool treat to chill you down.
+        Homemade popsicles are my son’s all-time favourite cool treat. Whenever there are fresh and cheap berries in the market,
+        I will make a bunch of popsicles and stock them in the fridge. The berries season is back now, and it’s time to dig
+        out my popsicle moulds again.
+    </p>
+    <p>
+        Homemade popsicles are not necessarily icy. They can be smooth and creamy instead. Let me show you how to make these
+        creamy-dreamy popsicles with just 4 ingredients – strawberry, cream cheese, Greek style yogurt and honey. The popsicles
+        will be ready for freezing in less than 15 minutes.
+    </p>
+    <p>
+        Cream cheese is the key ingredient that makes these popsicles so smooth and creamy without any iciness, almost like ice
+        cream. You can use either Greek style yogurt or normal plain yogurt to thin the cream cheese. But, I prefer the former
+        as it is thicker and creamier. Honey or sugar helps to bring out the sweetness of the fruits. How much honey or sugar
+        you need will very much depend on the fruit you choose. Don’t just limit yourself to strawberries. Any kind of berries
+        that are fresh makes good substitute. I had even tried using frozen blueberries, and the popsicles turned out to be just as delicious!
+    </p>
+    <p>
+        These popsicles are so satisfying that my dad, sis and nephew who were here for a visit could attest. Look at those
+        photos of my son. These popsicles really make his day. He enjoyed every bit of them and couldn’t be bothered with his
+        messy fingers and dirty shirt while I took some shots of him eating them. He ate three popsicles on that afternoon and
+        told me that he still had the stomach for one more. I almost fainted.
+    </p>
+{% endset %}
+
+{% set intro_img = url_for("static", filename= "strawberry_popsicle_2" | media( name | path_format )) %}
+
+{% set intro_caption = "" %}
+
+{% set adapted = "" %}
+
+{% set yield = "11 IKEA popsicle sticks" %}
+
+{% block ingredient_content %}
+    {{ ingredient("250g strawberries (roughly chopped)", 1) }}
+
+    {{ ingredient("250g cream cheese (1 packet), softened (cut into chunks)", 2) }}
+
+    {{ ingredient("60g Greek style yogurt", 3) }}
+
+    {{ ingredient("6 tablespoons honey or icing sugar", 4) }}
+
+    {{ ingredient("2-4 pieces of strawberries, diced (optional)", 5) }}
+{% endblock ingredient_content %}
+
+{% set ingredient_img = url_for("static", filename= "strawberry_popsicle_9" | media( name | path_format )) %}
+
+{% set ingredient_alt = "Top: Kraft Philadelphia Cream Cheese; Bottom: Farmers Union Greek Style Natural Yoghurt" %}
+
+{% set ingredient_caption = "" %}
+
+{% block steps_content %}
+    {% set accordion_body_1 %}
+        <ol>
+            <li>
+                In a food processor or blender, add strawberries and blend. Add cream cheese, and then Greek style yogurt and honey. Process until smooth and well combined. Taste and add more honey or sugar if desired.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Mixing the ingredients", accordion_body_1, 1, True) }}
+
+    {% set accordion_body_2 %}
+        <ol start="2">
+            <li>
+                Pour the mixture through a funner into the popsicle moulds. Add some diced strawberries in between if you like.
+                Use a chopstick or skewer to gently swirl the mixture together. Freeze until firm, at least 4 hours.
+            </li>
+            <li>
+                To unmould, run the mould under running water for a few seconds and gently slide the popsicle out of the mould.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Mixing the ingredients", accordion_body_2, 2) }}
+{% endblock steps_content %}
+
+{% set steps_img = url_for("static", filename= "strawberry_popsicle_7" | media( name | path_format )) %}
+
+{% set steps_caption = "" %}
+
+{% block notes_content %}
+    <li>
+        Thaw the cream cheese at room temperature until it is softened. This will make the blending easier.
+    </li>
+    <li>
+        I have a small blender. Hence, I blend the ingredients one at a time. For each addition, I just roughly blend it.
+        When it comes to the last ingredient, I process them until smooth and well combined. Do not over process the mixture
+        or else they will turn very watery.
+    </li>
+    <li>
+        You can substitute strawberries with other berries such as cherries and blueberries.
+    </li>
+    <li>
+        Greek-style yogurt is thicker and creamier than the normal plain yogurt. However, you can use plain yogurt as a substitute.
+    </li>
+    <li>
+        If your moulds don’t come with sticks, cover the moulds with foil and insert wooden sticks through foil into each mould
+        (refer photo below).
+    </li>
+    <li>
+        If you intend to make a bunch of them, remove the popsicles from the moulds and wrap them individually with cling wrap.
+        Store them in a freezer safe container or air-tight plastic bag.
+    </li>
+    <li>
+        These popsicles keep well in the freezer for 2-3 weeks.
+    </li>
+{% endblock notes_content %}
