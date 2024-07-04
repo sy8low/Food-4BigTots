@@ -49,7 +49,7 @@
         </form>
     {% endset %}
 
-    {{ double("Ingredients", ingredient_content, ingredient_img, ingredient_alt, ingredient_caption) }}
+    {{ double("Ingredients", ingredient_content, ingredient_img, ingredient_alt, caption=ingredient_caption) }}
 
 
     {% set steps_content %}
@@ -61,7 +61,7 @@
     
     {% set steps_alt = ["Step-by-step visual guide on how to make", name] | join(" ") %}
 
-    {{ double("Steps", steps_content, steps_img, steps_alt, steps_caption) }}
+    {{ double("Steps", steps_content, steps_img, steps_alt, caption=steps_caption) }}
 
 
     {% set notes_content %}

@@ -1,0 +1,122 @@
+{% extends "recipes/recipe.html" %}
+
+{% from "macros.html" import ingredient, accordion_item %}
+
+{% set cover_img = url_for("static", filename= "crepe_1" | media( name | path_format )) %}
+
+{% set intro_content %}
+    <p>
+        Crepes (or crêpes) are very thin pancakes. They originated from Brittany, a region in the north-west of France. Unlike pancakes, crepes don’t require leavening agent and have a higher content of milk.
+    </p>
+    <p>
+        Crepes come in two varieties: sweet (made with white or wheat flour and lightly sweetened) and savoury (made with buckwheat flour and unsweetened). While sweet crepes are often eaten as part of breakfast or as a dessert, savoury crepes are commonly served for lunch and dinner. My wholemeal crepe reicpe is closer to the sweet version. Nevertheless, it can be savoury too by switching to buckwheat flour and omitting the sugar.
+    </p>
+    <p>
+        Crepe is real simple and effortless to whip up even kids can do it. You can use a hand whisk and spatula to make the batter, or for a shortcut, whiz everything in a blender. You can make the batter a few hours or even a day in advance. However, it’s important to sieve your batter so as to be lump-free. Resting the batter before cooking also helps to produce more tender and soft crepes.
+    </p>
+    <p>
+        As I don’t have a special crepe pan, I cook my crepe with non-stick skillet which works just perfectly. I find 20cm (8 inches) to be the ideal pan size for making crepes. It’s easy to handle especially during flipping or tossing. Of course, you can use any pan size as you like. Well, to be honest, I still don’t dare to toss my crepes yet. Do give it a go if you dare!
+    </p>
+    <p>
+        These crepes can be served cold or warm, and topped with sweet or savoury fillings.  The ideas on how to eat them are endless. Using fresh fruits to make fun faces is what my son and I love most.  It’s a fun yet healthy way to encourage your little ones to eat more fruits. Sometimes, if I want to pamper my taste bud, I will apply a layer of Nutella jam on my crepe, and top with sliced strawberries and a sprinkle of ground toasted peanuts (the more the better!). Wow! It tastes heavenly!! What’s your favourite way of eating crepe? I love to hear from you.
+    </p>
+{% endset %}
+
+{% set intro_img = url_for("static", filename= "crepe_2" | media( name | path_format )) %}
+
+{% set intro_caption = "" %}
+
+{% set adapted = "" %}
+
+{% set yield = "7-8 crepes" %}
+
+{% block ingredient_content %}
+    {{ ingredient("50g wholemeal flour", 1) }}
+    
+    {{ ingredient("60g plain flour, sifted", 2) }}
+
+    {{ ingredient("300ml milk (at room temperature)", 3) }}
+
+    {{ ingredient("15g melted unsalted butter <a href='#note-1'>(refer to note 1)</a>", 4) }}
+
+    {{ ingredient("1 large egg about 64g (at room temperature)", 5) }}
+
+    {{ ingredient("Pinch of salt", 6) }}
+
+    {{ ingredient("1 tablespoon sugar (optional)", 7) }}
+{% endblock ingredient_content %}
+
+{% set ingredient_img = url_for("static", filename= "crepe_3" | media( name | path_format )) %}
+
+{% set ingredient_alt = "" %}
+
+{% set ingredient_caption = "Can you guess which one is my son’s creation?" %}
+
+{% block steps_content %}
+    {% set accordion_body_1 %}
+        <ol>
+            <li>
+                In a large mixing bowl, combine the wholemeal flour, sifted plain flour and salt.
+            </li>
+            <li>
+                In another bowl, beat egg. Add in sugar and beat until sugar is dissolved.
+            </li>
+            <li>
+                Stir in milk and mix. Then followed by melted butter.
+            </li>
+            <li>
+                Make a well in the center of the dry ingredients in step (1). Fold in the wet ingredients with a hand whisk until well combined and the batter is smooth and creamy. Then change to a rubber spatula to scrap off the batter that sticks to the side and bottom of the mixing bowl.
+            </li>
+            <li>
+                To avoid lumps in the batter, use the back of the spoon to press it through a sieve.
+            </li>
+            <li>
+                Cover the mixing bowl and leave it to rest for 30 minutes at room temperature or chill in the fridge.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Making the batter", accordion_body_1, 1, True) }}
+
+    {% set accordion_body_2 %}
+        <ol start="7">
+            <li>
+                Heat a non-stick frying pan (20cm or 8 in) on medium heat. Lightly grease the pan with butter. Pour a ladle of mixture onto the center of the pan and swirl it to form thin layer of batter.
+            </li>
+            <li>
+                Cook for 1 to 1 ½ minutes until the edges begin to lift and lightly golden brown underneath. Slip in a spatula under the crepe and flip it over. Continue to cook for a further 30 seconds to a minute.
+            </li>
+            <li>
+                Continue with the same process until the batter is fully used up. You
+            </li>
+            <li>
+                Serve cold or warm with your favourite toppings and fillings.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Cooking the crepes", accordion_body_2, 2) }}
+{% endblock steps_content %}
+
+{% set steps_img = url_for("static", filename= "crepe_4" | media( name | path_format )) %}
+
+{% set steps_caption = "" %}
+
+{% block notes_content %}
+    <li id="note-1">
+        Rather than using a mix of plain and wholewheat flour, you can use 100% of either one.
+    </li>
+    <li>
+        Cut butter into large cubes and put into a small bowl. Transfer the bowl to a sauce pan filled with water.
+        Heat up the sauce pan under medium low heat. Stir the butter occasionally. When it’s fully melted, remove
+        the bowl from the sauce pan. Set aside to cool. (refer to photo at
+        <a href="https://food-4tots.com/2011/10/02/coconut-banana-muffins/2/">this link</a>)
+    </li>
+    <li>
+        For a short cut, you can skip step (1) to (4) and whisk all the ingredients in a blender.
+    </li>
+    <li>
+        It’s not a must to grease the pan each time before making the next crepe.
+    </li>
+    <li>
+        You can make the batter in advance and stored in the fridge for overnight.
+    </li>
+{% endblock notes_content %}
