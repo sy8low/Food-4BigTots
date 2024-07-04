@@ -1,0 +1,186 @@
+{% extends "recipes/recipe.html" %}
+
+{% from "macros.html" import ingredient, accordion_item %}
+
+{% set cover_img = url_for("static", filename= "buns_1" | media( name | path_format )) %}
+
+{% set intro_content %}
+    <p>
+        These mini buns are made from a basic sweet dough recipe originated from Vinnie Baking Paradise.
+        This recipe has been very popular among the local food bloggers. It uses sponge dough method which
+        has many similarities with the <a href="https://food-4tots.com/2013/01/29/taro-pumpkin-buns/">17-hour
+        sponge dough method</a> I shared previously.
+    </p>
+    <p>
+        Sponge dough method has always been my preferred method in bread making as compared to direct method
+        for two simple reasons (if you want to know more about sponge dough method, please refer to my
+        <a href="https://food-4tots.com/2010/03/29/italian-pesto-bread/">pesto bread post</a>). First,
+        the bread making process for sponge dough method can be done in two separate sessions sometimes
+        overnight. It’s unlike direct method which must be completed within the same day. Secondly, it
+        yields more refined bread with softer texture and better taste.
+    </p>
+    <p>
+        I have been baking these mini buns with a few variations for the past two weeks.
+        Regardless of which variations, the end results are very satisfactory. The buns still remain soft the next day.
+        My family loves them very much as they are soft and have wonderful buttery taste. The aroma of these buns fills
+        up my entire kitchen when they are freshly out from the oven.
+    </p>
+    <p>
+        These buns can be eaten either plain or with jam. They can also be turned into sandwiches with filling inside.
+        My favourite way to enjoy is dipping it into my morning coffee. If I cannot finish them all at once, I will
+        freeze them for later consumption.
+    </p>
+    <p>
+        As the level of difficulty is low, I would recommend it to all beginners in bread making to give it try.
+        Once you have mastered this recipe, you can easily come out with a zillion of creations. This recipe is
+        definitely a keeper. I can’t wait to experiment with other flavours and shapes in my future attempts and
+        shall the outcome with you.
+    </p>
+{% endset %}
+
+{% set intro_img = url_for("static", filename= "buns_3" | media( name | path_format )) %}
+
+{% set intro_caption = "" %}
+
+{% set adapted %}
+    <a href="http://vinniebakingparadise.blogspot.com/2012/12/kopitiam-milk-bun.html?m=1">Vinnie Baking Paradise</a><br>
+    and <a href="http://siewhwei80.blogspot.com/2013/06/pandan-kopitiam-milk-bun.html">Siew Hwei’s Kitchen</a>
+{% endset %}
+
+{% set yield = "15 buns@38g each<br>(Size of baking tray: 12.5” x 9” x 0.5” ( 32cm x 23cm x 1.5cm))" %}
+
+{% block ingredient_content %}
+    <h4 class="h5">Starter dough</h4>
+    {{ ingredient("114g bread flour (high protein flour)", 1) }}
+
+    {{ ingredient("100g wholemeal bread flour <a href='#note-1'>(note 1)</a>", 2) }}
+
+    {{ ingredient("128g cold milk", 3) }}
+
+    {{ ingredient("2g instant dry yeast", 4) }}
+
+    <h4 class="h5 mt-3">Main dough</h4>
+    {{ ingredient("92g bread flour", 5) }}
+
+    {{ ingredient("12g full cream milk powder <a href='#note-2'>(note 2)</a>", 6) }}
+
+    {{ ingredient("3g instant dry yeast", 7) }}
+
+    {{ ingredient("15g cold milk", 8) }}
+
+    {{ ingredient("30g egg <a href='#note-3'>(note 3)</a>", 9) }}
+
+    {{ ingredient("3g (½ teaspoon) salt", 10) }}
+
+    {{ ingredient("45g castor sugar", 11) }}
+
+    {{ ingredient("45g unsalted butter (softened at room temperature)", 12) }}
+{% endblock ingredient_content %}
+
+{% set ingredient_img = url_for("static", filename= "buns_4" | media( name | path_format )) %}
+
+{% set ingredient_alt = name %}
+
+{% set ingredient_caption = "" %}
+
+{% block steps_content %}
+    {% set accordion_body_1 %}
+        <ol>
+            <li>
+                Place all the ingredients in a bowl. Use hand or kitchen mixer to knead until dough is formed (about 2-3 minutes).
+                Transfer to a lightly greased bowl, spray some water on the dough and cover the bowl with cling wrap. Let it prove
+                at room temperature for 4-5 hours or in the refrigerator for 14-16 hours <a href="#note-4">(note 4)</a>.
+            </li>
+            <li>
+                Place all the ingredients (except for butter) for main dough into the mixing bowl.  Tear starter dough (no need to
+                thaw for overnight dough) piece by piece and add to the bowl. Fix on the dough hook and switch on the kitchen mixer.
+                Let the machine knead with low speed (speed no. 1) till a rough dough is formed. Increase speed to medium low (speed no.
+                2) and knead until the dough is soft and stretchable (but not at the “membrane test” stage <a href="#note-5">(note 5)</a>). Add butter,
+                change speed to low (speed no. 1) and continue kneading until the butter is fully absorbed into the dough. Increase
+                speed to medium low (speed no. 2) and knead until the dough is stretchable and reaches the “membrane test” stage <a href="#note-5">(note 5)</a>.
+            </li>
+            <li>
+                Round the dough, transfer to a lightly greased bowl and spray some water on it. Cover with cling wrap and let it
+                rest for 25 minutes at room temperature until it is doubled in size. Test the dough to see if it is ready <a href="#note-6">(note 6)</a>.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Making the dough", accordion_body_1, 1, True) }}
+
+    {% set accordion_body_2 %}
+        <ol start="4">
+            <li>
+                After resting, gently punch down to deflate the dough. Divide the dough into 15 portions with 38g each <a href="#note-7">(note 7)</a>.
+                Round each portion into a ball shape and seal the bottom tightly.
+            </li>
+            <li>
+                Arrange the buns on a baking tray (greased with softened butter). Spray some water onto the buns. Place the tray
+                inside the oven with door close and no heat. Proof for one hour until double the size. Place a cup of boiling water
+                inside to create moisture.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Shaping the buns", accordion_body_2, 2) }}
+
+    {% set accordion_body_3 %}
+        <ol start="6">
+            <li>
+                10 minutes before the proofing ends, remove the tray from the oven and preheat the oven at 170°C <a href="#note-8">(note 8)</a>.
+            </li>
+            <li>
+                Bake in a pre-heated oven for 10 minutes or until lightly golden brown. Spray some water onto the buns before
+                transferring to the oven.
+            </li>
+            <li>
+                Remove the buns from tray and let them cool down on a cooling rack.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Baking the buns", accordion_body_3, 3) }}
+{% endblock steps_content %}
+
+{% set steps_img = url_for("static", filename= "buns_5" | media( name | path_format )) %}
+
+{% set steps_caption = "" %}
+
+{% block notes_content %}
+    <li id="note-1">
+        You can use 100% bread flour.
+    </li>
+    <li id="note-2">
+        Baker’s dry milk (milk powder) is high heat treated and make your bread better in term of texture, flavour and colour.
+        It can be purchased in local baking supplier shops. Do not use normal baby milk powder as substitute.
+        If you don’t have, you can replace with bread flour. (Click on the link to read more:
+        <a href="http://www.preparedpantry.com/dry-milk.aspx">Prepared Pantry</a>)
+    </li>
+    <li id="note-3">
+        Break your egg into a bowl and beat with folk until the yolk and white are well mixed. Take 30g from the mixture.
+    </li>
+    <li id="note-4">
+        I had stored my initial dough for more than 2.5 days and it still worked well.
+    </li>
+    <li id="note-5">
+        Take a small piece of dough, gently stretch it outwards at all the directions to form a thin layer of “membrane”.
+        This is called “membrane test”. If not, continue kneading until it reaches this stage.
+    </li>
+    <li id="note-6">
+        With a flour dusted finger, poke a hole into the centre of the dough. If the hole remains,  it’s ready.
+    </li>
+    <li id="note-7">
+        You can divide the dough into any sizes you want. For example, 16 portions with 35g each to fit into a square cake tin of 9”x9”x 3″.
+    </li>
+    <li id="note-8">
+        The stated temperature and time <b>should only be used as a reference</b>. Different ovens have different temperature setting.
+        It also depends on the size of buns and baking tray you use.
+    </li>
+    <li>
+        If the buns show uneven colour, turn the tray 180 degree after baking for 10 minutes.
+    </li>
+    <li>
+        If the surface of the buns become too brown after 10 minutes, cover the top with a piece of aluminium foil and continue baking.
+    </li>
+    <li>
+        You can keep these buns in the freezer for future consumption. Cut them into half (slice horizontally) and place into an
+        air-tight bag. You can either toast it (do spray some water onto it before toasting) or steam it.
+    </li>
+{% endblock notes_content %}
