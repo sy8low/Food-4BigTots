@@ -41,6 +41,13 @@ class Queries:
                    "FROM recipes AS r JOIN mapping AS m ON r.id = m.recipe_id "
                    "JOIN categories AS c ON m.category_id = c.id")
     
+    ALL_RECIPES_DISTINCT = ("SELECT * FROM "
+                            "(SELECT r.name AS name_r, r.thumbnail AS thumbnail_r, c.name AS name_c, "
+                            "ROW_NUMBER() OVER(PARTITION BY r.name) AS rn "
+                            "FROM recipes AS r JOIN mapping AS m ON r.id = m.recipe_id "
+                            "JOIN categories AS c ON m.category_id = c.id) "
+                            "WHERE rn = 1")
+    
     RECIPES_IN_CATEGORY = " ".join((ALL_RECIPES, "WHERE LOWER(c.name) = ?"))
     
     ALL_CATEGORIES = "SELECT name FROM categories ORDER BY name"

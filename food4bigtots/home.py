@@ -20,7 +20,7 @@ def home() -> Response:
     """
     
     recipes = query_db(
-        Queries.ALL_RECIPES
+        Queries.ALL_RECIPES_DISTINCT
     )
     
     return render_template("home/home.html", recipes=recipes)
