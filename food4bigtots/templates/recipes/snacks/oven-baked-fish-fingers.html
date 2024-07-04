@@ -1,0 +1,193 @@
+{% extends "recipes/recipe.html" %}
+
+{% from "macros.html" import ingredient, accordion_item %}
+
+{% set cover_img = url_for("static", filename= "fish_3" | media( name | path_format )) %}
+
+{% set intro_content %}
+    <p>
+        What’s your favourite finger food? If I were to name one, it would be fish fingers (or fish sticks).
+        Who doesn’t love fish fingers? Not even a picky eater.
+    </p>
+    <p>
+        Trust me! Making your own fish fingers from scratch is very easy and they taste absolutely delicious too.
+        Besides, you have full control in the selection of the type of fish and seasoning.
+        If you have 30 minutes or so to spare for cooking, then this recipe is something you shouldn’t miss.
+        Undeniably, the classic deep-frying version offers the ultimate crispiness that neither the baking nor
+        pan-frying versions can replace. But for my family’s overall wellness, I’m pretty satisfied with my baked/pan-fried version.
+    </p>
+    <p>
+        I have a little confession to make here.
+        This is one recipe that I had silently kept for the longest time (Yes, there is still a long list of other recipes as well.
+        I blame my lazy bones for this procrastination.).
+        Whenever I baked these fish fingers, they ended up pleasing my stomach first and made me quickly forget to share with you in my blog.
+        Hmm! That’s so selfish of me. So, if you have tried it and liked it, I hope you would share it with others and don’t be like me.
+    </p>
+    <p>
+        These fish fingers, when served warm, are extremely irresistible – crunchy and crispy on the outside and soft on the inside.
+        They are so good that waiting for them to cool down is kind of mental torture.
+        That’s the favourite comment my hubby loves to give before gobbling down his share (and more).
+    </p>
+    <p>
+        These fish fingers are perfect for the entire family.
+        They can be eaten just about anytime and anywhere you like.
+        For a healthy version of fast food experience, you can serve them with oven-baked potatoes wedges, peas or mixed vegetables,
+        and don’t forget to go with some delicious dips like mayonnaise, tartar sauce, ketchup of chili sauce. Bon appetit!
+    </p>
+    <p>
+        <b class="text-danger">A word of caution!</b>
+        We know that fish is a great source of lean protein but it also contains traces of mercury with varied degree.
+        So, <b class="text-danger">pregnant women, nursing mothers and young children (under 6)</b>
+        must be very careful about the amount and types of fish they eat.
+        There are four types of fish with high level of mercury that this group should not eat: sharks, swordfish, tilefish and King mackerel.
+        For more reading references, please go through the following suggested links:
+    
+        <ul>
+            <li>
+                <a href="http://www.babycenter.com/0_should-your-kids-eat-fish-how-they-can-avoid-mercury-and-sti_10319857.bc">Babycenter</a>
+                –  Should your kids eat fish? How they can avoid mercury and still get their omega-3s
+            </li>
+            <li>
+                <a href="http://www.whattoexpect.com/toddler-nutrition/fish-for-toddlers.aspx">What to expect</a>
+                – Fish for toddlers
+            </li>
+            <li>
+                <a href="http://water.epa.gov/scitech/swguidance/fishshellfish/outreach/advice_index.cfm">US EPA</a>
+                –  What You Need to Know about Mercury in Fish and Shellfish</li>
+            <li>
+                <a href="http://wholesomebabyfood.momtastic.com/introducingfishtobaby.htm">Momstatic – Wholesomebabyfood</a>
+                – Is Fish an Allergenic food for Babies and When Can Babies Eat Fish?</li>
+            <li>
+                <a href="http://www.businessweek.com/lifestyle/content/healthday/635854.html">Business Week</a>
+                –  Too Much Mercury in Canned Tuna – Or Is There?</li>
+        </ul>
+
+        It’s good to serve your toddlers with a variety of fish with low mercury contents two to three times a week,
+        with quantity ranging from one to three ounces of fish per serving depending on your child’s age.
+        For more info, please go to this <a href="http://longevity.about.com/od/lifelongnutrition/a/fish_mercury.htm">link</a>.
+        Remember, if you are uncertain of the mercury content in any type of fish you plan to introduce to your toddlers,
+        please consult your pediatrician beforehand. Better be safe than late!
+    </p>
+{% endset %}
+
+{% set intro_img = url_for("static", filename= "fish_4" | media( name | path_format )) %}
+
+{% set intro_caption = "I love playing with food. Do you?" %}
+
+{% set adapted = "You Can Cook (A step by step cookbook for kids) by Annabel Karmel<br>and Annabel Karmel Family Cookbook" %}
+
+{% set yield = "" %}
+
+{% block ingredient_content %}
+    {{ ingredient("380g skinless fish fillets (such as sole, flounder, tilapia or other firm white fish) <a href='#note-1'>[note 1]</a>", 1) }}
+
+    {{ ingredient("5 tbsp plain flour", 2) }}
+
+    {{ ingredient("1 large egg, beaten", 3) }}
+
+    {{ ingredient("20g dried breadcrumbs (normal)", 4) }}
+
+    {{ ingredient("20g panko breadcrumbs (Japanese breadcrumbs), refer to photo at the right <a href='#note-4'>[note 4]</a>", 5) }}
+
+    {{ ingredient("20g Parmesan cheese, freshly grated", 6) }}
+
+    {{ ingredient("1 tsp garlic powder", 7) }}
+
+    {{ ingredient("¼ tsp paprika", 8) }}
+
+    {{ ingredient("Pinch of salt", 9) }}
+
+    {{ ingredient("Dash of freshly ground black pepper", 10) }}
+
+{% endblock ingredient_content %}
+
+{% set ingredient_img = url_for("static", filename= "fish_7" | media( name | path_format )) %}
+
+{% set ingredient_alt = "Panko breadcrumbs" %}
+
+{% set ingredient_caption = "" %}
+
+{% block steps_content %}
+    {% set accordion_body_1 %}
+        <ol>
+            <li>Preheat oven to 200°C.</li>
+            <li>
+                Pat the fish dry with paper towels and cut into strips (1/2 inch thick x ¾ inch width).
+                Season with salt and pepper.
+            </li>
+            <li>
+                Set up your assemble line. Get ready with 3 bowls (even plates or small pan sheets are possible) which are large enough for coating the strips.
+            </li>
+            <li>
+                The first one is for flour.
+            </li>
+            <li>
+                The second one (preferably use bowl) is for egg. Crack an egg and whisk well. You may want to add a little bit (eg ¼ tsp) of milk or water to dilute the beaten egg.
+            </li>
+            <li>
+                The third one is for breadcrumb mixture. Mix breadcrumbs, Parmersan cheese, paprika, garlic powder and black pepper together.
+            </li>
+            <li>
+                Toss each strip in the flour and shake off any excess. To minimize any messiness, continue for the remaining strips before moving on to the next step.
+            </li>
+            <li>
+                Next, dip the strip into the egg mixture and allow extra egg liquid to drip back into the bowl.
+            </li>
+            <li>
+                Then coat the strip with the breadcrumb mixture. Slightly press the strip into the crumbs to make sure it is well coated. Let it stand for 5-10 minutes. It will help the coating adhere to the strip better.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Marinading the fish", accordion_body_1, 1, True) }}
+
+    {% set accordion_body_2 %}
+        <ol start="10">
+            <li>
+                Prepare a baking sheet (I lined it with non-stick parchment paper but it’s optional). Brush/ spray some oil on the sheet/paper.
+            </li>
+            <li>
+                Arrange strips in a single layer on the prepared baking tray. Drizzle or spray some oil over the strips.
+            </li>
+            <li>
+                Bake for 8-10 minutes or until the crumbs are golden brown and the fish is cooked through (eg flakes easily). Turning halfway through. Adjust the baking time according to the thickness of your fillet. Do not overcook the fish as it will be dry and hard.
+            </li>
+            <li>
+                Transfer to serving plates and allow it to cool a little before serving.
+            </li>
+            <li>
+                Best to dip in some sauce such as ketchup, sweet chilli sauce or tartar sauce.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Baking the fish", accordion_body_2, 2) }}
+{% endblock steps_content %}
+
+{% set steps_img = url_for("static", filename= "fish_8" | media( name | path_format )) %}
+
+{% set steps_caption = "" %}
+
+{% block notes_content %}
+    <li id="note-1">
+        Instead of strips, you may also cut them into the size of mini nugget.
+    </li>
+    <li>
+        You may not use all of the coating, but having more will make your work easier.
+    </li>
+    <li>
+        Use either a pair of tongs or clean hands to coat the fish.
+    </li>
+    <li id="note-4">
+        Crushed cornflakes or cream crackers also make a good coating.
+        Wrap them in a tea towel or put them in a plastic bag.
+        Then, smash up until fine, breaking up any big bits up with your hands.
+        Alternatively, you may use only normal breadcrumbs.
+    </li>
+    <li>
+        For kids who are not ready for paprika and garlic powder, you can omit them. It works equally well too.
+    </li>
+    <li>
+        If you don’t have oven, you can pan-fry these fish fingers too.
+        Heat oil in a non-stick pan over medium heat, pan fry the fish fingers for 1½ to 2 minutes on each side
+        until golden and the fish is cooked. Drain on kitchen paper and allow to cool a little before serving.
+    </li>
+{% endblock notes_content %}
