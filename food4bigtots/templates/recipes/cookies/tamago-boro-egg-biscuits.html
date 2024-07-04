@@ -1,0 +1,171 @@
+{% extends "recipes/recipe.html" %}
+
+{% from "macros.html" import ingredient, accordion_item %}
+
+{% set cover_img = url_for("static", filename= "tamago_1" | media( name | path_format )) %}
+
+{% set intro_content %}
+    <p>
+        Tamago Boro (also known as egg biscuits, (蛋果子 or 小馒头)) is a very popular snack among kids.
+        You can find them in supermarkets, Japanese specialty stores or local snack shops.
+        My son had never tasted them before. So, he was very excited when he knew that I was going to make them for him.
+    </p>
+    <p>
+        I have made these Tamago Boro successfully based on a recipe I have adapted and modified from
+        <a href="http://blog.sina.com.cn/s/blog_4a5089ff0102dytz.html">『君之』的手工烘焙坊</a>.
+        It uses simple ingredients with easy-to-follow steps. But if you want to make super tiny,
+        nicely browned and flawless tamago boro biscuits like those sold in the store, then it would be a challenge.
+    </p>
+    <p>
+        To get a perfect looking Tamago Boro, it really requires lots of patience and dexterity with the hands.
+        Having said that, the most tedious part comes from dividing the dough into bits of even weight (one gram
+        each, slightly bigger than the size of a soya bean) and rolling them into 280 miniature egg boro.
+        For easy rolling, I had to constantly wet my hands as the dough turns dry quickly. This task took me around
+        an hour and half to complete with the help of my hubby. Well, if you think it is too time consuming, you can
+        opt for the short-cut given in the original recipe (please refer to <a href="#note-2">note 2</a> in my recipe). However, the down
+        side of this option is that the cooked egg biscuits will be coated with a layer of flour and their shape may
+        not be as round as the first method and may have more crack lines.
+    </p>
+    <p>
+        During baking, it is important to use the right temperature setting and monitor the baking process closely.
+        This is to prevent these mini balls from cracking and browning too much. Spraying some water on them before
+        and during baking can help to minimize crack lines from developing. At times, you can also place a baking
+        sheet on top to cut down the heat.
+    </p>
+    <p>
+        I bake these egg biscuits for 25 minutes, longer than the recommended time stated in the original recipe.
+        This reason is because my son prefers the texture to be crisp and crunchy, and its taste is more flavourful.
+    </p>
+    <p>
+        I don’t know how they fair when compared to those commercial tamago boro as I can’t even recall when I last ate them.
+        However, the miniature size of these biscuits (about 1cm or less in diameter) makes them look incredibly adorable and
+        irresistible!! My son loves popping them into his mouth while doing his homework. When he shared them with his classmates,
+        the responses he received were overwhelming. After all, who will say no to these cuties?
+    </p>
+    <p>
+        These egg biscuits are low on oil and sugar. It is a perfect snack for kids but I would not recommend it for babies
+        (especially below one year old) as it contains egg and sugar, and may cause choking.
+    </p>
+{% endset %}
+
+{% set intro_img = url_for("static", filename= "tamago_2" | media( name | path_format )) %}
+
+{% set intro_caption = "" %}
+
+{% set adapted = "<a href='http://blog.sina.com.cn/s/blog_4a5089ff0102dytz.html'>『君之』的手工烘焙坊</a>" %}
+
+{% set yield = "280-290" %}
+
+{% block ingredient_content %}
+    {{ ingredient("140g potato starch (refer to photo below)", 1) }}
+    
+    {{ ingredient("20g low protein flour (cake flour)", 2) }}
+
+    {{ ingredient("20g dry milk (baking milk powder) <a href='#note-1'>(note 1)</a>", 3) }}
+
+    {{ ingredient("1 teaspoon baking powder", 4) }}
+
+    {{ ingredient("40g icing sugar (sifted)", 5) }}
+
+    {{ ingredient("50g egg liquid (about one 65g large egg)", 6) }}
+
+    {{ ingredient("2 teaspoons of corn oil (or any flavourless salad oil)", 7) }}
+{% endblock ingredient_content %}
+
+{% set ingredient_img = url_for("static", filename= "tamago_3" | media( name | path_format )) %}
+
+{% set ingredient_alt = "" %}
+
+{% set ingredient_caption = "" %}
+
+{% block steps_content %}
+    {% set accordion_body_1 %}
+        <ol>
+            <li>
+                Mix together potato starch flour, low protein flour, milk powder and baking powder until well-combined. Sieve and set aside.
+            </li>
+            <li>
+                Break egg in a mixing bowl. Beat until the yolk and white are well mixed. No need to beat until foamy.
+                Use only 50g of this egg liquid.
+            </li>
+            <li>
+                Stir in icing sugar in 2-3 batches and mix well after each addition.
+            </li>
+            <li>
+                Stir in flour mixture from step 1 in 2-3 batches and mix well after each addition <a href="#note-2">(note 2)</a>.
+                Add in oil and combine well. You will get a sticky and wet dough. Do not add any extra flour as the dough will
+                turn dry after some time. You should be able to roll a small piece of dough into ball.
+            </li>
+            <li>
+                Cover the dough with a damp cloth <a href="#note-3">(note 3)</a>.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Making the dough", accordion_body_1, 1, True) }}
+
+    {% set accordion_body_2 %}
+        <ol start="6">
+            <li>
+                Cut the dough into tiny pieces (slightly bigger than the size of a soya bean, approximately 1 gram) <a href="#note-4">(note 4)</a>
+            </li>
+            <li>
+                Arrange the biscuits on a baking tray lined with baking parchment paper. Allow some gaps between the biscuits.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Shaping the biscuits", accordion_body_2, 2) }}
+
+    {% set accordion_body_3 %}
+        <ol start="7">
+            <li>
+                Preheat oven at 170°C <a href="#note-5">(note 5)</a>.
+            </li>
+            <li>
+                Spray water onto the biscuits. Transfer the tray to the oven and bake for 10-15 minutes or until light golden brown.
+                Give the biscuits another spray before you close the door of the oven. Rotate the tray 180 degree half way during
+                baking for even colour. If you want texture to be crunchy, bake for another 8-10 minutes
+                (<a href="#note-6">note 6</a> &amp; <a href="#note-7">7</a>).
+            </li>
+            <li>
+                After baking, remove the baking tray from oven and transfer the egg biscuits to a cooling rack. Leave to cool
+                down completely before storing in an air-tight container.
+            </li>
+        </ol>
+    {% endset %}
+    {{ accordion_item("Baking the biscuits", accordion_body_3, 3) }}
+{% endblock steps_content %}
+
+{% set steps_img = url_for("static", filename= "tamago_4" | media( name | path_format )) %}
+
+{% set steps_caption = "" %}
+
+{% block notes_content %}
+    <li id="note-1">
+        Dry milk cannot be substituted with normal milk powder. You can buy dry milk from any local baking supply stores.
+    </li>
+    <li id="note-2">
+        Use a hand whisk to do the initial mixing and change to a rubber spatula when the batter becomes thick.
+    </li>
+    <li id="note-3">
+        You need to cover the dough with damp cloth all the time to prevent the dough from turning dry.
+    </li>
+    <li id="note-4">
+        Make sure your palms are slightly wet when rolling the dough. Wet your hand with little bit of water as and when needed.
+        For short cut, you can roll the dough into a flat, square sheet with 0.5cm thickness. Sprinkle some potato flour on top
+        and use a knife to cut into tiny pieces. Use both palms to roughly roll the pieces into tiny balls. Sprinkle more flour
+        to prevent the balls from sticking with each other. The down side of this method is that the egg biscuits will be covered
+        with a layer of flour after baking. The shape may not be as round as the first method and they may have more crack lines.
+        (For further details, please refer to <a href="http://blog.sina.com.cn/s/blog_4a5089ff0102dytz.html">『君之』的手工烘焙坊</a>)
+    </li>
+    <li id="note-5">
+        The stated temperature and time should only be used as a reference. Different ovens have different temperature setting.
+    </li>
+    <li id="note-6">
+        After five minutes of baking when you see the biscuits start to expand, open the oven door slightly and
+        spray some water onto the biscuits.
+    </li>
+    <li id="note-7">
+        You need to monitor the baking process closely to avoid the biscuits from turning brown. Place a baking sheet on
+        top if needed to cut down the heat.
+    </li>
+{% endblock notes_content %}
