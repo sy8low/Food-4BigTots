@@ -4,6 +4,8 @@
 
 I took up this project to relive my sweet childhood memories of helping my mum with the blog (testing food and modelling for photos 😁), and to continue its mission of helping everyone make simple, healthy food that also tastes really good. 😋
 
+* Click **[here](https://youtu.be/5aG8SreoxTM)** to watch my launch video! #shorts
+
 * Click **[here](https://www.food-4bigtots.xyz/about/)** to read our story!
 
 * Click **[here](https://youtu.be/5aG8SreoxTM?si=9ckqu47DKdCIV6HR)** to watch my YouTube video explaining the project.
