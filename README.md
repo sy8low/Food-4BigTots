@@ -12,7 +12,7 @@ I took up this project to relive my sweet childhood memories of helping my mum w
 
 * Click **[here](food4bigtots/)** to view the source code for the project.
 
-* Click **[here](https://shimmering-appliance-09d.notion.site/Food-4BigTots-64364e04a6f64fc0bc89dff5a4afdec6?pvs=74)** to view our Notion Wiki, where we’re sharing about our journey making this blog a reality.
+* Click **[here](tinyurl.com/food-4bigtotsNotionWiki)** to view our Notion Wiki, where we’re sharing about our journey making this blog a reality.
 
 You can find our socials and contact details **[below](https://github.com/sy8low/Food-4BigTots?tab=readme-ov-file#-show-us-some-love)**.
 
