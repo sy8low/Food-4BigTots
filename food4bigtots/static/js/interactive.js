@@ -13,6 +13,8 @@ $(document).ready(function(){
 
 function toggleDisplay(event){
     // Remember to select the event using $()!
+    // Know the difference between event.Target and event.currentTarget.
+    // Credit for the solution goes to ChatGPT: https://chatgpt.com/share/67146b64-2b00-800c-9a9d-7fa7e4a4a578.
     let target = $(event.currentTarget);
     target.children(".card-img").toggleClass("d-none");
     target.children(".card-body").toggleClass("d-flex");
