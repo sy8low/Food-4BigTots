@@ -35,12 +35,13 @@ $card-inner-border-radius: 0.5rem;
 
 $offcanvas-color: $primary;
 
-// Bootstrap source CSS.
+// Bootstrap source SCSS.
 @import "../bootstrap/scss/bootstrap";
 
 // Custom CSS
 // Links.
-a, .nav-link,
+a,
+.nav-link,
 .dropdown-item,
 input[type=reset] {
     color: $primary;
@@ -49,7 +50,8 @@ input[type=reset] {
 
 .nav-item > .nav-link.active,
 .nav-item.dropdown > .nav-link.dropdown-toggle:focus,
-a:hover, .nav-link:hover,
+a:hover,
+.nav-link:hover,
 .dropdown-item:hover,
 input[type=reset]:hover {
     color: $secondary;
