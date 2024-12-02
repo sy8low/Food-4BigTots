@@ -8,6 +8,10 @@ I took up this project to relive my sweet childhood memories of helping my mum w
 
 * Click **[here](https://www.food-4bigtots.xyz/about/)** to read our story!
 
+* Click **[here](https://drive.google.com/file/d/1XE4xrdG4QhO6CN8kTZ7F3lORXwU3goFI/view?usp=drive_link)** to read my project discussion.
+
+* Click **[here](https://youtu.be/eU5PVLZIb5M)** to watch a demonstration.
+
 * Click **[here](https://youtu.be/5aG8SreoxTM?si=9ckqu47DKdCIV6HR)** to watch my YouTube video explaining the project.
 
 * Click **[here](food4bigtots/)** to view the source code for the project.
